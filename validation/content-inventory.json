@@ -173,7 +173,8 @@
       "sourceText": "Vídeo de contextualização — a ser produzido e inserido.",
       "targetChapter": "contexto",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aviso de pendência removido da interface por solicitação de Artur em 12/10/2026; registro preservado no inventário."
     },
     {
       "id": "source-019",
@@ -412,7 +413,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — distribuição quantitativa deste eixo]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aviso de pendência removido da interface por solicitação de Artur em 12/10/2026; registro e status preservados no inventário até o recebimento do material."
     },
     {
       "id": "source-045",
@@ -1089,7 +1091,8 @@
       "sourceText": "[VÍDEO COMPARATIVO: FELCA E DENÚNCIAS JORNALÍSTICAS — A INSERIR]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aviso de pendência removido da interface por solicitação de Artur em 12/10/2026; registro e status preservados no inventário até o recebimento do material."
     },
     {
       "id": "source-118",
@@ -1517,7 +1520,8 @@
       "sourceText": "[DADOS VISUAIS DA PESQUISA A INSERIR — visualização dos padrões de engajamento por categoria de comentário]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aviso de pendência removido da interface por solicitação de Artur em 12/10/2026; registro e status preservados no inventário até o recebimento do material."
     },
     {
       "id": "source-165",
@@ -2109,7 +2113,7 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "conclusao:leaf[29]",
       "sourceText": "Isabelle Sestari",
-      "targetChapter": "encerramento",
+      "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
@@ -2118,7 +2122,7 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "conclusao:leaf[30]",
       "sourceText": "Isadora Moraes Lopes",
-      "targetChapter": "encerramento",
+      "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
@@ -2127,7 +2131,7 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "conclusao:leaf[31]",
       "sourceText": "Julia Nunes Budal",
-      "targetChapter": "encerramento",
+      "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
@@ -2136,7 +2140,7 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "conclusao:leaf[32]",
       "sourceText": "Sabrina Gomes da Cunha",
-      "targetChapter": "encerramento",
+      "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
@@ -2155,7 +2159,7 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "conclusao:leaf[34]",
       "sourceText": "Universidade Positivo — Jornalismo — TCC 2, 2026",
-      "targetChapter": "encerramento",
+      "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
@@ -2587,7 +2591,7 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "conclusao:advisor",
       "sourceText": "Prof. Dr. Daniel Zanella",
-      "targetChapter": "encerramento",
+      "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     }

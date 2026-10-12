@@ -42,28 +42,20 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       aria-labelledby="report-title"
     >
       <div class="wide">
-        <p class="validation-note">
-          Versão para validação · vídeos, áudios e cartilha de teste. Conteúdo
-          inicial preservado; apuração e materiais finais em revisão pelas
-          autoras.
-        </p>
         <header class="title-block" data-reveal>
           <span class="eyebrow">Uma reportagem multimídia interativa</span>
           <h1 id="report-title">
-            Na rede{" "}
-            <br />
+            Na rede <br />
             da verdade
           </h1>
           <p class="subtitle">quem informa, quem acredita e quem denuncia?</p>
           <div class="rule" aria-hidden="true"></div>
           <p class="byline">
-            Isabelle Sestari · Isadora Moraes Lopes{" "}
-            <br />
+            Isabelle Sestari · Isadora Moraes Lopes <br />
             Julia Nunes Budal · Sabrina Gomes da Cunha
           </p>
           <p class="small muted">
-            Orientador: {research.advisor}{" "}
-            <br />
+            Orientador: {research.advisor} <br />
             {research.institution}
           </p>
         </header>
@@ -76,8 +68,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <div class="context-intro reading prose" data-reveal>
           <span class="eyebrow">01 / A denúncia</span>
           <h2>
-            O vídeo "Adultização"{" "}
-            <br />e sua repercussão massiva
+            O vídeo "Adultização" <br />e sua repercussão massiva
           </h2>
           <Context />
         </div>
@@ -99,18 +90,11 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
           </p>
         </div>
         <VideoPlayer asset={felca} />
-        <p class="small muted">
-          Vídeo de contextualização — a ser produzido e inserido.
-        </p>
         <ResearchFigure
           caption={'Dados do vídeo "Adultização"'}
           rows={research.videoMetrics}
           note="Recorte e datas de coleta a confirmar. Valores, período e médias transcritos do Base44, sem recalcular os dados da pesquisa."
         />
-        <p class="pending">
-          Período e médias diárias aguardam conferência editorial. A indicação
-          de 20 dias foi mantida como recebida.
-        </p>
       </div>
     </section>
     <Section
@@ -139,9 +123,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <Comparison />
       </div>
       <VideoPlayer asset={comparison} />
-      <p class="pending">
-        [VÍDEO COMPARATIVO: FELCA E DENÚNCIAS JORNALÍSTICAS — A INSERIR]
-      </p>
       <div class="comparison-head" aria-hidden="true">
         <div>
           Influenciador Digital<span>caso Felca — "Adultização"</span>
@@ -174,10 +155,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
             <li>{outlet}</li>
           ))}
         </ul>
-        <p class="source">
-          Relação presente no conteúdo inicial das autoras. Links das matérias e
-          referências de apuração pendentes.
-        </p>
       </aside>
     </Section>
     <Section
@@ -232,7 +209,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
           </article>
         ))}
       </div>
-      <p class="pending pending-space">{research.participationPending}</p>
       <figure class="reading network-quote" data-reveal>
         <blockquote class="editorial-quote">
           {research.participationQuote}
@@ -247,10 +223,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
           O futuro do jornalismo
           <br />e quem informa na rede
         </h3>
-        <p class="pending">
-          Textos de apresentação dos episódios e gancho editorial a enviar pelas
-          autoras. Áudios de teste para validação do player.
-        </p>
       </div>
       {podcasts.map((asset) => (
         <PodcastPlayer asset={asset} />
@@ -263,10 +235,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     >
       <div class="chronology-intro reading">
         <Chronology />
-        <p class="pending">
-          Cronologia transcrita do conteúdo inicial. Antecedentes, atualização
-          dos marcos e referências originais aguardam validação das autoras.
-        </p>
       </div>
       <Timeline entries={timeline} />
     </Section>
@@ -347,42 +315,8 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <blockquote class="editorial-quote">{research.authorsQuote}</blockquote>
         <figcaption class="quote-attribution">Das autoras</figcaption>
       </figure>
-      <VideoPlayer asset={closing} />
-      <footer class="credits">
-        <a class="footer-title" href="#contexto">
-          Na rede da verdade
-        </a>
-        <div>
-          <span class="eyebrow">Autoras</span>
-          <ul>
-            {research.authors.map((author) => (
-              <li>{author}</li>
-            ))}
-          </ul>
-          <p class="small muted">
-            Orientador: {research.advisor}
-            <br />
-            {research.institution}
-          </p>
-        </div>
-        <p class="source">
-          Conteúdo inicial:{" "}
-          <a
-            href={research.source.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Base44 das autoras
-          </a>
-          , consultado em 10/10/2026. Fontes e créditos definitivos de cada
-          material serão integrados à versão editorial final. Vídeos, áudios,
-          imagens e PDF desta validação são arquivos técnicos de teste.
-        </p>
-        <a class="back-top" href="#abertura">
-          Voltar ao início ↑
-        </a>
-      </footer>
     </Section>
+    <VideoPlayer asset={closing} cover />
   </main>
 </Longform>
 <style>
@@ -608,32 +542,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
   .closing-quote {
     margin-block: 5rem;
   }
-  .credits {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--muted);
-  }
-  .footer-title {
-    font: 400 clamp(2.3rem, 4vw, 3.8rem)/1.15 var(--serif);
-    text-decoration: none;
-  }
-  .credits ul {
-    list-style: none;
-    padding: 0;
-    font-size: 1rem;
-  }
-  .credits li + li {
-    margin-top: 0.25rem;
-  }
-  .credits .source {
-    grid-column: 1/-1;
-    margin: 0;
-  }
-  .back-top {
-    font-size: 0.875rem;
-  }
   @media (max-width: 899px) {
     .reach-numbers {
       gap: 1rem;
@@ -661,9 +569,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     .findings {
       grid-template-columns: 1fr;
       gap: 2rem;
-    }
-    .credits {
-      grid-template-columns: 1fr;
     }
     .authors-quote {
       margin-bottom: 4rem;
@@ -725,9 +630,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     }
     .subtitle {
       font-size: 1.35rem;
-    }
-    .credits {
-      gap: 2rem;
     }
   }
 </style>

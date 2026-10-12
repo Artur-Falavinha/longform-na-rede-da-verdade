@@ -221,12 +221,6 @@ li + li {
 .skip-link:hover {
   color: var(--bg);
 }
-.validation-note {
-  font-size: 0.8125rem;
-  color: var(--muted);
-  padding-block: 1rem;
-  border-bottom: 1px solid var(--surface);
-}
 .section-title {
   margin-bottom: 3.5rem;
 }

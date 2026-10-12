@@ -30,10 +30,6 @@ import { comments } from "../../data/comments";
       <div class="comment-composition">
         <div class="comment-context">
           <p>{group.analysis[0]}</p>
-          <p class="small muted">
-            Comentários transcritos da amostra das autoras. Grafia e valores
-            aproximados preservados. Dados sem valor continuam pendentes.
-          </p>
         </div>
         <div class="comment-list">
           {group.comments.map((comment, i) => (
@@ -80,10 +76,6 @@ import { comments } from "../../data/comments";
           </figcaption>
         </figure>
       ))}
-      <aside class="pending pending-space">
-        {group.pendingDistribution} — B02. A distribuição será apresentada
-        quando a base e os valores forem enviados.
-      </aside>
     </section>
   ))}
 </div>
