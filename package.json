@@ -14,7 +14,8 @@
     "preview": "astro preview --host 127.0.0.1 --port 4326",
     "test": "vitest run",
     "validate:content": "tsx scripts/validate-content.ts",
-    "validate:assets": "tsx scripts/validate-assets.ts"
+    "validate:assets": "tsx scripts/validate-assets.ts",
+    "export:metrics": "tsx scripts/export-metrics.ts"
   },
   "dependencies": {
     "astro": "7.3.8",
