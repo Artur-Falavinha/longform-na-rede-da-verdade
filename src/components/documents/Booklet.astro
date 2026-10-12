@@ -1,6 +1,5 @@
 ---
 import { booklet } from "../../data/documents";
-import { Content } from "../../content/cartilha.md";
 ---
 
 <div class="booklet" data-booklet>
@@ -14,9 +13,6 @@ import { Content } from "../../content/cartilha.md";
   <div class="booklet-copy">
     <span class="eyebrow">Para continuar a leitura</span>
     <h3>{booklet.title}</h3>
-    <div class="prose">
-      <Content />
-    </div>
     <div class="booklet-actions">
       <a
         class="button primary"
@@ -37,7 +33,6 @@ import { Content } from "../../content/cartilha.md";
         Baixar PDF <span aria-hidden="true">↓</span>
       </a>
     </div>
-    <p class="small muted">PDF de teste · mesmo arquivo nas duas ações.</p>
     <p data-document-error role="status" class="pending" hidden>
       Não foi possível verificar o documento. Confira sua conexão e tente
       novamente pelos links acima.
@@ -59,9 +54,6 @@ import { Content } from "../../content/cartilha.md";
   }
   .booklet h3 {
     margin: 1rem 0 1.5rem;
-  }
-  .booklet .prose {
-    font-size: 1.0625rem;
   }
   .booklet-actions {
     display: flex;

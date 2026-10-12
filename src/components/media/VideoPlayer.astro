@@ -71,13 +71,6 @@ const ambient = asset.purpose === "ambient";
       </a>
     )}
   </div>
-  <figcaption class="small muted">
-    {asset.title} · arquivo de teste · material final pendente (
-    {asset.pendingId}).{" "}
-    {ambient
-      ? "Imagem abstrata e som de teste."
-      : "Vídeo de teste com legenda incorporada; não contém reportagem."}
-  </figcaption>
 </figure>
 <style>
   .video-player {
@@ -92,10 +85,6 @@ const ambient = asset.purpose === "ambient";
     width: 100%;
     height: 100%;
     object-fit: contain;
-  }
-  .video-player figcaption {
-    margin-top: 0.75rem;
-    max-width: 75ch;
   }
   .ambient .video-shell {
     height: 85svh;
@@ -114,14 +103,6 @@ const ambient = asset.purpose === "ambient";
     inset: 0;
     height: 100svh;
     z-index: 0;
-  }
-  .opening figcaption {
-    position: absolute;
-    left: var(--gutter);
-    top: calc(var(--header-height) + 1rem);
-    z-index: 1;
-    font-size: 0.75rem;
-    max-width: 40ch;
   }
   .ambient-controls {
     position: absolute;
@@ -167,9 +148,6 @@ const ambient = asset.purpose === "ambient";
       left: 50%;
       transform: translateX(-50%);
       white-space: nowrap;
-    }
-    .opening figcaption {
-      max-width: calc(100% - 2 * var(--gutter));
     }
     .ambient .video-shell {
       height: 70svh;
