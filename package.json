@@ -1,0 +1,34 @@
+{
+  "name": "na-rede-da-verdade",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4325",
+    "check": "npm run prepare:media && astro check",
+    "prepare:media": "tsx scripts/prepare-media-delivery.ts",
+    "build": "npm run prepare:media && astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4326"
+  },
+  "dependencies": {
+    "astro": "7.3.8",
+    "gsap": "3.15.0",
+    "posthog-js": "1.438.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@astrojs/markdown-satteri": "0.4.3",
+    "@playwright/test": "1.64.0",
+    "@types/node": "24.19.2",
+    "entities": "4.5.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.3",
+    "wrangler": "4.149.0"
+  }
+}

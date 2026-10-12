@@ -1,0 +1,38 @@
+---
+import type { ChapterId } from "../../data/types";
+interface Props {
+  id: ChapterId;
+  number: string;
+  title: string;
+  subtitle?: string;
+}
+const { id, number, title, subtitle } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["chapter", "wide", { "timeline-chapter": id === "cronologia" }]}
+  data-chapter-start
+  tabindex="-1"
+  aria-labelledby={`${id}-title`}
+>
+  <header class="section-title" data-reveal>
+    <span class="eyebrow">{number}</span>
+    <h2 id={`${id}-title`}>{title}</h2>
+    {subtitle && <p>{subtitle}</p>}
+  </header>
+  <slot />
+</section>
+<style>
+  @media (max-width: 899px) {
+    .timeline-chapter {
+      background: var(--surface);
+      border-radius: 1.5rem;
+      padding: 2.5rem 1.25rem;
+      margin-block: 2rem;
+    }
+    .timeline-chapter h2 {
+      font-size: 2.75rem;
+    }
+  }
+</style>

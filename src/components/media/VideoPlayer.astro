@@ -1,0 +1,181 @@
+---
+import type { MediaAsset } from "../../data/types";
+interface Props {
+  asset: MediaAsset;
+  opening?: boolean;
+}
+const { asset, opening = false } = Astro.props;
+const ambient = asset.purpose === "ambient";
+---
+
+<figure
+  class:list={["video-player", { ambient, opening }]}
+  data-video-player
+  data-ambient={ambient || undefined}
+>
+  <div class="video-shell">
+    <video
+      data-media-id={asset.id}
+      data-purpose={asset.purpose}
+      data-media-src={asset.src}
+      data-mobile-src={asset.mobileSrc}
+      data-mobile-poster={asset.mobilePoster}
+      poster={asset.poster}
+      src={asset.src}
+      controls
+      preload="none"
+      muted={ambient}
+      loop={ambient}
+      playsinline
+      width="1280"
+      height="720"
+      aria-label={`${asset.title} — arquivo de teste`}
+    >
+      <p>
+        Seu navegador não reproduz este vídeo.{" "}
+        <a href={asset.src}>Abrir arquivo de teste</a>.
+      </p>
+    </video>
+    {ambient && (
+      <div class="ambient-controls" hidden>
+        <button
+          type="button"
+          class="button"
+          data-ambient-play
+          aria-label={`Reproduzir ${asset.title.toLowerCase()}`}
+        >
+          Reproduzir vídeo
+        </button>
+        {asset.hasAudio && (
+          <button
+            type="button"
+            class="button"
+            data-ambient-sound
+            aria-pressed="false"
+          >
+            Ativar som
+          </button>
+        )}
+      </div>
+    )}
+    <div class="media-error" role="status" hidden>
+      <p>Não foi possível carregar o vídeo.</p>
+      <button type="button" class="button" data-media-retry>
+        Tentar novamente
+      </button>
+      <a href={asset.src}>Abrir arquivo diretamente</a>
+    </div>
+    {opening && (
+      <a class="cover-next" href="#contexto">
+        Começar a leitura <span aria-hidden="true">↓</span>
+      </a>
+    )}
+  </div>
+  <figcaption class="small muted">
+    {asset.title} · arquivo de teste · material final pendente (
+    {asset.pendingId}).{" "}
+    {ambient
+      ? "Imagem abstrata e som de teste."
+      : "Vídeo de teste com legenda incorporada; não contém reportagem."}
+  </figcaption>
+</figure>
+<style>
+  .video-player {
+    margin-block: 3rem;
+  }
+  .video-shell {
+    position: relative;
+    background: var(--surface);
+    aspect-ratio: 16/9;
+  }
+  .video-shell video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .video-player figcaption {
+    margin-top: 0.75rem;
+    max-width: 75ch;
+  }
+  .ambient .video-shell {
+    height: 85svh;
+    aspect-ratio: auto;
+  }
+  .ambient video {
+    object-fit: contain;
+    background: var(--bg);
+  }
+  .opening {
+    margin: 0;
+    height: 100svh;
+  }
+  .opening .video-shell {
+    position: fixed;
+    inset: 0;
+    height: 100svh;
+    z-index: 0;
+  }
+  .opening figcaption {
+    position: absolute;
+    left: var(--gutter);
+    top: calc(var(--header-height) + 1rem);
+    z-index: 1;
+    font-size: 0.75rem;
+    max-width: 40ch;
+  }
+  .ambient-controls {
+    position: absolute;
+    right: var(--gutter);
+    bottom: calc(2rem + var(--compact-space));
+    display: flex;
+    gap: 0.75rem;
+  }
+  .cover-next {
+    position: absolute;
+    bottom: calc(2.5rem + var(--compact-space));
+    left: var(--gutter);
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  .cover-next span {
+    margin-left: 2rem;
+    color: var(--accent);
+  }
+  .media-error {
+    position: absolute;
+    inset: auto 1rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+  .media-error a {
+    margin-left: 1rem;
+  }
+  @media (max-width: 599px) {
+    .ambient-controls {
+      right: 1rem;
+      bottom: calc(5.5rem + var(--compact-space));
+      left: 1rem;
+      justify-content: center;
+    }
+    .ambient-controls button {
+      font-size: 0.75rem;
+    }
+    .cover-next {
+      bottom: calc(2rem + var(--compact-space));
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .opening figcaption {
+      max-width: calc(100% - 2 * var(--gutter));
+    }
+    .ambient .video-shell {
+      height: 70svh;
+    }
+    .opening .video-shell {
+      height: 100svh;
+    }
+  }
+</style>

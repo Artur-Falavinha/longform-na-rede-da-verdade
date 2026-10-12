@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Libre Bodoni";
+  src: url("/fonts/librebodoni.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("/fonts/publicsans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  --bg: #0a0a0c;
+  --surface: #19191d;
+  --text: #f0ede6;
+  --muted: #b8b5af;
+  --red: #cc1f1f;
+  --accent: #ff6b64;
+  --serif: "Libre Bodoni", Georgia, serif;
+  --sans: "Public Sans", Arial, sans-serif;
+  --body: clamp(1.125rem, 1.05rem + 0.25vw, 1.375rem);
+  --small: 0.8125rem;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --reading: 65ch;
+  --wide: 76rem;
+  --header-height: 4rem;
+  --section-space: clamp(5rem, 10vw, 10rem);
+  --compact-space: 0px;
+}

@@ -1,0 +1,1 @@
+Esta comparação não decide quem é melhor. Ela mostra como diferentes atores constroem e circulam informações de interesse público — e o que cada caminho implica em termos de apuração, responsabilidade e credibilidade.

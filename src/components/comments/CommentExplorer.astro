@@ -1,0 +1,221 @@
+---
+import { comments } from "../../data/comments";
+---
+
+<div class="comment-explorer" data-comment-explorer>
+  <div class="group-selectors" data-tab-list aria-label="Categorias de análise">
+    {comments.map((group, i) => (
+      <a
+        href={`#group-${group.id}`}
+        data-group-select={group.id}
+        id={`tab-${group.id}`}
+      >
+        <span class="eyebrow">Eixo {String(i + 1).padStart(2, "0")}</span>
+        <span>{group.title}</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    ))}
+  </div>
+  {comments.map((group) => (
+    <section
+      class="comment-panel"
+      id={`group-${group.id}`}
+      data-comment-group={group.id}
+      aria-labelledby={`heading-${group.id}`}
+    >
+      <header class="group-intro">
+        <span class="eyebrow">O que a rede disse</span>
+        <h3 id={`heading-${group.id}`}>{group.heading}</h3>
+      </header>
+      <div class="comment-composition">
+        <div class="comment-context">
+          <p>{group.analysis[0]}</p>
+          <p class="small muted">
+            Comentários transcritos da amostra das autoras. Grafia e valores
+            aproximados preservados. Dados sem valor continuam pendentes.
+          </p>
+        </div>
+        <div class="comment-list">
+          {group.comments.map((comment, i) => (
+            <figure
+              class:list={["comment", { featured: i === 0 }]}
+              data-comment-id={comment.id}
+            >
+              {comment.status === "placeholder" && (
+                <span class="eyebrow">
+                  Comentário pendente · espaço reservado
+                </span>
+              )}
+              <blockquote>{comment.text}</blockquote>
+              <figcaption>
+                <span>{comment.likesLiteral}</span>
+                <span>{comment.repliesLiteral}</span>
+              </figcaption>
+              {i === 0 && (
+                <details class="comment-analysis">
+                  <summary>
+                    Ler análise <span aria-hidden="true">+</span>
+                  </summary>
+                  <div class="analysis-body">
+                    <ul>
+                      {group.topics.map((topic) => (
+                        <li>{topic}</li>
+                      ))}
+                    </ul>
+                    {group.analysis.slice(1).map((text) => (
+                      <p>{text}</p>
+                    ))}
+                  </div>
+                </details>
+              )}
+            </figure>
+          ))}
+        </div>
+      </div>
+      {group.expertQuotes.map((quote) => (
+        <figure class="expert-quote reading">
+          <blockquote class="editorial-quote">{quote.text}</blockquote>
+          <figcaption class="quote-attribution">
+            {quote.attribution} · conteúdo inicial das autoras
+          </figcaption>
+        </figure>
+      ))}
+      <aside class="pending pending-space">
+        {group.pendingDistribution} — B02. A distribuição será apresentada
+        quando a base e os valores forem enviados.
+      </aside>
+    </section>
+  ))}
+</div>
+<style>
+  .group-selectors {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-block: 1px solid var(--muted);
+    margin-block: 2.5rem;
+  }
+  .group-selectors a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+    padding: 1.25rem 1.5rem 1.25rem 0;
+    min-height: 8rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  .group-selectors a > span:last-child {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: var(--muted);
+  }
+  .group-selectors a[aria-selected="true"] {
+    box-shadow: inset 0 -3px var(--red);
+    background: var(--surface);
+    padding-left: 1rem;
+  }
+  .group-selectors .eyebrow {
+    font-size: 0.75rem;
+  }
+  .group-intro {
+    max-width: 52rem;
+    margin-block: 3rem;
+  }
+  .group-intro h3 {
+    margin-top: 0.75rem;
+  }
+  .comment-composition {
+    display: grid;
+    grid-template-columns: 1fr 2.15fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .comment-context {
+    font-size: 1.0625rem;
+    color: var(--muted);
+    padding-top: 2rem;
+  }
+  .comment-list {
+    min-width: 0;
+  }
+  .comment {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--muted);
+  }
+  .comment:first-child {
+    padding-top: 0;
+  }
+  .comment blockquote {
+    font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+    line-height: 1.55;
+  }
+  .comment figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 1.2rem;
+  }
+  .comment.featured {
+    padding: clamp(1.5rem, 3vw, 3rem);
+    border: 0;
+    background: var(--red);
+  }
+  .featured figcaption {
+    color: var(--text);
+  }
+  .comment-analysis {
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+  }
+  .comment-analysis summary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+  .analysis-body {
+    padding-top: 1rem;
+    border-top: 1px solid var(--text);
+    line-height: 1.65;
+  }
+  .analysis-body ul {
+    margin-top: 0;
+  }
+  .expert-quote {
+    margin-block: 4rem;
+  }
+  .comment-panel {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+  }
+  @media (max-width: 899px) {
+    .group-selectors {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .group-selectors a {
+      min-height: 7.5rem;
+      padding: 0.9rem 1.5rem 0.9rem 0.5rem;
+    }
+    .group-selectors a:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--surface);
+    }
+    .comment-composition {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .comment-context {
+      padding-top: 0;
+      font-size: 1rem;
+    }
+    .group-intro h3 {
+      font-size: 2rem;
+    }
+  }
+</style>
