@@ -3,13 +3,14 @@ import type { MediaAsset } from "../../data/types";
 interface Props {
   asset: MediaAsset;
   opening?: boolean;
+  cover?: boolean;
 }
-const { asset, opening = false } = Astro.props;
+const { asset, opening = false, cover = false } = Astro.props;
 const ambient = asset.purpose === "ambient";
 ---
 
 <figure
-  class:list={["video-player", { ambient, opening }]}
+  class:list={["video-player", { ambient, opening, cover: opening || cover }]}
   data-video-player
   data-ambient={ambient || undefined}
 >
@@ -94,11 +95,12 @@ const ambient = asset.purpose === "ambient";
     object-fit: contain;
     background: var(--bg);
   }
-  .opening {
+  .cover {
     margin: 0;
     height: 100svh;
+    clip-path: inset(0);
   }
-  .opening .video-shell {
+  .cover .video-shell {
     position: fixed;
     inset: 0;
     height: 100svh;
@@ -152,8 +154,16 @@ const ambient = asset.purpose === "ambient";
     .ambient .video-shell {
       height: 70svh;
     }
-    .opening .video-shell {
+    .cover .video-shell {
       height: 100svh;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cover {
+      clip-path: none;
+    }
+    .cover .video-shell {
+      position: relative;
     }
   }
 </style>
