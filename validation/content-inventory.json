@@ -1,0 +1,2910 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "label": "Base44 — conteúdo inicial das autoras",
+    "url": "https://narededaverdade.base44.app/",
+    "collectedAt": "2026-10-10"
+  },
+  "records": [
+    {
+      "id": "source-001",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:p[0]",
+      "sourceText": "quem informa, quem acredita e quem denuncia?",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-002",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:p[1]",
+      "sourceText": "\"Em um tempo em que a credibilidade pode se sobrepor aos fatos, buscar a verdade torna-se um ato de responsabilidade.\"",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-003",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[0]",
+      "sourceText": "Uma reportagem multimídia interativa",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-004",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[1]",
+      "sourceText": "NA REDE DA VERDADE",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-005",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[3]",
+      "sourceText": "Isabelle Sestari · Isadora Moraes Lopes",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-006",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[4]",
+      "sourceText": "Julia Nunes Budal · Sabrina Gomes da Cunha",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-007",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[5]",
+      "sourceText": "Orientador:",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-008",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[6]",
+      "sourceText": "Universidade Positivo — Jornalismo — TCC 2, 2026",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-009",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[8]",
+      "sourceText": "Das autoras",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-010",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[9]",
+      "sourceText": "52,7 mi",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-011",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[10]",
+      "sourceText": "visualizações do vídeo \"Adultização\"",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-012",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[11]",
+      "sourceText": "301 mil",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-013",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[12]",
+      "sourceText": "comentários analisados: 1.599",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-014",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:leaf[13]",
+      "sourceText": "role para ler",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-015",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:p[0]",
+      "sourceText": "Em 6 de agosto de 2025, o influenciador Felca publicou no YouTube o vídeo \"Adultização\" — aproximadamente 50 minutos de conteúdo apresentando uma denúncia relacionada à exposição, exploração e sexualização de crianças e adolescentes nas redes sociais, com destaque para conteúdos envolvendo Hytalo Santos.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-016",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:p[1]",
+      "sourceText": "O vídeo rapidamente se tornou um fenômeno. Em poucas semanas, ultrapassou dezenas de milhões de visualizações e centenas de milhares de comentários. A repercussão alcançou veículos jornalísticos, o judiciário e o Congresso Nacional.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-017",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:p[2]",
+      "sourceText": "O caso levanta perguntas que vão além da viralização: como uma denúncia circula na internet? Quem confere credibilidade a ela? E qual é o papel do jornalismo nesse processo?",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-018",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:p[3]",
+      "sourceText": "Vídeo de contextualização — a ser produzido e inserido.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-019",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[0]",
+      "sourceText": "01 — A Denúncia",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-020",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[1]",
+      "sourceText": "OBJETO DE PESQUISA",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-021",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[2]",
+      "sourceText": "O vídeo \"Adultização\" e sua repercussão massiva",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-022",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[7]",
+      "sourceText": "Dados do vídeo \"Adultização\"",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-023",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[8]",
+      "sourceText": "Variável",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-024",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[9]",
+      "sourceText": "Valor inicial → Valor final",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-025",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[10]",
+      "sourceText": "Visualizações",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-026",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[11]",
+      "sourceText": "52.687.300 → 52.758.032",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-027",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[12]",
+      "sourceText": "Comentários",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-028",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[13]",
+      "sourceText": "300.402 → 301.491",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-029",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[14]",
+      "sourceText": "Crescimento (20 dias)",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-030",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[15]",
+      "sourceText": "+70.732 views · +1.089 coment.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-031",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[16]",
+      "sourceText": "Média diária",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-032",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[17]",
+      "sourceText": "3.723 views · 57 coment.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-033",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[19]",
+      "sourceText": "Veículos que cobriram o caso",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-034",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[20]",
+      "sourceText": "Brasil Paralelo",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-035",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[21]",
+      "sourceText": "CBN",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-036",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[22]",
+      "sourceText": "CNN Brasil",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-037",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[23]",
+      "sourceText": "G1",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-038",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[24]",
+      "sourceText": "Tilt/UOL",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-039",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "denuncia:leaf[25]",
+      "sourceText": "Veja",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-040",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:p[0]",
+      "sourceText": "\"Sentei meus filhos pre-adolescentes no sofá e coloquei o vídeo na tv, para assistir e entendermos os desafios da adultizacão e redes sociais sexualizadas juntos. Obrigada pela prestação de serviço.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-041",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:p[1]",
+      "sourceText": "\"Sou mãe de uma modelo de passarela que começou a carreira com 14 anos… Este video me fez refletir muito sobre lugares de adultizacao fora da internet…\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-042",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:p[2]",
+      "sourceText": "\"[…] É um termo relativamente recente dentro da psicologia e que a gente não tem uma estrutura muito especializada que fale sobre isso. Com esse vídeo do Felca, isso tomou uma proporção muito maior.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-043",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:p[3]",
+      "sourceText": "A denúncia funcionou como catalisadora de um debate mais amplo sobre a exposição e adultização de crianças e adolescentes. O tema ganhou proporção muito maior do que antes.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-044",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:p[4]",
+      "sourceText": "[DADOS DA PESQUISA A INSERIR — distribuição quantitativa deste eixo]",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-045",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[0]",
+      "sourceText": "02 — O Que a Rede Disse?",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-046",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[1]",
+      "sourceText": "PESQUISA DE CAMPO",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-047",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[2]",
+      "sourceText": "Categorias de Análise:",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-048",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[3]",
+      "sourceText": "Dados da pesquisa de campo",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-049",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[4]",
+      "sourceText": "Comentários analisados",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-050",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[5]",
+      "sourceText": "1.599",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-051",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[6]",
+      "sourceText": "Vídeo analisado",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-052",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[7]",
+      "sourceText": "\"Adultização\" — Felca / YouTube",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-053",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[8]",
+      "sourceText": "Metodologia",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-054",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[9]",
+      "sourceText": "Análise de conteúdo (Bardin) / Netnografia (Kozinets)",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-055",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[10]",
+      "sourceText": "Abordagem",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-056",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[11]",
+      "sourceText": "Qualitativa, exploratória e bibliográfica",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-057",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[12]",
+      "sourceText": "Eixo 01",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-058",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[13]",
+      "sourceText": "Percepção sobre o Jornalismo",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-059",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[14]",
+      "sourceText": "Eixo 02",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-060",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[15]",
+      "sourceText": "Autoridade Moral e Herói",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-061",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[16]",
+      "sourceText": "Eixo 03",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-062",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[17]",
+      "sourceText": "Discursos de Oposição",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-063",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[18]",
+      "sourceText": "Eixo 04",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-064",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[19]",
+      "sourceText": "A Adultização em Debate",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-065",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[20]",
+      "sourceText": "A denúncia como catalisadora do debate sobre adultização",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-066",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[21]",
+      "sourceText": "Comentário em destaque",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-067",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[23]",
+      "sourceText": "♥ ~1,3 mil curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-068",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[24]",
+      "sourceText": "↩ [DADO]",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-069",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[26]",
+      "sourceText": "♥ 277 curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-070",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[29]",
+      "sourceText": "Dra. Jéssica Tonioti",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-071",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[30]",
+      "sourceText": "•",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-072",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[31]",
+      "sourceText": "Recente;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-073",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[33]",
+      "sourceText": "Popularização;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-074",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[35]",
+      "sourceText": "Consolidação;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-075",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[36]",
+      "sourceText": "Contexto da análise",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-076",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[38]",
+      "sourceText": "Dados visuais",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-077",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[0]",
+      "sourceText": "A partir de entrevista com especialista em psicologia, esta cartilha oferece um guia sobre o fenômeno da adultização — o que é, como reconhecer e o que exige atenção no ambiente digital.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-078",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[1]",
+      "sourceText": "Dra. Jéssica Tonioti",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-079",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[2]",
+      "sourceText": "Psicóloga — entrevistada para o TCC 1",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-080",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[3]",
+      "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-081",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[4]",
+      "sourceText": "Clique nos cards para ler o conteúdo completo.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-082",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[5]",
+      "sourceText": "Compreender o fenômeno é o primeiro passo para reconhecê-lo.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-083",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[6]",
+      "sourceText": "A adultização se manifesta de diferentes formas no ambiente digital.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-084",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[7]",
+      "sourceText": "As consequências são reais e podem ser duradouras.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-085",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[8]",
+      "sourceText": "Quais situações exigem atenção nas redes sociais?",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-086",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:p[9]",
+      "sourceText": "O que observar como cuidador, educador ou profissional.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-087",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[0]",
+      "sourceText": "03 — Entenda a Adultização",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-088",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[1]",
+      "sourceText": "ENTENDA A ADULTIZAÇÃO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-089",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[2]",
+      "sourceText": "Cartilha interativa — baseada em entrevista especializada",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-090",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[4]",
+      "sourceText": "Fonte especializada",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-091",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[9]",
+      "sourceText": "O que é adultização?",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-092",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[11]",
+      "sourceText": "Clique para ler",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-093",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[12]",
+      "sourceText": "→",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-094",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[13]",
+      "sourceText": "Como ela pode aparecer?",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-095",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[17]",
+      "sourceText": "Por que exige atenção?",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-096",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[21]",
+      "sourceText": "Sinais no ambiente digital",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-097",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:leaf[25]",
+      "sourceText": "Possíveis sinais de alerta",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-098",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[0]",
+      "sourceText": "Esta comparação não decide quem é melhor. Ela mostra como diferentes atores constroem e circulam informações de interesse público — e o que cada caminho implica em termos de apuração, responsabilidade e credibilidade.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-099",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[1]",
+      "sourceText": "A partir da observação pessoal, denúncias de seguidores ou identificação de um problema no feed. A comunidade prévia e o engajamento emocional já existem antes da publicação.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-100",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[2]",
+      "sourceText": "Por meio de pauta editorial, denúncia de fontes, investigação própria ou pressão social. Passa por critérios de noticiabilidade e interesse público definidos pela redação.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-101",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[3]",
+      "sourceText": "Capturas de tela, vídeos, depoimentos de seguidores, materiais públicos disponíveis online. A curadoria é pessoal e baseada no julgamento do criador de conteúdo.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-102",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[4]",
+      "sourceText": "Documentos oficiais, entrevistas formais, acesso a fontes primárias, banco de dados públicos e privados, cruzamento de informações.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-103",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[5]",
+      "sourceText": "[DADOS DA PESQUISA A INSERIR — forma de apuração identificada no conteúdo de Felca]",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-104",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[6]",
+      "sourceText": "Processo sistemático, com checagem de múltiplas fontes, verificação de documentos, contato com especialistas e, quando possível, com os envolvidos.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-105",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[7]",
+      "sourceText": "[DADOS DA PESQUISA A INSERIR — uso de fontes identificado no conteúdo de Felca]",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-106",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[8]",
+      "sourceText": "Fontes identificadas, crédito explícito, hierarquia de credibilidade. Preferencialmente diversas, independentes e complementares.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-107",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[9]",
+      "sourceText": "[DADOS DA PESQUISA A INSERIR — processo de verificação identificado ou ausente]",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-108",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[10]",
+      "sourceText": "Processo de checagem e fact-checking, comparação com fontes independentes, consulta a especialistas e documentação.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-109",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[11]",
+      "sourceText": "[DADOS DA PESQUISA A INSERIR — contraditório identificado ou ausente no conteúdo]",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-110",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[12]",
+      "sourceText": "Direito ao contraditório garantido: os envolvidos são consultados e têm direito de resposta antes da publicação.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-111",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[13]",
+      "sourceText": "Diretamente na plataforma, sem intermediários editoriais. Ritmo definido pelo criador e pela lógica do engajamento e da viralização.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-112",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[14]",
+      "sourceText": "Passa por edição, revisão, aprovação editorial e seguindo as normas e o padrão deontológico do veículo.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-113",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[15]",
+      "sourceText": "Viralizações, mobilização do público, pressão social, cobertura jornalística posterior. Responsabilidade jurídica pode ser ambígua ou difusa.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-114",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:p[16]",
+      "sourceText": "Responsabilidade jurídica clara do veículo e do jornalista. Possibilidade de direito de resposta formal e correções públicas.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-115",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[0]",
+      "sourceText": "04 — Quem Investiga? Quem Denuncia?",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-116",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[1]",
+      "sourceText": "Processos diferentes. Sem julgamento.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-117",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[3]",
+      "sourceText": "[VÍDEO COMPARATIVO: FELCA E DENÚNCIAS JORNALÍSTICAS — A INSERIR]",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-118",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[4]",
+      "sourceText": "Influenciador Digital",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-119",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[5]",
+      "sourceText": "caso Felca — \"Adultização\"",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-120",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[6]",
+      "sourceText": "Jornalismo Profissional",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-121",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[7]",
+      "sourceText": "processo editorial e apuração",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-122",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[8]",
+      "sourceText": "Como começa",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-123",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[11]",
+      "sourceText": "Como as informações são reunidas",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-124",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[14]",
+      "sourceText": "Como ocorre a apuração",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-125",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[17]",
+      "sourceText": "Como são utilizadas as fontes",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-126",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[20]",
+      "sourceText": "Como ocorre a verificação",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-127",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[23]",
+      "sourceText": "Como são buscadas respostas",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-128",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[26]",
+      "sourceText": "Como acontece a publicação",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-129",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "investiga:leaf[29]",
+      "sourceText": "Quais são os desdobramentos",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-130",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[0]",
+      "sourceText": "\"O vídeo do Felca conseguiu um impacto diferente de tudo o que o jornalismo vem conseguindo alcançar nos últimos anos.\"",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-131",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[1]",
+      "sourceText": "Salvadori levantou a questão \"O que o Felca fez que o jornalismo não está fazendo?\", destacando os fatores relacionados à ampla recepção da denúncia. Em sua análise, relacionou parte do alcance do vídeo à comunidade previamente construída pelo influenciador e à forma como diferentes públicos receberam o conteúdo.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-132",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[2]",
+      "sourceText": "\"Eu sempre gosto de dizer que se tem hater acompanhando o que eu faço, é porque estamos atingindo o objetivo de incomodar e gerar discussão.\"",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-133",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[3]",
+      "sourceText": "Entrevista sobre discursos de oposição, motivações e o papel do conflito na construção de audiências digitais.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-134",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[4]",
+      "sourceText": "\"A comunicação contemporânea tornou-se mais descentralizada e as audiências passaram a buscar novos caminhos para amplificar demandas sociais e denúncias públicas.\"",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-135",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[5]",
+      "sourceText": "Contribuição teórica sobre descentralização da comunicação e novas formas de autoridade informacional.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-136",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[6]",
+      "sourceText": "[ENTREVISTA COM JORNALISTA — A INSERIR]",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-137",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:p[7]",
+      "sourceText": "[Trecho da entrevista sobre investigação, apuração e verificação no jornalismo contemporâneo]",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-138",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[0]",
+      "sourceText": "05 — A Perspectiva do Jornalismo",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-139",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[1]",
+      "sourceText": "O CAMPO FALA.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-140",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[2]",
+      "sourceText": "Entrevistas com jornalistas e pesquisadores",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-141",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[3]",
+      "sourceText": "Fausto Salvadori",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-142",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[4]",
+      "sourceText": "Jornalista",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-143",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[7]",
+      "sourceText": "Jornalismo na internet",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-144",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[8]",
+      "sourceText": "Influência digital",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-145",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[9]",
+      "sourceText": "Credibilidade",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-146",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[10]",
+      "sourceText": "Eduardo Scola",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-147",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[14]",
+      "sourceText": "Discursos de oposição",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-148",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[15]",
+      "sourceText": "Audiências digitais",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-149",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[16]",
+      "sourceText": "Conflito",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-150",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[17]",
+      "sourceText": "Ana Vaz",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-151",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[18]",
+      "sourceText": "Pesquisadora / Referência teórica",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-152",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[21]",
+      "sourceText": "Comunicação digital",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-153",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[22]",
+      "sourceText": "Autoridade informacional",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-154",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[23]",
+      "sourceText": "Descentralização",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-155",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[24]",
+      "sourceText": "[ENTREVISTADO A INSERIR]",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-156",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[25]",
+      "sourceText": "Jornalista investigativo",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-157",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[28]",
+      "sourceText": "Investigação",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-158",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[29]",
+      "sourceText": "Apuração",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-159",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "jornalismo:leaf[30]",
+      "sourceText": "Verificação",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-160",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:p[0]",
+      "sourceText": "O público reagiu e expressou opiniões, participando ativamente da construção de sentido em torno da denúncia. 301 mil comentários documentam essa participação.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-161",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:p[1]",
+      "sourceText": "Comentários com centenas de milhares de curtidas revelam adesão coletiva massiva à narrativa apresentada pelo influenciador.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-162",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:p[2]",
+      "sourceText": "Uma parte do público exerceu pensamento crítico, levantando dúvidas sobre as motivações, os métodos e as consequências da denúncia.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-163",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:p[3]",
+      "sourceText": "A circulação do conteúdo amplificou o debate muito além da comunidade original, alcançando instituições, imprensa e o judiciário.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-164",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:p[4]",
+      "sourceText": "[DADOS VISUAIS DA PESQUISA A INSERIR — visualização dos padrões de engajamento por categoria de comentário]",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-165",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:p[5]",
+      "sourceText": "\"A credibilidade, no ambiente digital, não é apenas atribuída pelas instituições — ela é construída coletivamente, pela rede.\"",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-166",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[0]",
+      "sourceText": "06 — A Voz da Rede",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-167",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[1]",
+      "sourceText": "O papel do público na construção de credibilidade",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-168",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[2]",
+      "sourceText": "Comentar",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-169",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[5]",
+      "sourceText": "Acreditar",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-170",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[7]",
+      "sourceText": "201 mil curtidas — top coment.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-171",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[8]",
+      "sourceText": "Questionar",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-172",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[10]",
+      "sourceText": "[DADO DA PESQUISA A INSERIR]",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-173",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[11]",
+      "sourceText": "Mobilizar",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-174",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[13]",
+      "sourceText": "52,7 milhões de visualizações",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-175",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[14]",
+      "sourceText": "Dados visuais da pesquisa",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-176",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "voz-rede:leaf[17]",
+      "sourceText": "Análise netnográfica — TCC 1, 2026",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-177",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[0]",
+      "sourceText": "Felca publica o vídeo no YouTube. Aproximadamente 50 minutos de conteúdo sobre exposição, exploração e sexualização de crianças e adolescentes nas redes sociais. Em 8 de agosto, perfis de Hytalo Santos são suspensos das plataformas.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-178",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[1]",
+      "sourceText": "O Ministério Público da Paraíba apresenta ação civil pública solicitando medidas contra Hytalo Santos — cinco dias após a publicação do vídeo. A ação resultou em decisão judicial que determinou a suspensão dos perfis, interrupção da monetização e proibição de contato com menores.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-179",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[2]",
+      "sourceText": "Hytalo Santos e Israel Natã Vicente são presos preventivamente. Em 23 de setembro, o Tribunal de Justiça da Paraíba recebe a denúncia apresentada pelo Ministério Público.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-180",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[3]",
+      "sourceText": "O caso alcança a TV aberta e o influenciador aparece em programa da TV Globo. A cobertura jornalística, iniciada pela CNN Brasil em 9 de agosto de 2025, já havia incorporado o caso à agenda da imprensa.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-181",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[4]",
+      "sourceText": "Hytalo Santos é condenado, em primeira instância, a 11 anos e 4 meses de prisão. Israel Natã Vicente é condenado a 8 anos e 10 meses, por crimes relacionados à exploração de conteúdo pornográfico envolvendo adolescentes. A decisão estabelece R$ 500 mil por danos morais. Em 24 de fevereiro, a Câmara Criminal do TJPB nega novo pedido de habeas corpus.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-182",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[5]",
+      "sourceText": "A chamada Lei Felca entra em vigor, representando um desdobramento institucional diretamente ligado ao caso e ao debate público gerado pelo vídeo \"Adultização\".",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-183",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:p[6]",
+      "sourceText": "[DESDOBRAMENTO A APURAR — novos acontecimentos relacionados ao caso ou ao debate público sobre adultização e proteção infantil digital]",
+      "targetChapter": "cronologia",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-184",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[0]",
+      "sourceText": "07 — Depois da Denúncia",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-185",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[1]",
+      "sourceText": "LINHA DO TEMPO",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-186",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[2]",
+      "sourceText": "Os principais acontecimentos do caso Hytalo Santos e Felca",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-187",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[4]",
+      "sourceText": "6 ago 2025",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-188",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[5]",
+      "sourceText": "Vídeo \"Adultização\" e Denúncias",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-189",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[7]",
+      "sourceText": "11 ago 2025",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-190",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[8]",
+      "sourceText": "Ação Civil Pública do MPPB",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-191",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[10]",
+      "sourceText": "15 ago 2025",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-192",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[11]",
+      "sourceText": "Prisão preventiva de Hytalo Santos e do marido",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-193",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[13]",
+      "sourceText": "13 out 2025",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-194",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[14]",
+      "sourceText": "Felca na TV Globo",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-195",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[16]",
+      "sourceText": "23 fev 2026",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-196",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[17]",
+      "sourceText": "Condenação de Hytalo e Israel",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-197",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[18]",
+      "sourceText": "6",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-198",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[19]",
+      "sourceText": "17 mar 2026",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-199",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[20]",
+      "sourceText": "Entrada em vigor da Lei Felca (ECA Digital — Lei Nº 15.211)",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-200",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[22]",
+      "sourceText": "Publicação",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-201",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[26]",
+      "sourceText": "Institucional",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-202",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[30]",
+      "sourceText": "Judicial",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-203",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[34]",
+      "sourceText": "Mídia",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-204",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[45]",
+      "sourceText": "[DATA A CONFIRMAR]",
+      "targetChapter": "cronologia",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-205",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[46]",
+      "sourceText": "A confirmar",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-206",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "depois:leaf[47]",
+      "sourceText": "[EVENTO A INSERIR]",
+      "targetChapter": "cronologia",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-207",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:p[0]",
+      "sourceText": "No ambiente digital, a fronteira entre quem produz informação e quem a recebe tornou-se cada vez mais porosa. Criadores de conteúdo, influenciadores, jornalistas e o próprio público participam, de formas diferentes, da circulação de acontecimentos de interesse coletivo.",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-208",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:p[1]",
+      "sourceText": "A credibilidade não é mais uma propriedade exclusiva de instituições. Ela é construída, negociada e disputada em tempo real — nos comentários, nas curtidas, nos compartilhamentos. A pesquisa mostrou que o público atribui autoridade a partir de vínculos emocionais, identificação e percepção de coragem.",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-209",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:p[2]",
+      "sourceText": "O caso mostrou que uma denúncia de interesse público pode partir de diferentes lugares — e que seu impacto depende de fatores que vão além dos critérios técnicos da apuração: dependem da comunidade construída, da linguagem, do timing e da capacidade de mobilização do debate.",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-210",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:p[3]",
+      "sourceText": "\"Em um tempo em que a credibilidade pode se sobrepor aos fatos, buscar a verdade torna-se um ato de responsabilidade.\"",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-211",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:p[4]",
+      "sourceText": "Das autoras",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-212",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[0]",
+      "sourceText": "08 — Conclusão",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-213",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[1]",
+      "sourceText": "RESULTADOS",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-214",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[2]",
+      "sourceText": "Resultados",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-215",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[3]",
+      "sourceText": "•",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-216",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[4]",
+      "sourceText": "Felca foi percebido como agente informativo;",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-217",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[6]",
+      "sourceText": "O público atribuiu ao influenciador funções jornalísticas;",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-218",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[8]",
+      "sourceText": "A narrativa emocional aumentou o engajamento;",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-219",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[10]",
+      "sourceText": "O vídeo gerou debate público sobre adultização;",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-220",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[12]",
+      "sourceText": "Influenciadores disputam credibilidade com o jornalismo.",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-221",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[13]",
+      "sourceText": "Considerações Finais",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-222",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[15]",
+      "sourceText": "O caso Felca não demonstra a substituição do jornalismo;",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-223",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[17]",
+      "sourceText": "Demonstra uma reconfiguração das disputas por credibilidade no ambiente digital;",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-224",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[19]",
+      "sourceText": "O público continua valorizando o jornalismo, mas espera narrativas mais próximas, envolventes e mobilizadoras.",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-225",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[20]",
+      "sourceText": "Quem informa?",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-226",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[22]",
+      "sourceText": "Quem acredita?",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-227",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[24]",
+      "sourceText": "Quem denuncia?",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-228",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[28]",
+      "sourceText": "Autoras",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-229",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[29]",
+      "sourceText": "Isabelle Sestari",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-230",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[30]",
+      "sourceText": "Isadora Moraes Lopes",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-231",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[31]",
+      "sourceText": "Julia Nunes Budal",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-232",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[32]",
+      "sourceText": "Sabrina Gomes da Cunha",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-233",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[33]",
+      "sourceText": "Orientador:",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
+    },
+    {
+      "id": "source-234",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:leaf[34]",
+      "sourceText": "Universidade Positivo — Jornalismo — TCC 2, 2026",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-235",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[0].text",
+      "sourceText": "\"Protejam o Felca!!! Esse é o tipo de denúncia que a mídia tradicional evita por gerar problemas. Espalhem a notícia e cuidem das crianças!\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-236",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[0].likesLiteral",
+      "sourceText": "♥ ~184 mil curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-237",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[0].repliesLiteral",
+      "sourceText": "↩ 394 respostas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-238",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[1].text",
+      "sourceText": "\"Queremos esse vídeo em jornais, Netflix, é um documentário\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-239",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[1].likesLiteral",
+      "sourceText": "♥ ~31 mil curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-240",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[1].repliesLiteral",
+      "sourceText": "↩ 88 respostas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-241",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[2].text",
+      "sourceText": "\"O Fantástico deveria levar esse vídeo pra rede nacional. Parabéns pela coragem. Isso é um caso urgente de utilidade pública!!\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-242",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[2].likesLiteral",
+      "sourceText": "♥ ~10 mil curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-243",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:comments[2].repliesLiteral",
+      "sourceText": "↩ 61 respostas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-244",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:expertQuotes[0].text",
+      "sourceText": "\"O vídeo do Felca conseguiu um impacto diferente de tudo o que o jornalismo vem conseguindo alcançar nos últimos anos.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-245",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:expertQuotes[0].attribution",
+      "sourceText": "Fausto Salvadori",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-246",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[0]",
+      "sourceText": "Comentários que discutiram o papel da mídia tradicional e relacionaram a denúncia às funções do jornalismo. Manifestações expressaram crítica à suposta omissão da imprensa convencional.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-247",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[1]",
+      "sourceText": "Não é uma informação inédita;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-248",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[2]",
+      "sourceText": "Narrativa;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-249",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[3]",
+      "sourceText": "Mobilização;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-250",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[4]",
+      "sourceText": "Percepção do público sobre o papel do Jornalismo",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-251",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[0].text",
+      "sourceText": "\"Senhor, proteja esse cara, tem meu respeito!\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-252",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[0].likesLiteral",
+      "sourceText": "♥ ~201 mil curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-253",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[0].repliesLiteral",
+      "sourceText": "↩ 495 respostas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-254",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[1].text",
+      "sourceText": "\"O Felca está sendo na internet o que falta no Congresso.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-255",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[1].likesLiteral",
+      "sourceText": "♥ ~5,5 mil curtidas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-256",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[1].repliesLiteral",
+      "sourceText": "↩ 47 respostas",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-257",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[2].text",
+      "sourceText": "[COMENTÁRIO DA PESQUISA A INSERIR — eixo autoridade moral]",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-258",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:comments[2].likesLiteral",
+      "sourceText": "♥ [DADO]",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-259",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:expertQuotes[0].text",
+      "sourceText": "\"A comunicação contemporânea tornou-se mais descentralizada e as audiências passaram a buscar novos caminhos para amplificar demandas sociais e denúncias públicas.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-260",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:expertQuotes[0].attribution",
+      "sourceText": "Ana Vaz",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-261",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[0]",
+      "sourceText": "Manifestações que construíram Felca como figura de autoridade, coragem e intervenção social. Comentários associaram o influenciador à defesa das crianças e à responsabilidade social.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-262",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[1]",
+      "sourceText": "Autoridade Moral;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-263",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[2]",
+      "sourceText": "Mobilização Pública;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-264",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[3]",
+      "sourceText": "Deslegitimação Institucional;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-265",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[4]",
+      "sourceText": "Construção de Felca como \"autoridade moral\" e \"herói\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-266",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:comments[0].text",
+      "sourceText": "\"nao nego a importancia do video. mas o quanto que isso encheu o ego desse cara não tá escrito. e escancara ainda mais o lado podre dele o que ele acha da lei felca.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-267",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:comments[1].text",
+      "sourceText": "\"maior cavalo de troia da internet\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-268",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:comments[2].text",
+      "sourceText": "[COMENTÁRIO DA PESQUISA A INSERIR — discurso crítico]",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-269",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:expertQuotes[0].text",
+      "sourceText": "\"Eu sempre gosto de dizer que se tem hater acompanhando o que eu faço, é porque estamos atingindo o objetivo de incomodar e gerar discussão. Existem pessoas que podem não concordar com o que eu digo, mas são educadas e querem dialogar.\"",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-270",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:expertQuotes[0].attribution",
+      "sourceText": "Eduardo Scola",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-271",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[0]",
+      "sourceText": "Questionamentos sobre as motivações, métodos e responsabilidades do influenciador. Parte do público exerceu pensamento crítico, levantando dúvidas sobre os limites entre denúncia e exposição.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-272",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[1]",
+      "sourceText": "Vulnerabilidade Pessoal;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-273",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[2]",
+      "sourceText": "Surfar em temas;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-274",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[3]",
+      "sourceText": "Conflito como Sucesso;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-275",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[4]",
+      "sourceText": "Discursos de oposição e questionamento das motivações do influenciador",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-276",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:expanded[0]",
+      "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA adultização refere-se ao processo pelo qual crianças e adolescentes são expostos a comportamentos, papéis ou imagens associadas ao mundo adulto de forma prematura.",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-277",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:expanded[1]",
+      "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nNo ambiente digital, pode aparecer em conteúdos que sexualizam crianças e adolescentes, em dinâmicas que os colocam em situações de performance adulta para entretenimento ou monetização.",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-278",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:expanded[2]",
+      "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA exposição prematura pode gerar impactos negativos no desenvolvimento emocional e psicológico, afetando autoestima, senso de identidade e relações interpessoais.",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-279",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:expanded[3]",
+      "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nConteúdos que estimulam crianças e adolescentes a performar para câmeras em situações inadequadas; monetização da imagem de menores; comentários de cunho sexual ou assédio.",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-280",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "adultizacao:expanded[4]",
+      "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nMudanças repentinas de comportamento, interesse excessivo em exposição online, linguagem incompatível com a faixa etária, ansiedade relacionada à presença digital.",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "verification": "literal"
+    },
+    {
+      "id": "source-281",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "abertura:advisor",
+      "sourceText": "Prof. Dr. Daniel Zanella",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "source-282",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "conclusao:advisor",
+      "sourceText": "Prof. Dr. Daniel Zanella",
+      "targetChapter": "encerramento",
+      "status": "received",
+      "verification": "literal"
+    }
+  ],
+  "assets": [
+    {
+      "id": "opening",
+      "localPath": "/media/opening-test.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 20,
+      "bytes": 281233,
+      "status": "placeholder",
+      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+    },
+    {
+      "id": "closing",
+      "localPath": "/media/closing-test.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 20,
+      "bytes": 282957,
+      "status": "placeholder",
+      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+    },
+    {
+      "id": "felca",
+      "localPath": "/media/felca-test.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 20,
+      "bytes": 294533,
+      "status": "placeholder",
+      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+    },
+    {
+      "id": "comparison",
+      "localPath": "/media/comparison-test.mp4",
+      "width": 1280,
+      "height": 720,
+      "duration": 20,
+      "bytes": 290798,
+      "status": "placeholder",
+      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+    },
+    {
+      "id": "checking-future",
+      "localPath": "/media/checking-future-test.m4a",
+      "duration": 120,
+      "bytes": 760342,
+      "status": "placeholder",
+      "origin": "Tom sintetizado localmente para teste de reprodução; não contém entrevista."
+    },
+    {
+      "id": "journalist-influencer",
+      "localPath": "/media/journalist-influencer-test.m4a",
+      "duration": 120,
+      "bytes": 785373,
+      "status": "placeholder",
+      "origin": "Tom sintetizado localmente para teste de reprodução; não contém entrevista."
+    },
+    {
+      "id": "booklet",
+      "localPath": "/documents/cartilha-teste.pdf",
+      "bytes": 1769,
+      "status": "placeholder",
+      "origin": "PDF técnico de teste gerado localmente."
+    },
+    {
+      "id": "images-booklet.webp",
+      "localPath": "/images/booklet.webp",
+      "bytes": 10254,
+      "status": "placeholder",
+      "origin": "Imagem técnica gerada localmente para o material de teste."
+    },
+    {
+      "id": "images-closing.webp",
+      "localPath": "/images/closing.webp",
+      "bytes": 15392,
+      "status": "placeholder",
+      "origin": "Imagem técnica gerada localmente para o material de teste."
+    },
+    {
+      "id": "images-comparison.webp",
+      "localPath": "/images/comparison.webp",
+      "bytes": 18432,
+      "status": "placeholder",
+      "origin": "Imagem técnica gerada localmente para o material de teste."
+    },
+    {
+      "id": "images-felca.webp",
+      "localPath": "/images/felca.webp",
+      "bytes": 20484,
+      "status": "placeholder",
+      "origin": "Imagem técnica gerada localmente para o material de teste."
+    },
+    {
+      "id": "images-opening.webp",
+      "localPath": "/images/opening.webp",
+      "bytes": 14912,
+      "status": "placeholder",
+      "origin": "Imagem técnica gerada localmente para o material de teste."
+    },
+    {
+      "id": "fonts-librebodoni-OFL.txt",
+      "localPath": "/fonts/librebodoni-OFL.txt",
+      "bytes": 4492,
+      "status": "approved",
+      "origin": "Google Fonts; licença OFL local no mesmo diretório."
+    },
+    {
+      "id": "fonts-librebodoni.woff2",
+      "localPath": "/fonts/librebodoni.woff2",
+      "bytes": 42584,
+      "status": "approved",
+      "origin": "Google Fonts; licença OFL local no mesmo diretório."
+    },
+    {
+      "id": "fonts-publicsans-OFL.txt",
+      "localPath": "/fonts/publicsans-OFL.txt",
+      "bytes": 4390,
+      "status": "approved",
+      "origin": "Google Fonts; licença OFL local no mesmo diretório."
+    },
+    {
+      "id": "fonts-publicsans.woff2",
+      "localPath": "/fonts/publicsans.woff2",
+      "bytes": 41924,
+      "status": "approved",
+      "origin": "Google Fonts; licença OFL local no mesmo diretório."
+    },
+    {
+      "id": "opening-mobile-test",
+      "localPath": "/media/opening-mobile-test.mp4",
+      "width": 720,
+      "height": 1280,
+      "bytes": 249468,
+      "status": "placeholder",
+      "origin": "Teste procedural local em proporção vertical; sem imagens documentais.",
+      "duration": 20
+    },
+    {
+      "id": "opening-mobile",
+      "localPath": "/images/opening-mobile.webp",
+      "width": 720,
+      "height": 1280,
+      "bytes": 14364,
+      "status": "placeholder",
+      "origin": "Teste procedural local em proporção vertical; sem imagens documentais."
+    },
+    {
+      "id": "closing-mobile-test",
+      "localPath": "/media/closing-mobile-test.mp4",
+      "width": 720,
+      "height": 1280,
+      "bytes": 250722,
+      "status": "placeholder",
+      "origin": "Teste procedural local em proporção vertical; sem imagens documentais.",
+      "duration": 20
+    },
+    {
+      "id": "closing-mobile",
+      "localPath": "/images/closing-mobile.webp",
+      "width": 720,
+      "height": 1280,
+      "bytes": 15646,
+      "status": "placeholder",
+      "origin": "Teste procedural local em proporção vertical; sem imagens documentais."
+    }
+  ],
+  "pending": [
+    {
+      "id": "B01",
+      "description": "Vídeo editorial de contextualização",
+      "targetChapter": "contexto",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B02",
+      "description": "Distribuição quantitativa dos quatro eixos",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B03",
+      "description": "Terceiro comentário de autoridade moral",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B04",
+      "description": "Terceiro comentário de oposição",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B05",
+      "description": "Curtidas/respostas ausentes",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B06",
+      "description": "Complementos da entrevista de psicologia",
+      "targetChapter": "adultizacao",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B07",
+      "description": "Vídeo comparativo",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B08",
+      "description": "Apuração identificada no conteúdo de Felca",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B09",
+      "description": "Uso de fontes no conteúdo de Felca",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B10",
+      "description": "Verificação no conteúdo de Felca",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B11",
+      "description": "Contraditório no conteúdo de Felca",
+      "targetChapter": "comparacao",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B12",
+      "description": "Entrevista investigativa e identificação",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B13",
+      "description": "Dado sobre questionamento",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B14",
+      "description": "Engajamento por categoria",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "B15",
+      "description": "Novos acontecimentos, datas e fontes",
+      "targetChapter": "cronologia",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "N01",
+      "description": "Vídeo ambiente de abertura e créditos",
+      "targetChapter": "abertura",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "N02",
+      "description": "Vídeo ambiente de encerramento e créditos",
+      "targetChapter": "encerramento",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "N03",
+      "description": "Dois podcasts e transcrições",
+      "targetChapter": "jornalismo",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "N04",
+      "description": "Cartilha PDF e capa",
+      "targetChapter": "cartilha",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "N05",
+      "description": "Antecedentes do caso antes do vídeo",
+      "targetChapter": "cronologia",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    },
+    {
+      "id": "N06",
+      "description": "Terceiro comentário de adultização",
+      "targetChapter": "comentarios",
+      "status": "placeholder",
+      "resolution": "Aguardando material e validação editorial das autoras."
+    }
+  ]
+}
