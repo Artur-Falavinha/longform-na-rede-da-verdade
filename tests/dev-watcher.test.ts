@@ -1,5 +1,5 @@
 import { mkdtemp, mkdir, writeFile, rm, realpath } from "node:fs/promises";
-import { tmpdir } from "node:os";
+import { homedir } from "node:os";
 import { join, relative } from "node:path";
 import { setTimeout } from "node:timers/promises";
 import { createServer } from "vite";
@@ -7,7 +7,7 @@ import { expect, test } from "vitest";
 import config from "../astro.config.mjs";
 
 test("arquivos preservados não disparam eventos, mas código-fonte continua observado", async () => {
-  const root = await mkdtemp(join(await realpath(tmpdir()), "longform-watcher-"));
+  const root = await mkdtemp(join(await realpath(homedir()), ".longform-watcher-"));
   const files = [
     "src/probe.ts",
     "pr-assets/arquivo/tsconfig.json",
