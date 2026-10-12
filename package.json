@@ -11,7 +11,12 @@
     "check": "npm run prepare:media && astro check",
     "prepare:media": "tsx scripts/prepare-media-delivery.ts",
     "build": "npm run prepare:media && astro build",
-    "preview": "astro preview --host 127.0.0.1 --port 4326"
+    "preview": "astro preview --host 127.0.0.1 --port 4326",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "validate:assets": "tsx scripts/validate-assets.ts",
+    "export:metrics": "tsx scripts/export-metrics.ts"
   },
   "dependencies": {
     "astro": "7.3.8",
