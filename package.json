@@ -16,7 +16,9 @@
     "test:e2e": "playwright test",
     "validate:content": "tsx scripts/validate-content.ts",
     "validate:assets": "tsx scripts/validate-assets.ts",
-    "export:metrics": "tsx scripts/export-metrics.ts"
+    "export:metrics": "tsx scripts/export-metrics.ts",
+    "deploy:dry-run": "npm run check && npm run build && npm run validate:content && npm run validate:assets && wrangler deploy --dry-run",
+    "deploy": "npm run deploy:dry-run && wrangler deploy"
   },
   "dependencies": {
     "astro": "7.3.8",
