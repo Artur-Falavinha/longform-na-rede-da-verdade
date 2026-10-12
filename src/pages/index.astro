@@ -1,0 +1,733 @@
+---
+import Longform from "../layouts/Longform.astro";
+import ChapterIndex from "../components/navigation/ChapterIndex.astro";
+import Section from "../components/editorial/Section.astro";
+import ResearchFigure from "../components/editorial/ResearchFigure.astro";
+import VideoPlayer from "../components/media/VideoPlayer.astro";
+import PodcastPlayer from "../components/media/PodcastPlayer.astro";
+import CommentExplorer from "../components/comments/CommentExplorer.astro";
+import Timeline from "../components/timeline/Timeline.astro";
+import Booklet from "../components/documents/Booklet.astro";
+import { research } from "../data/research";
+import { media } from "../data/media";
+import { timeline } from "../data/timeline";
+import { Content as Context } from "../content/contexto.md";
+import { Content as CommentsIntro } from "../content/comentarios.md";
+import { Content as Comparison } from "../content/comparacao.md";
+import { Content as Journalism } from "../content/jornalismo.md";
+import { Content as Participation } from "../content/participacao.md";
+import { Content as Chronology } from "../content/cronologia.md";
+import { Content as Education } from "../content/adultizacao.md";
+import { Content as Closing } from "../content/encerramento.md";
+const [opening, closing, felca, comparison, ...podcasts] = media;
+---
+
+<Longform>
+  <ChapterIndex />
+  <section
+    id="abertura"
+    data-chapter-start
+    class="opening-chapter"
+    tabindex="-1"
+    aria-label="Capa em vídeo"
+  >
+    <VideoPlayer asset={opening} opening />
+  </section>
+  <main id="reportagem">
+    <section
+      id="contexto"
+      data-chapter-start
+      class="chapter context-chapter"
+      tabindex="-1"
+      aria-labelledby="report-title"
+    >
+      <div class="wide">
+        <p class="validation-note">
+          Versão para validação · vídeos, áudios e cartilha de teste. Conteúdo
+          inicial preservado; apuração e materiais finais em revisão pelas
+          autoras.
+        </p>
+        <header class="title-block" data-reveal>
+          <span class="eyebrow">Uma reportagem multimídia interativa</span>
+          <h1 id="report-title">
+            Na rede{" "}
+            <br />
+            da verdade
+          </h1>
+          <p class="subtitle">quem informa, quem acredita e quem denuncia?</p>
+          <div class="rule" aria-hidden="true"></div>
+          <p class="byline">
+            Isabelle Sestari · Isadora Moraes Lopes{" "}
+            <br />
+            Julia Nunes Budal · Sabrina Gomes da Cunha
+          </p>
+          <p class="small muted">
+            Orientador: {research.advisor}{" "}
+            <br />
+            {research.institution}
+          </p>
+        </header>
+        <figure class="authors-quote reading" data-reveal>
+          <blockquote class="editorial-quote">
+            {research.authorsQuote}
+          </blockquote>
+          <figcaption class="quote-attribution">Das autoras</figcaption>
+        </figure>
+        <div class="context-intro reading prose" data-reveal>
+          <span class="eyebrow">01 / A denúncia</span>
+          <h2>
+            O vídeo "Adultização"{" "}
+            <br />e sua repercussão massiva
+          </h2>
+          <Context />
+        </div>
+        <div
+          class="reach-numbers"
+          aria-label="Alcance registrado no conteúdo inicial"
+        >
+          <p>
+            <strong>52,7 mi</strong>
+            <span>visualizações do vídeo "Adultização"</span>
+          </p>
+          <p>
+            <strong>301 mil</strong>
+            <span>comentários no vídeo</span>
+          </p>
+          <p>
+            <strong>1.599</strong>
+            <span>comentários analisados na pesquisa</span>
+          </p>
+        </div>
+        <VideoPlayer asset={felca} />
+        <p class="small muted">
+          Vídeo de contextualização — a ser produzido e inserido.
+        </p>
+        <ResearchFigure
+          caption={'Dados do vídeo "Adultização"'}
+          rows={research.videoMetrics}
+          note="Recorte e datas de coleta a confirmar. Valores, período e médias transcritos do Base44, sem recalcular os dados da pesquisa."
+        />
+        <p class="pending">
+          Período e médias diárias aguardam conferência editorial. A indicação
+          de 20 dias foi mantida como recebida.
+        </p>
+      </div>
+    </section>
+    <Section
+      id="comentarios"
+      number="02 / Pesquisa de campo"
+      title="O que a rede disse?"
+      subtitle="Categorias de análise"
+    >
+      <div class="reading prose">
+        <CommentsIntro />
+      </div>
+      <ResearchFigure
+        caption="Dados da pesquisa de campo"
+        rows={research.method}
+        note="A amostra de 1.599 comentários é distinta do total de comentários do vídeo."
+      />
+      <CommentExplorer />
+    </Section>
+    <Section
+      id="comparacao"
+      number="03 / Informação e credibilidade"
+      title="Quem investiga? Quem denuncia?"
+      subtitle="Processos diferentes. Sem julgamento."
+    >
+      <div class="reading prose" data-reveal>
+        <Comparison />
+      </div>
+      <VideoPlayer asset={comparison} />
+      <p class="pending">
+        [VÍDEO COMPARATIVO: FELCA E DENÚNCIAS JORNALÍSTICAS — A INSERIR]
+      </p>
+      <div class="comparison-head" aria-hidden="true">
+        <div>
+          Influenciador Digital<span>caso Felca — "Adultização"</span>
+        </div>
+        <div>
+          Jornalismo Profissional<span>processo editorial e apuração</span>
+        </div>
+      </div>
+      <div class="comparison-rows">
+        {research.comparisons.map((row) => (
+          <article class="comparison-row" data-reveal>
+            <h3>{row.title}</h3>
+            <div>
+              <span class="mobile-label eyebrow">Influenciador Digital</span>
+              <p class:list={{ pending: row.influencer.startsWith("[") }}>
+                {row.influencer}
+              </p>
+            </div>
+            <div>
+              <span class="mobile-label eyebrow">Jornalismo Profissional</span>
+              <p>{row.journalism}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <aside class="outlets">
+        <span class="eyebrow">Veículos que cobriram o caso</span>
+        <ul>
+          {research.outlets.map((outlet) => (
+            <li>{outlet}</li>
+          ))}
+        </ul>
+        <p class="source">
+          Relação presente no conteúdo inicial das autoras. Links das matérias e
+          referências de apuração pendentes.
+        </p>
+      </aside>
+    </Section>
+    <Section
+      id="jornalismo"
+      number="04 / A perspectiva do jornalismo"
+      title="O campo fala."
+    >
+      <div class="muted">
+        <Journalism />
+      </div>
+      <div class="interviews">
+        {research.interviews.map((interview) => (
+          <article class="interview" data-reveal>
+            <header>
+              <h3>{interview.name}</h3>
+              <span class="small muted">{interview.role}</span>
+            </header>
+            <div>
+              <blockquote class="editorial-quote">{interview.quote}</blockquote>
+              <p>{interview.description}</p>
+              <ul class="topic-list">
+                {interview.topics.map((topic) => (
+                  <li>{topic}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="participation-header" data-reveal>
+        <span class="eyebrow">A voz da rede</span>
+        <h3>O público não é passivo.</h3>
+        <div class="muted">
+          <Participation />
+        </div>
+      </div>
+      <div class="participation-list">
+        {research.participation.map((item) => (
+          <article data-reveal>
+            <h4>{item.title}</h4>
+            <div>
+              <p>{item.paragraph}</p>
+              <span
+                class:list={[
+                  "participation-number",
+                  { pending: item.metric.startsWith("[") },
+                ]}
+              >
+                {item.metric}
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="pending pending-space">{research.participationPending}</p>
+      <figure class="reading network-quote" data-reveal>
+        <blockquote class="editorial-quote">
+          {research.participationQuote}
+        </blockquote>
+        <figcaption class="quote-attribution">
+          {research.participationAttribution}
+        </figcaption>
+      </figure>
+      <div class="podcast-intro">
+        <span class="eyebrow">Duas conversas · N03</span>
+        <h3>
+          O futuro do jornalismo
+          <br />e quem informa na rede
+        </h3>
+        <p class="pending">
+          Textos de apresentação dos episódios e gancho editorial a enviar pelas
+          autoras. Áudios de teste para validação do player.
+        </p>
+      </div>
+      {podcasts.map((asset) => (
+        <PodcastPlayer asset={asset} />
+      ))}
+    </Section>
+    <Section
+      id="cronologia"
+      number="05 / Depois da denúncia"
+      title="A realidade dos fatos"
+    >
+      <div class="chronology-intro reading">
+        <Chronology />
+        <p class="pending">
+          Cronologia transcrita do conteúdo inicial. Antecedentes, atualização
+          dos marcos e referências originais aguardam validação das autoras.
+        </p>
+      </div>
+      <Timeline entries={timeline} />
+    </Section>
+    <Section
+      id="adultizacao"
+      number="06 / Entenda a adultização"
+      title="Um debate que exige atenção"
+    >
+      <div class="reading prose">
+        <Education />
+        <div class="expert-source">
+          <span class="eyebrow">Fonte especializada</span>
+          <p>
+            Dra. Jéssica Tonioti
+            <br />
+            <span class="small muted">
+              Psicóloga — entrevistada para o TCC 1
+            </span>
+          </p>
+          <p class="pending">
+            [CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR] — B06
+          </p>
+        </div>
+      </div>
+      <div class="education-list reading">
+        {research.education.map((item, i) => (
+          <article data-reveal>
+            <span class="eyebrow">{String(i + 1).padStart(2, "0")}</span>
+            <h3>{item.title}</h3>
+            <p>{item.intro}</p>
+            <p class="education-description">{item.paragraph}</p>
+          </article>
+        ))}
+      </div>
+    </Section>
+    <Section
+      id="cartilha"
+      number="07 / Material de apoio"
+      title="Leve esta conversa adiante"
+    >
+      <Booklet />
+    </Section>
+    <Section
+      id="encerramento"
+      number="08 / Conclusão"
+      title="Quem informa, quem acredita e quem denuncia?"
+    >
+      <div class="small muted">
+        <Closing />
+      </div>
+      <div class="findings">
+        <article>
+          <span class="eyebrow">Resultados</span>
+          <ul>
+            {research.results.map((text) => (
+              <li>{text}</li>
+            ))}
+          </ul>
+        </article>
+        <article>
+          <span class="eyebrow">Considerações Finais</span>
+          <ul>
+            {research.conclusions.map((text) => (
+              <li>{text}</li>
+            ))}
+          </ul>
+        </article>
+      </div>
+      <div class="closing-questions reading">
+        {research.questions.map((item) => (
+          <article data-reveal>
+            <h3>{item.title}</h3>
+            <p>{item.paragraph}</p>
+          </article>
+        ))}
+      </div>
+      <figure class="reading closing-quote" data-reveal>
+        <blockquote class="editorial-quote">{research.authorsQuote}</blockquote>
+        <figcaption class="quote-attribution">Das autoras</figcaption>
+      </figure>
+      <VideoPlayer asset={closing} />
+      <footer class="credits">
+        <a class="footer-title" href="#contexto">
+          Na rede da verdade
+        </a>
+        <div>
+          <span class="eyebrow">Autoras</span>
+          <ul>
+            {research.authors.map((author) => (
+              <li>{author}</li>
+            ))}
+          </ul>
+          <p class="small muted">
+            Orientador: {research.advisor}
+            <br />
+            {research.institution}
+          </p>
+        </div>
+        <p class="source">
+          Conteúdo inicial:{" "}
+          <a
+            href={research.source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Base44 das autoras
+          </a>
+          , consultado em 10/10/2026. Fontes e créditos definitivos de cada
+          material serão integrados à versão editorial final. Vídeos, áudios,
+          imagens e PDF desta validação são arquivos técnicos de teste.
+        </p>
+        <a class="back-top" href="#abertura">
+          Voltar ao início ↑
+        </a>
+      </footer>
+    </Section>
+  </main>
+</Longform>
+<style>
+  .opening-chapter {
+    height: 100svh;
+    position: relative;
+  }
+  .context-chapter {
+    padding-top: 0;
+  }
+  .title-block {
+    text-align: center;
+    padding-block: clamp(4rem, 8vw, 8rem);
+  }
+  h1 {
+    font-size: clamp(4.15rem, 10.2vw, 9.75rem);
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+    padding-bottom: 0.08em;
+    margin: 1.7rem auto 1.2rem;
+  }
+  .subtitle {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(1.45rem, 2.4vw, 2.3rem);
+    line-height: 1.4;
+  }
+  .byline {
+    font-size: 0.875rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .authors-quote {
+    text-align: center;
+    margin-block: 1rem 7rem;
+  }
+  .context-intro h2 {
+    font-size: clamp(2.3rem, 4.7vw, 4rem);
+    margin: 1rem 0 2.5rem;
+  }
+  .reach-numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 4rem 0 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--muted);
+  }
+  .reach-numbers p {
+    margin: 0;
+  }
+  .reach-numbers strong {
+    display: block;
+    font: 400 clamp(2.4rem, 5vw, 4.5rem)/1.2 var(--serif);
+    color: var(--accent);
+  }
+  .reach-numbers span {
+    display: block;
+    font-size: 0.8125rem;
+    margin-top: 0.5rem;
+    color: var(--muted);
+  }
+  .comparison-head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    font: 400 1.8rem/1.2 var(--serif);
+  }
+  .comparison-head span {
+    display: block;
+    font: 400 0.8125rem/1.6 var(--sans);
+    color: var(--muted);
+    margin-top: 0.5rem;
+  }
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 4rem;
+    border-top: 1px solid var(--muted);
+    padding-block: 2rem;
+    margin-top: 2rem;
+  }
+  .comparison-row h3 {
+    grid-column: 1/-1;
+    font: 600 0.8125rem/1.5 var(--sans);
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .comparison-row p {
+    font-size: 1.0625rem;
+  }
+  .mobile-label {
+    display: none;
+  }
+  .outlets {
+    margin-top: 3rem;
+  }
+  .outlets ul {
+    display: flex;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    font-family: var(--serif);
+    font-size: 1.65rem;
+  }
+  .outlets li {
+    margin: 0;
+  }
+  .interviews {
+    margin-top: 4rem;
+  }
+  .interview {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    border-top: 1px solid var(--muted);
+    padding-block: 2.5rem;
+  }
+  .interview h3 {
+    font-size: 1.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .interview blockquote {
+    font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+  }
+  .interview p {
+    font-size: 1.0625rem;
+    margin-top: 1.5rem;
+  }
+  .topic-list {
+    display: flex;
+    gap: 0.6rem 1.2rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 1.5rem;
+  }
+  .topic-list li {
+    margin: 0;
+  }
+  .participation-header {
+    margin-block: 5rem 2rem;
+  }
+  .participation-header h3 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    margin: 1rem 0;
+  }
+  .participation-header p {
+    font-size: 1rem;
+  }
+  .participation-list article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    padding-block: 2rem;
+    border-top: 1px solid var(--surface);
+  }
+  .participation-list h4 {
+    font-size: 2rem;
+  }
+  .participation-list p {
+    font-size: 1.0625rem;
+  }
+  .participation-number {
+    display: block;
+    color: var(--accent);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+  .network-quote {
+    margin-block: 4rem 6rem;
+  }
+  .podcast-intro h3 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-block: 1rem 2rem;
+  }
+  .chronology-intro {
+    margin: 0 0 4rem;
+    max-width: 65ch;
+  }
+  .chronology-intro p + p {
+    margin-top: 1rem;
+  }
+  .expert-source {
+    margin-block: 2rem 4rem;
+  }
+  .expert-source p {
+    margin-top: 0.5rem;
+  }
+  .education-list article {
+    position: relative;
+    border-top: 1px solid var(--muted);
+    padding-block: 2.5rem;
+  }
+  .education-list h3 {
+    margin: 0.75rem 0 1.5rem;
+  }
+  .education-description {
+    white-space: pre-line;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+  .findings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-block: 3rem 5rem;
+    padding-block: 2rem;
+    border-block: 1px solid var(--muted);
+    font-size: 1.0625rem;
+  }
+  .closing-questions article + article {
+    margin-top: 3rem;
+  }
+  .closing-questions h3 {
+    margin-bottom: 1rem;
+  }
+  .closing-quote {
+    margin-block: 5rem;
+  }
+  .credits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--muted);
+  }
+  .footer-title {
+    font: 400 clamp(2.3rem, 4vw, 3.8rem)/1.15 var(--serif);
+    text-decoration: none;
+  }
+  .credits ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem;
+  }
+  .credits li + li {
+    margin-top: 0.25rem;
+  }
+  .credits .source {
+    grid-column: 1/-1;
+    margin: 0;
+  }
+  .back-top {
+    font-size: 0.875rem;
+  }
+  @media (max-width: 899px) {
+    .reach-numbers {
+      gap: 1rem;
+    }
+    .reach-numbers strong {
+      font-size: 2.4rem;
+    }
+    .reach-numbers span {
+      font-size: 0.75rem;
+    }
+    .comparison-head {
+      gap: 2rem;
+    }
+    .comparison-row {
+      gap: 1rem 2rem;
+    }
+    .interview {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .participation-list article {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .findings {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .credits {
+      grid-template-columns: 1fr;
+    }
+    .authors-quote {
+      margin-bottom: 4rem;
+    }
+  }
+  @media (max-width: 599px) {
+    .title-block > .eyebrow {
+      font-size: 0.75rem;
+    }
+    .title-block {
+      padding-block: 4rem;
+    }
+    .byline {
+      font-size: 0.75rem;
+    }
+    .comparison-head {
+      display: none;
+    }
+    .comparison-row {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    .comparison-row h3 {
+      margin-bottom: 0;
+    }
+    .mobile-label {
+      display: block;
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .comparison-row p {
+      font-size: 1rem;
+    }
+    .reach-numbers {
+      grid-template-columns: 1fr;
+      padding-top: 0;
+      border: 0;
+      gap: 0;
+    }
+    .reach-numbers p {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      border-top: 1px solid var(--surface);
+      padding: 1.2rem 0;
+    }
+    .reach-numbers strong {
+      min-width: 8rem;
+      font-size: 2.5rem;
+    }
+    .reach-numbers span {
+      font-size: 0.8125rem;
+    }
+    .title-block .small {
+      font-size: 0.75rem;
+    }
+    h1 {
+      font-size: clamp(3.5rem, 14.8vw, 5.5rem);
+    }
+    .subtitle {
+      font-size: 1.35rem;
+    }
+    .credits {
+      gap: 2rem;
+    }
+  }
+</style>

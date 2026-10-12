@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import { release } from "../data/release";
+const canonical = import.meta.env.PUBLIC_SITE_URL;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0A0A0C" />
+    {release.stage === "validation" && (
+      <meta name="robots" content="noindex, nofollow" />
+    )}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Na rede da verdade" />
+    <meta
+      property="og:description"
+      content="Quem informa, quem acredita e quem denuncia? Reportagem multimídia — versão de validação."
+    />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Na rede da verdade — quem informa, quem acredita e quem denuncia?</title>
+    <meta
+      name="description"
+      content="Uma reportagem multimídia sobre denúncia, credibilidade e jornalismo nas redes. Trabalho de Conclusão de Curso de Jornalismo, Universidade Positivo, 2026. Versão de validação com materiais provisórios."
+    />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link
+      rel="preload"
+      href="/fonts/librebodoni.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/publicsans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#contexto">
+      Pular para a reportagem
+    </a>
+    <slot />
+    <script>
+      import "../scripts/main";
+    </script>
+  </body>
+</html>

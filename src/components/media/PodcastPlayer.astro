@@ -1,0 +1,260 @@
+---
+import type { MediaAsset } from "../../data/types";
+interface Props {
+  asset: MediaAsset;
+}
+const { asset } = Astro.props;
+---
+
+<article class="podcast" id={`podcast-${asset.id}`} data-podcast={asset.id}>
+  <header>
+    <span class="eyebrow">Podcast · material de teste</span>
+    <h3>{asset.title}</h3>
+    <p class="small muted">
+      Áudio de teste com tom suave. Entrevista e transcrição finais pendentes (
+      {asset.pendingId}).
+    </p>
+  </header>
+  <div class="player-origin" data-player-origin>
+    <div class="player-surface" data-player-surface>
+      <div class="player-label">
+        <span class="eyebrow">Na rede da verdade · podcast</span>
+        <span class="player-title">{asset.title}</span>
+      </div>
+      <audio
+        controls
+        preload="none"
+        src={asset.src}
+        data-media-id={asset.id}
+        data-purpose="editorial"
+        aria-label={`${asset.title} — áudio de teste`}
+      ></audio>
+      <div class="player-controls" hidden>
+        <button
+          type="button"
+          data-podcast-play
+          class="play-control"
+          aria-label={`Reproduzir ${asset.title}`}
+        >
+          <span data-play-icon aria-hidden="true">
+            ▶
+          </span>
+        </button>
+        <div class="progress-control">
+          <label class="sr-only" for={`progress-${asset.id}`}>
+            Posição do áudio {asset.title}
+          </label>
+          <input
+            id={`progress-${asset.id}`}
+            data-podcast-progress
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1"
+            disabled
+          />
+          <div class="time-display">
+            <span data-current-time>0:00</span>
+            <span data-duration>--:--</span>
+          </div>
+        </div>
+        <div class="volume-control">
+          <label for={`volume-${asset.id}`}>Volume</label>
+          <input
+            id={`volume-${asset.id}`}
+            data-podcast-volume
+            type="range"
+            min="0"
+            max="1"
+            value="1"
+            step="0.05"
+          />
+        </div>
+        <a
+          class="origin-link"
+          href={`#podcast-${asset.id}`}
+          data-podcast-return
+          aria-label={`Voltar à origem de ${asset.title}`}
+        >
+          Voltar <span aria-hidden="true">↑</span>
+        </a>
+      </div>
+      <p class="podcast-error small" role="status" hidden>
+        Não foi possível reproduzir. Use Reproduzir para tentar novamente ou{" "}
+        <a href={asset.src}>abra o arquivo</a>.
+      </p>
+    </div>
+  </div>
+  <details class="transcript">
+    <summary>
+      Transcrição <span class="muted">· pendente</span>
+    </summary>
+    <p>{asset.transcript}</p>
+  </details>
+</article>
+<style>
+  .podcast {
+    margin-block: 4rem;
+    scroll-margin-top: calc(var(--header-height) + 2rem);
+  }
+  .podcast header {
+    max-width: 50rem;
+  }
+  .podcast h3 {
+    margin: 0.75rem 0 1rem;
+  }
+  .player-origin {
+    margin-top: 1.5rem;
+    min-height: 12rem;
+  }
+  .player-surface {
+    background: var(--surface);
+    border-top: 2px solid var(--red);
+    padding: 1.4rem 1.75rem;
+    position: relative;
+  }
+  .player-label {
+    margin-bottom: 1rem;
+  }
+  .player-label .eyebrow {
+    font-size: 0.75rem;
+  }
+  .player-title {
+    display: block;
+    font: 400 1.5rem/1.3 var(--serif);
+    margin-top: 0.25rem;
+  }
+  audio {
+    width: 100%;
+    height: 3rem;
+  }
+  .player-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .play-control {
+    background: var(--red);
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
+  }
+  .progress-control {
+    flex: 1;
+    min-width: 3rem;
+  }
+  input[type="range"] {
+    width: 100%;
+    margin: 0;
+    accent-color: var(--accent);
+    height: 2.75rem;
+  }
+  .time-display {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+  }
+  .volume-control {
+    width: 5rem;
+    flex-shrink: 0;
+  }
+  .volume-control label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1;
+  }
+  .origin-link {
+    display: none;
+    font-size: 0.75rem;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .transcript {
+    border-bottom: 1px solid var(--muted);
+    font-size: 1rem;
+  }
+  .transcript summary {
+    padding-block: 1rem;
+    font-size: 0.875rem;
+    min-height: 44px;
+  }
+  .transcript p {
+    padding: 1rem 0 2rem;
+    max-width: 65ch;
+  }
+  .player-surface.is-compact {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: min(33rem, calc(100% - 3rem));
+    padding: 1rem 1.25rem;
+    z-index: 30;
+    box-shadow: 0 0.5rem 2rem #0a0a0c;
+  }
+  .is-compact .origin-link {
+    display: flex;
+  }
+  .is-compact .player-title {
+    font-size: 1.15rem;
+  }
+  .is-compact .player-label {
+    margin-bottom: 0.6rem;
+  }
+  .is-compact .player-label .eyebrow {
+    display: none;
+  }
+  .is-compact .volume-control {
+    width: 3.5rem;
+  }
+  .is-compact .player-controls {
+    gap: 0.75rem;
+  }
+  .podcast-error {
+    color: var(--accent);
+    margin-top: 0.75rem;
+  }
+  @media (max-width: 899px) {
+    .player-surface {
+      padding: 1rem;
+    }
+    .player-controls {
+      gap: 0.75rem;
+    }
+    .volume-control {
+      width: 3.5rem;
+    }
+    .player-surface.is-compact {
+      inset: auto 0 0;
+      width: 100%;
+      padding: 0.8rem 1rem calc(0.8rem + env(safe-area-inset-bottom));
+      box-shadow: 0 -0.5rem 1.5rem #0a0a0c;
+    }
+    .is-compact .player-title {
+      font-size: 1.05rem;
+    }
+    .is-compact .player-controls {
+      gap: 0.6rem;
+    }
+    .is-compact .play-control {
+      width: 2.75rem;
+      height: 2.75rem;
+      min-width: 2.75rem;
+    }
+    .is-compact .origin-link {
+      font-size: 0.75rem;
+    }
+    .is-compact .volume-control {
+      width: 2.75rem;
+    }
+  }
+</style>

@@ -1,0 +1,212 @@
+---
+import type { TimelineEntry } from "../../data/types";
+interface Props {
+  entries: TimelineEntry[];
+}
+const { entries } = Astro.props;
+---
+
+<div class="timeline" data-timeline>
+  <div class="timeline-rail" aria-hidden="true">
+    <div class="timeline-fill" data-timeline-fill></div>
+  </div>
+  <ol>
+    {entries.map((entry) => (
+      <li class="timeline-event" data-timeline-event id={`event-${entry.id}`}>
+        <span
+          class="timeline-marker"
+          data-timeline-marker
+          aria-hidden="true"
+        ></span>
+        <span
+          class="timeline-connector"
+          data-timeline-connector
+          aria-hidden="true"
+        >
+          <span></span>
+        </span>
+        <div class="event-content">
+          <div class="event-date" data-event-date>
+            <time datetime={entry.dateISO}>{entry.dateLabel}</time>
+          </div>
+          <div class="event-copy">
+            <h3>{entry.title}</h3>
+            {entry.category && (
+              <span class="event-category">{entry.category}</span>
+            )}
+            {entry.paragraphs.map((text) => (
+              <p>{text}</p>
+            ))}
+            <div class="source">
+              {entry.sources.map((source) => (
+                <p>
+                  {source.url ? (
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {source.label}
+                    </a>
+                  ) : (
+                    source.label
+                  )}
+                </p>
+              ))}
+              {entry.status === "placeholder" && <p>Conteúdo pendente.</p>}
+            </div>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>
+<style>
+  .timeline {
+    position: relative;
+    --date-line: 1.5rem;
+    --axis: 50%;
+    --connector: 2rem;
+  }
+  .timeline ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .timeline-event {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);
+    position: relative;
+    margin: 0;
+    padding-bottom: 4.5rem;
+  }
+  .timeline-event:last-child {
+    padding-bottom: 0;
+  }
+  .event-content {
+    grid-column: 1;
+    min-width: 0;
+  }
+  .timeline-event:nth-child(even) .event-content {
+    grid-column: 3;
+  }
+  .timeline-marker {
+    position: absolute;
+    left: var(--axis);
+    top: calc(var(--date-line) / 2);
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--muted);
+    z-index: 2;
+  }
+  .timeline-connector {
+    position: absolute;
+    left: calc(var(--axis) - var(--connector));
+    top: calc(var(--date-line) / 2 - 1px);
+    height: 2px;
+    width: var(--connector);
+    background: var(--muted);
+  }
+  .timeline-connector > span {
+    display: block;
+    height: 100%;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  .timeline-event:nth-child(even) .timeline-connector {
+    left: var(--axis);
+  }
+  .timeline-event:nth-child(even) .timeline-connector > span {
+    transform-origin: left;
+  }
+  .timeline-rail {
+    position: absolute;
+    left: var(--axis);
+    width: 3px;
+    top: calc(var(--date-line) / 2);
+    bottom: 0;
+    transform: translateX(-50%);
+    background: var(--muted);
+  }
+  .timeline-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--red);
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  .event-date {
+    font-family: var(--sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: var(--date-line);
+    color: var(--accent);
+    text-transform: uppercase;
+    padding-right: 0.5rem;
+  }
+  .event-content h3 {
+    margin: 0.5rem 0 1rem;
+    font-size: clamp(1.7rem, 2.65vw, 2.65rem);
+  }
+  .event-content p {
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+  .event-category {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+  .event-content .source {
+    max-width: 90%;
+  }
+  .event-content .source p {
+    font-size: 0.75rem;
+    line-height: 1.6;
+  }
+  .source p + p {
+    margin-top: 0.5rem;
+  }
+  .timeline-event[data-reached="true"] .timeline-marker {
+    background: var(--red);
+  }
+  .timeline-event[data-reached="true"] .timeline-connector > span {
+    transform: scaleX(1);
+  }
+  @media (max-width: 899px) {
+    .timeline {
+      --axis: 0.5rem;
+      --connector: 1.4rem;
+    }
+    .timeline-event {
+      grid-template-columns: 2.5rem minmax(0, 1fr);
+      padding-bottom: 3.5rem;
+    }
+    .event-content,
+    .timeline-event:nth-child(even) .event-content {
+      grid-column: 2;
+    }
+    .timeline-connector,
+    .timeline-event:nth-child(even) .timeline-connector {
+      left: var(--axis);
+    }
+    .timeline-connector > span {
+      transform-origin: left;
+    }
+    .event-content .source {
+      max-width: 100%;
+    }
+    .event-content p {
+      font-size: 1.125rem;
+    }
+    .event-content h3 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

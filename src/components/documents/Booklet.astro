@@ -1,0 +1,88 @@
+---
+import { booklet } from "../../data/documents";
+import { Content } from "../../content/cartilha.md";
+---
+
+<div class="booklet" data-booklet>
+  <img
+    src={booklet.cover}
+    alt="Capa do PDF de teste — cartilha definitiva pendente"
+    width="600"
+    height="800"
+    loading="lazy"
+  />
+  <div class="booklet-copy">
+    <span class="eyebrow">Para continuar a leitura</span>
+    <h3>{booklet.title}</h3>
+    <div class="prose">
+      <Content />
+    </div>
+    <div class="booklet-actions">
+      <a
+        class="button primary"
+        data-booklet-action="open"
+        href={booklet.src}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Abrir cartilha <span aria-hidden="true">↗</span>
+        <span class="sr-only"> em nova guia</span>
+      </a>
+      <a
+        class="button"
+        data-booklet-action="download"
+        href={booklet.src}
+        download={booklet.downloadName}
+      >
+        Baixar PDF <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+    <p class="small muted">PDF de teste · mesmo arquivo nas duas ações.</p>
+    <p data-document-error role="status" class="pending" hidden>
+      Não foi possível verificar o documento. Confira sua conexão e tente
+      novamente pelos links acima.
+    </p>
+  </div>
+</div>
+<style>
+  .booklet {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    align-items: center;
+    gap: clamp(2rem, 6vw, 6rem);
+  }
+  .booklet img {
+    width: 100%;
+    height: auto;
+    max-width: 24rem;
+    border: 1px solid var(--muted);
+  }
+  .booklet h3 {
+    margin: 1rem 0 1.5rem;
+  }
+  .booklet .prose {
+    font-size: 1.0625rem;
+  }
+  .booklet-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-block: 2rem 1rem;
+  }
+  .booklet-actions a {
+    flex: 1;
+    white-space: nowrap;
+  }
+  @media (max-width: 699px) {
+    .booklet {
+      grid-template-columns: 1fr;
+    }
+    .booklet img {
+      width: 60%;
+      margin-inline: auto;
+    }
+    .booklet-actions {
+      flex-direction: column;
+    }
+  }
+</style>
