@@ -13,6 +13,7 @@
     "build": "npm run prepare:media && astro build",
     "preview": "astro preview --host 127.0.0.1 --port 4326",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "validate:content": "tsx scripts/validate-content.ts",
     "validate:assets": "tsx scripts/validate-assets.ts",
     "export:metrics": "tsx scripts/export-metrics.ts"
