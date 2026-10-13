@@ -17,6 +17,9 @@ test("índice mantém o documento, revela destino e fecha no celular", async ({
     .toBe("same-document");
   const target = page.locator("#cronologia");
   await expect(target).toBeFocused();
+  await expect
+    .poll(async () => (await target.boundingBox())!.y)
+    .toBeLessThan(150);
   expect((await target.boundingBox())!.y).toBeGreaterThan(50);
   if (isMobile) await expect(menu).not.toHaveAttribute("open", "");
   await page.evaluate(() => window.scrollBy(0, 400));
