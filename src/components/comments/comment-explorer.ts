@@ -25,23 +25,73 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     let index = 0;
     let target = 0;
     let slide: gsap.core.Tween | undefined;
+    let touching = false;
+    let scrolling = false;
+    let settleTimer = 0;
     controls.hidden = cards.length < 2;
     track.dataset.enhanced = "true";
     function render() {
       if (
         track.clientWidth &&
         !track.hasAttribute("data-dragging") &&
-        !track.hasAttribute("data-sliding")
+        !track.hasAttribute("data-sliding") &&
+        !touching &&
+        !scrolling
       )
         track.style.height = `${cards[index].offsetHeight}px`;
       status.textContent = `${index + 1} / ${cards.length}`;
       previous.disabled = index === 0;
       next.disabled = index === cards.length - 1;
-      cards.forEach((card, i) => {
-        card.inert = i !== index;
-      });
+      if (!touching && !scrolling) {
+        cards.forEach((card, i) => {
+          card.inert = i !== index;
+        });
+      }
+    }
+    function settle() {
+      if (
+        touching ||
+        track.hasAttribute("data-dragging") ||
+        track.hasAttribute("data-sliding")
+      )
+        return;
+      clearTimeout(settleTimer);
+      scrolling = false;
+      target = index;
+      const offset = cards[index].offsetLeft - cards[0].offsetLeft;
+      if (Math.abs(track.scrollLeft - offset) > 1) {
+        move(index);
+        return;
+      }
+      render();
+    }
+    function scheduleSettle() {
+      clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(settle, 180);
+    }
+    track.addEventListener(
+      "touchstart",
+      () => {
+        touching = true;
+        clearTimeout(settleTimer);
+        slide?.kill();
+        delete track.dataset.sliding;
+      },
+      { passive: true, signal: controller.signal },
+    );
+    for (const type of ["touchend", "touchcancel"]) {
+      track.addEventListener(
+        type,
+        () => {
+          touching = false;
+          scheduleSettle();
+        },
+        { passive: true, signal: controller.signal },
+      );
     }
     function move(value: number, instant = false) {
+      clearTimeout(settleTimer);
+      scrolling = false;
       target = Math.max(0, Math.min(cards.length - 1, value));
       const offset = cards[target].offsetLeft - cards[0].offsetLeft;
       slide?.kill();
@@ -83,6 +133,7 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
       "scroll",
       () => {
         if (!track.clientWidth) return;
+        scrolling = true;
         const step =
           cards.length > 1
             ? cards[1].offsetLeft - cards[0].offsetLeft
@@ -92,20 +143,11 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
           Math.min(cards.length - 1, Math.round(track.scrollLeft / step)),
         );
         render();
+        scheduleSettle();
       },
       { signal: controller.signal, passive: true },
     );
-    track.addEventListener(
-      "scrollend",
-      () => {
-        if (
-          !track.hasAttribute("data-dragging") &&
-          !track.hasAttribute("data-sliding")
-        )
-          target = index;
-      },
-      { signal: controller.signal },
-    );
+    track.addEventListener("scrollend", settle, { signal: controller.signal });
     let width = 0;
     const resize = new ResizeObserver(() => {
       if (!track.clientWidth) return;
@@ -205,6 +247,7 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
       resize.disconnect();
       endDrag();
       slide?.kill();
+      clearTimeout(settleTimer);
       delete track.dataset.sliding;
       track.style.removeProperty("height");
       delete track.dataset.enhanced;

@@ -86,6 +86,7 @@ test("índice conclui fade de saída e pode reverter durante a transição", asy
   const nav = page.locator("[data-timeline-index]");
   const event = page.locator("[data-timeline-event]").nth(2);
   await event.scrollIntoViewIfNeeded();
+  await expect(nav).toBeVisible();
   await expect(nav).toHaveCSS("opacity", "1");
   await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
   await expect
@@ -93,6 +94,7 @@ test("índice conclui fade de saída e pode reverter durante a transição", asy
     .toBe(true);
   await expect(nav).toBeHidden();
   await event.scrollIntoViewIfNeeded();
+  await expect(nav).toBeVisible();
   await expect(nav).toHaveCSS("opacity", "1");
   await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
   await event.scrollIntoViewIfNeeded();

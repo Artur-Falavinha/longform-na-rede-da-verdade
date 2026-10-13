@@ -89,9 +89,28 @@ test("vídeo usa controles customizados para reprodução, busca e tela cheia", 
     return b.bottom <= a.bottom + 1 && b.top >= a.top;
   });
   expect(bounds).toBe(true);
+  const fullscreenAvailable = await video.evaluate((el: HTMLVideoElement) =>
+    Boolean(
+      document.fullscreenEnabled ||
+      (el as HTMLVideoElement & { webkitSupportsFullscreen?: boolean })
+        .webkitSupportsFullscreen,
+    ),
+  );
+  test.skip(
+    !fullscreenAvailable,
+    "O perfil de iPhone neste runtime não implementa apresentação nativa em tela cheia.",
+  );
   await player.locator("media-fullscreen-button").click();
   await expect
-    .poll(() => page.evaluate(() => !!document.fullscreenElement))
+    .poll(() =>
+      video.evaluate((el: HTMLVideoElement) =>
+        Boolean(
+          document.fullscreenElement ||
+          (el as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean })
+            .webkitDisplayingFullscreen,
+        ),
+      ),
+    )
     .toBe(true);
   await page.keyboard.press("Escape");
 });
@@ -99,8 +118,12 @@ test("vídeo usa controles customizados para reprodução, busca e tela cheia", 
 test("deslize por toque sobre o card encaixa e permanece estável", async ({
   page,
   isMobile,
+  browserName,
 }) => {
-  test.skip(!isMobile, "Gesto de toque validado no projeto mobile.");
+  test.skip(
+    !isMobile || browserName !== "chromium",
+    "Injeção de gesto por CDP disponível somente no Chromium mobile.",
+  );
   await page.goto("/#comentarios");
   const track = page.locator("#comments-journalism");
   await track.scrollIntoViewIfNeeded();
@@ -138,4 +161,50 @@ test("deslize por toque sobre o card encaixa e permanece estável", async ({
     )
     .toBeLessThan(1);
   await session.detach();
+});
+
+test("encaixe incompleto espera o fim do toque e recupera o card sem scrollend", async ({
+  page,
+}) => {
+  await page.goto("/#comentarios");
+  const track = page.locator("#comments-journalism");
+  await track.scrollIntoViewIfNeeded();
+  const initialHeight = await track.evaluate((el) => el.clientHeight);
+  await track.evaluate((el) => {
+    el.style.scrollSnapType = "none";
+    el.addEventListener(
+      "scrollend",
+      (event) => event.stopImmediatePropagation(),
+      true,
+    );
+    el.dispatchEvent(new Event("touchstart"));
+    const step =
+      (el.children[1] as HTMLElement).offsetLeft -
+      (el.children[0] as HTMLElement).offsetLeft;
+    el.scrollLeft = step * 0.65;
+  });
+  await page.waitForTimeout(300);
+  expect(await track.evaluate((el) => el.clientHeight)).toBe(initialHeight);
+  await track.evaluate((el) => el.dispatchEvent(new Event("touchend")));
+  await expect
+    .poll(() =>
+      track.evaluate((el) =>
+        Math.abs(
+          el.scrollLeft -
+            (el.children[1] as HTMLElement).offsetLeft +
+            (el.children[0] as HTMLElement).offsetLeft,
+        ),
+      ),
+    )
+    .toBeLessThanOrEqual(1);
+  await expect(track.locator(".comment").nth(1)).not.toHaveAttribute(
+    "inert",
+    "",
+  );
+  await page
+    .locator('[data-comment-group="journalism"] [data-slide-next]')
+    .click();
+  await expect(
+    page.locator('[data-comment-group="journalism"] [data-slide-status]'),
+  ).toHaveText("3 / 3");
 });

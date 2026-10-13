@@ -159,6 +159,9 @@ const { entries } = Astro.props;
     width: 20px;
   }
   @media (max-width: 1199px) {
+    .timeline-index li {
+      overflow: hidden;
+    }
     .index-toggle {
       display: flex;
       justify-content: space-between;
@@ -172,18 +175,16 @@ const { entries } = Astro.props;
       pointer-events: auto;
     }
     .timeline-index {
-      inset: auto auto calc(1rem + var(--compact-space, 0px)) 0.75rem;
+      inset: auto auto
+        calc(
+          1rem + env(safe-area-inset-bottom, 0px) + var(--compact-space, 0px)
+        )
+        0.75rem;
       transform: none;
       width: min(17rem, calc(100vw - 1.5rem));
       max-height: 45vh;
       background: var(--bg);
       border: 1px solid var(--surface);
-    }
-    .timeline-index li:has(a:not([aria-current])) {
-      display: none;
-    }
-    .timeline-index[data-expanded] li:has(a:not([aria-current])) {
-      display: block;
     }
     .timeline-index a {
       min-height: 44px;

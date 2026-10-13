@@ -165,13 +165,13 @@ test("interromper Flip e trocar podcast preserva foco, destino e áudio único",
 test("duração pendente e inversões rápidas preservam controles e posição", async ({
   page,
 }) => {
-  let releaseMetadata!: () => void;
-  const metadataGate = new Promise<void>((resolve) => {
-    releaseMetadata = resolve;
-  });
-  await page.route("**/checking-future-test.m4a", async (route) => {
-    await metadataGate;
-    await route.continue();
+  await page.route("**/", async (route) => {
+    const response = await route.fetch();
+    const body = (await response.text()).replace(
+      'src="/media/checking-future-test.m4a"',
+      'data-held-src="/media/checking-future-test.m4a"',
+    );
+    await route.fulfill({ response, body });
   });
   await page.goto("/", { waitUntil: "domcontentloaded" });
   const root = page.locator('[data-podcast="checking-future"]');
@@ -179,7 +179,10 @@ test("duração pendente e inversões rápidas preservam controles e posição",
   const progress = root.locator("[data-podcast-progress]");
   await expect(progress).toBeDisabled();
   await expect(root.locator("[data-duration]")).toHaveText("--:--");
-  releaseMetadata();
+  await audio.evaluate((element: HTMLAudioElement) => {
+    element.src = element.dataset.heldSrc!;
+    element.load();
+  });
   await root.locator("[data-podcast-play]").click();
   await expect(progress).toBeEnabled();
   await progress.focus();

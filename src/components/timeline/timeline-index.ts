@@ -15,11 +15,64 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
   const controller = new AbortController();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const toggle = nav.querySelector<HTMLButtonElement>("[data-index-toggle]")!;
+  const compact = matchMedia("(max-width: 1199px)");
+  const rows = links.map((link) => link.parentElement!);
+  const rowAnimations = new Map<HTMLElement, ReturnType<typeof animate>>();
+  const rowStates = new Map<HTMLElement, boolean>();
+  let iconAnimation: ReturnType<typeof animate> | undefined;
+  function renderRows() {
+    if (nav.hidden) return;
+    if (!compact.matches) {
+      if (!rowAnimations.size) return;
+      rows.forEach((row) => {
+        rowAnimations.get(row)?.stop();
+        row.style.removeProperty("height");
+        row.style.removeProperty("opacity");
+        row.inert = false;
+      });
+      rowStates.clear();
+      rowAnimations.clear();
+      return;
+    }
+    rows.forEach((row, index) => {
+      const visible =
+        nav.hasAttribute("data-expanded") ||
+        links[index].hasAttribute("aria-current");
+      if (rowStates.get(row) === visible) return;
+      rowStates.set(row, visible);
+      rowAnimations.get(row)?.stop();
+      row.inert = !visible;
+      rowAnimations.set(
+        row,
+        animate(
+          row,
+          {
+            height: visible ? links[index].getBoundingClientRect().height : 0,
+            opacity: visible ? 1 : 0,
+          },
+          {
+            duration: reduced.matches || nav.hidden ? 0 : 0.3,
+            ease: [0.22, 1, 0.36, 1],
+          },
+        ),
+      );
+    });
+  }
+  function setExpanded(expanded: boolean) {
+    nav.toggleAttribute("data-expanded", expanded);
+    toggle.setAttribute("aria-expanded", String(expanded));
+    iconAnimation?.stop();
+    iconAnimation = animate(
+      toggle.querySelector("span")!,
+      { rotate: expanded ? 45 : 0 },
+      { duration: reduced.matches ? 0 : 0.25 },
+    );
+    renderRows();
+  }
   toggle.addEventListener(
     "click",
     () => {
-      const expanded = nav.toggleAttribute("data-expanded");
-      toggle.setAttribute("aria-expanded", String(expanded));
+      setExpanded(!nav.hasAttribute("data-expanded"));
     },
     { signal: controller.signal },
   );
@@ -63,6 +116,7 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
       if (index === active) link.setAttribute("aria-current", "step");
       else link.removeAttribute("aria-current");
     });
+    renderRows();
   }
   function schedule() {
     if (!frame) frame = requestAnimationFrame(update);
@@ -95,8 +149,7 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
               behavior: "instant",
             }),
           onComplete: () => {
-            nav.removeAttribute("data-expanded");
-            toggle.setAttribute("aria-expanded", "false");
+            setExpanded(false);
             target.setAttribute("tabindex", "-1");
             target.focus({ preventScroll: true });
             navigation = undefined;
@@ -110,7 +163,44 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
     passive: true,
     signal: controller.signal,
   });
-  window.addEventListener("resize", schedule, { signal: controller.signal });
+  window.addEventListener(
+    "resize",
+    () => {
+      rowStates.clear();
+      schedule();
+    },
+    { signal: controller.signal },
+  );
+  compact.addEventListener(
+    "change",
+    () => {
+      rowStates.clear();
+      renderRows();
+    },
+    { signal: controller.signal },
+  );
+  reduced.addEventListener(
+    "change",
+    () => {
+      rowStates.clear();
+      setExpanded(nav.hasAttribute("data-expanded"));
+    },
+    { signal: controller.signal },
+  );
+  window.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        event.key === "Escape" &&
+        compact.matches &&
+        nav.hasAttribute("data-expanded")
+      ) {
+        setExpanded(false);
+        toggle.focus();
+      }
+    },
+    { signal: controller.signal },
+  );
   for (const event of ["wheel", "touchstart", "keydown"]) {
     window.addEventListener(event, cancel, {
       passive: true,
@@ -122,6 +212,8 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
     cancel();
     visibilityVersion++;
     entrance?.stop();
+    iconAnimation?.stop();
+    rowAnimations.forEach((animation) => animation.stop());
     cancelAnimationFrame(frame);
     controller.abort();
     nav.hidden = true;
