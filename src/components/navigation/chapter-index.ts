@@ -18,6 +18,14 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   const hover = matchMedia("(hover: hover) and (min-width: 900px)");
   let previewAnimations: ReturnType<typeof animate>[] = [];
   function updatePreview() {
+    if (!hover.matches) {
+      previewAnimations.forEach((animation) => animation.cancel());
+      previewAnimations = [];
+      preview.style.width = "0px";
+      current.style.opacity = "0";
+      current.style.transform = "translateX(8px)";
+      return;
+    }
     const visible =
       hover.matches &&
       (summary.matches(":hover") || summary.matches(":focus-visible"));
@@ -260,7 +268,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     stopScroll();
     ++version;
     panelAnimation?.stop();
-    previewAnimations.forEach((animation) => animation.stop());
+    previewAnimations.forEach((animation) => animation.cancel());
     nav.inert = false;
     iconAnimation?.stop();
     icon.style.removeProperty("transform");
