@@ -73,8 +73,12 @@ export function initTimeline(root: HTMLElement): Dispose {
         .timeline({
           scrollTrigger: {
             trigger: event,
-            start: "top 84%",
-            end: "top 55%",
+            start: () => start + offsets[index] - window.innerHeight * 0.6,
+            end: () =>
+              start +
+              offsets[index] -
+              window.innerHeight * 0.6 +
+              Math.min(180, window.innerHeight * 0.22),
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -89,10 +93,10 @@ export function initTimeline(root: HTMLElement): Dispose {
           parts,
           {
             opacity: 0,
-            x: () => direction() * 48,
+            x: () => direction() * 24,
             y: 24,
             clipPath: "inset(0 0 100% 0)",
-            filter: "blur(3px)",
+            filter: "blur(1px)",
           },
           {
             opacity: 1,
@@ -104,7 +108,7 @@ export function initTimeline(root: HTMLElement): Dispose {
             duration: 0.5,
             ease: "power2.out",
           },
-          0.1,
+          0.25,
         );
     });
     tween = gsap.fromTo(

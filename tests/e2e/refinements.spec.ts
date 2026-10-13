@@ -87,7 +87,7 @@ test("construção dos acontecimentos reverte e movimento reduzido restaura leit
   await expect
     .poll(() => heading.evaluate((el) => Number(getComputedStyle(el).opacity)))
     .toBeLessThan(0.3);
-  await position(0.5);
+  await position(0.3);
   await expect(heading).toHaveCSS("opacity", "1");
   await position(0.9);
   await expect
