@@ -134,7 +134,9 @@ const { entries } = Astro.props;
   }
   .timeline-index:hover a,
   .timeline-index:focus-within a,
-  .timeline-index a[aria-current] {
+  .timeline-index a[aria-current],
+  .timeline-index a:hover,
+  .timeline-index a:focus-visible {
     width: 100%;
   }
   .timeline-index:hover,
@@ -147,7 +149,9 @@ const { entries } = Astro.props;
     opacity: 1;
     transform: none;
   }
-  .timeline-index a[aria-current] {
+  .timeline-index a[aria-current],
+  .timeline-index a:hover,
+  .timeline-index a:focus-visible {
     color: var(--accent);
   }
   .timeline-index a[aria-current] .index-bar {
