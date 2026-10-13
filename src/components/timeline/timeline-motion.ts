@@ -111,6 +111,8 @@ export function initTimeline(root: HTMLElement): Dispose {
           },
         })
         .fromTo(connector, { scaleX: 0 }, { scaleX: 1, ease: "none" });
+      gsap.set(title, { opacity: 0, y: 36 });
+      gsap.set(body, { opacity: 0, y: 20 });
       const content = gsap
         .timeline({
           scrollTrigger: {
@@ -118,15 +120,10 @@ export function initTimeline(root: HTMLElement): Dispose {
             start: () => anchor() - innerHeight * 0.86,
             end: () => anchor() - innerHeight * 0.34,
             scrub: 0.6,
-            invalidateOnRefresh: true,
           },
         })
-        .fromTo(
+        .to(
           title,
-          {
-            opacity: 0,
-            y: 36,
-          },
           {
             opacity: 1,
             y: 0,
@@ -135,9 +132,8 @@ export function initTimeline(root: HTMLElement): Dispose {
           },
           0,
         )
-        .fromTo(
+        .to(
           body,
-          { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,

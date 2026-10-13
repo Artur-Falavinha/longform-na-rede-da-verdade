@@ -92,3 +92,37 @@ test("preenchimento acompanha scroll, para e reverte sem fila temporal", async (
   for (const item of await geometry(page))
     expect(item.marker).toBeLessThanOrEqual(2);
 });
+
+test("textos entram em sequência sem aparecer antes nem reiniciar", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("[data-podcast-play]").first()).toBeVisible();
+  const samples = await page
+    .locator("[data-timeline-event]")
+    .last()
+    .evaluate(async (event) => {
+      const anchor = scrollY + event.getBoundingClientRect().top;
+      const texts = [...event.querySelectorAll(".event-copy > *")];
+      const rows: number[][] = [];
+      for (
+        let offset = innerHeight + 60;
+        offset >= innerHeight * 0.2;
+        offset -= 35
+      ) {
+        scrollTo({ top: anchor - offset, behavior: "instant" });
+        await new Promise((resolve) => setTimeout(resolve, 130));
+        rows.push(texts.map((text) => Number(getComputedStyle(text).opacity)));
+      }
+      return rows;
+    });
+  expect(samples[0].every((opacity) => opacity === 0)).toBe(true);
+  for (let i = 1; i < samples.length; i++) {
+    samples[i].forEach((opacity, index) =>
+      expect(opacity).toBeGreaterThanOrEqual(samples[i - 1][index] - 0.015),
+    );
+    for (let j = 1; j < samples[i].length; j++)
+      expect(samples[i][j]).toBeLessThanOrEqual(samples[i][j - 1] + 0.015);
+  }
+  expect(samples.at(-1)!.every((opacity) => opacity > 0.98)).toBe(true);
+});

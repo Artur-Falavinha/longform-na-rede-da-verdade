@@ -79,7 +79,9 @@ test("índice conclui fade de saída e pode reverter durante a transição", asy
   await event.scrollIntoViewIfNeeded();
   await expect(nav).toHaveCSS("opacity", "1");
   await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
-  await expect.poll(() => nav.evaluate((e) => e.inert)).toBe(true);
+  await expect
+    .poll(() => nav.evaluate((e) => (e as HTMLElement).inert))
+    .toBe(true);
   await expect(nav).toBeHidden();
   await event.scrollIntoViewIfNeeded();
   await expect(nav).toHaveCSS("opacity", "1");
