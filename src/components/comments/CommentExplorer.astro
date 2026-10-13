@@ -77,7 +77,7 @@ const anchors: Record<string, string> = {
                 </figcaption>
                 <details class="comment-analysis">
                   <summary>
-                    Ler análise <Plus size={18} aria-hidden="true" />
+                    <span>Ler análise</span> <Plus size={18} aria-hidden="true" />
                   </summary>
                   <div class="analysis-body">
                     <ul>
@@ -332,6 +332,10 @@ const anchors: Record<string, string> = {
     transform: translateY(-0.5px);
   }
   .comment-analysis summary :global(svg) {
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    top: -1px;
     transition: transform 300ms;
   }
   .comment-analysis[open] summary :global(svg) {
@@ -346,6 +350,7 @@ const anchors: Record<string, string> = {
   }
   .comment-analysis summary {
     width: fit-content;
+    line-height: 1;
     min-height: 44px;
     display: flex;
     align-items: center;
