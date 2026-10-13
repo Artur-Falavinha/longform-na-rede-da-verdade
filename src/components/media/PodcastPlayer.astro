@@ -19,12 +19,8 @@ const { asset } = Astro.props;
 
 <article class="podcast" id={`podcast-${asset.id}`} data-podcast={asset.id}>
   <header>
-    <span class="eyebrow">Podcast · material de teste</span>
+    <span class="eyebrow">Podcast</span>
     <h3>{asset.title}</h3>
-    <p class="small muted">
-      Áudio de teste com tom suave. Entrevista e transcrição finais pendentes (
-      {asset.pendingId}).
-    </p>
   </header>
   <div class="player-origin" data-player-origin>
     <div class="player-surface" data-player-surface>
@@ -366,6 +362,17 @@ const { asset } = Astro.props;
   .play-control {
     border: 0;
     transition: transform 200ms;
+  }
+  .play-control > span:not([hidden]) {
+    display: grid;
+    place-items: center;
+    line-height: 0;
+  }
+  .play-control :global(svg) {
+    display: block;
+  }
+  .play-control [data-play-icon] {
+    transform: translateX(1px);
   }
   .play-control:hover {
     transform: scale(1.08);

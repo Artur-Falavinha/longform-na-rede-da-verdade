@@ -1,5 +1,5 @@
 ---
-import { ArrowDown } from "@lucide/astro";
+import { Volume2, VolumeOff } from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
 interface Props {
   asset: MediaAsset;
@@ -24,7 +24,7 @@ const ambient = asset.purpose === "ambient";
       data-mobile-poster={asset.mobilePoster}
       poster={asset.poster}
       src={asset.src}
-      controls
+      controls={!ambient}
       preload="none"
       muted={ambient}
       loop={ambient}
@@ -40,22 +40,16 @@ const ambient = asset.purpose === "ambient";
     </video>
     {ambient && (
       <div class="ambient-controls" hidden>
-        <button
-          type="button"
-          class="button"
-          data-ambient-play
-          aria-label={`Reproduzir ${asset.title.toLowerCase()}`}
-        >
-          Reproduzir vídeo
-        </button>
         {asset.hasAudio && (
           <button
             type="button"
             class="button"
             data-ambient-sound
+            aria-label="Ativar som"
             aria-pressed="false"
           >
-            Ativar som
+            <VolumeOff class="sound-off" size={32} aria-hidden="true" />
+            <Volume2 class="sound-on" size={32} aria-hidden="true" />
           </button>
         )}
       </div>
@@ -67,11 +61,6 @@ const ambient = asset.purpose === "ambient";
       </button>
       <a href={asset.src}>Abrir arquivo diretamente</a>
     </div>
-    {opening && (
-      <a class="cover-next" href="#contexto">
-        Começar a leitura <ArrowDown size={18} aria-hidden="true" />
-      </a>
-    )}
   </div>
 </figure>
 <style>
@@ -114,16 +103,24 @@ const ambient = asset.purpose === "ambient";
     display: flex;
     gap: 0.75rem;
   }
-  .cover-next {
-    position: absolute;
-    bottom: calc(2.5rem + var(--compact-space));
-    left: var(--gutter);
-    font-size: 0.875rem;
-    text-decoration: none;
+  [data-ambient-sound] {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
   }
-  .cover-next span {
-    margin-left: 2rem;
-    color: var(--accent);
+  [data-ambient-sound] :global(svg) {
+    grid-area: 1 / 1;
+    display: block;
+  }
+  [data-ambient-sound][aria-pressed="false"] :global(.sound-on),
+  [data-ambient-sound][aria-pressed="true"] :global(.sound-off) {
+    visibility: hidden;
   }
   .media-error {
     position: absolute;
@@ -145,12 +142,6 @@ const ambient = asset.purpose === "ambient";
     }
     .ambient-controls button {
       font-size: 0.75rem;
-    }
-    .cover-next {
-      bottom: calc(2rem + var(--compact-space));
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
     }
     .ambient .video-shell {
       height: 70svh;

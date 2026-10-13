@@ -7,9 +7,6 @@ export function initAmbientVideo(
 ): Dispose {
   const video = root.querySelector<HTMLVideoElement>("video")!;
   const id = video.dataset.mediaId as MediaId;
-  const playButton = root.querySelector<HTMLButtonElement>(
-    "[data-ambient-play]",
-  )!;
   const soundButton = root.querySelector<HTMLButtonElement>(
     "[data-ambient-sound]",
   );
@@ -20,14 +17,12 @@ export function initAmbientVideo(
   video.muted = true;
   root.querySelector<HTMLElement>(".ambient-controls")!.hidden = false;
   function updateControls() {
-    playButton.textContent = video.paused ? "Reproduzir vídeo" : "Pausar vídeo";
-    playButton.setAttribute(
-      "aria-label",
-      `${video.paused ? "Reproduzir" : "Pausar"} ${video.getAttribute("aria-label")}`,
-    );
     soundButton?.setAttribute("aria-pressed", String(!video.muted));
-    if (soundButton)
-      soundButton.textContent = video.muted ? "Ativar som" : "Desativar som";
+    soundButton?.setAttribute(
+      "aria-label",
+      video.muted ? "Ativar som" : "Desativar som",
+    );
+    video.controls = false;
   }
   function attempt() {
     if (
@@ -48,18 +43,11 @@ export function initAmbientVideo(
     { threshold: 0.15 },
   );
   observer.observe(root);
-  playButton.addEventListener(
-    "click",
-    () => {
-      if (video.paused) void coordinator.play(id, "user").then(updateControls);
-      else coordinator.pause(id, "manual");
-    },
-    { signal: controller.signal },
-  );
   soundButton?.addEventListener(
     "click",
     () => {
       video.muted = !video.muted;
+      if (video.paused) void coordinator.play(id, "user").then(updateControls);
       updateControls();
     },
     { signal: controller.signal },
