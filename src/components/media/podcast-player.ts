@@ -85,9 +85,12 @@ export function initPodcastPlayer(
       "aria-label",
       `${playing ? "Pausar" : "Reproduzir"} ${root.querySelector("h3")!.textContent}`,
     );
-    root.querySelector<HTMLElement>("[data-play-icon]")!.textContent = playing
-      ? "Ⅱ"
-      : "▶";
+    root.querySelector<HTMLElement>("[data-play-icon]")!.hidden = playing;
+    root.querySelector<HTMLElement>("[data-pause-icon]")!.hidden = !playing;
+    progress.style.setProperty(
+      "--progress",
+      `${Number.isFinite(audio.duration) && audio.duration > 0 ? (audio.currentTime / audio.duration) * 100 : 0}%`,
+    );
     time.textContent = formatTime(audio.currentTime);
     const known = Number.isFinite(audio.duration) && audio.duration > 0;
     duration.textContent = formatTime(audio.duration);
@@ -150,6 +153,67 @@ export function initPodcastPlayer(
     },
     { signal: controller.signal },
   );
+  root
+    .querySelectorAll<HTMLButtonElement>("[data-podcast-skip]")
+    .forEach((button) => {
+      button.addEventListener(
+        "click",
+        () => {
+          if (!Number.isFinite(audio.duration)) return;
+          audio.currentTime = Math.min(
+            audio.duration,
+            Math.max(0, audio.currentTime + Number(button.dataset.podcastSkip)),
+          );
+          updatePlayback();
+        },
+        { signal: controller.signal },
+      );
+    });
+  const speed = root.querySelector<HTMLButtonElement>("[data-podcast-speed]")!;
+  const speeds = [1, 1.25, 1.5, 2];
+  speed.addEventListener(
+    "click",
+    () => {
+      audio.playbackRate =
+        speeds[(speeds.indexOf(audio.playbackRate) + 1) % speeds.length];
+      speed.textContent = `${audio.playbackRate.toLocaleString("pt-BR")}×`;
+      speed.setAttribute(
+        "aria-label",
+        `Velocidade de reprodução: ${audio.playbackRate.toLocaleString("pt-BR")} vezes`,
+      );
+    },
+    { signal: controller.signal },
+  );
+  const mute = root.querySelector<HTMLButtonElement>("[data-podcast-mute]")!;
+  function updateVolume() {
+    const silent = audio.muted || audio.volume === 0;
+    mute.setAttribute("aria-pressed", String(silent));
+    mute.setAttribute(
+      "aria-label",
+      silent ? "Ativar áudio" : "Silenciar áudio",
+    );
+    root
+      .querySelector<SVGElement>("[data-volume-icon]")!
+      .toggleAttribute("hidden", silent);
+    root
+      .querySelector<SVGElement>("[data-muted-icon]")!
+      .toggleAttribute("hidden", !silent);
+    volume.value = String(audio.muted ? 0 : audio.volume);
+    volume.style.setProperty("--progress", `${Number(volume.value) * 100}%`);
+  }
+  mute.addEventListener(
+    "click",
+    () => {
+      const silent = audio.muted || audio.volume === 0;
+      if (audio.volume === 0) audio.volume = 1;
+      audio.muted = !silent;
+    },
+    { signal: controller.signal },
+  );
+  audio.addEventListener("volumechange", updateVolume, {
+    signal: controller.signal,
+  });
+  updateVolume();
   audio.addEventListener("play", activate, { signal: controller.signal });
   for (const event of [
     "pause",

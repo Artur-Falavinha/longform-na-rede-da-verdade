@@ -1,4 +1,15 @@
 ---
+import {
+  Play,
+  Pause,
+  ArrowUpRight,
+  RotateCcw,
+  RotateCw,
+  Volume2,
+  VolumeX,
+  Headphones,
+  ChevronDown,
+} from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
 interface Props {
   asset: MediaAsset;
@@ -17,6 +28,15 @@ const { asset } = Astro.props;
   </header>
   <div class="player-origin" data-player-origin>
     <div class="player-surface" data-player-surface>
+      <div class="podcast-art" aria-hidden="true">
+        <Headphones size={38} />
+        <span>
+          NA REDE
+          <br />
+          DA VERDADE
+        </span>
+        <i></i>
+      </div>
       <div class="player-label">
         <span class="eyebrow">Na rede da verdade · podcast</span>
         <span class="player-title">{asset.title}</span>
@@ -30,16 +50,47 @@ const { asset } = Astro.props;
         aria-label={`${asset.title} — áudio de teste`}
       ></audio>
       <div class="player-controls" hidden>
-        <button
-          type="button"
-          data-podcast-play
-          class="play-control"
-          aria-label={`Reproduzir ${asset.title}`}
-        >
-          <span data-play-icon aria-hidden="true">
-            ▶
-          </span>
-        </button>
+        <div class="transport-controls">
+          <button
+            type="button"
+            class="transport-button"
+            data-podcast-skip="-15"
+            aria-label="Voltar 15 segundos"
+          >
+            <RotateCcw size={22} />
+            <span>15</span>
+          </button>
+          <button
+            type="button"
+            data-podcast-play
+            class="play-control"
+            aria-label={`Reproduzir ${asset.title}`}
+          >
+            <span data-play-icon aria-hidden="true">
+              <Play size={24} fill="currentColor" />
+            </span>
+            <span data-pause-icon aria-hidden="true" hidden>
+              <Pause size={24} fill="currentColor" />
+            </span>
+          </button>
+          <button
+            type="button"
+            class="transport-button"
+            data-podcast-skip="15"
+            aria-label="Avançar 15 segundos"
+          >
+            <RotateCw size={22} />
+            <span>15</span>
+          </button>
+          <button
+            type="button"
+            class="speed-control"
+            data-podcast-speed
+            aria-label="Velocidade de reprodução: 1 vez"
+          >
+            1×
+          </button>
+        </div>
         <div class="progress-control">
           <label class="sr-only" for={`progress-${asset.id}`}>
             Posição do áudio {asset.title}
@@ -60,7 +111,23 @@ const { asset } = Astro.props;
           </div>
         </div>
         <div class="volume-control">
-          <label for={`volume-${asset.id}`}>Volume</label>
+          <button
+            type="button"
+            data-podcast-mute
+            class="mute-control"
+            aria-label="Silenciar áudio"
+            aria-pressed="false"
+          >
+            <span data-volume-icon>
+              <Volume2 size={20} aria-hidden="true" />
+            </span>
+            <span data-muted-icon hidden>
+              <VolumeX size={20} aria-hidden="true" />
+            </span>
+          </button>
+          <label class="sr-only" for={`volume-${asset.id}`}>
+            Volume
+          </label>
           <input
             id={`volume-${asset.id}`}
             data-podcast-volume
@@ -77,7 +144,7 @@ const { asset } = Astro.props;
           data-podcast-return
           aria-label={`Voltar à origem de ${asset.title}`}
         >
-          Voltar <span aria-hidden="true">↑</span>
+          Voltar <ArrowUpRight size={18} aria-hidden="true" />
         </a>
       </div>
       <p class="podcast-error small" role="status" hidden>
@@ -88,7 +155,8 @@ const { asset } = Astro.props;
   </div>
   <details class="transcript">
     <summary>
-      Transcrição <span class="muted">· pendente</span>
+      <ChevronDown size={18} aria-hidden="true" /> Transcrição{" "}
+      <span class="muted">· pendente</span>
     </summary>
     <p>{asset.transcript}</p>
   </details>
@@ -113,6 +181,10 @@ const { asset } = Astro.props;
     border-top: 2px solid var(--red);
     padding: 1.4rem 1.75rem;
     position: relative;
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    column-gap: 1.75rem;
+    border-radius: 0.75rem;
   }
   .player-label {
     margin-bottom: 1rem;
@@ -130,9 +202,10 @@ const { asset } = Astro.props;
     height: 3rem;
   }
   .player-controls {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 6rem;
     align-items: center;
-    gap: 1.2rem;
+    gap: 0.6rem 1.5rem;
   }
   .play-control {
     background: var(--red);
@@ -145,6 +218,8 @@ const { asset } = Astro.props;
     place-items: center;
   }
   .progress-control {
+    grid-column: 1 / -1;
+    grid-row: 2;
     flex: 1;
     min-width: 3rem;
   }
@@ -163,7 +238,10 @@ const { asset } = Astro.props;
     color: var(--muted);
   }
   .volume-control {
-    width: 5rem;
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     flex-shrink: 0;
   }
   .volume-control label {
@@ -184,6 +262,10 @@ const { asset } = Astro.props;
     font-size: 1rem;
   }
   .transcript summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
     padding-block: 1rem;
     font-size: 0.875rem;
     min-height: 44px;
@@ -193,6 +275,7 @@ const { asset } = Astro.props;
     max-width: 65ch;
   }
   .player-surface.is-compact {
+    grid-template-columns: minmax(0, 1fr);
     position: fixed;
     bottom: 1.5rem;
     right: 1.5rem;
@@ -201,7 +284,13 @@ const { asset } = Astro.props;
     z-index: 30;
     box-shadow: 0 0.5rem 2rem #0a0a0c;
   }
+  .is-compact .podcast-art {
+    display: none;
+  }
   .is-compact .origin-link {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: end;
     display: flex;
   }
   .is-compact .player-title {
@@ -219,6 +308,130 @@ const { asset } = Astro.props;
   .is-compact .player-controls {
     gap: 0.75rem;
   }
+  .podcast-art {
+    grid-row: 1 / 3;
+    align-self: stretch;
+    min-height: 9rem;
+    background: var(--red);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+    border-radius: 0.3rem;
+  }
+  .podcast-art span {
+    font: 400 1rem/1.1 var(--serif);
+    margin-top: 1rem;
+  }
+  .podcast-art i {
+    display: block;
+    height: 2px;
+    background: var(--text);
+    margin-top: 1rem;
+  }
+  .transport-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .transport-button,
+  .speed-control,
+  .mute-control {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .transport-button {
+    flex-direction: column;
+    gap: 0;
+  }
+  .transport-button span {
+    font-size: 0.6rem;
+    line-height: 1;
+  }
+  .speed-control {
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .mute-control {
+    min-width: 28px;
+  }
+  .play-control {
+    border: 0;
+    transition: transform 200ms;
+  }
+  .play-control:hover {
+    transform: scale(1.08);
+  }
+  .transport-button:hover,
+  .speed-control:hover,
+  .mute-control:hover {
+    color: var(--accent);
+  }
+  input[type="range"] {
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    --progress: 0%;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(
+      to right,
+      var(--accent) var(--progress),
+      #5b5b60 var(--progress)
+    );
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text);
+    margin-top: -4px;
+  }
+  input[type="range"]::-moz-range-track {
+    height: 4px;
+    border-radius: 4px;
+    background: #5b5b60;
+  }
+  input[type="range"]::-moz-range-progress {
+    height: 4px;
+    background: var(--accent);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--text);
+  }
+  .is-compact .volume-control {
+    width: 6rem;
+  }
+  .is-compact .transport-controls {
+    gap: 0.4rem;
+  }
+  .is-compact .player-controls {
+    grid-template-columns: minmax(0, 1fr) 6rem;
+  }
+  .player-surface > audio,
+  .podcast-error {
+    grid-column: 1 / -1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .play-control {
+      transition: none;
+    }
+  }
   .podcast-error {
     color: var(--accent);
     margin-top: 0.75rem;
@@ -226,14 +439,27 @@ const { asset } = Astro.props;
   @media (max-width: 899px) {
     .player-surface {
       padding: 1rem;
+      grid-template-columns: 4rem minmax(0, 1fr);
+      column-gap: 1rem;
+    }
+    .podcast-art {
+      grid-row: 1;
+      min-height: 4rem;
+      padding: 0.75rem;
+    }
+    .podcast-art span,
+    .podcast-art i {
+      display: none;
     }
     .player-controls {
+      grid-column: 1 / -1;
       gap: 0.75rem;
     }
     .volume-control {
-      width: 3.5rem;
+      width: 6rem;
     }
     .player-surface.is-compact {
+      grid-template-columns: minmax(0, 1fr);
       inset: auto 0 0;
       width: 100%;
       padding: 0.8rem 1rem calc(0.8rem + env(safe-area-inset-bottom));
@@ -250,11 +476,17 @@ const { asset } = Astro.props;
       height: 2.75rem;
       min-width: 2.75rem;
     }
+    .is-compact .podcast-art {
+      display: none;
+    }
     .is-compact .origin-link {
+      grid-column: 2;
+      grid-row: 3;
+      justify-self: end;
       font-size: 0.75rem;
     }
     .is-compact .volume-control {
-      width: 2.75rem;
+      width: 6rem;
     }
   }
 </style>
