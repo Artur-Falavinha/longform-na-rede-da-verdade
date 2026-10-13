@@ -195,10 +195,14 @@ const Shell = ambient ? "div" : "media-controller";
   }
   .ambient-controls {
     position: absolute;
-    right: var(--gutter);
-    bottom: calc(2rem + var(--compact-space));
+    left: var(--gutter);
+    bottom: calc(2rem + var(--compact-space) + env(safe-area-inset-bottom));
     display: flex;
     gap: 0.75rem;
+  }
+  .opening .ambient-controls {
+    top: calc(1rem + env(safe-area-inset-top));
+    bottom: auto;
   }
   [data-ambient-sound] {
     display: grid;
@@ -210,6 +214,7 @@ const Shell = ambient ? "div" : "media-controller";
     border-radius: 0;
     background: transparent;
     color: var(--text);
+    filter: drop-shadow(0 1px 4px #000b);
   }
   [data-ambient-sound] :global(svg) {
     grid-area: 1 / 1;
@@ -232,10 +237,7 @@ const Shell = ambient ? "div" : "media-controller";
   }
   @media (max-width: 599px) {
     .ambient-controls {
-      right: 1rem;
-      bottom: calc(5.5rem + var(--compact-space));
       left: 1rem;
-      justify-content: center;
     }
     .ambient-controls button {
       font-size: 0.75rem;

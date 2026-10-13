@@ -2644,20 +2644,20 @@
       "localPath": "/media/opening-test.mp4",
       "width": 1280,
       "height": 720,
-      "duration": 20,
-      "bytes": 281233,
+      "duration": 15,
+      "bytes": 1576937,
       "status": "placeholder",
-      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
       "id": "closing",
       "localPath": "/media/closing-test.mp4",
       "width": 1280,
       "height": 720,
-      "duration": 20,
-      "bytes": 282957,
+      "duration": 23,
+      "bytes": 5551404,
       "status": "placeholder",
-      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
       "id": "felca",
@@ -2712,9 +2712,11 @@
     {
       "id": "images-closing.webp",
       "localPath": "/images/closing.webp",
-      "bytes": 15392,
+      "bytes": 121406,
       "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "width": 1280,
+      "height": 720
     },
     {
       "id": "images-comparison.webp",
@@ -2733,9 +2735,11 @@
     {
       "id": "images-opening.webp",
       "localPath": "/images/opening.webp",
-      "bytes": 14912,
+      "bytes": 27156,
       "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "width": 1280,
+      "height": 720
     },
     {
       "id": "fonts-librebodoni-OFL.txt",
@@ -2768,40 +2772,40 @@
     {
       "id": "opening-mobile-test",
       "localPath": "/media/opening-mobile-test.mp4",
-      "width": 720,
-      "height": 1280,
-      "bytes": 249468,
+      "width": 540,
+      "height": 960,
+      "bytes": 1143233,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais.",
-      "duration": 20
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "duration": 15
     },
     {
       "id": "opening-mobile",
       "localPath": "/images/opening-mobile.webp",
-      "width": 720,
-      "height": 1280,
-      "bytes": 14364,
+      "width": 540,
+      "height": 960,
+      "bytes": 13954,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
       "id": "closing-mobile-test",
       "localPath": "/media/closing-mobile-test.mp4",
-      "width": 720,
-      "height": 1280,
-      "bytes": 250722,
+      "width": 540,
+      "height": 960,
+      "bytes": 2814840,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais.",
-      "duration": 20
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "duration": 23
     },
     {
       "id": "closing-mobile",
       "localPath": "/images/closing-mobile.webp",
-      "width": 720,
-      "height": 1280,
-      "bytes": 15646,
+      "width": 540,
+      "height": 960,
+      "bytes": 73200,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     }
   ],
   "pending": [
