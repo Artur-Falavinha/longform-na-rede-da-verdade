@@ -1,3 +1,4 @@
+import { branchCompletionPosition } from "./timeline-progress";
 import { animate } from "motion/mini";
 import { gsap } from "../../scripts/gsap";
 import type { Dispose } from "../../data/types";
@@ -8,6 +9,9 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
   const events = [
     ...root.querySelectorAll<HTMLElement>("[data-timeline-event]"),
   ];
+  const markers = events.map((event) =>
+    event.querySelector<HTMLElement>("[data-timeline-marker]")!,
+  );
   const controller = new AbortController();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const toggle = nav.querySelector<HTMLButtonElement>("[data-index-toggle]")!;
@@ -48,9 +52,9 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
         if (version === visibilityVersion) nav.hidden = hidden;
       });
     }
-    const active = events.reduce(
-      (selected, event, index) =>
-        event.getBoundingClientRect().top <= innerHeight * 0.45
+    const active = markers.reduce(
+      (selected, marker, index) =>
+        window.scrollY >= branchCompletionPosition(marker) - 0.5
           ? index
           : selected,
       0,
@@ -78,9 +82,7 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
         history.pushState(null, "", link.hash);
         const target = events[index];
         const destination = () =>
-          window.scrollY +
-          target.getBoundingClientRect().top -
-          innerHeight * 0.25;
+          Math.ceil(branchCompletionPosition(markers[index]));
         const from = window.scrollY;
         const progress = { value: 0 };
         navigation = gsap.to(progress, {

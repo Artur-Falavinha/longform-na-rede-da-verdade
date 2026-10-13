@@ -1,4 +1,8 @@
 import { gsap, ScrollTrigger } from "../../scripts/gsap";
+import {
+  TIMELINE_READING_LINE,
+  TIMELINE_BRANCH_DISTANCE,
+} from "./timeline-progress";
 import { initTimelineIndex } from "./timeline-index";
 import type { Dispose } from "../../data/types";
 
@@ -104,8 +108,11 @@ export function initTimeline(root: HTMLElement): Dispose {
         .timeline({
           scrollTrigger: {
             trigger: event,
-            start: () => anchor() - innerHeight * 0.6,
-            end: () => anchor() - innerHeight * 0.6 + 64,
+            start: () => anchor() - innerHeight * TIMELINE_READING_LINE,
+            end: () =>
+              anchor() -
+              innerHeight * TIMELINE_READING_LINE +
+              TIMELINE_BRANCH_DISTANCE,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -153,8 +160,9 @@ export function initTimeline(root: HTMLElement): Dispose {
         ease: "none",
         scrollTrigger: {
           trigger: root,
-          start: () => start - window.innerHeight * 0.6,
-          end: () => start + distance - window.innerHeight * 0.6,
+          start: () => start - window.innerHeight * TIMELINE_READING_LINE,
+          end: () =>
+            start + distance - window.innerHeight * TIMELINE_READING_LINE,
           scrub: true,
           invalidateOnRefresh: true,
           onRefreshInit: measure,

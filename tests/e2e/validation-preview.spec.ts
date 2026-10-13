@@ -27,7 +27,15 @@ test("índice acompanha a leitura e navega até o acontecimento", async ({
       events
         .nth(4)
         .evaluate((el) =>
-          Math.abs(el.getBoundingClientRect().top - innerHeight * 0.25),
+          Math.abs(
+            el.querySelector("[data-timeline-marker]")!.getBoundingClientRect()
+              .top +
+              el
+                .querySelector("[data-timeline-marker]")!
+                .getBoundingClientRect().height /
+                2 -
+              (innerHeight * 0.6 - 64),
+          ),
         ),
     )
     .toBeLessThan(3);
@@ -92,4 +100,33 @@ test("índice conclui fade de saída e pode reverter durante a transição", asy
   expect(
     await event.locator("h3").evaluate((e) => getComputedStyle(e).clipPath),
   ).toBe("none");
+});
+
+test("índice muda somente ao concluir a ramificação e reverte junto ao scroll", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const events = page.locator("[data-timeline-event]");
+  const nav = page.locator("[data-timeline-index]");
+  const target = events.nth(2);
+  const end = await target.locator("[data-timeline-marker]").evaluate((el) => {
+    const rect = el.getBoundingClientRect();
+    return scrollY + rect.top + rect.height / 2 - innerHeight * 0.6 + 64;
+  });
+  for (const delta of [-8, 8, -8]) {
+    await page.evaluate(
+      (y) => scrollTo({ top: y, behavior: "instant" }),
+      end + delta,
+    );
+    const selected = events.nth(delta > 0 ? 2 : 1);
+    await expect(nav.locator('[aria-current="step"]')).toHaveAttribute(
+      "href",
+      `#${await selected.getAttribute("id")}`,
+    );
+    const scale = await target
+      .locator(".timeline-connector > span")
+      .evaluate((el) => new DOMMatrix(getComputedStyle(el).transform).a);
+    if (delta > 0) expect(scale).toBeCloseTo(1, 2);
+    else expect(scale).toBeLessThan(0.99);
+  }
 });
