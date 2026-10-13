@@ -167,3 +167,67 @@ test("carrosséis mantêm cards iguais, navegação e posição após trocar eix
     ),
   ).toBe(true);
 });
+
+test("arraste do card reduz altura e preserva análise clicável", async ({
+  page,
+}) => {
+  await page.goto("/#comentarios");
+  const panel = page.getByRole("tabpanel");
+  const track = panel.locator(".comment-track");
+  await track.scrollIntoViewIfNeeded();
+  const height = await track.evaluate((el) => el.clientHeight);
+  const box = (await track.boundingBox())!;
+  await page.mouse.move(box.x + box.width - 25, box.y + 60);
+  await page.mouse.down();
+  await page.mouse.move(box.x + 25, box.y + 60, { steps: 20 });
+  await page.mouse.up();
+  await expect(panel.locator("[data-slide-status]")).toHaveText("2 / 3");
+  await expect
+    .poll(() => track.evaluate((el) => el.clientHeight))
+    .toBeLessThan(height - 20);
+  const active = panel.locator(".comment:not([inert])");
+  await active.locator("summary").click();
+  await expect(active.locator("details")).toHaveAttribute("open", "");
+});
+
+test("menu fecha fora e capas exibem apenas controle sonoro", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/");
+  await expect(page.locator(".cover-next, [data-ambient-play]")).toHaveCount(0);
+  await expect(page.locator("[data-ambient-sound]")).toHaveCount(2);
+  const menu = page.locator(".chapter-menu");
+  const label = menu.locator(".current-chapter");
+  if (isMobile) await expect(label).toBeHidden();
+  else {
+    await expect(label).toHaveCSS("opacity", "0");
+    await menu.locator("summary").hover();
+    await expect(label).toHaveCSS("opacity", "1");
+  }
+  await menu.locator("summary").click();
+  await expect(menu).toHaveAttribute("open", "");
+  await page.locator(".wordmark").click();
+  await expect(menu).not.toHaveAttribute("open", "");
+  await expect(page.locator(".podcast header").first()).not.toContainText(
+    "material de teste",
+  );
+  await expect(page.locator(".podcast header p")).toHaveCount(0);
+});
+
+
+test("capas mantêm somente volume mesmo pausadas e fora da tela", async ({ page }) => {
+  await page.goto("/");
+  for (const id of ["opening", "closing"]) {
+    const video = page.locator(`[data-media-id="${id}"]`);
+    await video.evaluate((el: HTMLVideoElement) => el.pause());
+    await expect.poll(() => video.evaluate((el: HTMLVideoElement) => el.controls)).toBe(false);
+    const root = video.locator("xpath=../..");
+    await expect(root.locator(".lucide-volume-off")).toHaveCount(1);
+    await expect(root.locator(".lucide-volume2, .lucide-volume-2")).toHaveCount(1);
+  }
+  await page.locator("#cartilha").scrollIntoViewIfNeeded();
+  for (const video of await page.locator("[data-ambient] video").all()) {
+    await expect.poll(() => video.evaluate((el: HTMLVideoElement) => el.controls)).toBe(false);
+  }
+});
