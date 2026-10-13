@@ -179,7 +179,7 @@ const Shell = ambient ? "div" : "media-controller";
     aspect-ratio: auto;
   }
   .ambient video {
-    object-fit: contain;
+    object-fit: cover;
     background: var(--bg);
   }
   .cover {
@@ -214,7 +214,6 @@ const Shell = ambient ? "div" : "media-controller";
     border-radius: 0;
     background: transparent;
     color: var(--text);
-    filter: drop-shadow(0 1px 4px #000b);
   }
   [data-ambient-sound] :global(svg) {
     grid-area: 1 / 1;
