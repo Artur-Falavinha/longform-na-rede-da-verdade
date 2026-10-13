@@ -3,10 +3,7 @@ import { Plus } from "@lucide/astro";
 import { chapters } from "../../data/chapters";
 ---
 
-<header class="site-header" data-chapter-index>
-  <a class="wordmark" href="#contexto">
-    Na rede da verdade
-  </a>
+<div class="chapter-navigation" data-chapter-index>
   <details class="chapter-menu">
     <summary>
       <span>Capítulos</span>
@@ -28,24 +25,13 @@ import { chapters } from "../../data/chapters";
       </ol>
     </nav>
   </details>
-</header>
+</div>
 <style>
-  .site-header {
+  .chapter-navigation {
     position: fixed;
-    inset: 0 0 auto;
-    min-height: var(--header-height);
+    top: 1rem;
+    right: var(--gutter);
     z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: var(--gutter);
-    background: var(--bg);
-    border-bottom: 1px solid var(--surface);
-    gap: 1rem;
-  }
-  .wordmark {
-    font: 400 1.05rem/1.3 var(--serif);
-    text-decoration: none;
   }
   .chapter-menu {
     position: relative;
@@ -56,7 +42,10 @@ import { chapters } from "../../data/chapters";
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    min-height: var(--header-height);
+    min-height: 48px;
+    padding: 0.6rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--surface);
     font: 400 0.8125rem/1.4 var(--sans);
   }
   summary::-webkit-details-marker {
@@ -95,7 +84,7 @@ import { chapters } from "../../data/chapters";
     transform-origin: top right;
     position: absolute;
     right: 0;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     width: 21rem;
     max-width: calc(100vw - 2 * var(--gutter));
     max-height: calc(90svh - var(--header-height) - var(--compact-space));

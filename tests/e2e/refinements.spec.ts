@@ -207,7 +207,7 @@ test("menu fecha fora e capas exibem apenas controle sonoro", async ({
   }
   await menu.locator("summary").click();
   await expect(menu).toHaveAttribute("open", "");
-  await page.locator(".wordmark").click();
+  await page.mouse.click(12, 120);
   await expect(menu).not.toHaveAttribute("open", "");
   await expect(page.locator(".podcast header").first()).not.toContainText(
     "material de teste",
