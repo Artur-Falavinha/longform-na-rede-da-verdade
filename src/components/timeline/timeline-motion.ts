@@ -172,21 +172,28 @@ export function initTimeline(root: HTMLElement): Dispose {
       },
     );
   }
+  let refreshPosition = { top: window.scrollY, left: window.scrollX };
+  function captureScrollPosition() {
+    refreshPosition = { top: window.scrollY, left: window.scrollX };
+  }
+  function restoreScrollPosition() {
+    if (
+      window.scrollY !== refreshPosition.top ||
+      window.scrollX !== refreshPosition.left
+    ) {
+      window.scrollTo({ ...refreshPosition, behavior: "instant" });
+      ScrollTrigger.update();
+    }
+  }
+  ScrollTrigger.addEventListener("refreshInit", captureScrollPosition);
+  ScrollTrigger.addEventListener("refresh", restoreScrollPosition);
   function scheduleRefresh() {
     clearTimeout(refreshTimer);
     refreshTimer = setTimeout(() => {
       if (!disposed) {
         measure();
         if (reduced.matches) return;
-        const position = { top: window.scrollY, left: window.scrollX };
         ScrollTrigger.refresh();
-        if (
-          window.scrollY !== position.top ||
-          window.scrollX !== position.left
-        ) {
-          window.scrollTo({ ...position, behavior: "instant" });
-          ScrollTrigger.update();
-        }
       }
     }, 80);
   }
@@ -205,6 +212,8 @@ export function initTimeline(root: HTMLElement): Dispose {
   configure();
   return () => {
     disposed = true;
+    ScrollTrigger.removeEventListener("refreshInit", captureScrollPosition);
+    ScrollTrigger.removeEventListener("refresh", restoreScrollPosition);
     disposeIndex();
     cursorObserver.disconnect();
     cursor?.dispose();
