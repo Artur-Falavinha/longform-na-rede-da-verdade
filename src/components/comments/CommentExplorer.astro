@@ -1,25 +1,43 @@
 ---
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowUpRight,
+  ArrowDownRight,
+  Heart,
+  MessageCircle,
+  Plus,
+} from "@lucide/astro";
 import { comments } from "../../data/comments";
+const anchors: Record<string, string> = {
+  journalism: "jornalismo",
+  "moral-authority": "autoridade-moral",
+  opposition: "oposicao",
+  adultization: "adultizacao",
+};
 ---
 
 <div class="comment-explorer" data-comment-explorer>
   <div class="group-selectors" data-tab-list aria-label="Categorias de análise">
     {comments.map((group, i) => (
       <a
-        href={`#group-${group.id}`}
+        href={`#eixo-${anchors[group.id]}`}
         data-group-select={group.id}
         id={`tab-${group.id}`}
       >
         <span class="eyebrow">Eixo {String(i + 1).padStart(2, "0")}</span>
         <span>{group.title}</span>
-        <span aria-hidden="true">↗</span>
+        <span class="tab-icon" aria-hidden="true">
+          <ArrowUpRight class="icon-idle" size={22} />
+          <ArrowDownRight class="icon-active" size={22} />
+        </span>
       </a>
     ))}
   </div>
   {comments.map((group) => (
     <section
       class="comment-panel"
-      id={`group-${group.id}`}
+      id={`eixo-${anchors[group.id]}`}
       data-comment-group={group.id}
       aria-labelledby={`heading-${group.id}`}
     >
@@ -31,26 +49,35 @@ import { comments } from "../../data/comments";
         <div class="comment-context">
           <p>{group.analysis[0]}</p>
         </div>
-        <div class="comment-list">
-          {group.comments.map((comment, i) => (
-            <figure
-              class:list={["comment", { featured: i === 0 }]}
-              data-comment-id={comment.id}
-            >
-              {comment.status === "placeholder" && (
-                <span class="eyebrow">
-                  Comentário pendente · espaço reservado
+        <div class="comment-list" data-comment-carousel>
+          <div
+            class="comment-track"
+            id={`comments-${group.id}`}
+            tabindex="0"
+            role="region"
+            aria-label={`Comentários: ${group.title}`}
+          >
+            {group.comments.map((comment) => (
+              <figure class="comment featured" data-comment-id={comment.id}>
+                <span class="quote-mark" aria-hidden="true">
+                  “
                 </span>
-              )}
-              <blockquote>{comment.text}</blockquote>
-              <figcaption>
-                <span>{comment.likesLiteral}</span>
-                <span>{comment.repliesLiteral}</span>
-              </figcaption>
-              {i === 0 && (
+                <blockquote>
+                  {comment.text.replace(/^["“]([\s\S]*)["”]$/, "$1")}
+                </blockquote>
+                <figcaption>
+                  <span>
+                    <Heart size={15} aria-hidden="true" />
+                    {comment.likesLiteral.replace(/^♥\s*/, "")}
+                  </span>
+                  <span>
+                    <MessageCircle size={15} aria-hidden="true" />
+                    {comment.repliesLiteral.replace(/^↩\s*/, "")}
+                  </span>
+                </figcaption>
                 <details class="comment-analysis">
                   <summary>
-                    Ler análise <span aria-hidden="true">+</span>
+                    <span>Ler análise</span> <Plus size={18} aria-hidden="true" />
                   </summary>
                   <div class="analysis-body">
                     <ul>
@@ -63,17 +90,38 @@ import { comments } from "../../data/comments";
                     ))}
                   </div>
                 </details>
-              )}
-            </figure>
-          ))}
+              </figure>
+            ))}
+          </div>
+          <div class="comment-controls" hidden>
+            <span data-slide-status aria-live="polite" aria-atomic="true">
+              1 / {group.comments.length}
+            </span>
+            <div class="comment-arrows">
+              <button
+                type="button"
+                data-slide-prev
+                aria-label="Comentário anterior"
+                aria-controls={`comments-${group.id}`}
+              >
+                <ArrowLeft size={22} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                data-slide-next
+                aria-label="Próximo comentário"
+                aria-controls={`comments-${group.id}`}
+              >
+                <ArrowRight size={22} aria-hidden="true" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       {group.expertQuotes.map((quote) => (
         <figure class="expert-quote reading">
           <blockquote class="editorial-quote">{quote.text}</blockquote>
-          <figcaption class="quote-attribution">
-            {quote.attribution} · conteúdo inicial das autoras
-          </figcaption>
+          <figcaption class="quote-attribution">{quote.attribution}</figcaption>
         </figure>
       ))}
     </section>
@@ -92,7 +140,8 @@ import { comments } from "../../data/comments";
     align-items: flex-start;
     gap: 0.75rem;
     position: relative;
-    padding: 1.25rem 1.5rem 1.25rem 0;
+    padding: 1.25rem 2.5rem 1.25rem 1rem;
+    isolation: isolate;
     min-height: 8rem;
     text-decoration: none;
     font-size: 0.875rem;
@@ -104,10 +153,50 @@ import { comments } from "../../data/comments";
     bottom: 1rem;
     color: var(--muted);
   }
+  .group-selectors a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--surface);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group-selectors a[aria-selected="true"]::before {
+    transform: scaleY(1);
+  }
+  .group-selectors a:hover::before {
+    transform: scaleY(1);
+  }
+  .tab-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .tab-icon :global(svg) {
+    position: absolute;
+    inset: 0;
+    display: block;
+    transform-origin: center;
+    transition:
+      transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 300ms;
+  }
+  .tab-icon :global(.icon-active) {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  [aria-selected="true"] .tab-icon :global(.icon-idle) {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  [aria-selected="true"] .tab-icon :global(.icon-active) {
+    opacity: 1;
+    transform: none;
+    color: var(--accent);
+  }
   .group-selectors a[aria-selected="true"] {
     box-shadow: inset 0 -3px var(--red);
-    background: var(--surface);
-    padding-left: 1rem;
   }
   .group-selectors .eyebrow {
     font-size: 0.75rem;
@@ -133,13 +222,70 @@ import { comments } from "../../data/comments";
   .comment-list {
     min-width: 0;
   }
+  .comment-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    overscroll-behavior-x: contain;
+  }
+  .comment-track[data-enhanced] {
+    scrollbar-width: none;
+    overflow-y: hidden;
+    cursor: grab;
+    transition: height 250ms ease;
+  }
+  .comment-track[data-sliding],
+  .comment-track[data-dragging] {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
+  .comment-track:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
   .comment {
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--muted);
+    flex: 0 0 100%;
+    min-width: 0;
+    margin: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
-  .comment:first-child {
-    padding-top: 0;
+  .comment-controls:not([hidden]) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
   }
+  .comment-arrows {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .comment-arrows button {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--muted);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .comment-arrows button:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  .comment-arrows button:not(:disabled):hover {
+    background: var(--red);
+  }
+
   .comment blockquote {
     font-size: clamp(1.2rem, 1.6vw, 1.5rem);
     line-height: 1.55;
@@ -153,18 +299,58 @@ import { comments } from "../../data/comments";
     margin-top: 1.2rem;
   }
   .comment.featured {
-    padding: clamp(1.5rem, 3vw, 3rem);
+    --quote-inset: clamp(3rem, 5vw, 4.375rem);
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
+    padding-bottom: 0.875rem;
     border: 0;
     background: var(--red);
+    position: relative;
+  }
+  .featured .quote-mark {
+    position: absolute;
+    left: clamp(1.5rem, 2.5vw, 2.25rem);
+    top: clamp(1rem, 1.5vw, 1.375rem);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 5.5rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .featured blockquote,
+  .featured figcaption,
+  .featured > .eyebrow {
+    margin-left: var(--quote-inset);
+  }
+  .comment figcaption > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    line-height: 1;
+  }
+  .comment figcaption :global(svg) {
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(-0.5px);
+  }
+  .comment-analysis summary :global(svg) {
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+    top: -1px;
+    transition: transform 300ms;
+  }
+  .comment-analysis[open] summary :global(svg) {
+    transform: rotate(45deg);
   }
   .featured figcaption {
     color: var(--text);
   }
   .comment-analysis {
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
     font-size: 0.875rem;
   }
   .comment-analysis summary {
+    width: fit-content;
+    line-height: 1;
     min-height: 44px;
     display: flex;
     align-items: center;
@@ -186,6 +372,14 @@ import { comments } from "../../data/comments";
   }
   .comment-panel {
     scroll-margin-top: calc(var(--header-height) + 1rem);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .comment-track,
+    .group-selectors a::before,
+    .tab-icon :global(svg),
+    .comment-analysis summary :global(svg) {
+      transition: none;
+    }
   }
   @media (max-width: 899px) {
     .group-selectors {

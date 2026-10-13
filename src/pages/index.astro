@@ -1,4 +1,5 @@
 ---
+import { outletLogos } from "../data/outlet-logos";
 import Longform from "../layouts/Longform.astro";
 import ChapterIndex from "../components/navigation/ChapterIndex.astro";
 import Section from "../components/editorial/Section.astro";
@@ -65,17 +66,19 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
           </blockquote>
           <figcaption class="quote-attribution">Das autoras</figcaption>
         </figure>
-        <div class="context-intro reading prose" data-reveal>
+        <div
+          id="denuncia"
+          tabindex="-1"
+          class="context-intro reading prose"
+          data-reveal
+        >
           <span class="eyebrow">01 / A denúncia</span>
           <h2>
             O vídeo "Adultização" <br />e sua repercussão massiva
           </h2>
           <Context />
         </div>
-        <div
-          class="reach-numbers"
-          aria-label="Alcance registrado no conteúdo inicial"
-        >
+        <div class="reach-numbers" aria-label="Alcance registrado">
           <p>
             <strong>52,7 mi</strong>
             <span>visualizações do vídeo "Adultização"</span>
@@ -152,7 +155,16 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <span class="eyebrow">Veículos que cobriram o caso</span>
         <ul>
           {research.outlets.map((outlet) => (
-            <li>{outlet}</li>
+            <li>
+              <img
+                src={outletLogos[outlet].src}
+                alt={outlet}
+                width="150"
+                height="48"
+                loading="lazy"
+              />
+              <span class="sr-only">{outlet}</span>
+            </li>
           ))}
         </ul>
       </aside>
@@ -218,7 +230,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         </figcaption>
       </figure>
       <div class="podcast-intro">
-        <span class="eyebrow">Duas conversas · N03</span>
+        <span class="eyebrow">Duas conversas</span>
         <h3>
           O futuro do jornalismo
           <br />e quem informa na rede
@@ -254,8 +266,9 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
               Psicóloga — entrevistada para o TCC 1
             </span>
           </p>
-          <p class="pending">
-            [CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR] — B06
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
       </div>
@@ -417,16 +430,57 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     margin-top: 3rem;
   }
   .outlets ul {
-    display: flex;
-    gap: 1rem 2rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 2rem;
     list-style: none;
     padding: 0;
-    font-family: var(--serif);
-    font-size: 1.65rem;
+    margin-top: 1.5rem;
   }
   .outlets li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 4.5rem;
     margin: 0;
+  }
+  .outlets img {
+    width: var(--logo-width);
+    max-width: 100%;
+    height: 3rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+  .outlets img[alt="Brasil Paralelo"] {
+    --logo-width: 9.5rem;
+  }
+  .outlets img[alt="CBN"] {
+    --logo-width: 6.5rem;
+  }
+  .outlets img[alt="CNN Brasil"] {
+    --logo-width: 4.5rem;
+  }
+  .outlets img[alt="G1"] {
+    --logo-width: 2.75rem;
+  }
+  .outlets img[alt="Tilt/UOL"] {
+    --logo-width: 4rem;
+  }
+  .outlets img[alt="Veja"] {
+    --logo-width: 6rem;
+  }
+  @media (max-width: 899px) {
+    .outlets ul {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 599px) {
+    .outlets ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
   .interviews {
     margin-top: 4rem;

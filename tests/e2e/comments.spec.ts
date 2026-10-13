@@ -21,8 +21,9 @@ test("seleção tem roving focus, painel conjunto e métrica apenas por ação",
   const panel = page.getByRole("tabpanel");
   await expect(panel.locator("[data-comment-id]")).toHaveCount(3);
   await expect(panel).toContainText("Ana Vaz");
-  await panel.locator("summary").click();
-  await expect(panel.locator(".analysis-body")).toBeVisible();
+  const activeCard = panel.locator(".comment:not([inert])");
+  await activeCard.locator("summary").click();
+  await expect(activeCard.locator(".analysis-body")).toBeVisible();
   await page.keyboard.press("End");
   expect(await page.evaluate(() => (window as any).commentEvents[0])).toEqual({
     groupId: "moral-authority",

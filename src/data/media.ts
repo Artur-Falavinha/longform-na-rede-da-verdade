@@ -55,7 +55,7 @@ export const media = [
     title: "Checagem e futuro do jornalismo",
     src: "/media/checking-future-test.m4a",
     transcript:
-      "Transcrição pendente — N03. Texto demonstrativo: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Este trecho serve apenas para testar abertura, leitura e mudança de altura da página. Não corresponde a uma entrevista.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     status: "placeholder",
     hasAudio: true,
     pendingId: "N03",
@@ -67,7 +67,7 @@ export const media = [
     title: "Jornalista e influenciador",
     src: "/media/journalist-influencer-test.m4a",
     transcript:
-      "Transcrição pendente — N03. Texto demonstrativo: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Este trecho serve apenas para testar abertura, leitura e mudança de altura da página. Não corresponde a uma entrevista.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     status: "placeholder",
     hasAudio: true,
     pendingId: "N03",

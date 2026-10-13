@@ -377,7 +377,8 @@
       "sourceText": "\"Sentei meus filhos pre-adolescentes no sofá e coloquei o vídeo na tv, para assistir e entendermos os desafios da adultizacão e redes sociais sexualizadas juntos. Obrigada pela prestação de serviço.\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas da citação substituídas por aspa tipográfica decorativa no card destacado; texto original preservado nos dados."
     },
     {
       "id": "source-041",
@@ -386,7 +387,8 @@
       "sourceText": "\"Sou mãe de uma modelo de passarela que começou a carreira com 14 anos… Este video me fez refletir muito sobre lugares de adultizacao fora da internet…\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa; citação original preservada nos dados."
     },
     {
       "id": "source-042",
@@ -630,7 +632,8 @@
       "sourceText": "♥ ~1,3 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-068",
@@ -639,7 +642,8 @@
       "sourceText": "↩ [DADO]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-069",
@@ -648,7 +652,8 @@
       "sourceText": "♥ 277 curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-070",
@@ -750,7 +755,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-081",
@@ -963,7 +969,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — forma de apuração identificada no conteúdo de Felca]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-104",
@@ -981,7 +988,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — uso de fontes identificado no conteúdo de Felca]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-106",
@@ -999,7 +1007,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — processo de verificação identificado ou ausente]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-108",
@@ -1017,7 +1026,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — contraditório identificado ou ausente no conteúdo]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-110",
@@ -1267,7 +1277,8 @@
       "sourceText": "[ENTREVISTA COM JORNALISTA — A INSERIR]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-137",
@@ -1276,7 +1287,8 @@
       "sourceText": "[Trecho da entrevista sobre investigação, apuração e verificação no jornalismo contemporâneo]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-138",
@@ -1439,7 +1451,8 @@
       "sourceText": "[ENTREVISTADO A INSERIR]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-156",
@@ -1594,7 +1607,8 @@
       "sourceText": "[DADO DA PESQUISA A INSERIR]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-173",
@@ -1694,7 +1708,8 @@
       "sourceText": "[DESDOBRAMENTO A APURAR — novos acontecimentos relacionados ao caso ou ao debate público sobre adultização e proteção infantil digital]",
       "targetChapter": "cronologia",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-184",
@@ -1886,7 +1901,8 @@
       "sourceText": "[DATA A CONFIRMAR]",
       "targetChapter": "cronologia",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-205",
@@ -1904,7 +1920,8 @@
       "sourceText": "[EVENTO A INSERIR]",
       "targetChapter": "cronologia",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-207",
@@ -2170,7 +2187,8 @@
       "sourceText": "\"Protejam o Felca!!! Esse é o tipo de denúncia que a mídia tradicional evita por gerar problemas. Espalhem a notícia e cuidem das crianças!\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-236",
@@ -2179,7 +2197,8 @@
       "sourceText": "♥ ~184 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-237",
@@ -2188,7 +2207,8 @@
       "sourceText": "↩ 394 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-238",
@@ -2197,7 +2217,8 @@
       "sourceText": "\"Queremos esse vídeo em jornais, Netflix, é um documentário\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-239",
@@ -2206,7 +2227,8 @@
       "sourceText": "♥ ~31 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-240",
@@ -2215,7 +2237,8 @@
       "sourceText": "↩ 88 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-241",
@@ -2224,7 +2247,8 @@
       "sourceText": "\"O Fantástico deveria levar esse vídeo pra rede nacional. Parabéns pela coragem. Isso é um caso urgente de utilidade pública!!\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-242",
@@ -2233,7 +2257,8 @@
       "sourceText": "♥ ~10 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-243",
@@ -2242,7 +2267,8 @@
       "sourceText": "↩ 61 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-244",
@@ -2314,7 +2340,8 @@
       "sourceText": "\"Senhor, proteja esse cara, tem meu respeito!\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-252",
@@ -2323,7 +2350,8 @@
       "sourceText": "♥ ~201 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-253",
@@ -2332,7 +2360,8 @@
       "sourceText": "↩ 495 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-254",
@@ -2341,7 +2370,8 @@
       "sourceText": "\"O Felca está sendo na internet o que falta no Congresso.\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-255",
@@ -2350,7 +2380,8 @@
       "sourceText": "♥ ~5,5 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-256",
@@ -2359,7 +2390,8 @@
       "sourceText": "↩ 47 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-257",
@@ -2368,7 +2400,8 @@
       "sourceText": "[COMENTÁRIO DA PESQUISA A INSERIR — eixo autoridade moral]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-258",
@@ -2377,7 +2410,8 @@
       "sourceText": "♥ [DADO]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-259",
@@ -2449,7 +2483,8 @@
       "sourceText": "\"nao nego a importancia do video. mas o quanto que isso encheu o ego desse cara não tá escrito. e escancara ainda mais o lado podre dele o que ele acha da lei felca.\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-267",
@@ -2458,7 +2493,8 @@
       "sourceText": "\"maior cavalo de troia da internet\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-268",
@@ -2467,7 +2503,8 @@
       "sourceText": "[COMENTÁRIO DA PESQUISA A INSERIR — discurso crítico]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-269",
@@ -2539,7 +2576,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA adultização refere-se ao processo pelo qual crianças e adolescentes são expostos a comportamentos, papéis ou imagens associadas ao mundo adulto de forma prematura.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-277",
@@ -2548,7 +2586,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nNo ambiente digital, pode aparecer em conteúdos que sexualizam crianças e adolescentes, em dinâmicas que os colocam em situações de performance adulta para entretenimento ou monetização.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-278",
@@ -2557,7 +2596,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA exposição prematura pode gerar impactos negativos no desenvolvimento emocional e psicológico, afetando autoestima, senso de identidade e relações interpessoais.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-279",
@@ -2566,7 +2606,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nConteúdos que estimulam crianças e adolescentes a performar para câmeras em situações inadequadas; monetização da imagem de menores; comentários de cunho sexual ou assédio.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-280",
@@ -2575,7 +2616,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nMudanças repentinas de comportamento, interesse excessivo em exposição online, linguagem incompatível com a faixa etária, ansiedade relacionada à presença digital.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-281",
@@ -2602,20 +2644,20 @@
       "localPath": "/media/opening-test.mp4",
       "width": 1280,
       "height": 720,
-      "duration": 20,
-      "bytes": 281233,
+      "duration": 15,
+      "bytes": 1576937,
       "status": "placeholder",
-      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
       "id": "closing",
       "localPath": "/media/closing-test.mp4",
       "width": 1280,
       "height": 720,
-      "duration": 20,
-      "bytes": 282957,
+      "duration": 23,
+      "bytes": 5551404,
       "status": "placeholder",
-      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
       "id": "felca",
@@ -2670,9 +2712,11 @@
     {
       "id": "images-closing.webp",
       "localPath": "/images/closing.webp",
-      "bytes": 15392,
+      "bytes": 121406,
       "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "width": 1280,
+      "height": 720
     },
     {
       "id": "images-comparison.webp",
@@ -2691,9 +2735,11 @@
     {
       "id": "images-opening.webp",
       "localPath": "/images/opening.webp",
-      "bytes": 14912,
+      "bytes": 27156,
       "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "width": 1280,
+      "height": 720
     },
     {
       "id": "fonts-librebodoni-OFL.txt",
@@ -2726,40 +2772,40 @@
     {
       "id": "opening-mobile-test",
       "localPath": "/media/opening-mobile-test.mp4",
-      "width": 720,
-      "height": 1280,
-      "bytes": 249468,
+      "width": 540,
+      "height": 960,
+      "bytes": 1143233,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais.",
-      "duration": 20
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "duration": 15
     },
     {
       "id": "opening-mobile",
       "localPath": "/images/opening-mobile.webp",
-      "width": 720,
-      "height": 1280,
-      "bytes": 14364,
+      "width": 540,
+      "height": 960,
+      "bytes": 13954,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
       "id": "closing-mobile-test",
       "localPath": "/media/closing-mobile-test.mp4",
-      "width": 720,
-      "height": 1280,
-      "bytes": 250722,
+      "width": 540,
+      "height": 960,
+      "bytes": 2814840,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais.",
-      "duration": 20
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "duration": 23
     },
     {
       "id": "closing-mobile",
       "localPath": "/images/closing-mobile.webp",
-      "width": 720,
-      "height": 1280,
-      "bytes": 15646,
+      "width": 540,
+      "height": 960,
+      "bytes": 73200,
       "status": "placeholder",
-      "origin": "Teste procedural local em proporção vertical; sem imagens documentais."
+      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     }
   ],
   "pending": [

@@ -67,7 +67,7 @@ export const comments = [
     ],
     topics: ["Não é uma informação inédita;", "Narrativa;", "Mobilização;"],
     pendingDistribution:
-      "[DADOS DA PESQUISA A INSERIR — distribuição quantitativa deste eixo]",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "moral-authority",
@@ -106,11 +106,11 @@ export const comments = [
       },
       {
         id: "moral-authority-03",
-        text: "[COMENTÁRIO DA PESQUISA A INSERIR — eixo autoridade moral]",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         likes: null,
         replies: null,
-        likesLiteral: "♥ [DADO]",
-        repliesLiteral: "↩ [DADO]",
+        likesLiteral: "♥ Lorem ipsum",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "placeholder",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -140,7 +140,7 @@ export const comments = [
       "Deslegitimação Institucional;",
     ],
     pendingDistribution:
-      "[DADOS DA PESQUISA A INSERIR — distribuição quantitativa deste eixo]",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "opposition",
@@ -153,8 +153,8 @@ export const comments = [
         text: '"nao nego a importancia do video. mas o quanto que isso encheu o ego desse cara não tá escrito. e escancara ainda mais o lado podre dele o que ele acha da lei felca."',
         likes: null,
         replies: null,
-        likesLiteral: "♥ [DADO]",
-        repliesLiteral: "↩ [DADO]",
+        likesLiteral: "♥ Lorem ipsum",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "placeholder",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -168,8 +168,8 @@ export const comments = [
         text: '"maior cavalo de troia da internet"',
         likes: null,
         replies: null,
-        likesLiteral: "♥ [DADO]",
-        repliesLiteral: "↩ [DADO]",
+        likesLiteral: "♥ Lorem ipsum",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "placeholder",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -180,11 +180,11 @@ export const comments = [
       },
       {
         id: "opposition-03",
-        text: "[COMENTÁRIO DA PESQUISA A INSERIR — discurso crítico]",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         likes: null,
         replies: null,
-        likesLiteral: "♥ [DADO]",
-        repliesLiteral: "↩ [DADO]",
+        likesLiteral: "♥ Lorem ipsum",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "placeholder",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -214,7 +214,7 @@ export const comments = [
       "Conflito como Sucesso;",
     ],
     pendingDistribution:
-      "[DADOS DA PESQUISA A INSERIR — distribuição quantitativa deste eixo]",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: "adultization",
@@ -227,7 +227,7 @@ export const comments = [
         likes: null,
         replies: null,
         likesLiteral: "♥ ~1,3 mil curtidas",
-        repliesLiteral: "↩ [DADO]",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "approximate",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -242,7 +242,7 @@ export const comments = [
         likes: 277,
         replies: null,
         likesLiteral: "♥ 277 curtidas",
-        repliesLiteral: "↩ [DADO]",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "exact",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -253,11 +253,11 @@ export const comments = [
       },
       {
         id: "adultization-03",
-        text: "[TERCEIRO COMENTÁRIO SOBRE ADULTIZAÇÃO A INSERIR — N06]",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         likes: null,
         replies: null,
-        likesLiteral: "♥ [DADO]",
-        repliesLiteral: "↩ [DADO]",
+        likesLiteral: "♥ Lorem ipsum",
+        repliesLiteral: "↩ Lorem ipsum",
         likesState: "placeholder",
         status: "placeholder",
       },
@@ -278,6 +278,6 @@ export const comments = [
     ],
     topics: ["Recente;", "Popularização;", "Consolidação;"],
     pendingDistribution:
-      "[DADOS DA PESQUISA A INSERIR — distribuição quantitativa deste eixo]",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ] satisfies CommentGroup[];

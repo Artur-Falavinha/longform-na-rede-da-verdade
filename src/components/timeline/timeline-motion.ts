@@ -1,7 +1,13 @@
 import { gsap, ScrollTrigger } from "../../scripts/gsap";
+import {
+  TIMELINE_READING_LINE,
+  TIMELINE_BRANCH_DISTANCE,
+} from "./timeline-progress";
+import { initTimelineIndex } from "./timeline-index";
 import type { Dispose } from "../../data/types";
 
 export function initTimeline(root: HTMLElement): Dispose {
+  const disposeIndex = initTimelineIndex(root);
   const fill = root.querySelector<HTMLElement>("[data-timeline-fill]")!;
   const rail = root.querySelector<HTMLElement>(".timeline-rail")!;
   const events = [
@@ -17,8 +23,33 @@ export function initTimeline(root: HTMLElement): Dispose {
   let start = 0;
   let refreshTimer: ReturnType<typeof setTimeout>;
   let tween: gsap.core.Tween | undefined;
-  let entryTweens: gsap.core.Tween[] = [];
+  let entryTweens: gsap.core.Timeline[] = [];
   let disposed = false;
+  let progress = 0;
+  let cursor: ReturnType<
+    typeof import("./timeline-cursor").createTimelineCursor
+  >;
+  let cursorLoading = false;
+  const cursorObserver = new IntersectionObserver(
+    async ([entry]) => {
+      if (!entry.isIntersecting || reduced.matches || cursor || cursorLoading)
+        return;
+      cursorLoading = true;
+      try {
+        const { createTimelineCursor } = await import("./timeline-cursor");
+        if (!disposed && !reduced.matches) {
+          cursor = createTimelineCursor(rail);
+          cursor?.update(progress);
+        }
+      } catch {
+        /* A linha em CSS permanece disponível sem WebGL. */
+      } finally {
+        cursorLoading = false;
+      }
+    },
+    { rootMargin: "200px" },
+  );
+  cursorObserver.observe(root);
 
   function measure() {
     if (!markers.length) {
@@ -36,7 +67,9 @@ export function initTimeline(root: HTMLElement): Dispose {
     rail.style.height = `${Math.max(0, distance)}px`;
     rail.style.bottom = "auto";
   }
-  function updateMarkers(progress: number) {
+  function updateMarkers(value: number) {
+    progress = value;
+    cursor?.update(progress);
     events.forEach((event, i) => {
       event.dataset.reached = String(offsets[i] <= progress * distance + 0.5);
     });
@@ -50,33 +83,75 @@ export function initTimeline(root: HTMLElement): Dispose {
       entry.kill();
     });
     entryTweens = [];
-    const copies = events.map((event) =>
-      event.querySelector<HTMLElement>(".event-copy")!,
+    gsap.set(
+      events.flatMap((event) => [
+        ...event.querySelectorAll(
+          ".event-copy > *, .timeline-connector > span",
+        ),
+      ]),
+      { clearProps: "opacity,transform,clipPath,filter" },
     );
-    gsap.set(copies, { clearProps: "opacity,transform" });
     measure();
     if (reduced.matches || markers.length < 2 || distance <= 0) {
+      cursor?.dispose();
+      cursor = undefined;
       gsap.set(fill, { scaleY: 1 });
       updateMarkers(1);
       return;
     }
-    entryTweens = copies.map((copy) =>
-      gsap.fromTo(
-        copy,
-        { opacity: 0.65, x: 6 },
-        {
-          opacity: 1,
-          x: 0,
-          ease: "none",
+    entryTweens = events.flatMap((event, index) => {
+      const connector = event.querySelector(".timeline-connector > span")!;
+      const title = event.querySelector("h3")!;
+      const body = event.querySelectorAll(".event-copy > :not(h3)");
+      const anchor = () => start + offsets[index];
+      const branch = gsap
+        .timeline({
           scrollTrigger: {
-            trigger: copy,
-            start: "top 94%",
-            end: "top 72%",
+            trigger: event,
+            start: () => anchor() - innerHeight * TIMELINE_READING_LINE,
+            end: () =>
+              anchor() -
+              innerHeight * TIMELINE_READING_LINE +
+              TIMELINE_BRANCH_DISTANCE,
             scrub: true,
+            invalidateOnRefresh: true,
           },
-        },
-      ),
-    );
+        })
+        .fromTo(connector, { scaleX: 0 }, { scaleX: 1, ease: "none" });
+      gsap.set(title, { opacity: 0, y: 36 });
+      gsap.set(body, { opacity: 0, y: 20 });
+      const content = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: event,
+            start: () => anchor() - innerHeight * 0.86,
+            end: () => anchor() - innerHeight * 0.34,
+            scrub: 0.6,
+          },
+        })
+        .to(
+          title,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          0,
+        )
+        .to(
+          body,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.08,
+            ease: "power2.out",
+          },
+          0.2,
+        );
+      return [branch, content];
+    });
     tween = gsap.fromTo(
       fill,
       { scaleY: 0 },
@@ -85,8 +160,9 @@ export function initTimeline(root: HTMLElement): Dispose {
         ease: "none",
         scrollTrigger: {
           trigger: root,
-          start: () => start - window.innerHeight * 0.6,
-          end: () => start + distance - window.innerHeight * 0.6,
+          start: () => start - window.innerHeight * TIMELINE_READING_LINE,
+          end: () =>
+            start + distance - window.innerHeight * TIMELINE_READING_LINE,
           scrub: true,
           invalidateOnRefresh: true,
           onRefreshInit: measure,
@@ -96,11 +172,27 @@ export function initTimeline(root: HTMLElement): Dispose {
       },
     );
   }
+  let refreshPosition = { top: window.scrollY, left: window.scrollX };
+  function captureScrollPosition() {
+    refreshPosition = { top: window.scrollY, left: window.scrollX };
+  }
+  function restoreScrollPosition() {
+    if (
+      window.scrollY !== refreshPosition.top ||
+      window.scrollX !== refreshPosition.left
+    ) {
+      window.scrollTo({ ...refreshPosition, behavior: "instant" });
+      ScrollTrigger.update();
+    }
+  }
+  ScrollTrigger.addEventListener("refreshInit", captureScrollPosition);
+  ScrollTrigger.addEventListener("refresh", restoreScrollPosition);
   function scheduleRefresh() {
     clearTimeout(refreshTimer);
     refreshTimer = setTimeout(() => {
       if (!disposed) {
         measure();
+        if (reduced.matches) return;
         ScrollTrigger.refresh();
       }
     }, 80);
@@ -120,6 +212,11 @@ export function initTimeline(root: HTMLElement): Dispose {
   configure();
   return () => {
     disposed = true;
+    ScrollTrigger.removeEventListener("refreshInit", captureScrollPosition);
+    ScrollTrigger.removeEventListener("refresh", restoreScrollPosition);
+    disposeIndex();
+    cursorObserver.disconnect();
+    cursor?.dispose();
     clearTimeout(refreshTimer);
     controller.abort();
     observer.disconnect();
@@ -131,8 +228,12 @@ export function initTimeline(root: HTMLElement): Dispose {
     });
     gsap.set(fill, { clearProps: "transform" });
     gsap.set(
-      events.map((event) => event.querySelector(".event-copy")),
-      { clearProps: "opacity,transform" },
+      events.flatMap((event) => [
+        ...event.querySelectorAll(
+          ".event-copy > *, .timeline-connector > span",
+        ),
+      ]),
+      { clearProps: "opacity,transform,clipPath,filter" },
     );
   };
 }

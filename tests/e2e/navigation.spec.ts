@@ -17,6 +17,9 @@ test("índice mantém o documento, revela destino e fecha no celular", async ({
     .toBe("same-document");
   const target = page.locator("#cronologia");
   await expect(target).toBeFocused();
+  await expect
+    .poll(async () => (await target.boundingBox())!.y)
+    .toBeLessThan(150);
   expect((await target.boundingBox())!.y).toBeGreaterThan(50);
   if (isMobile) await expect(menu).not.toHaveAttribute("open", "");
   await page.evaluate(() => window.scrollBy(0, 400));
@@ -31,4 +34,41 @@ test("Escape recolhe índice e devolve foco ao controle", async ({ page }) => {
   await page.keyboard.press("Escape");
   await expect(menu).not.toHaveAttribute("open", "");
   await expect(menu.locator("summary")).toBeFocused();
+});
+
+test("A denúncia aponta para o conteúdo depois da capa editorial", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.locator(".chapter-menu summary").click();
+  await page.getByRole("link", { name: "A denúncia", exact: true }).click();
+  await expect(page).toHaveURL(/#denuncia$/);
+  await expect
+    .poll(() =>
+      page.locator("#denuncia").evaluate((e) => e.getBoundingClientRect().top),
+    )
+    .toBeLessThan(150);
+  await expect(page.locator("#denuncia")).toBeFocused();
+  expect(
+    await page
+      .locator("#report-title")
+      .evaluate((e) => e.getBoundingClientRect().bottom),
+  ).toBeLessThan(0);
+});
+
+test("prévia do capítulo não anima texto oculto ao alternar viewport", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/");
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.locator(".chapter-menu summary").hover();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator("#cronologia").scrollIntoViewIfNeeded();
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(page.locator(".current-chapter")).toBeHidden();
+  await page.locator(".chapter-menu summary").click();
+  await expect(page.locator(".chapter-menu nav")).toBeVisible();
+  expect(errors).toEqual([]);
 });

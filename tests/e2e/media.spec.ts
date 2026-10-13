@@ -60,7 +60,7 @@ test("ambientação retoma por visibilidade, mas respeita pausa manual", async (
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.paused))
     .toBe(false);
-  await page.locator("#abertura [data-ambient-play]").click();
+  await opening.evaluate((e: HTMLVideoElement) => e.pause());
   await page.locator("#comentarios").scrollIntoViewIfNeeded();
   await page.locator("#abertura").scrollIntoViewIfNeeded();
   await expect
@@ -76,7 +76,7 @@ test("movimento reduzido e autoplay rejeitado deixam reprodução manual dispon�
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.paused))
     .toBe(true);
-  await page.locator("#abertura [data-ambient-play]").click();
+  await page.locator("#abertura [data-ambient-sound]").click();
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);
@@ -93,10 +93,11 @@ test("movimento reduzido e autoplay rejeitado deixam reprodução manual dispon�
     };
   });
   await page.reload();
-  await expect(page.locator("#abertura [data-ambient-play]")).toContainText(
-    "Reproduzir",
+  await expect(page.locator("#abertura [data-ambient-sound]")).toHaveAttribute(
+    "aria-label",
+    "Ativar som",
   );
-  await page.locator("#abertura [data-ambient-play]").click();
+  await page.locator("#abertura [data-ambient-sound]").click();
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);

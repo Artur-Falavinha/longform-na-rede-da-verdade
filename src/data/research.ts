@@ -53,29 +53,25 @@ export const research = {
     },
     {
       title: "Como ocorre a apuração",
-      influencer:
-        "[DADOS DA PESQUISA A INSERIR — forma de apuração identificada no conteúdo de Felca]",
+      influencer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       journalism:
         "Processo sistemático, com checagem de múltiplas fontes, verificação de documentos, contato com especialistas e, quando possível, com os envolvidos.",
     },
     {
       title: "Como são utilizadas as fontes",
-      influencer:
-        "[DADOS DA PESQUISA A INSERIR — uso de fontes identificado no conteúdo de Felca]",
+      influencer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       journalism:
         "Fontes identificadas, crédito explícito, hierarquia de credibilidade. Preferencialmente diversas, independentes e complementares.",
     },
     {
       title: "Como ocorre a verificação",
-      influencer:
-        "[DADOS DA PESQUISA A INSERIR — processo de verificação identificado ou ausente]",
+      influencer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       journalism:
         "Processo de checagem e fact-checking, comparação com fontes independentes, consulta a especialistas e documentação.",
     },
     {
       title: "Como são buscadas respostas",
-      influencer:
-        "[DADOS DA PESQUISA A INSERIR — contraditório identificado ou ausente no conteúdo]",
+      influencer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       journalism:
         "Direito ao contraditório garantido: os envolvidos são consultados e têm direito de resposta antes da publicação.",
     },
@@ -127,11 +123,10 @@ export const research = {
       ],
     },
     {
-      name: "[ENTREVISTADO A INSERIR]",
+      name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       role: "Jornalista investigativo",
-      quote: "[ENTREVISTA COM JORNALISTA — A INSERIR]",
-      description:
-        "[Trecho da entrevista sobre investigação, apuração e verificação no jornalismo contemporâneo]",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       topics: ["Investigação", "Apuração", "Verificação"],
     },
   ],
@@ -152,7 +147,7 @@ export const research = {
       title: "Questionar",
       paragraph:
         "Uma parte do público exerceu pensamento crítico, levantando dúvidas sobre as motivações, os métodos e as consequências da denúncia.",
-      metric: "[DADO DA PESQUISA A INSERIR]",
+      metric: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       title: "Mobilizar",
@@ -165,38 +160,38 @@ export const research = {
     '"A credibilidade, no ambiente digital, não é apenas atribuída pelas instituições — ela é construída coletivamente, pela rede."',
   participationAttribution: "Análise netnográfica — TCC 1, 2026",
   participationPending:
-    "[DADOS VISUAIS DA PESQUISA A INSERIR — visualização dos padrões de engajamento por categoria de comentário]",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   education: [
     {
       title: "O que é adultização?",
       intro: "Compreender o fenômeno é o primeiro passo para reconhecê-lo.",
       paragraph:
-        "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA adultização refere-se ao processo pelo qual crianças e adolescentes são expostos a comportamentos, papéis ou imagens associadas ao mundo adulto de forma prematura.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nA adultização refere-se ao processo pelo qual crianças e adolescentes são expostos a comportamentos, papéis ou imagens associadas ao mundo adulto de forma prematura.",
     },
     {
       title: "Como ela pode aparecer?",
       intro:
         "A adultização se manifesta de diferentes formas no ambiente digital.",
       paragraph:
-        "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nNo ambiente digital, pode aparecer em conteúdos que sexualizam crianças e adolescentes, em dinâmicas que os colocam em situações de performance adulta para entretenimento ou monetização.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nNo ambiente digital, pode aparecer em conteúdos que sexualizam crianças e adolescentes, em dinâmicas que os colocam em situações de performance adulta para entretenimento ou monetização.",
     },
     {
       title: "Por que exige atenção?",
       intro: "As consequências são reais e podem ser duradouras.",
       paragraph:
-        "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA exposição prematura pode gerar impactos negativos no desenvolvimento emocional e psicológico, afetando autoestima, senso de identidade e relações interpessoais.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nA exposição prematura pode gerar impactos negativos no desenvolvimento emocional e psicológico, afetando autoestima, senso de identidade e relações interpessoais.",
     },
     {
       title: "Sinais no ambiente digital",
       intro: "Quais situações exigem atenção nas redes sociais?",
       paragraph:
-        "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nConteúdos que estimulam crianças e adolescentes a performar para câmeras em situações inadequadas; monetização da imagem de menores; comentários de cunho sexual ou assédio.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nConteúdos que estimulam crianças e adolescentes a performar para câmeras em situações inadequadas; monetização da imagem de menores; comentários de cunho sexual ou assédio.",
     },
     {
       title: "Possíveis sinais de alerta",
       intro: "O que observar como cuidador, educador ou profissional.",
       paragraph:
-        "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nMudanças repentinas de comportamento, interesse excessivo em exposição online, linguagem incompatível com a faixa etária, ansiedade relacionada à presença digital.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nMudanças repentinas de comportamento, interesse excessivo em exposição online, linguagem incompatível com a faixa etária, ansiedade relacionada à presença digital.",
     },
   ],
   results: [

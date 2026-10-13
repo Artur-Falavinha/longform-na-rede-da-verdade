@@ -28,6 +28,6 @@
   --reading: 65ch;
   --wide: 76rem;
   --header-height: 4rem;
-  --section-space: clamp(5rem, 10vw, 10rem);
+  --section-space: clamp(2.5rem, 4vw, 4rem);
   --compact-space: 0px;
 }

@@ -1,4 +1,12 @@
 ---
+import {
+  Volume2,
+  VolumeOff,
+  Play,
+  Pause,
+  Maximize,
+  Minimize,
+} from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
 interface Props {
   asset: MediaAsset;
@@ -7,6 +15,7 @@ interface Props {
 }
 const { asset, opening = false, cover = false } = Astro.props;
 const ambient = asset.purpose === "ambient";
+const Shell = ambient ? "div" : "media-controller";
 ---
 
 <figure
@@ -14,8 +23,9 @@ const ambient = asset.purpose === "ambient";
   data-video-player
   data-ambient={ambient || undefined}
 >
-  <div class="video-shell">
+  <Shell class="video-shell" lang={ambient ? undefined : "pt"}>
     <video
+      {...{ slot: ambient ? undefined : "media" }}
       data-media-id={asset.id}
       data-purpose={asset.purpose}
       data-media-src={asset.src}
@@ -23,7 +33,7 @@ const ambient = asset.purpose === "ambient";
       data-mobile-poster={asset.mobilePoster}
       poster={asset.poster}
       src={asset.src}
-      controls
+      controls={!ambient}
       preload="none"
       muted={ambient}
       loop={ambient}
@@ -37,24 +47,53 @@ const ambient = asset.purpose === "ambient";
         <a href={asset.src}>Abrir arquivo de teste</a>.
       </p>
     </video>
+    {!ambient && (
+      <div class="editorial-controls">
+        <media-time-range aria-label="Posição do vídeo"></media-time-range>
+        <media-control-bar>
+          <media-play-button>
+            <Play slot="play" size={22} fill="currentColor" />
+            <Pause slot="pause" size={22} fill="currentColor" />
+          </media-play-button>
+          <media-time-display showduration></media-time-display>
+          <span class="control-spacer"></span>
+          <media-playback-rate-button></media-playback-rate-button>
+          <media-mute-button>
+            <Volume2 slot="high" size={22} />
+            <Volume2 slot="medium" size={22} />
+            <Volume2 slot="low" size={22} />
+            <VolumeOff slot="off" size={22} />
+          </media-mute-button>
+          <media-volume-range></media-volume-range>
+          <media-fullscreen-button>
+            <Maximize slot="enter" size={22} />
+            <Minimize slot="exit" size={22} />
+          </media-fullscreen-button>
+        </media-control-bar>
+      </div>
+    )}
     {ambient && (
       <div class="ambient-controls" hidden>
-        <button
-          type="button"
-          class="button"
-          data-ambient-play
-          aria-label={`Reproduzir ${asset.title.toLowerCase()}`}
-        >
-          Reproduzir vídeo
-        </button>
         {asset.hasAudio && (
           <button
             type="button"
             class="button"
             data-ambient-sound
+            aria-label="Ativar som"
             aria-pressed="false"
           >
-            Ativar som
+            <VolumeOff
+              class="sound-off"
+              size={64}
+              stroke-width={0.8}
+              aria-hidden="true"
+            />
+            <Volume2
+              class="sound-on"
+              size={64}
+              stroke-width={0.8}
+              aria-hidden="true"
+            />
           </button>
         )}
       </div>
@@ -66,14 +105,62 @@ const ambient = asset.purpose === "ambient";
       </button>
       <a href={asset.src}>Abrir arquivo diretamente</a>
     </div>
-    {opening && (
-      <a class="cover-next" href="#contexto">
-        Começar a leitura <span aria-hidden="true">↓</span>
-      </a>
-    )}
-  </div>
+  </Shell>
 </figure>
 <style>
+  media-controller {
+    display: block;
+    width: 100%;
+    --media-primary-color: var(--text);
+    --media-secondary-color: var(--bg);
+    --media-control-background: transparent;
+    --media-control-hover-background: #ffffff12;
+    --media-range-track-height: 3px;
+    --media-range-bar-color: var(--red);
+    --media-range-track-background: #66666b;
+    --media-font-family: var(--sans);
+    --media-control-height: 22px;
+    --media-control-padding: 11px;
+  }
+  .editorial-controls {
+    width: 100%;
+    padding: 0.25rem 1rem 0.6rem;
+    background: linear-gradient(transparent, #0a0a0cf5 35%);
+  }
+  media-controller:not(:defined) .editorial-controls {
+    display: none;
+  }
+  media-control-bar {
+    display: flex;
+    align-items: center;
+  }
+  media-time-range,
+  media-volume-range {
+    --media-control-hover-background: transparent;
+  }
+  media-time-range {
+    display: block;
+    width: 100%;
+  }
+  media-volume-range {
+    max-width: 6rem;
+  }
+  media-time-display {
+    font-variant-numeric: tabular-nums;
+    font-size: 12px;
+  }
+  .control-spacer {
+    flex: 1;
+  }
+  @media (max-width: 599px) {
+    .editorial-controls {
+      padding-inline: 0.25rem;
+    }
+    media-volume-range {
+      display: none;
+    }
+  }
+
   .video-player {
     margin-block: 3rem;
   }
@@ -92,7 +179,7 @@ const ambient = asset.purpose === "ambient";
     aspect-ratio: auto;
   }
   .ambient video {
-    object-fit: contain;
+    object-fit: cover;
     background: var(--bg);
   }
   .cover {
@@ -108,21 +195,33 @@ const ambient = asset.purpose === "ambient";
   }
   .ambient-controls {
     position: absolute;
-    right: var(--gutter);
-    bottom: calc(2rem + var(--compact-space));
+    left: var(--gutter);
+    bottom: calc(2rem + var(--compact-space) + env(safe-area-inset-bottom));
     display: flex;
     gap: 0.75rem;
   }
-  .cover-next {
-    position: absolute;
-    bottom: calc(2.5rem + var(--compact-space));
-    left: var(--gutter);
-    font-size: 0.875rem;
-    text-decoration: none;
+  .opening .ambient-controls {
+    top: calc(1rem + env(safe-area-inset-top));
+    bottom: auto;
   }
-  .cover-next span {
-    margin-left: 2rem;
-    color: var(--accent);
+  [data-ambient-sound] {
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+  }
+  [data-ambient-sound] :global(svg) {
+    grid-area: 1 / 1;
+    display: block;
+  }
+  [data-ambient-sound][aria-pressed="false"] :global(.sound-on),
+  [data-ambient-sound][aria-pressed="true"] :global(.sound-off) {
+    opacity: 0;
   }
   .media-error {
     position: absolute;
@@ -137,19 +236,10 @@ const ambient = asset.purpose === "ambient";
   }
   @media (max-width: 599px) {
     .ambient-controls {
-      right: 1rem;
-      bottom: calc(5.5rem + var(--compact-space));
       left: 1rem;
-      justify-content: center;
     }
     .ambient-controls button {
       font-size: 0.75rem;
-    }
-    .cover-next {
-      bottom: calc(2rem + var(--compact-space));
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
     }
     .ambient .video-shell {
       height: 70svh;
