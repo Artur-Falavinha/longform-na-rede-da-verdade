@@ -1,5 +1,5 @@
 import { initTranscript } from "./transcript";
-import { gsap } from "../../scripts/gsap";
+import { animate } from "motion/mini";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
 
@@ -32,7 +32,9 @@ export function initPodcastPlayer(
   let active = false;
   let compact = false;
   let resizeFrame = 0;
-  let animation: gsap.core.Tween | undefined;
+  let animation: ReturnType<typeof animate> | undefined;
+  let requestedCompact = false;
+  let transitionVersion = 0;
   root.querySelector<HTMLElement>(".player-controls")!.hidden = false;
   audio.hidden = true;
   audio.controls = false;
@@ -47,33 +49,52 @@ export function initPodcastPlayer(
       );
   }
   function clearTransition() {
-    animation?.kill();
+    transitionVersion++;
+    animation?.stop();
     animation = undefined;
-    gsap.set(surface, { clearProps: "transform,opacity" });
+    surface.style.removeProperty("transform");
+    surface.style.removeProperty("opacity");
   }
-  function setCompact(next: boolean, force = false) {
-    if (compact === next && !force) return;
-    clearTransition();
+  function applyLayout(next: boolean) {
     if (!compact) origin.style.minHeight = `${surface.offsetHeight}px`;
     compact = next;
     surface.classList.toggle("is-compact", next);
     reserveSpace();
-    if (reduced.matches || force) return;
-    animation = gsap.fromTo(
+  }
+  async function setCompact(next: boolean, force = false) {
+    if (requestedCompact === next && !force) return;
+    requestedCompact = next;
+    const version = ++transitionVersion;
+    animation?.stop();
+    if (reduced.matches || force) {
+      clearTransition();
+      applyLayout(next);
+      return;
+    }
+    if (compact && !next) {
+      animation = animate(
+        surface,
+        { opacity: 0, transform: "translateY(16px)" },
+        { duration: 0.25, ease: [0.4, 0, 1, 1] },
+      );
+      await animation.finished;
+      if (version !== transitionVersion) return;
+    }
+    const changed = compact !== next;
+    applyLayout(next);
+    if (changed) {
+      surface.style.opacity = "0";
+      surface.style.transform = `translateY(${next ? 24 : 8}px)`;
+    }
+    animation = animate(
       surface,
-      { y: next ? 28 : 12, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: next ? 0.5 : 0.3,
-        ease: "power3.out",
-        clearProps: "transform,opacity",
-        onComplete: () => {
-          animation = undefined;
-          reserveSpace();
-        },
-      },
+      { opacity: 1, transform: "translateY(0px)" },
+      { duration: next ? 0.4 : 0.25, ease: [0.22, 1, 0.36, 1] },
     );
+    await animation.finished;
+    if (version !== transitionVersion) return;
+    clearTransition();
+    reserveSpace();
   }
   function updateLayout() {
     setCompact(active && !originVisible);
@@ -257,11 +278,15 @@ export function initPodcastPlayer(
     },
     { signal: controller.signal },
   );
-  root.querySelector("[data-podcast-return]")!.addEventListener(
+  root.querySelector("[data-podcast-close]")!.addEventListener(
     "click",
     () => {
+      coordinator.pause(id, "manual");
+      active = false;
+      document.documentElement.style.setProperty("--compact-space", "0px");
       root.setAttribute("tabindex", "-1");
-      requestAnimationFrame(() => root.focus({ preventScroll: true }));
+      root.focus({ preventScroll: true });
+      void setCompact(false);
     },
     { signal: controller.signal },
   );
@@ -276,7 +301,7 @@ export function initPodcastPlayer(
     observer.disconnect();
     sizeObserver.disconnect();
     cancelAnimationFrame(resizeFrame);
-    animation?.kill();
+    animation?.stop();
     clearTransition();
     if (active)
       document.documentElement.style.setProperty("--compact-space", "0px");

@@ -126,12 +126,10 @@ export function initTimeline(root: HTMLElement): Dispose {
           {
             opacity: 0,
             y: 36,
-            clipPath: "inset(0 0 85% 0)",
           },
           {
             opacity: 1,
             y: 0,
-            clipPath: "inset(0 0 0% 0)",
             duration: 0.6,
             ease: "power3.out",
           },

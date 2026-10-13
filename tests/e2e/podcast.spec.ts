@@ -88,7 +88,7 @@ test("mesmo áudio continua durante compactação, pausa e retorno", async ({
     .toBe(true);
   await expect(surface).toHaveCSS("position", "fixed");
   await root.locator("[data-podcast-play]").click();
-  await root.locator("[data-podcast-return]").click();
+  await root.scrollIntoViewIfNeeded();
   await expect(surface).not.toHaveCSS("position", "fixed");
   expect(await audio.evaluate((e) => e === (window as any).originalAudio)).toBe(
     true,
@@ -228,4 +228,27 @@ test("duração pendente e inversões rápidas preservam controles e posição",
   expect(
     await audio.evaluate((element: HTMLAudioElement) => element.volume),
   ).toBeCloseTo(0.5);
+});
+
+test("fechar o player pausa o áudio e impede reaparecimento ao rolar", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const root = page.locator('[data-podcast="checking-future"]');
+  const surface = root.locator("[data-player-surface]");
+  await root.locator("[data-podcast-play]").click();
+  await page.locator("#cronologia").scrollIntoViewIfNeeded();
+  await expect(surface).toHaveClass(/is-compact/);
+  await root.locator("[data-podcast-close]").click();
+  await expect
+    .poll(() =>
+      root.locator("audio").evaluate((e: HTMLAudioElement) => e.paused),
+    )
+    .toBe(true);
+  await expect(surface).not.toHaveClass(/is-compact/);
+  await page.locator("#cartilha").scrollIntoViewIfNeeded();
+  await expect(surface).not.toHaveClass(/is-compact/);
+  await root.locator("[data-podcast-play]").click();
+  await page.locator("#cronologia").scrollIntoViewIfNeeded();
+  await expect(surface).toHaveClass(/is-compact/);
 });

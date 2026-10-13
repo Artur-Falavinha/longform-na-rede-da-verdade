@@ -2,7 +2,7 @@
 import {
   Play,
   Pause,
-  ArrowUpRight,
+  X,
   RotateCcw,
   RotateCw,
   Volume2,
@@ -27,6 +27,14 @@ const anchor =
   </header>
   <div class="player-origin" data-player-origin>
     <div class="player-surface" data-player-surface>
+      <button
+        type="button"
+        class="close-player"
+        data-podcast-close
+        aria-label={`Fechar reprodução de ${asset.title}`}
+      >
+        <X size={22} aria-hidden="true" />
+      </button>
       <div class="player-label">
         <span class="eyebrow">Na rede da verdade · podcast</span>
         <span class="player-title">{asset.title}</span>
@@ -128,14 +136,6 @@ const anchor =
             step="0.05"
           />
         </div>
-        <a
-          class="origin-link"
-          href={`#${anchor}`}
-          data-podcast-return
-          aria-label={`Voltar à origem de ${asset.title}`}
-        >
-          Voltar <ArrowUpRight size={18} aria-hidden="true" />
-        </a>
       </div>
       <p class="podcast-error small" role="status" hidden>
         Não foi possível reproduzir. Use Reproduzir para tentar novamente ou{" "}
@@ -243,12 +243,23 @@ const anchor =
     color: var(--muted);
     line-height: 1;
   }
-  .origin-link {
+  .close-player {
     display: none;
-    font-size: 0.75rem;
-    min-height: 44px;
-    align-items: center;
-    gap: 0.4rem;
+  }
+  .is-compact .close-player {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+  }
+  .is-compact .close-player:hover {
+    color: var(--accent);
   }
   .transcript {
     font-size: 1rem;
@@ -283,13 +294,9 @@ const anchor =
     z-index: 30;
     box-shadow: 0 0.5rem 2rem #0a0a0c;
   }
-  .is-compact .origin-link {
-    grid-column: 2;
-    grid-row: 3;
-    justify-self: end;
-    display: flex;
-  }
+
   .is-compact .player-title {
+    padding-right: 2.25rem;
     font-size: 1.15rem;
   }
   .is-compact .player-label {
@@ -462,12 +469,7 @@ const anchor =
       height: 2.75rem;
       min-width: 2.75rem;
     }
-    .is-compact .origin-link {
-      grid-column: 2;
-      grid-row: 3;
-      justify-self: end;
-      font-size: 0.75rem;
-    }
+
     .is-compact .volume-control {
       width: 6rem;
     }

@@ -69,3 +69,25 @@ test("hover da barra de vídeo mantém fundo transparente", async ({ page }) => 
       .evaluate((el) => getComputedStyle(el).borderBottomWidth),
   ).toBe("0px");
 });
+
+test("índice conclui fade de saída e pode reverter durante a transição", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const nav = page.locator("[data-timeline-index]");
+  const event = page.locator("[data-timeline-event]").nth(2);
+  await event.scrollIntoViewIfNeeded();
+  await expect(nav).toHaveCSS("opacity", "1");
+  await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+  await expect.poll(() => nav.evaluate((e) => e.inert)).toBe(true);
+  await expect(nav).toBeHidden();
+  await event.scrollIntoViewIfNeeded();
+  await expect(nav).toHaveCSS("opacity", "1");
+  await page.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+  await event.scrollIntoViewIfNeeded();
+  await expect(nav).toBeVisible();
+  await expect(nav).toHaveCSS("opacity", "1");
+  expect(
+    await event.locator("h3").evaluate((e) => getComputedStyle(e).clipPath),
+  ).toBe("none");
+});

@@ -20,6 +20,8 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
     { signal: controller.signal },
   );
   let entrance: ReturnType<typeof animate> | undefined;
+  let hiddenTarget = true;
+  let visibilityVersion = 0;
   let frame = 0;
   let navigation: gsap.core.Tween | undefined;
 
@@ -28,15 +30,23 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
     const bounds = root.getBoundingClientRect();
     const hidden =
       bounds.top > innerHeight * 0.7 || bounds.bottom < innerHeight * 0.25;
-    if (nav.hidden !== hidden) {
+    if (hiddenTarget !== hidden) {
+      hiddenTarget = hidden;
+      const version = ++visibilityVersion;
       entrance?.stop();
-      nav.hidden = hidden;
-      if (!hidden)
-        entrance = animate(
-          nav,
-          { opacity: [0, 1] },
-          { duration: reduced.matches ? 0 : 0.3 },
-        );
+      if (!hidden && nav.hidden) {
+        nav.hidden = false;
+        nav.style.opacity = "0";
+      }
+      nav.inert = hidden;
+      entrance = animate(
+        nav,
+        { opacity: hidden ? 0 : 1 },
+        { duration: reduced.matches ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] },
+      );
+      void entrance.finished.then(() => {
+        if (version === visibilityVersion) nav.hidden = hidden;
+      });
     }
     const active = events.reduce(
       (selected, event, index) =>
@@ -108,6 +118,7 @@ export function initTimelineIndex(root: HTMLElement): Dispose {
   update();
   return () => {
     cancel();
+    visibilityVersion++;
     entrance?.stop();
     cancelAnimationFrame(frame);
     controller.abort();

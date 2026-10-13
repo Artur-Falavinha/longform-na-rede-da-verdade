@@ -48,8 +48,8 @@ test("larguras, orientação e ampliação de 200% mantêm leitura e controles",
     document.documentElement.style.zoom = "2";
   });
   await expect(podcast.locator("[data-podcast-play]")).toBeInViewport();
-  await expect(podcast.locator("[data-podcast-return]")).toBeInViewport();
-  await podcast.locator("[data-podcast-return]").click();
+  await expect(podcast.locator("[data-podcast-close]")).toBeInViewport();
+  await podcast.locator("[data-podcast-close]").click();
   await podcast.locator("summary").click();
   await expect(podcast.locator(".transcript p")).toBeVisible();
   expect(
