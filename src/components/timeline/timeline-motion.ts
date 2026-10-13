@@ -56,7 +56,7 @@ export function initTimeline(root: HTMLElement): Dispose {
           ".event-copy > *, .timeline-connector > span",
         ),
       ]),
-      { clearProps: "opacity,transform" },
+      { clearProps: "opacity,transform,clipPath,filter" },
     );
     measure();
     if (reduced.matches || markers.length < 2 || distance <= 0) {
@@ -87,11 +87,20 @@ export function initTimeline(root: HTMLElement): Dispose {
         )
         .fromTo(
           parts,
-          { opacity: 0.2, x: () => direction() * 28 },
+          {
+            opacity: 0,
+            x: () => direction() * 48,
+            y: 24,
+            clipPath: "inset(0 0 100% 0)",
+            filter: "blur(3px)",
+          },
           {
             opacity: 1,
             x: 0,
-            stagger: 0.08,
+            y: 0,
+            clipPath: "inset(0 0 0% 0)",
+            filter: "blur(0px)",
+            stagger: 0.12,
             duration: 0.5,
             ease: "power2.out",
           },
@@ -157,7 +166,7 @@ export function initTimeline(root: HTMLElement): Dispose {
           ".event-copy > *, .timeline-connector > span",
         ),
       ]),
-      { clearProps: "opacity,transform" },
+      { clearProps: "opacity,transform,clipPath,filter" },
     );
   };
 }
