@@ -755,7 +755,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-081",
@@ -968,7 +969,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — forma de apuração identificada no conteúdo de Felca]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-104",
@@ -986,7 +988,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — uso de fontes identificado no conteúdo de Felca]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-106",
@@ -1004,7 +1007,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — processo de verificação identificado ou ausente]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-108",
@@ -1022,7 +1026,8 @@
       "sourceText": "[DADOS DA PESQUISA A INSERIR — contraditório identificado ou ausente no conteúdo]",
       "targetChapter": "comparacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-110",
@@ -1272,7 +1277,8 @@
       "sourceText": "[ENTREVISTA COM JORNALISTA — A INSERIR]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-137",
@@ -1281,7 +1287,8 @@
       "sourceText": "[Trecho da entrevista sobre investigação, apuração e verificação no jornalismo contemporâneo]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-138",
@@ -1444,7 +1451,8 @@
       "sourceText": "[ENTREVISTADO A INSERIR]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-156",
@@ -1599,7 +1607,8 @@
       "sourceText": "[DADO DA PESQUISA A INSERIR]",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-173",
@@ -1699,7 +1708,8 @@
       "sourceText": "[DESDOBRAMENTO A APURAR — novos acontecimentos relacionados ao caso ou ao debate público sobre adultização e proteção infantil digital]",
       "targetChapter": "cronologia",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-184",
@@ -1891,7 +1901,8 @@
       "sourceText": "[DATA A CONFIRMAR]",
       "targetChapter": "cronologia",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-205",
@@ -1909,7 +1920,8 @@
       "sourceText": "[EVENTO A INSERIR]",
       "targetChapter": "cronologia",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-207",
@@ -2388,7 +2400,8 @@
       "sourceText": "[COMENTÁRIO DA PESQUISA A INSERIR — eixo autoridade moral]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-258",
@@ -2490,7 +2503,8 @@
       "sourceText": "[COMENTÁRIO DA PESQUISA A INSERIR — discurso crítico]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-269",
@@ -2562,7 +2576,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA adultização refere-se ao processo pelo qual crianças e adolescentes são expostos a comportamentos, papéis ou imagens associadas ao mundo adulto de forma prematura.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-277",
@@ -2571,7 +2586,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nNo ambiente digital, pode aparecer em conteúdos que sexualizam crianças e adolescentes, em dinâmicas que os colocam em situações de performance adulta para entretenimento ou monetização.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-278",
@@ -2580,7 +2596,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nA exposição prematura pode gerar impactos negativos no desenvolvimento emocional e psicológico, afetando autoestima, senso de identidade e relações interpessoais.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-279",
@@ -2589,7 +2606,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nConteúdos que estimulam crianças e adolescentes a performar para câmeras em situações inadequadas; monetização da imagem de menores; comentários de cunho sexual ou assédio.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-280",
@@ -2598,7 +2616,8 @@
       "sourceText": "[CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR]\n\nMudanças repentinas de comportamento, interesse excessivo em exposição online, linguagem incompatível com a faixa etária, ansiedade relacionada à presença digital.",
       "targetChapter": "adultizacao",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Texto de preenchimento substituído por lorem ipsum na prévia de validação, por solicitação do responsável. Pendência e fonte original preservadas neste inventário."
     },
     {
       "id": "source-281",

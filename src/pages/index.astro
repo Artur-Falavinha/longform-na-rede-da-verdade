@@ -78,10 +78,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
           </h2>
           <Context />
         </div>
-        <div
-          class="reach-numbers"
-          aria-label="Alcance registrado no conteúdo inicial"
-        >
+        <div class="reach-numbers" aria-label="Alcance registrado">
           <p>
             <strong>52,7 mi</strong>
             <span>visualizações do vídeo "Adultização"</span>
@@ -233,7 +230,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         </figcaption>
       </figure>
       <div class="podcast-intro">
-        <span class="eyebrow">Duas conversas · N03</span>
+        <span class="eyebrow">Duas conversas</span>
         <h3>
           O futuro do jornalismo
           <br />e quem informa na rede
@@ -269,8 +266,9 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
               Psicóloga — entrevistada para o TCC 1
             </span>
           </p>
-          <p class="pending">
-            [CONTEÚDO DA ENTREVISTA COM A PSICÓLOGA A INSERIR] — B06
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
       </div>
@@ -455,12 +453,24 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     filter: brightness(0) invert(1);
     opacity: 0.9;
   }
-  .outlets img[alt="Brasil Paralelo"] { --logo-width: 9.5rem; }
-  .outlets img[alt="CBN"] { --logo-width: 6.5rem; }
-  .outlets img[alt="CNN Brasil"] { --logo-width: 4.5rem; }
-  .outlets img[alt="G1"] { --logo-width: 2.75rem; }
-  .outlets img[alt="Tilt/UOL"] { --logo-width: 4rem; }
-  .outlets img[alt="Veja"] { --logo-width: 6rem; }
+  .outlets img[alt="Brasil Paralelo"] {
+    --logo-width: 9.5rem;
+  }
+  .outlets img[alt="CBN"] {
+    --logo-width: 6.5rem;
+  }
+  .outlets img[alt="CNN Brasil"] {
+    --logo-width: 4.5rem;
+  }
+  .outlets img[alt="G1"] {
+    --logo-width: 2.75rem;
+  }
+  .outlets img[alt="Tilt/UOL"] {
+    --logo-width: 4rem;
+  }
+  .outlets img[alt="Veja"] {
+    --logo-width: 6rem;
+  }
   @media (max-width: 899px) {
     .outlets ul {
       grid-template-columns: repeat(3, minmax(0, 1fr));

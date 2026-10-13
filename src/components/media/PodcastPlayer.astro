@@ -14,9 +14,13 @@ interface Props {
   asset: MediaAsset;
 }
 const { asset } = Astro.props;
+const anchor =
+  asset.id === "checking-future"
+    ? "podcast-checagem-e-futuro"
+    : "podcast-jornalista-e-influenciador";
 ---
 
-<article class="podcast" id={`podcast-${asset.id}`} data-podcast={asset.id}>
+<article class="podcast" id={anchor} data-podcast={asset.id}>
   <header>
     <span class="eyebrow">Podcast</span>
     <h3>{asset.title}</h3>
@@ -126,7 +130,7 @@ const { asset } = Astro.props;
         </div>
         <a
           class="origin-link"
-          href={`#podcast-${asset.id}`}
+          href={`#${anchor}`}
           data-podcast-return
           aria-label={`Voltar à origem de ${asset.title}`}
         >
@@ -142,7 +146,6 @@ const { asset } = Astro.props;
   <details class="transcript">
     <summary>
       <ChevronDown size={18} aria-hidden="true" /> Transcrição{" "}
-      <span class="muted">· pendente</span>
     </summary>
     <div class="transcript-content">
       <p>{asset.transcript}</p>
@@ -248,7 +251,6 @@ const { asset } = Astro.props;
     gap: 0.4rem;
   }
   .transcript {
-    border-bottom: 1px solid var(--muted);
     font-size: 1rem;
   }
   .transcript summary {

@@ -4,7 +4,7 @@ interface Props {
   rows: readonly { label: string; value: string }[];
   note?: string;
 }
-const { caption, rows, note } = Astro.props;
+const { caption, rows } = Astro.props;
 ---
 
 <figure class="research-figure">
@@ -17,17 +17,6 @@ const { caption, rows, note } = Astro.props;
       </div>
     ))}
   </dl>
-  <p class="source">
-    Fonte:{" "}
-    <a
-      href="https://narededaverdade.base44.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      conteúdo inicial das autoras
-    </a>
-    . {note}
-  </p>
 </figure>
 <style>
   .research-figure {

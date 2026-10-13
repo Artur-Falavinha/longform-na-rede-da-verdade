@@ -1,1 +1,1 @@
-Material de teste — N04. A cartilha definitiva e a capa ainda serão enviadas pelas autoras. O documento disponível permite conferir abertura e download; não contém orientações editoriais.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

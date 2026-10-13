@@ -1,5 +1,5 @@
 import { initTranscript } from "./transcript";
-import { gsap, Flip } from "../../scripts/gsap";
+import { gsap } from "../../scripts/gsap";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
 
@@ -32,7 +32,7 @@ export function initPodcastPlayer(
   let active = false;
   let compact = false;
   let resizeFrame = 0;
-  let animation: gsap.core.Timeline | undefined;
+  let animation: gsap.core.Tween | undefined;
   root.querySelector<HTMLElement>(".player-controls")!.hidden = false;
   audio.hidden = true;
   audio.controls = false;
@@ -46,36 +46,34 @@ export function initPodcastPlayer(
         compact ? `${surface.offsetHeight + 16}px` : "0px",
       );
   }
-  function clearFlip() {
-    Flip.killFlipsOf(surface, false);
+  function clearTransition() {
+    animation?.kill();
     animation = undefined;
-    gsap.set(surface, {
-      clearProps:
-        "transform,width,height,top,left,right,bottom,position,minWidth,minHeight,maxWidth,maxHeight",
-    });
+    gsap.set(surface, { clearProps: "transform,opacity" });
   }
   function setCompact(next: boolean, force = false) {
     if (compact === next && !force) return;
-    const captureOptions: Flip.FlipStateVars & { kill: boolean } = {
-      kill: false,
-    };
-    const state = reduced.matches
-      ? undefined
-      : Flip.getState(surface, captureOptions);
-    clearFlip();
+    clearTransition();
+    if (!compact) origin.style.minHeight = `${surface.offsetHeight}px`;
     compact = next;
     surface.classList.toggle("is-compact", next);
     reserveSpace();
-    if (state)
-      animation = Flip.from(state, {
-        duration: 0.38,
-        ease: "power2.inOut",
-        scale: false,
+    if (reduced.matches || force) return;
+    animation = gsap.fromTo(
+      surface,
+      { y: next ? 28 : 12, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: next ? 0.5 : 0.3,
+        ease: "power3.out",
+        clearProps: "transform,opacity",
         onComplete: () => {
           animation = undefined;
           reserveSpace();
         },
-      });
+      },
+    );
   }
   function updateLayout() {
     setCompact(active && !originVisible);
@@ -279,7 +277,7 @@ export function initPodcastPlayer(
     sizeObserver.disconnect();
     cancelAnimationFrame(resizeFrame);
     animation?.kill();
-    clearFlip();
+    clearTransition();
     if (active)
       document.documentElement.style.setProperty("--compact-space", "0px");
   };

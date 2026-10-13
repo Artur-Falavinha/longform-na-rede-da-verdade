@@ -49,7 +49,7 @@ const Shell = ambient ? "div" : "media-controller";
     </video>
     {!ambient && (
       <div class="editorial-controls">
-        <media-time-range aria-label="Posi��o do v�deo"></media-time-range>
+        <media-time-range aria-label="Posição do vídeo"></media-time-range>
         <media-control-bar>
           <media-play-button>
             <Play slot="play" size={22} fill="currentColor" />
@@ -114,7 +114,7 @@ const Shell = ambient ? "div" : "media-controller";
     --media-primary-color: var(--text);
     --media-secondary-color: var(--bg);
     --media-control-background: transparent;
-    --media-control-hover-background: var(--red);
+    --media-control-hover-background: #ffffff12;
     --media-range-track-height: 3px;
     --media-range-bar-color: var(--red);
     --media-range-track-background: #66666b;
@@ -133,6 +133,10 @@ const Shell = ambient ? "div" : "media-controller";
   media-control-bar {
     display: flex;
     align-items: center;
+  }
+  media-time-range,
+  media-volume-range {
+    --media-control-hover-background: transparent;
   }
   media-time-range {
     display: block;

@@ -9,13 +9,19 @@ import {
   Plus,
 } from "@lucide/astro";
 import { comments } from "../../data/comments";
+const anchors: Record<string, string> = {
+  journalism: "jornalismo",
+  "moral-authority": "autoridade-moral",
+  opposition: "oposicao",
+  adultization: "adultizacao",
+};
 ---
 
 <div class="comment-explorer" data-comment-explorer>
   <div class="group-selectors" data-tab-list aria-label="Categorias de análise">
     {comments.map((group, i) => (
       <a
-        href={`#group-${group.id}`}
+        href={`#eixo-${anchors[group.id]}`}
         data-group-select={group.id}
         id={`tab-${group.id}`}
       >
@@ -31,7 +37,7 @@ import { comments } from "../../data/comments";
   {comments.map((group) => (
     <section
       class="comment-panel"
-      id={`group-${group.id}`}
+      id={`eixo-${anchors[group.id]}`}
       data-comment-group={group.id}
       aria-labelledby={`heading-${group.id}`}
     >
@@ -53,11 +59,6 @@ import { comments } from "../../data/comments";
           >
             {group.comments.map((comment) => (
               <figure class="comment featured" data-comment-id={comment.id}>
-                {comment.status === "placeholder" && (
-                  <span class="eyebrow">
-                    Comentário pendente · espaço reservado
-                  </span>
-                )}
                 <span class="quote-mark" aria-hidden="true">
                   “
                 </span>
@@ -120,9 +121,7 @@ import { comments } from "../../data/comments";
       {group.expertQuotes.map((quote) => (
         <figure class="expert-quote reading">
           <blockquote class="editorial-quote">{quote.text}</blockquote>
-          <figcaption class="quote-attribution">
-            {quote.attribution} · conteúdo inicial das autoras
-          </figcaption>
+          <figcaption class="quote-attribution">{quote.attribution}</figcaption>
         </figure>
       ))}
     </section>
