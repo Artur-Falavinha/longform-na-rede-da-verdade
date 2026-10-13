@@ -1,9 +1,14 @@
+import "media-chrome";
+import "media-chrome/lang/pt.js";
+import { setLanguage } from "media-chrome/dist/utils/i18n.js";
+setLanguage("pt");
 import type { Dispose } from "../../data/types";
 
 export function initVideoPlayer(root: HTMLElement): Dispose {
   const video = root.querySelector<HTMLVideoElement>("video")!;
   const error = root.querySelector<HTMLElement>(".media-error")!;
   const controller = new AbortController();
+  if (!root.hasAttribute("data-ambient")) video.controls = false;
   if (video.dataset.mobileSrc && matchMedia("(max-width:899px)").matches) {
     video.src = video.dataset.mobileSrc;
     if (video.dataset.mobilePoster) video.poster = video.dataset.mobilePoster;

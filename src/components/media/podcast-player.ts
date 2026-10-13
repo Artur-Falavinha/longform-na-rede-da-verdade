@@ -1,3 +1,4 @@
+import { initTranscript } from "./transcript";
 import { gsap, Flip } from "../../scripts/gsap";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
@@ -37,8 +38,8 @@ export function initPodcastPlayer(
   audio.controls = false;
 
   function reserveSpace() {
-    if (!compact)
-      origin.style.minHeight = `${Math.max(192, surface.offsetHeight)}px`;
+    if (!compact && !animation)
+      origin.style.minHeight = `${surface.offsetHeight}px`;
     if (active)
       document.documentElement.style.setProperty(
         "--compact-space",
@@ -69,7 +70,7 @@ export function initPodcastPlayer(
       animation = Flip.from(state, {
         duration: 0.38,
         ease: "power2.inOut",
-        scale: true,
+        scale: false,
         onComplete: () => {
           animation = undefined;
           reserveSpace();
@@ -266,9 +267,13 @@ export function initPodcastPlayer(
     },
     { signal: controller.signal },
   );
+  const disposeTranscript = initTranscript(
+    root.querySelector<HTMLDetailsElement>(".transcript")!,
+  );
   updatePlayback();
   reserveSpace();
   return () => {
+    disposeTranscript();
     controller.abort();
     observer.disconnect();
     sizeObserver.disconnect();

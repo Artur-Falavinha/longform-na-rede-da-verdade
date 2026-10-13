@@ -1,5 +1,12 @@
 ---
-import { Volume2, VolumeOff } from "@lucide/astro";
+import {
+  Volume2,
+  VolumeOff,
+  Play,
+  Pause,
+  Maximize,
+  Minimize,
+} from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
 interface Props {
   asset: MediaAsset;
@@ -8,6 +15,7 @@ interface Props {
 }
 const { asset, opening = false, cover = false } = Astro.props;
 const ambient = asset.purpose === "ambient";
+const Shell = ambient ? "div" : "media-controller";
 ---
 
 <figure
@@ -15,8 +23,9 @@ const ambient = asset.purpose === "ambient";
   data-video-player
   data-ambient={ambient || undefined}
 >
-  <div class="video-shell">
+  <Shell class="video-shell" lang={ambient ? undefined : "pt"}>
     <video
+      {...{ slot: ambient ? undefined : "media" }}
       data-media-id={asset.id}
       data-purpose={asset.purpose}
       data-media-src={asset.src}
@@ -38,6 +47,31 @@ const ambient = asset.purpose === "ambient";
         <a href={asset.src}>Abrir arquivo de teste</a>.
       </p>
     </video>
+    {!ambient && (
+      <div class="editorial-controls">
+        <media-time-range aria-label="Posi��o do v�deo"></media-time-range>
+        <media-control-bar>
+          <media-play-button>
+            <Play slot="play" size={22} fill="currentColor" />
+            <Pause slot="pause" size={22} fill="currentColor" />
+          </media-play-button>
+          <media-time-display showduration></media-time-display>
+          <span class="control-spacer"></span>
+          <media-playback-rate-button></media-playback-rate-button>
+          <media-mute-button>
+            <Volume2 slot="high" size={22} />
+            <Volume2 slot="medium" size={22} />
+            <Volume2 slot="low" size={22} />
+            <VolumeOff slot="off" size={22} />
+          </media-mute-button>
+          <media-volume-range></media-volume-range>
+          <media-fullscreen-button>
+            <Maximize slot="enter" size={22} />
+            <Minimize slot="exit" size={22} />
+          </media-fullscreen-button>
+        </media-control-bar>
+      </div>
+    )}
     {ambient && (
       <div class="ambient-controls" hidden>
         {asset.hasAudio && (
@@ -71,9 +105,58 @@ const ambient = asset.purpose === "ambient";
       </button>
       <a href={asset.src}>Abrir arquivo diretamente</a>
     </div>
-  </div>
+  </Shell>
 </figure>
 <style>
+  media-controller {
+    display: block;
+    width: 100%;
+    --media-primary-color: var(--text);
+    --media-secondary-color: var(--bg);
+    --media-control-background: transparent;
+    --media-control-hover-background: var(--red);
+    --media-range-track-height: 3px;
+    --media-range-bar-color: var(--red);
+    --media-range-track-background: #66666b;
+    --media-font-family: var(--sans);
+    --media-control-height: 22px;
+    --media-control-padding: 11px;
+  }
+  .editorial-controls {
+    width: 100%;
+    padding: 0.25rem 1rem 0.6rem;
+    background: linear-gradient(transparent, #0a0a0cf5 35%);
+  }
+  media-controller:not(:defined) .editorial-controls {
+    display: none;
+  }
+  media-control-bar {
+    display: flex;
+    align-items: center;
+  }
+  media-time-range {
+    display: block;
+    width: 100%;
+  }
+  media-volume-range {
+    max-width: 6rem;
+  }
+  media-time-display {
+    font-variant-numeric: tabular-nums;
+    font-size: 12px;
+  }
+  .control-spacer {
+    flex: 1;
+  }
+  @media (max-width: 599px) {
+    .editorial-controls {
+      padding-inline: 0.25rem;
+    }
+    media-volume-range {
+      display: none;
+    }
+  }
+
   .video-player {
     margin-block: 3rem;
   }
