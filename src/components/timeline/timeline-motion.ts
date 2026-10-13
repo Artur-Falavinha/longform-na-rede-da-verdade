@@ -64,52 +64,61 @@ export function initTimeline(root: HTMLElement): Dispose {
       updateMarkers(1);
       return;
     }
-    entryTweens = events.map((event, index) => {
+    entryTweens = events.flatMap((event, index) => {
       const connector = event.querySelector(".timeline-connector > span")!;
-      const parts = event.querySelectorAll(".event-copy > *");
-      const direction = () =>
-        matchMedia("(min-width: 900px)").matches && index % 2 === 0 ? -1 : 1;
-      return gsap
+      const title = event.querySelector("h3")!;
+      const body = event.querySelectorAll(".event-copy > :not(h3)");
+      const anchor = () => start + offsets[index];
+      const branch = gsap
         .timeline({
           scrollTrigger: {
             trigger: event,
-            start: () => start + offsets[index] - window.innerHeight * 0.6,
-            end: () =>
-              start +
-              offsets[index] -
-              window.innerHeight * 0.6 +
-              Math.min(180, window.innerHeight * 0.22),
+            start: () => anchor() - innerHeight * 0.6,
+            end: () => anchor() - innerHeight * 0.6 + 64,
             scrub: true,
             invalidateOnRefresh: true,
           },
         })
+        .fromTo(connector, { scaleX: 0 }, { scaleX: 1, ease: "none" });
+      const content = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: event,
+            start: () => anchor() - innerHeight * 0.86,
+            end: () => anchor() - innerHeight * 0.34,
+            scrub: 0.35,
+            invalidateOnRefresh: true,
+          },
+        })
         .fromTo(
-          connector,
-          { scaleX: 0 },
-          { scaleX: 1, duration: 0.25, ease: "none" },
-          0,
-        )
-        .fromTo(
-          parts,
+          title,
           {
             opacity: 0,
-            x: () => direction() * 24,
-            y: 24,
+            y: 48,
             clipPath: "inset(0 0 100% 0)",
-            filter: "blur(1px)",
           },
           {
             opacity: 1,
-            x: 0,
             y: 0,
             clipPath: "inset(0 0 0% 0)",
-            filter: "blur(0px)",
-            stagger: 0.12,
-            duration: 0.5,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          0,
+        )
+        .fromTo(
+          body,
+          { opacity: 0, y: 28 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.08,
             ease: "power2.out",
           },
-          0.25,
+          0.2,
         );
+      return [branch, content];
     });
     tween = gsap.fromTo(
       fill,
@@ -135,7 +144,16 @@ export function initTimeline(root: HTMLElement): Dispose {
     refreshTimer = setTimeout(() => {
       if (!disposed) {
         measure();
+        if (reduced.matches) return;
+        const position = { top: window.scrollY, left: window.scrollX };
         ScrollTrigger.refresh();
+        if (
+          window.scrollY !== position.top ||
+          window.scrollX !== position.left
+        ) {
+          window.scrollTo({ ...position, behavior: "instant" });
+          ScrollTrigger.update();
+        }
       }
     }, 80);
   }
