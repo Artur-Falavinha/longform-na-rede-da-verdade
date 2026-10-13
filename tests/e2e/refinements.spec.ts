@@ -16,6 +16,10 @@ test("trocas rápidas mantêm um painel e SVGs alternam com a seleção", async 
     await tabs.nth(i).click();
     const panel = page.getByRole("tabpanel");
     for (const [j, comment] of comments[i].comments.entries()) {
+      const quote = panel.locator(".comment blockquote").nth(j);
+      await expect(quote).toHaveText(
+        comment.text.replace(/^["“]([\s\S]*)["”]$/, "$1"),
+      );
       const caption = panel.locator("figcaption").nth(j);
       await expect(caption).toContainText(
         comment.likesLiteral.replace(/^♥\s*/, ""),
@@ -112,6 +116,51 @@ test("seis marcas vetoriais locais carregam e não há símbolos usados como íc
     await expect(logo).toHaveAttribute("src", /\.svg$/);
   }
   expect(await page.locator("body").innerText()).not.toMatch(/[♥↩↗▶Ⅱ]/);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+
+test("carrosséis mantêm cards iguais, navegação e posição após trocar eixo", async ({
+  page,
+}) => {
+  await page.goto("/#comentarios");
+  const panel = page.getByRole("tabpanel");
+  const track = panel.locator(".comment-track");
+  const cards = track.locator(".comment");
+  await expect(cards).toHaveCount(3);
+  for (const card of await cards.all()) {
+    await expect(card).toHaveCSS("background-color", "rgb(204, 31, 31)");
+    await expect(card.locator(".quote-mark")).toHaveText("“");
+  }
+  await panel.getByRole("button", { name: "Próximo comentário" }).click();
+  await expect(panel.locator("[data-slide-status]")).toHaveText("2 / 3");
+  await track.focus();
+  await page.keyboard.press("End");
+  await expect(panel.locator("[data-slide-status]")).toHaveText("3 / 3");
+  await expect(
+    panel.getByRole("button", { name: "Próximo comentário" }),
+  ).toBeDisabled();
+  await page.keyboard.press("Home");
+  await expect(panel.locator("[data-slide-status]")).toHaveText("1 / 3");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await track.evaluate((el) =>
+    el.scrollTo({ left: el.scrollWidth, behavior: "instant" }),
+  );
+  await expect(panel.locator("[data-slide-status]")).toHaveText("3 / 3");
+  await page.getByRole("tab").nth(1).click();
+  await page.getByRole("tab").first().click();
+  await expect(panel.locator("[data-slide-status]")).toHaveText("3 / 3");
+  await expect
+    .poll(() =>
+      track.evaluate((el) => {
+        const last = el.lastElementChild!.getBoundingClientRect();
+        return Math.abs(last.left - el.getBoundingClientRect().left);
+      }),
+    )
+    .toBeLessThan(2);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,

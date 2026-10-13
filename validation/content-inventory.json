@@ -377,7 +377,8 @@
       "sourceText": "\"Sentei meus filhos pre-adolescentes no sofá e coloquei o vídeo na tv, para assistir e entendermos os desafios da adultizacão e redes sociais sexualizadas juntos. Obrigada pela prestação de serviço.\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas da citação substituídas por aspa tipográfica decorativa no card destacado; texto original preservado nos dados."
     },
     {
       "id": "source-041",
@@ -386,7 +387,8 @@
       "sourceText": "\"Sou mãe de uma modelo de passarela que começou a carreira com 14 anos… Este video me fez refletir muito sobre lugares de adultizacao fora da internet…\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa; citação original preservada nos dados."
     },
     {
       "id": "source-042",
@@ -2173,7 +2175,8 @@
       "sourceText": "\"Protejam o Felca!!! Esse é o tipo de denúncia que a mídia tradicional evita por gerar problemas. Espalhem a notícia e cuidem das crianças!\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-236",
@@ -2202,7 +2205,8 @@
       "sourceText": "\"Queremos esse vídeo em jornais, Netflix, é um documentário\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-239",
@@ -2231,7 +2235,8 @@
       "sourceText": "\"O Fantástico deveria levar esse vídeo pra rede nacional. Parabéns pela coragem. Isso é um caso urgente de utilidade pública!!\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-242",
@@ -2323,7 +2328,8 @@
       "sourceText": "\"Senhor, proteja esse cara, tem meu respeito!\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-252",
@@ -2352,7 +2358,8 @@
       "sourceText": "\"O Felca está sendo na internet o que falta no Congresso.\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-255",
@@ -2463,7 +2470,8 @@
       "sourceText": "\"nao nego a importancia do video. mas o quanto que isso encheu o ego desse cara não tá escrito. e escancara ainda mais o lado podre dele o que ele acha da lei felca.\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-267",
@@ -2472,7 +2480,8 @@
       "sourceText": "\"maior cavalo de troia da internet\"",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Aspas externas substituídas pela aspa tipográfica decorativa dos cards; citação original preservada nos dados."
     },
     {
       "id": "source-268",
