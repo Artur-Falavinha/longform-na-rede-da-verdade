@@ -6,13 +6,42 @@ interface Props {
 const { entries } = Astro.props;
 ---
 
+<nav
+  class="timeline-index"
+  data-timeline-index
+  aria-label="Acontecimentos da linha do tempo"
+  hidden
+>
+  <button
+    type="button"
+    class="index-toggle"
+    data-index-toggle
+    aria-expanded="false"
+  >
+    Acontecimentos <span aria-hidden="true">+</span>
+  </button>
+  <ol>
+    {entries.map((entry) => (
+      <li>
+        <a href={`#acontecimento-${entry.id}`}>
+          <span class="index-bar" aria-hidden="true"></span>
+          <span class="index-label">{entry.title}</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</nav>
 <div class="timeline" data-timeline>
   <div class="timeline-rail" aria-hidden="true">
     <div class="timeline-fill" data-timeline-fill></div>
   </div>
   <ol>
     {entries.map((entry) => (
-      <li class="timeline-event" data-timeline-event id={`event-${entry.id}`}>
+      <li
+        class="timeline-event"
+        data-timeline-event
+        id={`acontecimento-${entry.id}`}
+      >
         <span
           class="timeline-marker"
           data-timeline-marker
@@ -27,34 +56,23 @@ const { entries } = Astro.props;
         </span>
         <div class="event-content">
           <div class="event-date" data-event-date>
-            <time datetime={entry.dateISO}>{entry.dateLabel}</time>
+            <time datetime={entry.dateISO}>
+              {entry.dateLabel.replace(" · data pendente", "")}
+            </time>
           </div>
           <div class="event-copy">
             <h3>{entry.title}</h3>
             {entry.category && (
               <span class="event-category">{entry.category}</span>
             )}
-            {entry.paragraphs.map((text) => (
+            {(entry.status === "placeholder"
+              ? [
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                ]
+              : entry.paragraphs
+            ).map((text) => (
               <p>{text}</p>
             ))}
-            <div class="source">
-              {entry.sources.map((source) => (
-                <p>
-                  {source.url ? (
-                    <a
-                      href={source.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {source.label}
-                    </a>
-                  ) : (
-                    source.label
-                  )}
-                </p>
-              ))}
-              {entry.status === "placeholder" && <p>Conteúdo pendente.</p>}
-            </div>
           </div>
         </div>
       </li>
@@ -62,6 +80,129 @@ const { entries } = Astro.props;
   </ol>
 </div>
 <style>
+  .index-toggle {
+    display: none;
+  }
+  .timeline-index {
+    position: fixed;
+    inset: 50% auto auto 1rem;
+    transform: translateY(-50%);
+    z-index: 25;
+    max-height: 70vh;
+    overflow-y: auto;
+    width: 11rem;
+    pointer-events: none;
+  }
+  .timeline-index ol {
+    list-style: none;
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .timeline-index li {
+    margin: 0;
+  }
+  .timeline-index a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    position: relative;
+    min-height: 44px;
+    padding: 0.3rem 0;
+    text-decoration: none;
+    font: 400 0.7rem/1.35 var(--sans);
+    color: var(--muted);
+    pointer-events: auto;
+    width: 32px;
+  }
+  .index-bar {
+    height: 2px;
+    width: 12px;
+    flex-shrink: 0;
+    background: currentColor;
+    transition: width 0.3s;
+  }
+  .index-label {
+    position: absolute;
+    left: 30px;
+    width: 135px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+      opacity 0.25s,
+      transform 0.35s;
+    min-width: 0;
+  }
+  .timeline-index:hover a,
+  .timeline-index:focus-within a,
+  .timeline-index a[aria-current] {
+    width: 100%;
+  }
+  .timeline-index:hover,
+  .timeline-index:focus-within {
+    background: var(--bg);
+  }
+  .timeline-index:hover .index-label,
+  .timeline-index:focus-within .index-label,
+  a[aria-current] .index-label {
+    opacity: 1;
+    transform: none;
+  }
+  .timeline-index a[aria-current] {
+    color: var(--accent);
+  }
+  .timeline-index a[aria-current] .index-bar {
+    width: 20px;
+  }
+  @media (max-width: 1199px) {
+    .index-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      min-height: 44px;
+      background: transparent;
+      border: 0;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      pointer-events: auto;
+    }
+    .timeline-index {
+      inset: auto auto calc(1rem + var(--compact-space, 0px)) 0.75rem;
+      transform: none;
+      width: min(17rem, calc(100vw - 1.5rem));
+      max-height: 45vh;
+      background: var(--bg);
+      border: 1px solid var(--surface);
+    }
+    .timeline-index li:has(a:not([aria-current])) {
+      display: none;
+    }
+    .timeline-index[data-expanded] li:has(a:not([aria-current])) {
+      display: block;
+    }
+    .timeline-index a {
+      min-height: 44px;
+      width: 100%;
+    }
+    .timeline-index .index-label {
+      position: static;
+      width: auto;
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .index-label,
+    .index-bar {
+      transition: none;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .timeline {
+      margin-left: 6rem;
+    }
+  }
   .timeline {
     overflow: clip;
     position: relative;
@@ -181,16 +322,6 @@ const { entries } = Astro.props;
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
   }
-  .event-content .source {
-    max-width: 90%;
-  }
-  .event-content .source p {
-    font-size: 0.75rem;
-    line-height: 1.6;
-  }
-  .source p + p {
-    margin-top: 0.5rem;
-  }
   .timeline-event[data-reached="true"] .timeline-marker {
     background: var(--red);
   }
@@ -213,9 +344,6 @@ const { entries } = Astro.props;
     }
     .timeline-connector > span {
       transform-origin: left;
-    }
-    .event-content .source {
-      max-width: 100%;
     }
     .event-content p {
       font-size: 1.125rem;

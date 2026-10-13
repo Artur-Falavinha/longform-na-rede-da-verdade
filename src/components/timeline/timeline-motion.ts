@@ -1,7 +1,9 @@
 import { gsap, ScrollTrigger } from "../../scripts/gsap";
+import { initTimelineIndex } from "./timeline-index";
 import type { Dispose } from "../../data/types";
 
 export function initTimeline(root: HTMLElement): Dispose {
+  const disposeIndex = initTimelineIndex(root);
   const fill = root.querySelector<HTMLElement>("[data-timeline-fill]")!;
   const rail = root.querySelector<HTMLElement>(".timeline-rail")!;
   const events = [
@@ -19,6 +21,31 @@ export function initTimeline(root: HTMLElement): Dispose {
   let tween: gsap.core.Tween | undefined;
   let entryTweens: gsap.core.Timeline[] = [];
   let disposed = false;
+  let progress = 0;
+  let cursor: ReturnType<
+    typeof import("./timeline-cursor").createTimelineCursor
+  >;
+  let cursorLoading = false;
+  const cursorObserver = new IntersectionObserver(
+    async ([entry]) => {
+      if (!entry.isIntersecting || reduced.matches || cursor || cursorLoading)
+        return;
+      cursorLoading = true;
+      try {
+        const { createTimelineCursor } = await import("./timeline-cursor");
+        if (!disposed && !reduced.matches) {
+          cursor = createTimelineCursor(rail);
+          cursor?.update(progress);
+        }
+      } catch {
+        /* A linha em CSS permanece disponível sem WebGL. */
+      } finally {
+        cursorLoading = false;
+      }
+    },
+    { rootMargin: "200px" },
+  );
+  cursorObserver.observe(root);
 
   function measure() {
     if (!markers.length) {
@@ -36,7 +63,9 @@ export function initTimeline(root: HTMLElement): Dispose {
     rail.style.height = `${Math.max(0, distance)}px`;
     rail.style.bottom = "auto";
   }
-  function updateMarkers(progress: number) {
+  function updateMarkers(value: number) {
+    progress = value;
+    cursor?.update(progress);
     events.forEach((event, i) => {
       event.dataset.reached = String(offsets[i] <= progress * distance + 0.5);
     });
@@ -60,6 +89,8 @@ export function initTimeline(root: HTMLElement): Dispose {
     );
     measure();
     if (reduced.matches || markers.length < 2 || distance <= 0) {
+      cursor?.dispose();
+      cursor = undefined;
       gsap.set(fill, { scaleY: 1 });
       updateMarkers(1);
       return;
@@ -86,7 +117,7 @@ export function initTimeline(root: HTMLElement): Dispose {
             trigger: event,
             start: () => anchor() - innerHeight * 0.86,
             end: () => anchor() - innerHeight * 0.34,
-            scrub: 0.35,
+            scrub: 0.6,
             invalidateOnRefresh: true,
           },
         })
@@ -94,8 +125,8 @@ export function initTimeline(root: HTMLElement): Dispose {
           title,
           {
             opacity: 0,
-            y: 48,
-            clipPath: "inset(0 0 100% 0)",
+            y: 36,
+            clipPath: "inset(0 0 85% 0)",
           },
           {
             opacity: 1,
@@ -108,7 +139,7 @@ export function initTimeline(root: HTMLElement): Dispose {
         )
         .fromTo(
           body,
-          { opacity: 0, y: 28 },
+          { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,
@@ -172,6 +203,9 @@ export function initTimeline(root: HTMLElement): Dispose {
   configure();
   return () => {
     disposed = true;
+    disposeIndex();
+    cursorObserver.disconnect();
+    cursor?.dispose();
     clearTimeout(refreshTimer);
     controller.abort();
     observer.disconnect();
