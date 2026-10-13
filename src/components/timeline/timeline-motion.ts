@@ -17,7 +17,7 @@ export function initTimeline(root: HTMLElement): Dispose {
   let start = 0;
   let refreshTimer: ReturnType<typeof setTimeout>;
   let tween: gsap.core.Tween | undefined;
-  let entryTweens: gsap.core.Tween[] = [];
+  let entryTweens: gsap.core.Timeline[] = [];
   let disposed = false;
 
   function measure() {
@@ -50,33 +50,54 @@ export function initTimeline(root: HTMLElement): Dispose {
       entry.kill();
     });
     entryTweens = [];
-    const copies = events.map((event) =>
-      event.querySelector<HTMLElement>(".event-copy")!,
+    gsap.set(
+      events.flatMap((event) => [
+        ...event.querySelectorAll(
+          ".event-copy > *, .timeline-connector > span",
+        ),
+      ]),
+      { clearProps: "opacity,transform" },
     );
-    gsap.set(copies, { clearProps: "opacity,transform" });
     measure();
     if (reduced.matches || markers.length < 2 || distance <= 0) {
       gsap.set(fill, { scaleY: 1 });
       updateMarkers(1);
       return;
     }
-    entryTweens = copies.map((copy) =>
-      gsap.fromTo(
-        copy,
-        { opacity: 0.65, x: 6 },
-        {
-          opacity: 1,
-          x: 0,
-          ease: "none",
+    entryTweens = events.map((event, index) => {
+      const connector = event.querySelector(".timeline-connector > span")!;
+      const parts = event.querySelectorAll(".event-copy > *");
+      const direction = () =>
+        matchMedia("(min-width: 900px)").matches && index % 2 === 0 ? -1 : 1;
+      return gsap
+        .timeline({
           scrollTrigger: {
-            trigger: copy,
-            start: "top 94%",
-            end: "top 72%",
+            trigger: event,
+            start: "top 84%",
+            end: "top 55%",
             scrub: true,
+            invalidateOnRefresh: true,
           },
-        },
-      ),
-    );
+        })
+        .fromTo(
+          connector,
+          { scaleX: 0 },
+          { scaleX: 1, duration: 0.25, ease: "none" },
+          0,
+        )
+        .fromTo(
+          parts,
+          { opacity: 0.2, x: () => direction() * 28 },
+          {
+            opacity: 1,
+            x: 0,
+            stagger: 0.08,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          0.1,
+        );
+    });
     tween = gsap.fromTo(
       fill,
       { scaleY: 0 },
@@ -131,7 +152,11 @@ export function initTimeline(root: HTMLElement): Dispose {
     });
     gsap.set(fill, { clearProps: "transform" });
     gsap.set(
-      events.map((event) => event.querySelector(".event-copy")),
+      events.flatMap((event) => [
+        ...event.querySelectorAll(
+          ".event-copy > *, .timeline-connector > span",
+        ),
+      ]),
       { clearProps: "opacity,transform" },
     );
   };
