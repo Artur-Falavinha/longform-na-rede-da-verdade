@@ -1,3 +1,4 @@
+import { animate } from "motion/mini";
 import type { Dispose } from "../../data/types";
 
 export function initChapterIndex(root: HTMLElement): Dispose {
@@ -9,6 +10,28 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     .filter((section): section is HTMLElement => Boolean(section));
   const current = root.querySelector<HTMLElement>("[data-current-chapter]")!;
   const controller = new AbortController();
+  const icon = summary.querySelector("svg")!;
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  let iconAnimation: ReturnType<typeof animate> | undefined;
+  function animateIcon() {
+    iconAnimation?.stop();
+    iconAnimation = animate(
+      icon,
+      { transform: menu.open ? "rotate(45deg)" : "rotate(0deg)" },
+      { duration: reduced.matches ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] },
+    );
+  }
+  menu.addEventListener("toggle", animateIcon, { signal: controller.signal });
+  reduced.addEventListener("change", animateIcon, {
+    signal: controller.signal,
+  });
+  document.addEventListener(
+    "pointerdown",
+    (event) => {
+      if (menu.open && !menu.contains(event.target as Node)) menu.open = false;
+    },
+    { signal: controller.signal },
+  );
   let frame = 0;
   let anchorFrame = 0;
   const initialHash = location.hash;
@@ -89,6 +112,8 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   window.addEventListener("resize", schedule, { signal: controller.signal });
   update();
   return () => {
+    iconAnimation?.stop();
+    icon.style.removeProperty("transform");
     controller.abort();
     cancelAnimationFrame(frame);
     cancelAnimationFrame(anchorFrame);

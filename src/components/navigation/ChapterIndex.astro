@@ -65,9 +65,31 @@ import { chapters } from "../../data/chapters";
   .current-chapter {
     color: var(--muted);
     font-size: 0.75rem;
+    position: absolute;
+    right: calc(100% + 1.25rem);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(12px);
+    pointer-events: none;
+    transition:
+      opacity 250ms,
+      transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .chapter-menu[open] summary > span:last-child {
-    transform: rotate(45deg);
+  @media (hover: hover) and (min-width: 900px) {
+    summary:hover .current-chapter,
+    summary:focus-visible .current-chapter {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  summary :global(svg) {
+    display: block;
+    transform-origin: center;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .current-chapter {
+      transition: none;
+    }
   }
   nav {
     position: absolute;
