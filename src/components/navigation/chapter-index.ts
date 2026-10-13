@@ -14,6 +14,43 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   const icon = summary.querySelector("svg")!;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const nav = menu.querySelector<HTMLElement>("nav")!;
+  const preview = root.querySelector<HTMLElement>("[data-chapter-preview]")!;
+  const hover = matchMedia("(hover: hover) and (min-width: 900px)");
+  let previewAnimations: ReturnType<typeof animate>[] = [];
+  function updatePreview() {
+    const visible =
+      hover.matches &&
+      (summary.matches(":hover") || summary.matches(":focus-visible"));
+    previewAnimations.forEach((animation) => animation.stop());
+    const options = {
+      duration: reduced.matches ? 0 : 0.4,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    };
+    previewAnimations = [
+      animate(preview, { width: visible ? current.scrollWidth : 0 }, options),
+      animate(
+        current,
+        {
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateX(0px)" : "translateX(8px)",
+        },
+        options,
+      ),
+    ];
+  }
+  for (const event of ["pointerenter", "pointerleave", "focus", "blur"])
+    summary.addEventListener(event, updatePreview, {
+      signal: controller.signal,
+    });
+  hover.addEventListener("change", updatePreview, {
+    signal: controller.signal,
+  });
+  reduced.addEventListener("change", updatePreview, {
+    signal: controller.signal,
+  });
+  void document.fonts.ready.then(() => {
+    if (!controller.signal.aborted) updatePreview();
+  });
   let expanded = menu.open;
   let version = 0;
   let panelAnimation: ReturnType<typeof animate> | undefined;
@@ -176,7 +213,11 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       const selected = link.hash === `#${active.id}`;
       if (selected) {
         link.setAttribute("aria-current", "location");
-        current.textContent = link.textContent?.slice(2).trim() ?? "";
+        const title = link.textContent?.slice(2).trim() ?? "";
+        if (current.textContent !== title) {
+          current.textContent = title;
+          updatePreview();
+        }
       } else link.removeAttribute("aria-current");
     }
   }
@@ -219,6 +260,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     stopScroll();
     ++version;
     panelAnimation?.stop();
+    previewAnimations.forEach((animation) => animation.stop());
     nav.inert = false;
     iconAnimation?.stop();
     icon.style.removeProperty("transform");
