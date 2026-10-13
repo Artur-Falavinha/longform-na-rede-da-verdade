@@ -111,6 +111,7 @@ const { entries } = Astro.props;
     text-decoration: none;
     font: 400 0.7rem/1.35 var(--sans);
     color: var(--muted);
+    transition: color 250ms ease-in-out;
     pointer-events: auto;
     width: 32px;
   }
@@ -196,6 +197,7 @@ const { entries } = Astro.props;
     }
   }
   @media (prefers-reduced-motion: reduce) {
+    .timeline-index a,
     .index-label,
     .index-bar {
       transition: none;
