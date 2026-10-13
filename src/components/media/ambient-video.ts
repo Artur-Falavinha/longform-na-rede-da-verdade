@@ -1,3 +1,4 @@
+import { animate } from "motion/mini";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
 
@@ -12,6 +13,32 @@ export function initAmbientVideo(
   );
   const controller = new AbortController();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const off = soundButton?.querySelector<SVGSVGElement>(".sound-off");
+  const on = soundButton?.querySelector<SVGSVGElement>(".sound-on");
+  const slash = off?.querySelector<SVGPathElement>('path[d="m2 2 20 20"]');
+  slash?.setAttribute("pathLength", "1");
+  if (slash) slash.style.strokeDasharray = "1";
+  let iconState: boolean | undefined;
+  let iconAnimations: ReturnType<typeof animate>[] = [];
+  function updateIcon(force = false) {
+    if (!off || !on || !slash || (iconState === video.muted && !force)) return;
+    const instant = iconState === undefined || reduced.matches;
+    iconState = video.muted;
+    iconAnimations.forEach((animation) => animation.stop());
+    const options = {
+      duration: instant ? 0 : 0.4,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    };
+    iconAnimations = [
+      animate(off, { opacity: video.muted ? 1 : 0 }, options),
+      animate(on, { opacity: video.muted ? 0 : 1 }, options),
+      animate(
+        slash,
+        { strokeDashoffset: video.muted ? "0" : "1" },
+        { ...options, duration: instant ? 0 : 0.5 },
+      ),
+    ];
+  }
   let visible = false;
   video.controls = false;
   video.muted = true;
@@ -23,6 +50,7 @@ export function initAmbientVideo(
       video.muted ? "Ativar som" : "Desativar som",
     );
     video.controls = false;
+    updateIcon();
   }
   function attempt() {
     if (
@@ -70,11 +98,13 @@ export function initAmbientVideo(
       if (reduced.matches && !video.paused)
         coordinator.pause(id, "reduced-motion");
       updateControls();
+      updateIcon(true);
     },
     { signal: controller.signal },
   );
   updateControls();
   return () => {
+    iconAnimations.forEach((animation) => animation.stop());
     controller.abort();
     observer.disconnect();
   };

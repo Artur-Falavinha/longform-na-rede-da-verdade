@@ -48,8 +48,18 @@ const ambient = asset.purpose === "ambient";
             aria-label="Ativar som"
             aria-pressed="false"
           >
-            <VolumeOff class="sound-off" size={64} stroke-width={1.5} aria-hidden="true" />
-            <Volume2 class="sound-on" size={64} stroke-width={1.5} aria-hidden="true" />
+            <VolumeOff
+              class="sound-off"
+              size={64}
+              stroke-width={0.8}
+              aria-hidden="true"
+            />
+            <Volume2
+              class="sound-on"
+              size={64}
+              stroke-width={0.8}
+              aria-hidden="true"
+            />
           </button>
         )}
       </div>
@@ -120,7 +130,7 @@ const ambient = asset.purpose === "ambient";
   }
   [data-ambient-sound][aria-pressed="false"] :global(.sound-on),
   [data-ambient-sound][aria-pressed="true"] :global(.sound-off) {
-    visibility: hidden;
+    opacity: 0;
   }
   .media-error {
     position: absolute;
