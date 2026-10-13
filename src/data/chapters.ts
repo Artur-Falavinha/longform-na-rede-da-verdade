@@ -1,7 +1,7 @@
 import type { ChapterId } from "./types";
-export const chapters: { id: ChapterId; title: string }[] = [
+export const chapters: { id: ChapterId; title: string; anchor?: string }[] = [
   { id: "abertura", title: "Abertura" },
-  { id: "contexto", title: "A denúncia" },
+  { id: "contexto", title: "A denúncia", anchor: "denuncia" },
   { id: "comentarios", title: "O que a rede disse" },
   { id: "comparacao", title: "Quem investiga?" },
   { id: "jornalismo", title: "O campo fala" },

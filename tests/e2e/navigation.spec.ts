@@ -35,3 +35,14 @@ test("Escape recolhe índice e devolve foco ao controle", async ({ page }) => {
   await expect(menu).not.toHaveAttribute("open", "");
   await expect(menu.locator("summary")).toBeFocused();
 });
+
+
+test("A denúncia aponta para o conteúdo depois da capa editorial", async ({ page }) => {
+  await page.goto("/");
+  await page.locator(".chapter-menu summary").click();
+  await page.getByRole("link", { name: "A denúncia", exact: true }).click();
+  await expect(page).toHaveURL(/#denuncia$/);
+  await expect.poll(() => page.locator("#denuncia").evaluate(e => e.getBoundingClientRect().top)).toBeLessThan(150);
+  await expect(page.locator("#denuncia")).toBeFocused();
+  expect(await page.locator("#report-title").evaluate(e => e.getBoundingClientRect().bottom)).toBeLessThan(0);
+});

@@ -19,7 +19,7 @@ import { chapters } from "../../data/chapters";
       <ol>
         {chapters.map((chapter, i) => (
           <li>
-            <a href={`#${chapter.id}`}>
+            <a href={`#${chapter.anchor ?? chapter.id}`}>
               <span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
               {chapter.title}
             </a>
