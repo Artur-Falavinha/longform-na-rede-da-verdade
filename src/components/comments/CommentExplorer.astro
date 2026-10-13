@@ -225,6 +225,7 @@ import { comments } from "../../data/comments";
   }
   .comment-track {
     display: flex;
+    align-items: flex-start;
     gap: 1rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -233,7 +234,16 @@ import { comments } from "../../data/comments";
   }
   .comment-track[data-enhanced] {
     scrollbar-width: none;
+    overflow-y: hidden;
+    cursor: grab;
+    transition: height 250ms ease;
   }
+  .comment-track[data-dragging] {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
   .comment-track:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
@@ -314,6 +324,12 @@ import { comments } from "../../data/comments";
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
+    line-height: 1;
+  }
+  .comment figcaption :global(svg) {
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(-0.5px);
   }
   .comment-analysis summary :global(svg) {
     transition: transform 300ms;
@@ -352,6 +368,7 @@ import { comments } from "../../data/comments";
     scroll-margin-top: calc(var(--header-height) + 1rem);
   }
   @media (prefers-reduced-motion: reduce) {
+    .comment-track,
     .group-selectors a::before,
     .tab-icon :global(svg),
     .comment-analysis summary :global(svg) {

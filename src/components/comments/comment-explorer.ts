@@ -27,6 +27,8 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     controls.hidden = cards.length < 2;
     track.dataset.enhanced = "true";
     function render() {
+      if (track.clientWidth)
+        track.style.height = `${cards[index].offsetHeight}px`;
       status.textContent = `${index + 1} / ${cards.length}`;
       previous.disabled = index === 0;
       next.disabled = index === cards.length - 1;
@@ -87,16 +89,85 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
       },
       { signal: controller.signal },
     );
+    let width = 0;
     const resize = new ResizeObserver(() => {
-      if (track.clientWidth) move(index, true);
+      if (!track.clientWidth) return;
+      render();
+      if (width !== track.clientWidth) {
+        width = track.clientWidth;
+        move(index, true);
+      }
     });
     resize.observe(track);
+    cards.forEach((card) => resize.observe(card));
+    let drag:
+      { x: number; left: number; pointer: number; moved: boolean } | undefined;
+    track.addEventListener(
+      "pointerdown",
+      (event) => {
+        if (
+          event.pointerType !== "mouse" ||
+          event.button !== 0 ||
+          (event.target as Element).closest("button, a, summary, input")
+        )
+          return;
+        drag = {
+          x: event.clientX,
+          left: track.scrollLeft,
+          pointer: event.pointerId,
+          moved: false,
+        };
+      },
+      { signal: controller.signal },
+    );
+    track.addEventListener(
+      "pointermove",
+      (event) => {
+        if (!drag) return;
+        const delta = event.clientX - drag.x;
+        if (!drag.moved && Math.abs(delta) < 5) return;
+        drag.moved = true;
+        track.dataset.dragging = "true";
+        track.setPointerCapture(drag.pointer);
+        event.preventDefault();
+        track.scrollLeft = drag.left - delta;
+      },
+      { signal: controller.signal },
+    );
+    function endDrag() {
+      if (!drag) return;
+      const { moved, pointer } = drag;
+      drag = undefined;
+      delete track.dataset.dragging;
+      if (track.hasPointerCapture(pointer))
+        track.releasePointerCapture(pointer);
+      if (moved) {
+        window.getSelection()?.removeAllRanges();
+        move(index);
+      }
+    }
+    track.addEventListener("pointerup", endDrag, { signal: controller.signal });
+    track.addEventListener("pointercancel", endDrag, {
+      signal: controller.signal,
+    });
+    track.addEventListener("lostpointercapture", endDrag, {
+      signal: controller.signal,
+    });
+    track.addEventListener(
+      "pointerleave",
+      () => {
+        if (drag && !drag.moved) drag = undefined;
+      },
+      { signal: controller.signal },
+    );
     reduced.addEventListener("change", () => move(target, true), {
       signal: controller.signal,
     });
     render();
     return () => {
       resize.disconnect();
+      endDrag();
+      track.style.removeProperty("height");
       delete track.dataset.enhanced;
       controls.hidden = true;
       cards.forEach((card) => {
