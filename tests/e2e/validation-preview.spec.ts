@@ -43,6 +43,7 @@ test("índice acompanha a leitura e navega até o acontecimento", async ({
     "href",
     `#${await events.nth(4).getAttribute("id")}`,
   );
+  await expect(events.nth(4)).toBeFocused();
   await page.emulateMedia({ reducedMotion: "reduce" });
   if (await toggle.isVisible()) await toggle.click();
   else await nav.locator('[aria-current="step"]').focus();
