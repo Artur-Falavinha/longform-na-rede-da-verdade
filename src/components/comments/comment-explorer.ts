@@ -25,10 +25,6 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     let index = 0;
     let target = 0;
     let slide: gsap.core.Tween | undefined;
-    const followPointer = gsap.quickTo(track, "scrollLeft", {
-      duration: 0.14,
-      ease: "power2.out",
-    });
     controls.hidden = cards.length < 2;
     track.dataset.enhanced = "true";
     function render() {
@@ -49,7 +45,6 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
       target = Math.max(0, Math.min(cards.length - 1, value));
       const offset = cards[target].offsetLeft - cards[0].offsetLeft;
       slide?.kill();
-      followPointer.tween.pause();
       track.dataset.sliding = "true";
       slide = gsap.to(track, {
         scrollLeft: offset,
@@ -142,7 +137,6 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
           return;
         track.dataset.dragging = "true";
         slide?.kill();
-        followPointer.tween.pause();
         delete track.dataset.sliding;
         drag = {
           x: event.clientX,
@@ -168,8 +162,7 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
           0,
           Math.min(track.scrollWidth - track.clientWidth, drag.left - delta),
         );
-        if (reduced.matches) track.scrollLeft = drag.desired;
-        else followPointer(drag.desired);
+        track.scrollLeft = drag.desired;
       },
       { signal: controller.signal },
     );
@@ -212,7 +205,6 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
       resize.disconnect();
       endDrag();
       slide?.kill();
-      followPointer.tween.kill();
       delete track.dataset.sliding;
       track.style.removeProperty("height");
       delete track.dataset.enhanced;
