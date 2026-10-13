@@ -77,7 +77,8 @@ const anchors: Record<string, string> = {
                 </figcaption>
                 <details class="comment-analysis">
                   <summary>
-                    <span>Ler análise</span> <Plus size={18} aria-hidden="true" />
+                    <span>Ler análise</span>{" "}
+                    <Plus size={18} aria-hidden="true" />
                   </summary>
                   <div class="analysis-body">
                     <ul>
@@ -230,6 +231,7 @@ const anchors: Record<string, string> = {
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
     overscroll-behavior-x: contain;
+    overflow-anchor: none;
   }
   .comment-track[data-enhanced] {
     scrollbar-width: none;
@@ -250,6 +252,7 @@ const anchors: Record<string, string> = {
   }
   .comment {
     flex: 0 0 100%;
+    width: 100%;
     min-width: 0;
     margin: 0;
     scroll-snap-align: start;
