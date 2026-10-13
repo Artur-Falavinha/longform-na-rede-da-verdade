@@ -1,4 +1,5 @@
 ---
+import { outletLogos } from "../data/outlet-logos";
 import Longform from "../layouts/Longform.astro";
 import ChapterIndex from "../components/navigation/ChapterIndex.astro";
 import Section from "../components/editorial/Section.astro";
@@ -152,7 +153,16 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <span class="eyebrow">Veículos que cobriram o caso</span>
         <ul>
           {research.outlets.map((outlet) => (
-            <li>{outlet}</li>
+            <li>
+              <img
+                src={outletLogos[outlet].src}
+                alt={outlet}
+                width="150"
+                height="48"
+                loading="lazy"
+              />
+              <span class="sr-only">{outlet}</span>
+            </li>
           ))}
         </ul>
       </aside>
@@ -425,7 +435,23 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     font-family: var(--serif);
     font-size: 1.65rem;
   }
+  .outlets img {
+    width: 100%;
+    height: 3rem;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+  .outlets img[alt="CNN Brasil"] {
+    filter: none;
+    height: 4.5rem;
+    opacity: 1;
+  }
   .outlets li {
+    width: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
   }
   .interviews {

@@ -1,4 +1,5 @@
 ---
+import { ArrowDown } from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
 interface Props {
   asset: MediaAsset;
@@ -68,7 +69,7 @@ const ambient = asset.purpose === "ambient";
     </div>
     {opening && (
       <a class="cover-next" href="#contexto">
-        Começar a leitura <span aria-hidden="true">↓</span>
+        Começar a leitura <ArrowDown size={18} aria-hidden="true" />
       </a>
     )}
   </div>

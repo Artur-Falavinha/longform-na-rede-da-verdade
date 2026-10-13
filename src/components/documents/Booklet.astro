@@ -1,4 +1,5 @@
 ---
+import { ArrowUpRight, Download } from "@lucide/astro";
 import { booklet } from "../../data/documents";
 ---
 
@@ -21,7 +22,7 @@ import { booklet } from "../../data/documents";
         target="_blank"
         rel="noopener noreferrer"
       >
-        Abrir cartilha <span aria-hidden="true">↗</span>
+        Abrir cartilha <ArrowUpRight size={18} aria-hidden="true" />
         <span class="sr-only"> em nova guia</span>
       </a>
       <a
@@ -30,7 +31,7 @@ import { booklet } from "../../data/documents";
         href={booklet.src}
         download={booklet.downloadName}
       >
-        Baixar PDF <span aria-hidden="true">↓</span>
+        Baixar PDF <Download size={18} aria-hidden="true" />
       </a>
     </div>
     <p data-document-error role="status" class="pending" hidden>

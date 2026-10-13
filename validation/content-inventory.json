@@ -630,7 +630,8 @@
       "sourceText": "♥ ~1,3 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-068",
@@ -639,7 +640,8 @@
       "sourceText": "↩ [DADO]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-069",
@@ -648,7 +650,8 @@
       "sourceText": "♥ 277 curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-070",
@@ -2179,7 +2182,8 @@
       "sourceText": "♥ ~184 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-237",
@@ -2188,7 +2192,8 @@
       "sourceText": "↩ 394 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-238",
@@ -2206,7 +2211,8 @@
       "sourceText": "♥ ~31 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-240",
@@ -2215,7 +2221,8 @@
       "sourceText": "↩ 88 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-241",
@@ -2233,7 +2240,8 @@
       "sourceText": "♥ ~10 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-243",
@@ -2242,7 +2250,8 @@
       "sourceText": "↩ 61 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-244",
@@ -2323,7 +2332,8 @@
       "sourceText": "♥ ~201 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-253",
@@ -2332,7 +2342,8 @@
       "sourceText": "↩ 495 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-254",
@@ -2350,7 +2361,8 @@
       "sourceText": "♥ ~5,5 mil curtidas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-256",
@@ -2359,7 +2371,8 @@
       "sourceText": "↩ 47 respostas",
       "targetChapter": "comentarios",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-257",
@@ -2377,7 +2390,8 @@
       "sourceText": "♥ [DADO]",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Símbolos decorativos de curtidas e respostas substituídos por ícones SVG Lucide; texto e valores preservados."
     },
     {
       "id": "source-259",

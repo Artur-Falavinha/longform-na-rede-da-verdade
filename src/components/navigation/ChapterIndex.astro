@@ -1,4 +1,5 @@
 ---
+import { Plus } from "@lucide/astro";
 import { chapters } from "../../data/chapters";
 ---
 
@@ -12,7 +13,7 @@ import { chapters } from "../../data/chapters";
       <span class="current-chapter" data-current-chapter>
         Abertura
       </span>
-      <span aria-hidden="true">+</span>
+      <Plus size={18} aria-hidden="true" />
     </summary>
     <nav aria-label="Capítulos da reportagem">
       <ol>
