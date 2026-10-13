@@ -24,10 +24,19 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     const status = carousel.querySelector<HTMLElement>("[data-slide-status]")!;
     let index = 0;
     let target = 0;
+    let slide: gsap.core.Tween | undefined;
+    const followPointer = gsap.quickTo(track, "scrollLeft", {
+      duration: 0.14,
+      ease: "power2.out",
+    });
     controls.hidden = cards.length < 2;
     track.dataset.enhanced = "true";
     function render() {
-      if (track.clientWidth)
+      if (
+        track.clientWidth &&
+        !track.hasAttribute("data-dragging") &&
+        !track.hasAttribute("data-sliding")
+      )
         track.style.height = `${cards[index].offsetHeight}px`;
       status.textContent = `${index + 1} / ${cards.length}`;
       previous.disabled = index === 0;
@@ -39,9 +48,18 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     function move(value: number, instant = false) {
       target = Math.max(0, Math.min(cards.length - 1, value));
       const offset = cards[target].offsetLeft - cards[0].offsetLeft;
-      track.scrollTo({
-        left: offset,
-        behavior: instant || reduced.matches ? "instant" : "smooth",
+      slide?.kill();
+      followPointer.tween.pause();
+      track.dataset.sliding = "true";
+      slide = gsap.to(track, {
+        scrollLeft: offset,
+        duration: instant || reduced.matches ? 0 : 0.5,
+        ease: "power3.out",
+        onComplete: () => {
+          delete track.dataset.sliding;
+          index = target;
+          render();
+        },
       });
     }
     previous.addEventListener("click", () => move(target - 1), {
@@ -85,7 +103,11 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     track.addEventListener(
       "scrollend",
       () => {
-        target = index;
+        if (
+          !track.hasAttribute("data-dragging") &&
+          !track.hasAttribute("data-sliding")
+        )
+          target = index;
       },
       { signal: controller.signal },
     );
@@ -101,7 +123,14 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     resize.observe(track);
     cards.forEach((card) => resize.observe(card));
     let drag:
-      { x: number; left: number; pointer: number; moved: boolean } | undefined;
+      | {
+          x: number;
+          left: number;
+          desired: number;
+          pointer: number;
+          moved: boolean;
+        }
+      | undefined;
     track.addEventListener(
       "pointerdown",
       (event) => {
@@ -111,9 +140,14 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
           (event.target as Element).closest("button, a, summary, input")
         )
           return;
+        track.dataset.dragging = "true";
+        slide?.kill();
+        followPointer.tween.pause();
+        delete track.dataset.sliding;
         drag = {
           x: event.clientX,
           left: track.scrollLeft,
+          desired: track.scrollLeft,
           pointer: event.pointerId,
           moved: false,
         };
@@ -130,20 +164,30 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
         track.dataset.dragging = "true";
         track.setPointerCapture(drag.pointer);
         event.preventDefault();
-        track.scrollLeft = drag.left - delta;
+        drag.desired = Math.max(
+          0,
+          Math.min(track.scrollWidth - track.clientWidth, drag.left - delta),
+        );
+        if (reduced.matches) track.scrollLeft = drag.desired;
+        else followPointer(drag.desired);
       },
       { signal: controller.signal },
     );
     function endDrag() {
       if (!drag) return;
-      const { moved, pointer } = drag;
+      const { moved, pointer, desired } = drag;
       drag = undefined;
+      if (moved) track.dataset.sliding = "true";
       delete track.dataset.dragging;
       if (track.hasPointerCapture(pointer))
         track.releasePointerCapture(pointer);
       if (moved) {
         window.getSelection()?.removeAllRanges();
-        move(index);
+        const step =
+          cards.length > 1
+            ? cards[1].offsetLeft - cards[0].offsetLeft
+            : track.clientWidth;
+        move(Math.round(desired / step));
       }
     }
     track.addEventListener("pointerup", endDrag, { signal: controller.signal });
@@ -156,7 +200,7 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     track.addEventListener(
       "pointerleave",
       () => {
-        if (drag && !drag.moved) drag = undefined;
+        if (drag && !drag.moved) endDrag();
       },
       { signal: controller.signal },
     );
@@ -167,6 +211,9 @@ export function initCommentExplorer(root: HTMLElement): Dispose {
     return () => {
       resize.disconnect();
       endDrag();
+      slide?.kill();
+      followPointer.tween.kill();
+      delete track.dataset.sliding;
       track.style.removeProperty("height");
       delete track.dataset.enhanced;
       controls.hidden = true;
