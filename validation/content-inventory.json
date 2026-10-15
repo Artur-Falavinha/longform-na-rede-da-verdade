@@ -725,7 +725,8 @@
       "sourceText": "PORQUE O FELCA TEVE + ALCANCE",
       "targetChapter": "alcance",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
     },
     {
       "id": "docs-011",
@@ -959,7 +960,8 @@
       "sourceText": "CONTEXTUALIZAÇÃO DO CASO",
       "targetChapter": "cronologia",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
     },
     {
       "id": "docs-036",
@@ -1528,7 +1530,8 @@
       "sourceText": "SOBRE O CASO",
       "targetChapter": "sobre-caso",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
     },
     {
       "id": "docs-097",
@@ -1582,7 +1585,8 @@
       "sourceText": "ADULTIZAÇÃO",
       "targetChapter": "adultizacao",
       "status": "received",
-      "verification": "literal"
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo alterado para O \"novo\" termo Adultização por solicitação do responsável em 15/10/2026."
     },
     {
       "id": "docs-103",

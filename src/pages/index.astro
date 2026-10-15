@@ -66,19 +66,16 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     <section
       id="alcance"
       data-chapter-start
-      class="story-section story-column story-copy"
+      class="story-section story-continuation story-column story-copy"
       tabindex="-1"
-      aria-labelledby="alcance-title"
+      aria-label="O alcance de Felca"
     >
-      <h2 id="alcance-title" class="story-heading" data-reveal>
-        Porque o Felca teve + alcance
-      </h2>
       <EditorialText paragraphs={editorial.reach} />
     </section>
     <section
       id="comentarios"
       data-chapter-start
-      class="story-section"
+      class="story-section story-continuation"
       tabindex="-1"
       aria-label="Análise dos comentários"
     >
@@ -112,7 +109,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     <section
       id="jornalismo"
       data-chapter-start
-      class="story-section"
+      class="story-section story-continuation"
       tabindex="-1"
       aria-label="O futuro do jornalismo"
     >
@@ -136,7 +133,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <h2 id="cronologia-title" class="story-heading" data-reveal>
           A realidade dos fatos
         </h2>
-        <h3 class="story-subheading" data-reveal>Contextualização do caso</h3>
         <EditorialText paragraphs={editorial.chronology} />
       </div>
       <div class="wide chronology">
@@ -146,11 +142,10 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     <section
       id="sobre-caso"
       data-chapter-start
-      class="story-section story-column story-copy"
+      class="story-section story-continuation story-column story-copy"
       tabindex="-1"
-      aria-labelledby="sobre-caso-title"
+      aria-label="Sobre o caso"
     >
-      <h2 id="sobre-caso-title" class="story-heading" data-reveal>Sobre o caso</h2>
       <EditorialText paragraphs={editorial.case} />
     </section>
     <section
@@ -160,7 +155,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       tabindex="-1"
       aria-labelledby="adultizacao-title"
     >
-      <h2 id="adultizacao-title" class="story-heading" data-reveal>Adultização</h2>
+      <h2 id="adultizacao-title" class="story-heading" data-reveal>O "novo" termo Adultização</h2>
       <EditorialText paragraphs={editorial.adultization.slice(0, 2)} />
       <div class="booklet-passage">
         <aside
@@ -202,6 +197,9 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     position: relative;
     padding-block: 1.5rem;
   }
+  .story-continuation {
+    padding-top: 0;
+  }
   .story-copy {
     font-size: clamp(1.125rem, 1rem + 0.3vw, 1.25rem);
     line-height: 1.65;
@@ -235,11 +233,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     font-size: clamp(2.4rem, 4.5vw, 4rem);
     line-height: 1.15;
     margin-block: 2rem 2.5rem;
-  }
-  .story-subheading {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
   }
   .comment-interactive {
     margin-block: 3.5rem;
