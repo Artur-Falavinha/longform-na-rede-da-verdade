@@ -661,8 +661,7 @@
       "sourceText": "CONTEXTUALIZAÇÃO",
       "targetChapter": "contexto",
       "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "verification": "literal"
     },
     {
       "id": "docs-004",
@@ -726,8 +725,7 @@
       "sourceText": "PORQUE O FELCA TEVE + ALCANCE",
       "targetChapter": "alcance",
       "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "verification": "literal"
     },
     {
       "id": "docs-011",
@@ -961,8 +959,7 @@
       "sourceText": "CONTEXTUALIZAÇÃO DO CASO",
       "targetChapter": "cronologia",
       "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "verification": "literal"
     },
     {
       "id": "docs-036",
@@ -1531,8 +1528,7 @@
       "sourceText": "SOBRE O CASO",
       "targetChapter": "sobre-caso",
       "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "verification": "literal"
     },
     {
       "id": "docs-097",
@@ -1586,8 +1582,7 @@
       "sourceText": "ADULTIZAÇÃO",
       "targetChapter": "adultizacao",
       "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "verification": "literal"
     },
     {
       "id": "docs-103",

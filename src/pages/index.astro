@@ -56,7 +56,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <EditorialText paragraphs={editorial.standfirst} />
       </div>
       <div id="denuncia" class="story-column story-copy" tabindex="-1">
-        <h2 class="sr-only">Contextualização</h2>
+        <h2 class="story-heading" data-reveal>Contextualização</h2>
         <EditorialText paragraphs={editorial.context} />
       </div>
       <div class="story-media">
@@ -68,8 +68,11 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       data-chapter-start
       class="story-section story-column story-copy"
       tabindex="-1"
-      aria-label="Por que Felca teve mais alcance"
+      aria-labelledby="alcance-title"
     >
+      <h2 id="alcance-title" class="story-heading" data-reveal>
+        Porque o Felca teve + alcance
+      </h2>
       <EditorialText paragraphs={editorial.reach} />
     </section>
     <section
@@ -133,6 +136,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <h2 id="cronologia-title" class="story-heading" data-reveal>
           A realidade dos fatos
         </h2>
+        <h3 class="story-subheading" data-reveal>Contextualização do caso</h3>
         <EditorialText paragraphs={editorial.chronology} />
       </div>
       <div class="wide chronology">
@@ -144,8 +148,9 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       data-chapter-start
       class="story-section story-column story-copy"
       tabindex="-1"
-      aria-label="Sobre o caso"
+      aria-labelledby="sobre-caso-title"
     >
+      <h2 id="sobre-caso-title" class="story-heading" data-reveal>Sobre o caso</h2>
       <EditorialText paragraphs={editorial.case} />
     </section>
     <section
@@ -153,8 +158,9 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       data-chapter-start
       class="story-section story-column story-copy final-copy"
       tabindex="-1"
-      aria-label="Adultização"
+      aria-labelledby="adultizacao-title"
     >
+      <h2 id="adultizacao-title" class="story-heading" data-reveal>Adultização</h2>
       <EditorialText paragraphs={editorial.adultization.slice(0, 2)} />
       <div class="booklet-passage">
         <aside
@@ -229,6 +235,11 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     font-size: clamp(2.4rem, 4.5vw, 4rem);
     line-height: 1.15;
     margin-block: 2rem 2.5rem;
+  }
+  .story-subheading {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
   }
   .comment-interactive {
     margin-block: 3.5rem;
