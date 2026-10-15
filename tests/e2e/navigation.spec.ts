@@ -41,7 +41,7 @@ test("A denúncia aponta para o conteúdo depois da capa editorial", async ({
 }) => {
   await page.goto("/");
   await page.locator(".chapter-menu summary").click();
-  await page.getByRole("link", { name: "A denúncia", exact: true }).click();
+  await page.getByRole("link", { name: "Contextualização", exact: true }).click();
   await expect(page).toHaveURL(/#denuncia$/);
   await expect
     .poll(() =>

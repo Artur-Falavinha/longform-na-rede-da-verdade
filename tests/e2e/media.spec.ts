@@ -163,7 +163,7 @@ test("arquivo ausente tem recuperação sem bloquear leitura", async ({
     void element.play().catch(() => {});
   });
   await expect(video.locator("..").locator(".media-error")).toBeVisible();
-  await expect(page.locator("#comentarios h2")).toBeVisible();
+  await expect(page.locator("#comentarios .story-copy p").first()).toBeVisible();
   await video.evaluate((element: HTMLVideoElement) => {
     // Restaura a fixture no gesto de retry; o pipeline de mídia do WebKit ignora page.route.
     element

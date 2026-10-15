@@ -1,0 +1,10 @@
+---
+interface Props {
+  paragraphs: readonly string[];
+}
+const { paragraphs } = Astro.props;
+---
+
+{paragraphs.map((text) => (
+  <p data-reveal>{text}</p>
+))}

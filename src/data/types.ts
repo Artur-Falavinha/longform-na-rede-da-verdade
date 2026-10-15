@@ -2,6 +2,8 @@ export type AssetStatus = "placeholder" | "received" | "approved";
 export type ChapterId =
   | "abertura"
   | "contexto"
+  | "alcance"
+  | "sobre-caso"
   | "comentarios"
   | "comparacao"
   | "jornalismo"

@@ -98,23 +98,12 @@ test("construção dos acontecimentos reverte e movimento reduzido restaura leit
   await expect(heading).toHaveCSS("transform", "none");
 });
 
-test("seis marcas vetoriais locais carregam e não há símbolos usados como ícones", async ({
+test("comparação segue a estrutura editorial sem painel de marcas e preserva ícones", async ({
   page,
 }) => {
   await page.goto("/#comparacao");
   const logos = page.locator(".outlets img");
-  await expect(logos).toHaveCount(6);
-  for (const logo of await logos.all()) {
-    await logo.scrollIntoViewIfNeeded();
-    await expect
-      .poll(() =>
-        logo.evaluate(
-          (img: HTMLImageElement) => img.complete && img.naturalWidth > 0,
-        ),
-      )
-      .toBe(true);
-    await expect(logo).toHaveAttribute("src", /\.svg$/);
-  }
+  await expect(logos).toHaveCount(0);
   expect(await page.locator("body").innerText()).not.toMatch(/[♥↩↗▶Ⅱ]/);
   expect(
     await page.evaluate(
@@ -215,19 +204,26 @@ test("menu fecha fora e capas exibem apenas controle sonoro", async ({
   await expect(page.locator(".podcast header p")).toHaveCount(0);
 });
 
-
-test("capas mantêm somente volume mesmo pausadas e fora da tela", async ({ page }) => {
+test("capas mantêm somente volume mesmo pausadas e fora da tela", async ({
+  page,
+}) => {
   await page.goto("/");
   for (const id of ["opening", "closing"]) {
     const video = page.locator(`[data-media-id="${id}"]`);
     await video.evaluate((el: HTMLVideoElement) => el.pause());
-    await expect.poll(() => video.evaluate((el: HTMLVideoElement) => el.controls)).toBe(false);
+    await expect
+      .poll(() => video.evaluate((el: HTMLVideoElement) => el.controls))
+      .toBe(false);
     const root = video.locator("xpath=../..");
     await expect(root.locator(".lucide-volume-off")).toHaveCount(1);
-    await expect(root.locator(".lucide-volume2, .lucide-volume-2")).toHaveCount(1);
+    await expect(root.locator(".lucide-volume2, .lucide-volume-2")).toHaveCount(
+      1,
+    );
   }
   await page.locator("#cartilha").scrollIntoViewIfNeeded();
   for (const video of await page.locator("[data-ambient] video").all()) {
-    await expect.poll(() => video.evaluate((el: HTMLVideoElement) => el.controls)).toBe(false);
+    await expect
+      .poll(() => video.evaluate((el: HTMLVideoElement) => el.controls))
+      .toBe(false);
   }
 });

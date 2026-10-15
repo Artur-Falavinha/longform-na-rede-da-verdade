@@ -167,6 +167,8 @@ describe("exportação administrativa de métricas", () => {
       byChapter: {
         abertura: 0,
         contexto: 0,
+        alcance: 0,
+        "sobre-caso": 0,
         comentarios: 0,
         comparacao: 0,
         jornalismo: 0,
