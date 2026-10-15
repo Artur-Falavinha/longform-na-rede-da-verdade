@@ -1,8 +1,6 @@
 import type { Dispose } from "../../data/types";
-import { initBookletMotion } from "./booklet-motion";
 
 export function initBooklet(root: HTMLElement): Dispose {
-  const disposeMotion = initBookletMotion(root);
   const controller = new AbortController();
   const error = root.querySelector<HTMLElement>("[data-document-error]")!;
   root.addEventListener(
@@ -35,8 +33,5 @@ export function initBooklet(root: HTMLElement): Dispose {
     },
     { signal: controller.signal },
   );
-  return () => {
-    controller.abort();
-    disposeMotion();
-  };
+  return () => controller.abort();
 }
