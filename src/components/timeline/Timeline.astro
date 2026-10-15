@@ -9,6 +9,7 @@ const { entries } = Astro.props;
 <nav
   class="timeline-index"
   data-timeline-index
+  style={`--event-count: ${entries.length}`}
   aria-label="Acontecimentos da linha do tempo"
   hidden
 >
@@ -84,30 +85,34 @@ const { entries } = Astro.props;
     display: none;
   }
   .timeline-index {
+    --index-width: 11rem;
     position: fixed;
     inset: 50% auto auto 1rem;
     transform: translateY(-50%);
     z-index: 25;
-    max-height: 70vh;
-    overflow-y: auto;
-    width: 11rem;
+    height: min(70svh, calc(var(--event-count) * 2.75rem));
+    width: var(--index-width);
     pointer-events: none;
   }
   .timeline-index ol {
     list-style: none;
     padding: 0.5rem;
     margin: 0;
+    display: grid;
+    grid-template-rows: repeat(var(--event-count), minmax(0, 1fr));
+    height: 100%;
   }
   .timeline-index li {
     margin: 0;
+    min-height: 0;
   }
   .timeline-index a {
     display: flex;
     align-items: center;
     gap: 0.65rem;
     position: relative;
-    min-height: 44px;
-    padding: 0.3rem 0;
+    height: 100%;
+    padding: 0;
     text-decoration: none;
     font: 400 0.7rem/1.35 var(--sans);
     color: var(--muted);
@@ -124,8 +129,12 @@ const { entries } = Astro.props;
   }
   .index-label {
     position: absolute;
-    left: 30px;
-    width: 135px;
+    left: 1.875rem;
+    width: calc(var(--index-width) - 2.875rem);
+    padding: 0.4rem;
+    background: var(--bg);
+    overflow-wrap: anywhere;
+    pointer-events: none;
     opacity: 0;
     transform: translateX(-6px);
     transition:
@@ -133,22 +142,18 @@ const { entries } = Astro.props;
       transform 0.35s;
     min-width: 0;
   }
-  .timeline-index:hover a,
-  .timeline-index:focus-within a,
   .timeline-index a[aria-current],
   .timeline-index a:hover,
   .timeline-index a:focus-visible {
     width: 100%;
+    z-index: 1;
   }
-  .timeline-index:hover,
-  .timeline-index:focus-within {
-    background: var(--bg);
-  }
-  .timeline-index:hover .index-label,
-  .timeline-index:focus-within .index-label,
+  .timeline-index a:hover .index-label,
+  .timeline-index a:focus-visible .index-label,
   a[aria-current] .index-label {
     opacity: 1;
     transform: none;
+    pointer-events: auto;
   }
   .timeline-index a[aria-current],
   .timeline-index a:hover,
@@ -157,6 +162,15 @@ const { entries } = Astro.props;
   }
   .timeline-index a[aria-current] .index-bar {
     width: 20px;
+  }
+  @media (min-width: 1200px) {
+    .timeline-index:has(a:hover) a:not(:hover) .index-label,
+    .timeline-index:not(:has(a:hover)):has(a:focus-visible)
+      a:not(:focus-visible)
+      .index-label {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
   @media (max-width: 1199px) {
     .timeline-index li {
@@ -183,18 +197,29 @@ const { entries } = Astro.props;
       transform: none;
       width: min(17rem, calc(100vw - 1.5rem));
       max-height: 45vh;
+      height: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       background: var(--bg);
       border: 1px solid var(--surface);
     }
     .timeline-index a {
       min-height: 44px;
+      height: auto;
+      padding: 0.3rem 0;
       width: 100%;
+    }
+    .timeline-index ol {
+      display: block;
+      height: auto;
     }
     .timeline-index .index-label {
       position: static;
       width: auto;
       opacity: 1;
       transform: none;
+      padding: 0;
+      pointer-events: auto;
     }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -207,7 +232,7 @@ const { entries } = Astro.props;
 
   @media (min-width: 1200px) {
     .timeline {
-      margin-left: 6rem;
+      margin-left: 8.5rem;
     }
   }
   .timeline {

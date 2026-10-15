@@ -1,81 +1,97 @@
 ---
-import { ArrowUpRight, Download } from "@lucide/astro";
+import { Download } from "@lucide/astro";
 import { booklet } from "../../data/documents";
 ---
 
 <div class="booklet" data-booklet>
-  <img
-    src={booklet.cover}
-    alt="Capa da cartilha"
-    width="600"
-    height="800"
-    loading="lazy"
-  />
-  <div class="booklet-copy">
-    <span class="eyebrow">Para continuar a leitura</span>
-    <h3>{booklet.title}</h3>
-    <div class="booklet-actions">
-      <a
-        class="button primary"
-        data-booklet-action="open"
-        href={booklet.src}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Abrir cartilha <ArrowUpRight size={18} aria-hidden="true" />
-        <span class="sr-only"> em nova guia</span>
-      </a>
-      <a
-        class="button"
-        data-booklet-action="download"
-        href={booklet.src}
-        download={booklet.downloadName}
-      >
-        Baixar PDF <Download size={18} aria-hidden="true" />
-      </a>
-    </div>
-    <p data-document-error role="status" class="pending" hidden>
-      Não foi possível verificar o documento. Confira sua conexão e tente
-      novamente pelos links acima.
-    </p>
+  <div class="booklet-cover">
+    <a
+      class="booklet-preview"
+      data-booklet-action="open"
+      href={booklet.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir cartilha em nova guia"
+    >
+      <img
+        src={booklet.cover}
+        alt="Capa da cartilha sobre adultização"
+        width="600"
+        height="800"
+        loading="lazy"
+      />
+    </a>
+    <a
+      class="booklet-download"
+      data-booklet-action="download"
+      href={booklet.src}
+      download={booklet.downloadName}
+      aria-label="Baixar cartilha em PDF"
+      title="Baixar cartilha em PDF"
+    >
+      <Download size={22} aria-hidden="true" />
+    </a>
   </div>
+  <p data-document-error role="status" class="pending" hidden>
+    Não foi possível verificar o documento. Confira sua conexão e tente
+    novamente pelos links acima.
+  </p>
 </div>
 <style>
   .booklet {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-    align-items: center;
-    gap: clamp(2rem, 6vw, 6rem);
+    position: relative;
   }
-  .booklet img {
+  .booklet-cover {
+    position: relative;
+    border-radius: 0.125rem;
+    box-shadow:
+      2px 2px 0 color-mix(in srgb, var(--muted) 40%, var(--surface)),
+      4px 4px 0 var(--surface),
+      0 0.75rem 1.5rem color-mix(in srgb, var(--bg) 55%, transparent);
+  }
+  .booklet-preview {
+    display: block;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--muted) 35%, var(--surface));
+    border-radius: inherit;
+    text-decoration: none;
+    background: var(--surface);
+  }
+  .booklet-preview img {
+    display: block;
     width: 100%;
     height: auto;
-    max-width: 24rem;
-    border: 1px solid var(--muted);
   }
-  .booklet h3 {
-    margin: 1rem 0 1.5rem;
+  .booklet-download {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    color: var(--text);
+    border: 1px solid color-mix(in srgb, var(--muted) 35%, transparent);
+    touch-action: manipulation;
+    transition: background-color 180ms ease, border-color 180ms ease;
   }
-  .booklet-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-block: 2rem 1rem;
+  .booklet-download:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--text);
   }
-  .booklet-actions a {
-    flex: 1;
-    white-space: nowrap;
-  }
-  @media (max-width: 699px) {
-    .booklet {
-      grid-template-columns: 1fr;
+  @media (prefers-reduced-motion: reduce) {
+    .booklet-download {
+      transition: none;
     }
-    .booklet img {
-      width: 60%;
-      margin-inline: auto;
-    }
-    .booklet-actions {
-      flex-direction: column;
-    }
+  }
+  .booklet-preview:focus-visible,
+  .booklet-download:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  [data-document-error] {
+    margin-top: 1rem;
   }
 </style>

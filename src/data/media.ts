@@ -52,7 +52,7 @@ export const media = [
     id: "checking-future",
     kind: "audio",
     purpose: "editorial",
-    title: "Checagem e futuro do jornalismo",
+    title: "O futuro da checagem",
     src: "/media/checking-future-test.m4a",
     transcript:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -64,7 +64,7 @@ export const media = [
     id: "journalist-influencer",
     kind: "audio",
     purpose: "editorial",
-    title: "Jornalista e influenciador",
+    title: "Preciso virar influencer para ser jornalista?",
     src: "/media/journalist-influencer-test.m4a",
     transcript:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

@@ -1,9 +1,7 @@
 ---
-import { outletLogos } from "../data/outlet-logos";
 import Longform from "../layouts/Longform.astro";
 import ChapterIndex from "../components/navigation/ChapterIndex.astro";
-import Section from "../components/editorial/Section.astro";
-import ResearchFigure from "../components/editorial/ResearchFigure.astro";
+import EditorialText from "../components/editorial/EditorialText.astro";
 import VideoPlayer from "../components/media/VideoPlayer.astro";
 import PodcastPlayer from "../components/media/PodcastPlayer.astro";
 import CommentExplorer from "../components/comments/CommentExplorer.astro";
@@ -12,14 +10,7 @@ import Booklet from "../components/documents/Booklet.astro";
 import { research } from "../data/research";
 import { media } from "../data/media";
 import { timeline } from "../data/timeline";
-import { Content as Context } from "../content/contexto.md";
-import { Content as CommentsIntro } from "../content/comentarios.md";
-import { Content as Comparison } from "../content/comparacao.md";
-import { Content as Journalism } from "../content/jornalismo.md";
-import { Content as Participation } from "../content/participacao.md";
-import { Content as Chronology } from "../content/cronologia.md";
-import { Content as Education } from "../content/adultizacao.md";
-import { Content as Closing } from "../content/encerramento.md";
+import { editorial } from "../data/editorial";
 const [opening, closing, felca, comparison, ...podcasts] = media;
 ---
 
@@ -28,7 +19,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
   <section
     id="abertura"
     data-chapter-start
-    class="opening-chapter"
+    class="ambient-chapter"
     tabindex="-1"
     aria-label="Capa em vídeo"
   >
@@ -38,652 +29,252 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     <section
       id="contexto"
       data-chapter-start
-      class="chapter context-chapter"
+      class="story-section"
       tabindex="-1"
       aria-labelledby="report-title"
     >
-      <div class="wide">
-        <header class="title-block" data-reveal>
-          <span class="eyebrow">Uma reportagem multimídia interativa</span>
-          <h1 id="report-title">
-            Na rede <br />
-            da verdade
-          </h1>
-          <p class="subtitle">quem informa, quem acredita e quem denuncia?</p>
-          <div class="rule" aria-hidden="true"></div>
-          <p class="byline">
-            Isabelle Sestari · Isadora Moraes Lopes <br />
-            Julia Nunes Budal · Sabrina Gomes da Cunha
-          </p>
-          <p class="small muted">
-            Orientador: {research.advisor} <br />
-            {research.institution}
-          </p>
-        </header>
-        <figure class="authors-quote reading" data-reveal>
-          <blockquote class="editorial-quote">
-            {research.authorsQuote}
-          </blockquote>
-          <figcaption class="quote-attribution">Das autoras</figcaption>
-        </figure>
-        <div
-          id="denuncia"
-          tabindex="-1"
-          class="context-intro reading prose"
-          data-reveal
-        >
-          <span class="eyebrow">01 / A denúncia</span>
-          <h2>
-            O vídeo "Adultização" <br />e sua repercussão massiva
-          </h2>
-          <Context />
-        </div>
-        <div class="reach-numbers" aria-label="Alcance registrado">
-          <p>
-            <strong>52,7 mi</strong>
-            <span>visualizações do vídeo "Adultização"</span>
-          </p>
-          <p>
-            <strong>301 mil</strong>
-            <span>comentários no vídeo</span>
-          </p>
-          <p>
-            <strong>1.599</strong>
-            <span>comentários analisados na pesquisa</span>
-          </p>
-        </div>
+      <header class="title-block wide" data-reveal>
+        <h1 id="report-title">
+          Na rede
+          <br />
+          da verdade
+        </h1>
+        <p class="subtitle">quem informa, quem acredita e quem denuncia?</p>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="byline">
+          Isabelle Sestari · Isadora Moraes Lopes
+          <br />
+          Julia Nunes Budal · Sabrina Gomes da Cunha
+        </p>
+        <p class="small muted">
+          Orientador: {research.advisor}
+          <br />
+          {research.institution}
+        </p>
+      </header>
+      <div class="story-column standfirst">
+        <EditorialText paragraphs={editorial.standfirst} />
+      </div>
+      <div id="denuncia" class="story-column story-copy" tabindex="-1">
+        <h2 class="story-heading" data-reveal>Contextualização</h2>
+        <EditorialText paragraphs={editorial.context} />
+      </div>
+      <div class="story-media">
         <VideoPlayer asset={felca} />
-        <ResearchFigure
-          caption={'Dados do vídeo "Adultização"'}
-          rows={research.videoMetrics}
-          note="Recorte e datas de coleta a confirmar. Valores, período e médias transcritos do Base44, sem recalcular os dados da pesquisa."
-        />
       </div>
     </section>
-    <Section
+    <section
+      id="alcance"
+      data-chapter-start
+      class="story-section story-continuation story-column story-copy"
+      tabindex="-1"
+      aria-label="O alcance de Felca"
+    >
+      <EditorialText paragraphs={editorial.reach} />
+    </section>
+    <section
       id="comentarios"
-      number="02 / Pesquisa de campo"
-      title="O que a rede disse?"
-      subtitle="Categorias de análise"
+      data-chapter-start
+      class="story-section story-continuation"
+      tabindex="-1"
+      aria-label="Análise dos comentários"
     >
-      <div class="reading prose">
-        <CommentsIntro />
+      <div class="story-column story-copy">
+        <EditorialText paragraphs={editorial.commentsIntro} />
       </div>
-      <ResearchFigure
-        caption="Dados da pesquisa de campo"
-        rows={research.method}
-        note="A amostra de 1.599 comentários é distinta do total de comentários do vídeo."
-      />
-      <CommentExplorer />
-    </Section>
-    <Section
+      <div class="wide comment-interactive">
+        <CommentExplorer />
+      </div>
+      <div class="story-column story-copy">
+        <EditorialText paragraphs={editorial.commentsOutro} />
+      </div>
+    </section>
+    <section
       id="comparacao"
-      number="03 / Informação e credibilidade"
-      title="Quem investiga? Quem denuncia?"
-      subtitle="Processos diferentes. Sem julgamento."
+      data-chapter-start
+      class="story-section"
+      tabindex="-1"
+      aria-labelledby="comparacao-title"
     >
-      <div class="reading prose" data-reveal>
-        <Comparison />
+      <div class="story-column story-copy">
+        <h2 id="comparacao-title" class="story-heading" data-reveal>
+          Entre a influência e o jornalismo
+        </h2>
+        <EditorialText paragraphs={editorial.comparison} />
       </div>
-      <VideoPlayer asset={comparison} />
-      <div class="comparison-head" aria-hidden="true">
-        <div>
-          Influenciador Digital<span>caso Felca — "Adultização"</span>
-        </div>
-        <div>
-          Jornalismo Profissional<span>processo editorial e apuração</span>
-        </div>
+      <div class="story-media">
+        <VideoPlayer asset={comparison} />
       </div>
-      <div class="comparison-rows">
-        {research.comparisons.map((row) => (
-          <article class="comparison-row" data-reveal>
-            <h3>{row.title}</h3>
-            <div>
-              <span class="mobile-label eyebrow">Influenciador Digital</span>
-              <p class:list={{ pending: row.influencer.startsWith("[") }}>
-                {row.influencer}
-              </p>
-            </div>
-            <div>
-              <span class="mobile-label eyebrow">Jornalismo Profissional</span>
-              <p>{row.journalism}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-      <aside class="outlets">
-        <span class="eyebrow">Veículos que cobriram o caso</span>
-        <ul>
-          {research.outlets.map((outlet) => (
-            <li>
-              <img
-                src={outletLogos[outlet].src}
-                alt={outlet}
-                width="150"
-                height="48"
-                loading="lazy"
-              />
-              <span class="sr-only">{outlet}</span>
-            </li>
-          ))}
-        </ul>
-      </aside>
-    </Section>
-    <Section
+    </section>
+    <section
       id="jornalismo"
-      number="04 / A perspectiva do jornalismo"
-      title="O campo fala."
+      data-chapter-start
+      class="story-section story-continuation"
+      tabindex="-1"
+      aria-label="O futuro do jornalismo"
     >
-      <div class="muted">
-        <Journalism />
+      <div class="story-column story-copy">
+        <EditorialText paragraphs={editorial.journalism} />
       </div>
-      <div class="interviews">
-        {research.interviews.map((interview) => (
-          <article class="interview" data-reveal>
-            <header>
-              <h3>{interview.name}</h3>
-              <span class="small muted">{interview.role}</span>
-            </header>
-            <div>
-              <blockquote class="editorial-quote">{interview.quote}</blockquote>
-              <p>{interview.description}</p>
-              <ul class="topic-list">
-                {interview.topics.map((topic) => (
-                  <li>{topic}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
+      <div class="story-media podcast-conversations">
+        {podcasts.map((asset) => (
+          <PodcastPlayer asset={asset} />
         ))}
       </div>
-      <div class="participation-header" data-reveal>
-        <span class="eyebrow">A voz da rede</span>
-        <h3>O público não é passivo.</h3>
-        <div class="muted">
-          <Participation />
-        </div>
-      </div>
-      <div class="participation-list">
-        {research.participation.map((item) => (
-          <article data-reveal>
-            <h4>{item.title}</h4>
-            <div>
-              <p>{item.paragraph}</p>
-              <span
-                class:list={[
-                  "participation-number",
-                  { pending: item.metric.startsWith("[") },
-                ]}
-              >
-                {item.metric}
-              </span>
-            </div>
-          </article>
-        ))}
-      </div>
-      <figure class="reading network-quote" data-reveal>
-        <blockquote class="editorial-quote">
-          {research.participationQuote}
-        </blockquote>
-        <figcaption class="quote-attribution">
-          {research.participationAttribution}
-        </figcaption>
-      </figure>
-      <div class="podcast-intro">
-        <span class="eyebrow">Duas conversas</span>
-        <h3>
-          O futuro do jornalismo
-          <br />e quem informa na rede
-        </h3>
-      </div>
-      {podcasts.map((asset) => (
-        <PodcastPlayer asset={asset} />
-      ))}
-    </Section>
-    <Section
+    </section>
+    <section
       id="cronologia"
-      number="05 / Depois da denúncia"
-      title="A realidade dos fatos"
+      data-chapter-start
+      class="story-section"
+      tabindex="-1"
+      aria-labelledby="cronologia-title"
     >
-      <div class="chronology-intro reading">
-        <Chronology />
+      <div class="story-column story-copy">
+        <h2 id="cronologia-title" class="story-heading" data-reveal>
+          A realidade dos fatos
+        </h2>
+        <EditorialText paragraphs={editorial.chronology} />
       </div>
-      <Timeline entries={timeline} />
-    </Section>
-    <Section
+      <div class="wide chronology">
+        <Timeline entries={timeline} />
+      </div>
+    </section>
+    <section
+      id="sobre-caso"
+      data-chapter-start
+      class="story-section story-continuation story-column story-copy"
+      tabindex="-1"
+      aria-label="Sobre o caso"
+    >
+      <EditorialText paragraphs={editorial.case} />
+    </section>
+    <section
       id="adultizacao"
-      number="06 / Entenda a adultização"
-      title="Um debate que exige atenção"
+      data-chapter-start
+      class="story-section story-column story-copy final-copy"
+      tabindex="-1"
+      aria-labelledby="adultizacao-title"
     >
-      <div class="reading prose">
-        <Education />
-        <div class="expert-source">
-          <span class="eyebrow">Fonte especializada</span>
-          <p>
-            Dra. Jéssica Tonioti
-            <br />
-            <span class="small muted">
-              Psicóloga — entrevistada para o TCC 1
-            </span>
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
+      <h2 id="adultizacao-title" class="story-heading" data-reveal>O termo Adultização</h2>
+      <EditorialText paragraphs={editorial.adultization.slice(0, 2)} />
+      <div class="booklet-passage">
+        <aside
+          id="cartilha"
+          class="booklet-inset"
+          aria-label="Cartilha sobre adultização"
+        >
+          <Booklet />
+        </aside>
+        <EditorialText paragraphs={editorial.adultization.slice(2)} />
       </div>
-      <div class="education-list reading">
-        {research.education.map((item, i) => (
-          <article data-reveal>
-            <span class="eyebrow">{String(i + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
-            <p>{item.intro}</p>
-            <p class="education-description">{item.paragraph}</p>
-          </article>
-        ))}
-      </div>
-    </Section>
-    <Section
-      id="cartilha"
-      number="07 / Material de apoio"
-      title="Leve esta conversa adiante"
-    >
-      <Booklet />
-    </Section>
-    <Section
+    </section>
+    <section
       id="encerramento"
-      number="08 / Conclusão"
-      title="Quem informa, quem acredita e quem denuncia?"
+      data-chapter-start
+      class="ambient-chapter"
+      tabindex="-1"
+      aria-label="Vídeo de encerramento"
     >
-      <div class="small muted">
-        <Closing />
-      </div>
-      <div class="findings">
-        <article>
-          <span class="eyebrow">Resultados</span>
-          <ul>
-            {research.results.map((text) => (
-              <li>{text}</li>
-            ))}
-          </ul>
-        </article>
-        <article>
-          <span class="eyebrow">Considerações Finais</span>
-          <ul>
-            {research.conclusions.map((text) => (
-              <li>{text}</li>
-            ))}
-          </ul>
-        </article>
-      </div>
-      <div class="closing-questions reading">
-        {research.questions.map((item) => (
-          <article data-reveal>
-            <h3>{item.title}</h3>
-            <p>{item.paragraph}</p>
-          </article>
-        ))}
-      </div>
-      <figure class="reading closing-quote" data-reveal>
-        <blockquote class="editorial-quote">{research.authorsQuote}</blockquote>
-        <figcaption class="quote-attribution">Das autoras</figcaption>
-      </figure>
-    </Section>
-    <VideoPlayer asset={closing} cover />
+      <VideoPlayer asset={closing} cover />
+    </section>
   </main>
 </Longform>
 <style>
-  .opening-chapter {
+  .ambient-chapter {
     height: 100svh;
     position: relative;
   }
-  .context-chapter {
+  .story-column {
+    width: min(calc(100% - 2 * var(--gutter)), 48rem);
+    margin-inline: auto;
+  }
+  .story-media {
+    width: min(calc(100% - 2 * var(--gutter)), 62rem);
+    margin-inline: auto;
+  }
+  .story-section {
+    position: relative;
+    padding-block: 1.5rem;
+  }
+  .story-continuation {
     padding-top: 0;
+  }
+  .story-copy {
+    font-size: clamp(1.125rem, 1rem + 0.3vw, 1.25rem);
+    line-height: 1.65;
+  }
+  .story-copy :global(p + p) {
+    margin-top: 1.4em;
   }
   .title-block {
     text-align: center;
-    padding-block: clamp(4rem, 8vw, 8rem);
+    padding-block: clamp(4rem, 8vw, 8rem) 3rem;
   }
   h1 {
-    font-size: clamp(4.15rem, 10.2vw, 9.75rem);
+    font-size: clamp(3.5rem, 10.2vw, 9.75rem);
     letter-spacing: -0.04em;
     line-height: 1.02;
-    padding-bottom: 0.08em;
     margin: 1.7rem auto 1.2rem;
   }
   .subtitle {
-    font-family: var(--serif);
-    font-weight: 700;
-    font-size: clamp(1.45rem, 2.4vw, 2.3rem);
-    line-height: 1.4;
+    font: 700 clamp(1.35rem, 2.4vw, 2.3rem)/1.4 var(--serif);
   }
   .byline {
     font-size: 0.875rem;
     line-height: 1.8;
     margin-bottom: 1rem;
   }
-  .authors-quote {
-    text-align: center;
-    margin-block: 1rem 7rem;
+  .standfirst {
+    font: 400 clamp(1.4rem, 2.6vw, 2rem)/1.5 var(--serif);
+    padding-block: 1rem 4rem;
   }
-  .context-intro h2 {
-    font-size: clamp(2.3rem, 4.7vw, 4rem);
-    margin: 1rem 0 2.5rem;
+  .story-heading {
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    line-height: 1.15;
+    margin-block: 2rem 2.5rem;
   }
-  .reach-numbers {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin: 4rem 0 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--muted);
+  .comment-interactive {
+    margin-block: 3.5rem;
   }
-  .reach-numbers p {
-    margin: 0;
-  }
-  .reach-numbers strong {
-    display: block;
-    font: 400 clamp(2.4rem, 5vw, 4.5rem)/1.2 var(--serif);
-    color: var(--accent);
-  }
-  .reach-numbers span {
-    display: block;
-    font-size: 0.8125rem;
-    margin-top: 0.5rem;
-    color: var(--muted);
-  }
-  .comparison-head {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 4rem;
-    font: 400 1.8rem/1.2 var(--serif);
-  }
-  .comparison-head span {
-    display: block;
-    font: 400 0.8125rem/1.6 var(--sans);
-    color: var(--muted);
-    margin-top: 0.5rem;
-  }
-  .comparison-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 4rem;
-    border-top: 1px solid var(--muted);
-    padding-block: 2rem;
-    margin-top: 2rem;
-  }
-  .comparison-row h3 {
-    grid-column: 1/-1;
-    font: 600 0.8125rem/1.5 var(--sans);
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .comparison-row p {
-    font-size: 1.0625rem;
-  }
-  .mobile-label {
-    display: none;
-  }
-  .outlets {
+  .podcast-conversations {
     margin-top: 3rem;
   }
-  .outlets ul {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin-top: 1.5rem;
+  .chronology {
+    margin-block: 4rem 2rem;
   }
-  .outlets li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    min-height: 4.5rem;
-    margin: 0;
+  .final-copy {
+    padding-bottom: 4rem;
   }
-  .outlets img {
-    width: var(--logo-width);
-    max-width: 100%;
-    height: 3rem;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+  .booklet-passage {
+    display: flow-root;
+    margin-top: 1.4em;
   }
-  .outlets img[alt="Brasil Paralelo"] {
-    --logo-width: 9.5rem;
-  }
-  .outlets img[alt="CBN"] {
-    --logo-width: 6.5rem;
-  }
-  .outlets img[alt="CNN Brasil"] {
-    --logo-width: 4.5rem;
-  }
-  .outlets img[alt="G1"] {
-    --logo-width: 2.75rem;
-  }
-  .outlets img[alt="Tilt/UOL"] {
-    --logo-width: 4rem;
-  }
-  .outlets img[alt="Veja"] {
-    --logo-width: 6rem;
-  }
-  @media (max-width: 899px) {
-    .outlets ul {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-  }
-  @media (max-width: 599px) {
-    .outlets ul {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .interviews {
-    margin-top: 4rem;
-  }
-  .interview {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    border-top: 1px solid var(--muted);
-    padding-block: 2.5rem;
-  }
-  .interview h3 {
-    font-size: 1.85rem;
-    margin-bottom: 0.5rem;
-  }
-  .interview blockquote {
-    font-size: clamp(1.65rem, 2.5vw, 2.4rem);
-  }
-  .interview p {
-    font-size: 1.0625rem;
-    margin-top: 1.5rem;
-  }
-  .topic-list {
-    display: flex;
-    gap: 0.6rem 1.2rem;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-top: 1.5rem;
-  }
-  .topic-list li {
-    margin: 0;
-  }
-  .participation-header {
-    margin-block: 5rem 2rem;
-  }
-  .participation-header h3 {
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    margin: 1rem 0;
-  }
-  .participation-header p {
-    font-size: 1rem;
-  }
-  .participation-list article {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    padding-block: 2rem;
-    border-top: 1px solid var(--surface);
-  }
-  .participation-list h4 {
-    font-size: 2rem;
-  }
-  .participation-list p {
-    font-size: 1.0625rem;
-  }
-  .participation-number {
-    display: block;
-    color: var(--accent);
-    font-size: 0.875rem;
-    margin-top: 1rem;
-  }
-  .network-quote {
-    margin-block: 4rem 6rem;
-  }
-  .podcast-intro h3 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    margin-block: 1rem 2rem;
-  }
-  .chronology-intro {
-    margin: 0 0 4rem;
-    max-width: 65ch;
-  }
-  .chronology-intro p + p {
-    margin-top: 1rem;
-  }
-  .expert-source {
-    margin-block: 2rem 4rem;
-  }
-  .expert-source p {
-    margin-top: 0.5rem;
-  }
-  .education-list article {
+  .booklet-inset {
     position: relative;
-    border-top: 1px solid var(--muted);
-    padding-block: 2.5rem;
-  }
-  .education-list h3 {
-    margin: 0.75rem 0 1.5rem;
-  }
-  .education-description {
-    white-space: pre-line;
-    color: var(--muted);
-    font-size: 1rem;
-  }
-  .findings {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-block: 3rem 5rem;
-    padding-block: 2rem;
-    border-block: 1px solid var(--muted);
-    font-size: 1.0625rem;
-  }
-  .closing-questions article + article {
-    margin-top: 3rem;
-  }
-  .closing-questions h3 {
-    margin-bottom: 1rem;
-  }
-  .closing-quote {
-    margin-block: 5rem;
-  }
-  @media (max-width: 899px) {
-    .reach-numbers {
-      gap: 1rem;
-    }
-    .reach-numbers strong {
-      font-size: 2.4rem;
-    }
-    .reach-numbers span {
-      font-size: 0.75rem;
-    }
-    .comparison-head {
-      gap: 2rem;
-    }
-    .comparison-row {
-      gap: 1rem 2rem;
-    }
-    .interview {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-    .participation-list article {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-    .findings {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .authors-quote {
-      margin-bottom: 4rem;
-    }
+    z-index: 1;
+    float: right;
+    width: min(38%, 14rem);
+    margin: 0.3rem 0 1.25rem 2rem;
   }
   @media (max-width: 599px) {
-    .title-block > .eyebrow {
-      font-size: 0.75rem;
-    }
     .title-block {
-      padding-block: 4rem;
-    }
-    .byline {
-      font-size: 0.75rem;
-    }
-    .comparison-head {
-      display: none;
-    }
-    .comparison-row {
-      grid-template-columns: 1fr;
-      gap: 1.75rem;
-    }
-    .comparison-row h3 {
-      margin-bottom: 0;
-    }
-    .mobile-label {
-      display: block;
-      font-size: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .comparison-row p {
-      font-size: 1rem;
-    }
-    .reach-numbers {
-      grid-template-columns: 1fr;
-      padding-top: 0;
-      border: 0;
-      gap: 0;
-    }
-    .reach-numbers p {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      border-top: 1px solid var(--surface);
-      padding: 1.2rem 0;
-    }
-    .reach-numbers strong {
-      min-width: 8rem;
-      font-size: 2.5rem;
-    }
-    .reach-numbers span {
-      font-size: 0.8125rem;
-    }
-    .title-block .small {
-      font-size: 0.75rem;
+      padding-top: 3rem;
     }
     h1 {
       font-size: clamp(3.5rem, 14.8vw, 5.5rem);
     }
-    .subtitle {
-      font-size: 1.35rem;
+    .byline {
+      font-size: 0.75rem;
+    }
+    .booklet-passage {
+      display: flex;
+      flex-direction: column;
+    }
+    .booklet-inset {
+      float: none;
+      order: 1;
+      width: min(60%, 14rem);
+      margin: 1.75rem 0 0 auto;
     }
   }
 </style>

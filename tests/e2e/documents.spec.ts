@@ -28,7 +28,7 @@ test("cartilha abre outra guia e baixa PDF real por ações independentes", asyn
   expect(bytes.subarray(0, 5).toString()).toBe("%PDF-");
   expect(bytes.toString()).toContain("%%EOF");
   await expect(page).toHaveURL(/#cartilha$/);
-  await expect(page.locator("#cartilha h2")).toBeVisible();
+  await expect(page.locator("#cartilha .booklet-preview")).toBeVisible();
 });
 test("PDF corrompido apresenta recuperação na reportagem", async ({ page }) => {
   await page.route("**/cartilha-teste.pdf", (route) =>

@@ -1,5 +1,79 @@
 import { test, expect } from "@playwright/test";
 
+test("índice acomoda os 19 títulos sem cortes e alcança o último marco", async ({
+  page,
+  isMobile,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/#acontecimento-marco-01");
+  const nav = page.locator("[data-timeline-index]");
+  const links = nav.locator("a");
+  await expect(nav).toBeVisible();
+  await expect(links).toHaveCount(19);
+
+  if (isMobile) {
+    await nav.locator("[data-index-toggle]").click();
+    await links.last().scrollIntoViewIfNeeded();
+    expect(await nav.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(
+      true,
+    );
+  } else {
+    for (const viewport of [
+      { width: 1847, height: 948 },
+      { width: 1280, height: 600 },
+    ]) {
+      await page.setViewportSize(viewport);
+      const firstText = await page.locator(".event-content").first().boundingBox();
+      const bars = await nav.locator(".index-bar").evaluateAll((nodes) =>
+        nodes.map((node) => {
+          const rect = node.getBoundingClientRect();
+          return { top: rect.top, bottom: rect.bottom };
+        }),
+      );
+      expect(bars[0].top).toBeGreaterThan(0);
+      expect(bars.at(-1)!.bottom).toBeLessThan(viewport.height);
+      expect(await nav.evaluate((el) => el.scrollWidth <= el.clientWidth)).toBe(
+        true,
+      );
+      expect(await nav.evaluate((el) => getComputedStyle(el).overflowY)).toBe(
+        "visible",
+      );
+      for (const index of [0, 9, 18]) {
+        await links.nth(index).hover();
+        await expect(links.nth(index).locator(".index-label")).toHaveCSS(
+          "opacity",
+          "1",
+        );
+        const labels = await nav.locator(".index-label").evaluateAll((nodes) =>
+          nodes
+            .filter((node) => getComputedStyle(node).opacity === "1")
+            .map((node) => {
+              const rect = node.getBoundingClientRect();
+              return { top: rect.top, bottom: rect.bottom, right: rect.right };
+            }),
+        );
+        expect(labels).toHaveLength(1);
+        expect(labels[0].top).toBeGreaterThanOrEqual(0);
+        expect(labels[0].bottom).toBeLessThanOrEqual(viewport.height);
+        expect(labels[0].right).toBeLessThanOrEqual(viewport.width);
+        expect(labels[0].right).toBeLessThan(firstText!.x);
+      }
+    }
+    await page.mouse.move(600, 10);
+    await links.last().focus();
+    await expect(links.last().locator(".index-label")).toHaveCSS(
+      "opacity",
+      "1",
+    );
+  }
+  await links.last().locator(".index-label").click();
+  await expect(nav.locator('[aria-current="step"]')).toHaveAttribute(
+    "href",
+    "#acontecimento-marco-19",
+  );
+  await expect(page.locator("#acontecimento-marco-19")).toBeFocused();
+});
+
 test("índice acompanha a leitura e navega até o acontecimento", async ({
   page,
 }) => {
