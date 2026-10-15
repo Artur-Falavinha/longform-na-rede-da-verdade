@@ -4,33 +4,34 @@ import { booklet } from "../../data/documents";
 ---
 
 <div class="booklet" data-booklet>
-  <a
-    class="booklet-preview"
-    data-booklet-action="open"
-    href={booklet.src}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Abrir cartilha em nova guia"
-  >
-    <img
-      src={booklet.cover}
-      alt="Capa da cartilha sobre adultização"
-      width="600"
-      height="800"
-      loading="lazy"
-    />
-    <span class="booklet-caption">{booklet.title}</span>
-  </a>
-  <a
-    class="booklet-download"
-    data-booklet-action="download"
-    href={booklet.src}
-    download={booklet.downloadName}
-    aria-label="Baixar cartilha em PDF"
-    title="Baixar cartilha em PDF"
-  >
-    <Download size={22} aria-hidden="true" />
-  </a>
+  <div class="booklet-cover" data-booklet-cover>
+    <a
+      class="booklet-preview"
+      data-booklet-action="open"
+      href={booklet.src}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Abrir cartilha em nova guia"
+    >
+      <img
+        src={booklet.cover}
+        alt="Capa da cartilha sobre adultização"
+        width="600"
+        height="800"
+        loading="lazy"
+      />
+    </a>
+    <a
+      class="booklet-download"
+      data-booklet-action="download"
+      href={booklet.src}
+      download={booklet.downloadName}
+      aria-label="Baixar cartilha em PDF"
+      title="Baixar cartilha em PDF"
+    >
+      <Download size={22} aria-hidden="true" />
+    </a>
+  </div>
   <p data-document-error role="status" class="pending" hidden>
     Não foi possível verificar o documento. Confira sua conexão e tente
     novamente pelos links acima.
@@ -40,24 +41,27 @@ import { booklet } from "../../data/documents";
   .booklet {
     position: relative;
   }
+  .booklet-cover {
+    position: relative;
+    transform-origin: 50% 80%;
+    border-radius: 0.125rem;
+    box-shadow:
+      2px 2px 0 color-mix(in srgb, var(--muted) 40%, var(--surface)),
+      4px 4px 0 var(--surface),
+      0 0.75rem 1.5rem color-mix(in srgb, var(--bg) 55%, transparent);
+  }
   .booklet-preview {
     display: block;
-    border: 1px solid var(--muted);
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--muted) 35%, var(--surface));
+    border-radius: inherit;
     text-decoration: none;
     background: var(--surface);
   }
-  .booklet-preview:hover {
-    border-color: var(--accent);
-    color: var(--text);
-  }
   .booklet-preview img {
+    display: block;
     width: 100%;
     height: auto;
-  }
-  .booklet-caption {
-    display: block;
-    padding: 0.8rem;
-    font: 400 0.8125rem/1.4 var(--sans);
   }
   .booklet-download {
     position: absolute;
@@ -67,11 +71,19 @@ import { booklet } from "../../data/documents";
     place-items: center;
     width: 2.75rem;
     height: 2.75rem;
-    background: var(--bg);
-    border: 1px solid var(--muted);
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 50%;
+    box-shadow: 0 0.125rem 0.5rem color-mix(in srgb, var(--bg) 30%, transparent);
+    touch-action: manipulation;
   }
   .booklet-download:hover {
-    border-color: var(--accent);
+    color: var(--bg);
+  }
+  .booklet-preview:focus-visible,
+  .booklet-download:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
   }
   [data-document-error] {
     margin-top: 1rem;
