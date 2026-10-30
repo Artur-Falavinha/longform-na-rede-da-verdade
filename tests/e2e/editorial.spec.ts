@@ -51,8 +51,12 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
   expect(
     await page
       .locator("#adultizacao")
-      .evaluate((node) => node.nextElementSibling?.id),
+      .evaluate((node) => node.nextElementSibling?.nextElementSibling?.id),
   ).toBe("encerramento");
+  await expect(page.locator("footer.credits-block")).toContainText(
+    "Isabelle Sestari",
+  );
+  await expect(page.locator("#contexto")).not.toContainText("Isabelle Sestari");
   await expect(page.locator("#comparacao h2")).toHaveText(
     "Entre a influência e o jornalismo",
   );

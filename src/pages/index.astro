@@ -33,30 +33,21 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       tabindex="-1"
       aria-labelledby="report-title"
     >
+      <div class="story-column standfirst">
+        <EditorialText paragraphs={editorial.standfirst} />
+      </div>
       <header class="title-block wide" data-reveal>
         <h1 id="report-title">
           Na rede
           <br />
-          da verdade
+          da verdade:
+          <span class="subtitle">
+            quem informa, quem acredita e quem denuncia?
+          </span>
         </h1>
-        <p class="subtitle">quem informa, quem acredita e quem denuncia?</p>
         <div class="rule" aria-hidden="true"></div>
-        <p class="byline">
-          Isabelle Sestari · Isadora Moraes Lopes
-          <br />
-          Julia Nunes Budal · Sabrina Gomes da Cunha
-        </p>
-        <p class="small muted">
-          Orientador: {research.advisor}
-          <br />
-          {research.institution}
-        </p>
       </header>
-      <div class="story-column standfirst">
-        <EditorialText paragraphs={editorial.standfirst} />
-      </div>
       <div id="denuncia" class="story-column story-copy" tabindex="-1">
-        <h2 class="story-heading" data-reveal>Contextualização</h2>
         <EditorialText paragraphs={editorial.context} />
       </div>
       <div class="story-media">
@@ -77,7 +68,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       data-chapter-start
       class="story-section story-continuation"
       tabindex="-1"
-      aria-label="Análise dos comentários"
+      aria-label="O que o público disse"
     >
       <div class="story-column story-copy">
         <EditorialText paragraphs={editorial.commentsIntro} />
@@ -155,7 +146,9 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       tabindex="-1"
       aria-labelledby="adultizacao-title"
     >
-      <h2 id="adultizacao-title" class="story-heading" data-reveal>O termo Adultização</h2>
+      <h2 id="adultizacao-title" class="story-heading" data-reveal>
+        O termo Adultização
+      </h2>
       <EditorialText paragraphs={editorial.adultization.slice(0, 2)} />
       <div class="booklet-passage">
         <aside
@@ -168,6 +161,22 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         <EditorialText paragraphs={editorial.adultization.slice(2)} />
       </div>
     </section>
+    <footer
+      class="story-column credits-block"
+      aria-label="Créditos da reportagem"
+    >
+      <div class="rule" aria-hidden="true"></div>
+      <ul class="byline">
+        {research.authors.map((author) => (
+          <li>{author}</li>
+        ))}
+      </ul>
+      <p class="small muted">
+        Orientador: {research.advisor}
+        <br />
+        {research.institution}
+      </p>
+    </footer>
     <section
       id="encerramento"
       data-chapter-start
@@ -208,7 +217,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
   }
   .title-block {
     text-align: center;
-    padding-block: clamp(4rem, 8vw, 8rem) 3rem;
+    padding-block: clamp(2rem, 4vw, 4rem) 2rem;
   }
   h1 {
     font-size: clamp(3.5rem, 10.2vw, 9.75rem);
@@ -217,16 +226,25 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     margin: 1.7rem auto 1.2rem;
   }
   .subtitle {
+    display: block;
+    margin-top: 1.5rem;
+    letter-spacing: normal;
     font: 700 clamp(1.35rem, 2.4vw, 2.3rem)/1.4 var(--serif);
   }
+  .credits-block {
+    padding-block: 0 4rem;
+    text-align: center;
+  }
   .byline {
+    list-style: none;
+    padding: 0;
     font-size: 0.875rem;
     line-height: 1.8;
     margin-bottom: 1rem;
   }
   .standfirst {
     font: 400 clamp(1.4rem, 2.6vw, 2rem)/1.5 var(--serif);
-    padding-block: 1rem 4rem;
+    padding-block: clamp(3rem, 6vw, 6rem) 1rem;
   }
   .story-heading {
     font-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -255,6 +273,12 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     float: right;
     width: min(38%, 14rem);
     margin: 0.3rem 0 1.25rem 2rem;
+  }
+  @media (min-width: 900px) {
+    .story-copy :global(p[data-reveal]) {
+      text-align: justify;
+      hyphens: auto;
+    }
   }
   @media (max-width: 599px) {
     .title-block {
