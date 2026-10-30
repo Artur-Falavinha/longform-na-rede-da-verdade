@@ -15,7 +15,7 @@ export const chapters: { id: ChapterId; title: string; anchor?: string }[] = [
   },
   {
     id: "comentarios",
-    title: "Análise dos comentários",
+    title: "O que o público disse",
   },
   {
     id: "comparacao",
