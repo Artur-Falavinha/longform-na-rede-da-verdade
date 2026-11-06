@@ -118,13 +118,14 @@ const format = new Intl.NumberFormat("pt-BR");
     border-block: 1px solid var(--surface);
   }
   dl {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
     margin-block: 1rem;
   }
   dl > div + div {
-    border-inline-start: 1px solid var(--red);
-    padding-inline-start: clamp(1rem, 4vw, 3rem);
+    text-align: end;
   }
   dt,
   figcaption {
