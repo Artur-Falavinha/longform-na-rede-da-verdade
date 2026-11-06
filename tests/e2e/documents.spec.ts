@@ -31,7 +31,7 @@ test("cartilha abre outra guia e baixa PDF real por ações independentes", asyn
   await expect(page.locator("#cartilha .booklet-preview")).toBeVisible();
 });
 test("PDF corrompido apresenta recuperação na reportagem", async ({ page }) => {
-  await page.route("**/cartilha-teste.pdf", (route) =>
+  await page.route("**/infancia-acelerada.pdf", (route) =>
     route.fulfill({
       status: 200,
       contentType: "application/pdf",

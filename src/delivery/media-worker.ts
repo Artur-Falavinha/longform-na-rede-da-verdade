@@ -1,3 +1,4 @@
+import { deliverFelcaMetrics } from "./felca-metrics";
 import manifest from "../../.generated/media-manifest.json";
 
 type AssetFetcher = { fetch(request: Request): Promise<Response> };
@@ -13,8 +14,14 @@ function lookupRequest(request: Request, key: Request, etag: string) {
 }
 
 export default {
-  async fetch(request: Request, env: { ASSETS: AssetFetcher }) {
+  async fetch(
+    request: Request,
+    env: { ASSETS: AssetFetcher; YOUTUBE_API_KEY?: string },
+  ) {
     const url = new URL(request.url);
+    if (url.pathname === "/api/felca-metrics") {
+      return deliverFelcaMetrics(request, env.YOUTUBE_API_KEY);
+    }
     const asset = media[url.pathname];
     if (!asset || !["GET", "HEAD"].includes(request.method)) {
       return env.ASSETS.fetch(request);
@@ -28,7 +35,9 @@ export default {
     const lookup = lookupRequest(request, key, etag);
     let response = await cache.match(lookup);
     if (!response) {
-      const complete = await env.ASSETS.fetch(new Request(url, { method: "GET" }));
+      const complete = await env.ASSETS.fetch(
+        new Request(url, { method: "GET" }),
+      );
       if (complete.status !== 200) return complete;
       const headers = new Headers(complete.headers);
       headers.set("Content-Length", String(asset.bytes));
@@ -44,7 +53,10 @@ export default {
       }
     }
     return request.method === "HEAD"
-      ? new Response(null, { status: response.status, headers: response.headers })
+      ? new Response(null, {
+          status: response.status,
+          headers: response.headers,
+        })
       : response;
   },
 };

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "source": {
-    "label": "TEXTOS — autoras",
+    "label": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
     "url": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-    "collectedAt": "2026-10-15",
+    "collectedAt": "2026-11-06",
     "editorialReview": "Aguardando análise do professor"
   },
   "records": [
@@ -636,361 +636,221 @@
       "verification": "literal"
     },
     {
-      "id": "docs-001",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:1:index:1",
+      "id": "docs-20261106-titulo",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, título",
       "sourceText": "NA REDE DA VERDADE: QUEM INFORMA, QUEM ACREDITA E QUEM DENUNCIA?",
       "targetChapter": "contexto",
       "status": "received",
       "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "adaptation": "Título e subtítulo renderizados no mesmo cabeçalho, antes da paráfrase conforme a ordem da p. 9."
     },
     {
-      "id": "docs-002",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:2:index:66",
-      "sourceText": "Quando fatos e emoções disputam o mesmo espaço, a verdade pode deixar de ser aquilo que foi apurado para se tornar aquilo em que escolhemos acreditar.",
+      "id": "docs-20261106-standfirst-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, standfirst, parágrafo 1",
+      "sourceText": "Quando os fatos e as emoções disputam o mesmo espaço, a verdade pode deixar de ser aquilo que foi apurado para se tornar aquilo em que escolhemos acreditar.",
       "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-003",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:3:index:218",
-      "sourceText": "CONTEXTUALIZAÇÃO",
-      "targetChapter": "contexto",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Subtítulo removido por solicitação aprovada em 29/10/2026; o texto de contextualização permanece integralmente após o título da reportagem."
-    },
-    {
-      "id": "docs-004",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:4:index:235",
-      "sourceText": "Nas redes sociais, informar deixou de ser uma atividade restrita às redações. Com um celular e uma audiência, influenciadores passaram a ocupar espaços antes vinculados ao Jornalismo: comentam acontecimentos, investigam situações, denunciam comportamentos e mobilizam o coletivo em torno de temas de interesse público. Em um tempo marcado pela circulação acelerada de informações, essas denúncias podem alcançar milhões de pessoas antes mesmo de chegarem aos veículos de imprensa, enquanto a identificação com quem comunica pode pesar na percepção sobre aquilo que é verdadeiro. É nesse cenário que esta reportagem investiga os caminhos percorridos por uma denúncia, entre influência, credibilidade, apuração e responsabilidade.",
+      "id": "docs-20261106-context-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, context, parágrafo 1",
+      "sourceText": "Nas redes sociais, informar deixou de ser uma atividade restrita às redações. Com um celular e uma audiência, influenciadores passaram a ocupar espaços antes vinculados ao Jornalismo: comentam acontecimentos, investigam situações, denunciam comportamentos e mobilizam o coletivo em torno de temas de interesse público.",
       "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-005",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:5:index:964",
+      "id": "docs-20261106-context-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, context, parágrafo 2",
+      "sourceText": "Em um tempo marcado pela circulação acelerada de informações, essas denúncias podem alcançar milhões de pessoas antes mesmo de chegarem aos veículos de imprensa, enquanto a identificação com quem comunica pode pesar na percepção sobre aquilo que é verdadeiro. É nesse cenário que esta reportagem investiga os caminhos percorridos por uma denúncia, entre influência, credibilidade, apuração e responsabilidade.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-20261106-context-03",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, context, parágrafo 3",
       "sourceText": "Foi nesse cenário que, em agosto de 2025, o influenciador Felca publicou o vídeo “Adultização”. Em quase 50 minutos, ele apresentou uma denúncia sobre a exposição, exploração e sexualização de crianças e adolescentes nas redes sociais, colocando o caso de Hytalo Santos no centro da discussão.",
       "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-006",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:6:index:1258",
-      "sourceText": "A repercussão foi imediata. O vídeo alcançou milhões de pessoas, provocou uma onda de comentários e ultrapassou o ambiente das plataformas digitais, chegando à imprensa, às instituições públicas e ao debate sobre a proteção de crianças e adolescentes na internet.",
+      "id": "docs-20261106-context-04",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, context, parágrafo 4",
+      "sourceText": "A repercussão foi imediata. O vídeo alcançou milhões de pessoas, provocou uma onda de comentários e ultrapassou o ambiente das plataformas digitais, chegando à imprensa, às instituições públicas e ao debate sobre a proteção de crianças e adolescentes na internet. Mas o impacto da denúncia levanta questões que ultrapassam o próprio caso: o que faz uma pessoa confiar em quem está falando? Quando um influenciador consegue mobilizar uma audiência maior do que veículos jornalísticos e passa a ser percebido como uma fonte legítima de informação, o que isso revela sobre a forma como consumimos notícias, construímos confiança e estendemos a credibilidade?",
       "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-007",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:7:index:1522",
-      "sourceText": "Mas o impacto da denúncia levanta uma questão que vai além do próprio caso: o que faz uma pessoa confiar em quem está falando? Quando um influenciador consegue mobilizar uma audiência maior do que veículos jornalísticos e passa a ser percebido como uma fonte legítima de informação, o que isso revela sobre a forma como consumimos notícias, construímos confiança e estendemos a credibilidade?",
+      "id": "docs-20261106-context-05",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1, context, parágrafo 5",
+      "sourceText": "É a partir dessas inquietações que esta reportagem entra na rede: para compreender quem ocupa hoje o lugar de informar, quais caminhos fazem uma denúncia conquistar credibilidade e o que acontece quando a confiança depositada em quem comunica passa a influenciar a maneira como reconhecemos a verdade. Entre influenciadores, jornalistas e audiências, buscamos entender como a informação circula, em quem escolhemos acreditar e quais responsabilidades acompanham o poder de denunciar.",
       "targetChapter": "contexto",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-008",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:8:index:1915",
-      "sourceText": "É a partir dessas perguntas que esta reportagem entra na rede",
-      "targetChapter": "contexto",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "docs-009",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:9:index:1979",
-      "sourceText": "(vídeo 1)",
-      "targetChapter": "contexto",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-010",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:10:index:1990",
-      "sourceText": "PORQUE O FELCA TEVE + ALCANCE",
-      "targetChapter": "alcance",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
-    },
-    {
-      "id": "docs-011",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:11:index:2020",
-      "sourceText": "O alcance da denúncia de Felca não aconteceu por acaso. Antes mesmo de publicar o vídeo sobre a adultização, o influenciador já havia construído uma comunidade de milhões de seguidores e uma relação de proximidade com esse público. A confiança acumulada ao longo dos anos fez com que a denúncia chegasse a uma audiência que já estava disposta a ouvi-lo.",
+      "id": "docs-20261106-reach-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 1",
+      "sourceText": "O alcance da denúncia de Felca não aconteceu por acaso. Antes mesmo de publicar o vídeo sobre a adultização, o influenciador já havia conquistado milhões de seguidores por meio de conteúdos que exploravam o humor, a ironia e a crítica a comportamentos e tendências da internet. Em 2023, ganhou grande repercussão ao publicar um vídeo testando a base da influenciadora Virginia Fonseca, que ultrapassou 19 milhões de visualizações. No mesmo ano, voltou a viralizar ao reproduzir as chamadas lives de NPC, tendência do TikTok que ele próprio utilizou para questionar os formatos de conteúdo que ganhavam espaço na plataforma. Mais tarde, também direcionou críticas às publicidades de influenciadores e à divulgação de plataformas de apostas. Essa trajetória contribuiu para consolidar uma audiência numerosa e familiarizada com sua linguagem, criando uma relação de proximidade que antecedeu a denúncia sobre a adultização.",
       "targetChapter": "alcance",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-012",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:12:index:2374",
-      "sourceText": "Mas o número de seguidores, sozinho, não explica a dimensão que o vídeo alcançou.",
+      "id": "docs-20261106-reach-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 2",
+      "sourceText": "Mas o número de seguidores, sozinho, não explica a dimensão que o vídeo alcançou. A forma como Felca construiu a narrativa também foi determinante. Em vez de apresentar a denúncia a partir da linguagem tradicional de uma reportagem, ele utilizou recursos já conhecidos pelo público das redes: uma comunicação pessoal, direta e acessível, combinada a elementos de investigação e apresentação de evidências.",
       "targetChapter": "alcance",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-013",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:13:index:2456",
-      "sourceText": "A forma como Felca construiu a narrativa também foi determinante. Em vez de apresentar a denúncia a partir da linguagem tradicional de uma reportagem, ele utilizou recursos já conhecidos pelo público das redes: uma comunicação pessoal, direta e acessível, combinada a elementos de investigação e apresentação de evidências.",
-      "targetChapter": "alcance",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "docs-014",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:14:index:2780",
+      "id": "docs-20261106-reach-03",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 3",
       "sourceText": "Essa mistura aproximou a denúncia da experiência cotidiana de quem consome conteúdo nas redes. O público não estava apenas diante de uma informação, mas de alguém com quem já possuía uma relação de identificação.",
       "targetChapter": "alcance",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-015",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:15:index:2993",
-      "sourceText": "O conceito “efeito cego”, discutido por Brito (2023), nos auxilia a ilustrar esse fenômeno. A confiança construída entre influenciador e audiência pode fazer com que seus seguidores recebam e reproduzam uma informação antes mesmo de submetê-la ao mesmo nível de questionamento que aplicariam a outras fontes, como, o jornalismo.",
+      "id": "docs-20261106-reach-04",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 4",
+      "sourceText": "A pesquisadora Brito, em sua discussão sobre o chamado “efeito cego”, em 2023, ajuda a compreender esse fenômeno. A confiança construída entre influenciador e audiência pode fazer com que seus seguidores recebam e reproduzam uma informação antes mesmo de submetê-la ao mesmo nível de questionamento que aplicariam a outras fontes, como o jornalismo.",
       "targetChapter": "alcance",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-016",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:16:index:3323",
-      "sourceText": "Além disso, Felca estava inserido em uma estrutura de circulação diferente daquela enfrentada pelo Jornalismo tradicional. As plataformas digitais favorecem determinados formatos e criadores, ampliando a visibilidade de conteúdos capazes de gerar interação. Assim, a repercussão do vídeo resultou da combinação entre uma audiência já consolidada, a linguagem utilizada, a circulação algorítmica e o contexto em que a denúncia foi publicada. O resultado foi uma mensagem que ultrapassou a comunidade original do influenciador e alcançou pessoas que sequer o acompanhavam.",
+      "id": "docs-20261106-reach-05",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 5",
+      "sourceText": "Além disso, Felca estava inserido em uma estrutura de circulação diferente daquela enfrentada pelo jornalismo tradicional. As plataformas digitais favorecem determinados formatos e criadores, ampliando a visibilidade de conteúdos capazes de gerar interação. Assim, a repercussão do vídeo resultou da combinação entre uma audiência já consolidada, a linguagem utilizada, a circulação algorítmica e o contexto em que a denúncia foi publicada. O resultado foi uma mensagem que ultrapassou a comunidade original do influenciador e alcançou pessoas que sequer o acompanhavam.",
       "targetChapter": "alcance",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-017",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:17:index:3894",
-      "sourceText": "Por isso, para entender o alcance de Felca é  necessário compreender a mudança na dinâmica de circulação de informação: nas redes, quem informa não é apenas quem possui uma pauta relevante, mas também quem consegue estabelecer uma relação de confiança com quem está do outro lado da tela.",
+      "id": "docs-20261106-reach-06",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 6",
+      "sourceText": "Por isso, para entender o alcance de Felca, é necessário compreender a mudança na dinâmica de circulação da informação: nas redes, quem informa não é apenas quem possui uma pauta relevante, mas também quem consegue estabelecer uma relação de confiança com quem está do outro lado da tela.",
       "targetChapter": "alcance",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-018",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:18:index:4185",
-      "sourceText": "GANCHO ANÁLISE COMENTÁRIOS",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-019",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:19:index:4213",
-      "sourceText": "Mas o alcance, por si só, não conta toda a história.",
+      "id": "docs-20261106-commentsIntro-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 2, commentsIntro, parágrafo 1",
+      "sourceText": "Mas o alcance, por si só, não conta toda a história. Para entender por que a denúncia de Felca mobilizou tantas pessoas, é preciso olhar para quem estava do outro lado da tela. O que os comentários revelam sobre confiança, credibilidade e a relação do público com o influenciador?",
       "targetChapter": "comentarios",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-020",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:20:index:4266",
-      "sourceText": "Para entender por que a denúncia de Felca mobilizou tantas pessoas, é preciso olhar para quem estava do outro lado da tela. O que os comentários revelam sobre confiança, credibilidade e a relação do público com o influenciador?",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "docs-021",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:21:index:4494",
+      "id": "docs-20261106-commentsIntro-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 2, commentsIntro, parágrafo 2",
       "sourceText": "Mais do que medir a repercussão, eles ajudam a entender por que tanta gente acreditou, compartilhou e defendeu aquela denúncia.",
       "targetChapter": "comentarios",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-022",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:22:index:4623",
-      "sourceText": "(comentários analisados)",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-023",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:23:index:4649",
+      "id": "docs-20261106-commentsOutro-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, commentsOutro, parágrafo 1",
       "sourceText": "Os comentários mostram que a repercussão do vídeo foi muito além da discussão sobre a adultização infantil. Uma das narrativas mais recorrentes coloca Felca em oposição ao Jornalismo, com usuários afirmando que a imprensa não teria feito o que o influenciador fez. Ao mesmo tempo, muitos passaram a tratá-lo como herói, atribuindo a ele coragem, responsabilidade social e capacidade de mobilização. A ideia de que ele não teria interesse financeiro na denúncia também apareceu como argumento para reforçar sua autenticidade.",
       "targetChapter": "comentarios",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-024",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:24:index:5174",
+      "id": "docs-20261106-commentsOutro-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, commentsOutro, parágrafo 2",
+      "sourceText": "Essa percepção encontra um contraponto interessante na análise do jornalista Fausto Salvadori, que participou desta pesquisa. Ao refletir sobre a reação do público ao vídeo, ele chama atenção para a maneira como a indignação de Felca foi recebida: “No caso de Felca, que não costuma aparecer todo dia no vídeo indignado com alguma coisa, a emoção parece mais autêntica e impactante”.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-20261106-commentsOutro-03",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, commentsOutro, parágrafo 3",
       "sourceText": "Outros comentários se concentraram diretamente na adultização e em seus impactos, enquanto uma parcela questionou o próprio Felca e sua forma de conduzir a denúncia. Entre elogios, críticas e comparações, os comentários ilustram um debate maior: quem o público considera digno de credibilidade quando o assunto é informar e denunciar? Por quais razões?",
       "targetChapter": "comentarios",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-025",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:25:index:5529",
-      "sourceText": "(subtítulo)",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-026",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:26:index:5542",
-      "sourceText": "COMPARAÇÃO",
-      "targetChapter": "comparacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-027",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:27:index:5553",
-      "sourceText": "A análise dos comentários do vídeo “Adultização” mostrou que a repercussão da denúncia não esteve relacionada apenas ao conteúdo apresentado por Felca, mas também à forma como o público passou a percebê-lo como uma fonte legítima de informação e denúncia. Em diferentes manifestações, os usuários atribuíram ao influenciador características associadas à atuação jornalística, cobraram a participação da imprensa e, em alguns casos, demonstraram maior confiança na denúncia feita por ele. Ao mesmo tempo, o levantamento realizado para esta pesquisa mostra que o tema envolvendo Hytalo Santos e as denúncias de exploração de crianças e adolescentes já era abordado por veículos jornalísticos antes da publicação do vídeo de Felca. Diante disso, surge uma questão: se o problema já estava sendo tratado pela imprensa e também foi investigado e denunciado por um influenciador, quais são as diferenças entre os caminhos percorridos por cada um até a publicação de uma denúncia?",
+      "id": "docs-20261106-comparison-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, comparison, parágrafo 1",
+      "sourceText": "A análise dos comentários do vídeo “Adultização”, publicado em 6 de agosto de 2025 pelo influenciador Felca, mostrou que a repercussão da denúncia não esteve relacionada apenas ao conteúdo apresentado, mas também à forma como o público passou a percebê-lo como uma fonte legítima de informação e denúncia.",
       "targetChapter": "comparacao",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-028",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:28:index:6527",
-      "sourceText": "É a partir dessa questão que se estabelece a comparação entre a atuação de Felca e o processo jornalístico. Como as informações são reunidas e verificadas em cada caso? Quais fontes são utilizadas? Como são buscadas respostas dos envolvidos? E de que maneira esses diferentes processos interferem na credibilidade atribuída à informação pelo público? A comparação não pretende determinar quem informa melhor, mas compreender como diferentes atores constroem e circulam informações de interesse público — e o que cada caminho implica em termos de apuração, responsabilidade e credibilidade. A seguir, essas diferenças são apresentadas a partir das etapas que envolvem a construção de uma denúncia.",
+      "id": "docs-20261106-comparison-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, comparison, parágrafo 2",
+      "sourceText": "Conhecido pelo nome artístico Felca, Felipe Bressanim Pereira é um youtuber e humorista que ganhou popularidade com vídeos de humor, críticas e comentários sobre conteúdos que circulam na internet. No vídeo “Adultização”, ele abordou a exposição e a sexualização de crianças e adolescentes nas redes sociais, destacando o caso de Hytalo Santos, influenciador paraibano conhecido por publicar vídeos de dança e da rotina de jovens que participavam de seus conteúdos. As denúncias apresentadas por Felca apontaram possíveis situações de exploração e exposição inadequada de menores de idade. O caso, que já era acompanhado por autoridades e abordado pela imprensa, ganhou grande repercussão após a publicação do vídeo.",
       "targetChapter": "comparacao",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-029",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:29:index:7225",
-      "sourceText": "(vídeo 2)",
+      "id": "docs-20261106-comparison-03",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, comparison, parágrafo 3",
+      "sourceText": "Em diferentes manifestações, os usuários atribuíram a Felca características associadas à atuação jornalística e cobraram maior participação da imprensa. Esse cenário levanta questões sobre as diferenças entre a forma como influenciadores e jornalistas constroem e divulgam denúncias, além dos fatores que influenciam a credibilidade atribuída a cada um. Como as informações são reunidas e verificadas? Quais fontes são utilizadas? E como cada processo busca garantir a responsabilidade na divulgação de informações de interesse público? Essas questões serão aprofundadas a seguir.",
       "targetChapter": "comparacao",
       "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "verification": "literal"
     },
     {
-      "id": "docs-030",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:30:index:7236",
-      "sourceText": "GANCHO FUTURO DO JORNALISMO",
-      "targetChapter": "jornalismo",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-031",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:31:index:7264",
+      "id": "docs-20261106-journalism-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3–4, journalism, parágrafo 1",
       "sourceText": "Se hoje influenciadores conseguem mobilizar milhões em torno de uma denúncia, o que isso significa para o futuro do Jornalismo? Mais do que disputar alcance, a imprensa precisa entender como preservar sua credibilidade em um ambiente em que qualquer pessoa pode informar, denunciar e conquistar a confiança de uma audiência.",
       "targetChapter": "jornalismo",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-032",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:32:index:7590",
-      "sourceText": "(podcast 1)",
-      "targetChapter": "jornalismo",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-033",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:33:index:7602",
-      "sourceText": "(podcast 2)",
-      "targetChapter": "jornalismo",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-034",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:34:index:7615",
-      "sourceText": "(subtítulo “A realidade dos fatos)",
-      "targetChapter": "cronologia",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-035",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:35:index:7651",
-      "sourceText": "CONTEXTUALIZAÇÃO DO CASO",
-      "targetChapter": "cronologia",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
-    },
-    {
-      "id": "docs-036",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:36:index:7676",
+      "id": "docs-20261106-chronology-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 4, chronology, parágrafo 1",
       "sourceText": "Hytalo José Santos Silva, conhecido como Hytalo Santos, ganhou notoriedade nas redes sociais pela produção de conteúdos envolvendo crianças e adolescentes, mostrando a rotina dos jovens que conviviam com ele e assumindo, em alguns casos, uma posição semelhante à de uma figura paterna. Antes da repercussão provocada pelo vídeo de Felca, o influenciador já era alvo de denúncias e investigações relacionadas à exposição de menores de idade. Em dezembro de 2024, o Ministério Público passou a investigar suspeitas de exploração de crianças e adolescentes relacionadas ao conteúdo produzido por Hytalo. Ao longo de 2025, novas denúncias e acusações envolvendo o influenciador e pessoas próximas ampliaram a atenção sobre o caso.",
       "targetChapter": "cronologia",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-037",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:37:index:8403",
+      "id": "docs-20261106-chronology-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 4, chronology, parágrafo 2",
       "sourceText": "Em 6 de agosto de 2025, Felca publicou o vídeo “Adultização”, no qual apresentou uma denúncia sobre a exposição, exploração e sexualização de crianças e adolescentes nas redes sociais, tendo Hytalo Santos como um dos principais casos apresentados. Cinco dias depois, em 11 de agosto, o Ministério Público da Paraíba ingressou com uma ação civil pública contra o influenciador, solicitando medidas relacionadas à proteção dos adolescentes envolvidos. Em 15 de agosto, Hytalo Santos e seu marido, Israel Natã Vicente, foram presos preventivamente em Carapicuíba, São Paulo, por determinação da Justiça da Paraíba. Em setembro, o Tribunal de Justiça da Paraíba recebeu a denúncia do Ministério Público, tornando os dois réus. Em fevereiro de 2026, Hytalo foi condenado a 11 anos e 4 meses de prisão, enquanto Israel recebeu pena de 8 anos e 10 meses, além da determinação de pagamento de R$ 500 mil por danos morais. O caso, que envolvia inicialmente denúncias sobre a exposição de menores nas redes sociais, passou a ter também consequências criminais e judiciais.",
       "targetChapter": "cronologia",
       "status": "received",
       "verification": "literal"
-    },
-    {
-      "id": "docs-038",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:38:index:9467",
-      "sourceText": "MONTAR TEXTO LINHA DO TEMPO",
-      "targetChapter": "cronologia",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
     },
     {
       "id": "docs-039",
@@ -1525,325 +1385,125 @@
       "verification": "literal"
     },
     {
-      "id": "docs-096",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:96:index:16153",
-      "sourceText": "SOBRE O CASO",
-      "targetChapter": "sobre-caso",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
-    },
-    {
-      "id": "docs-097",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:97:index:16166",
+      "id": "docs-20261106-case-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 7–8, case, parágrafo 1",
       "sourceText": "A repercussão do caso Hytalo Santos não começou com a publicação do vídeo “Adultização”, de Felca. O levantamento realizado para esta pesquisa identificou que o influenciador já era alvo de investigações e havia sido citado em conteúdos jornalísticos antes de agosto de 2025. Entre dezembro de 2024 e julho de 2025, CNN Brasil, G1 e Tilt/UOL publicaram matérias relacionadas a Hytalo Santos e a denúncias envolvendo a exposição e a exploração de menores. Segundo a CNN Brasil, as investigações do Ministério Público da Paraíba haviam começado em 2024, após denúncias recebidas pelo Disque 100. O vídeo de Felca, portanto, inseriu o caso em uma nova dimensão de repercussão pública, mas ocorreu em meio a um processo de investigação que já estava em andamento.",
       "targetChapter": "sobre-caso",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-098",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:98:index:16926",
+      "id": "docs-20261106-case-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 7–8, case, parágrafo 2",
       "sourceText": "A partir de agosto de 2025, as medidas tomadas pelas autoridades se intensificaram. Após a repercussão do vídeo, o Ministério Público da Paraíba apresentou uma ação civil pública que resultou em medidas como a suspensão dos perfis de Hytalo Santos, a interrupção da monetização dos conteúdos, o afastamento dos adolescentes envolvidos e a proibição de contato com menores. Em 15 de agosto, Hytalo Santos e Israel Natã Vicente foram presos preventivamente em Carapicuíba, em São Paulo, por ordem da Justiça da Paraíba. A investigação apurava suspeitas relacionadas à exploração de crianças e adolescentes, incluindo tráfico de pessoas e exploração sexual infantil. A prisão foi mantida após audiência de custódia e, em 19 de agosto, o Superior Tribunal de Justiça também negou um pedido de habeas corpus apresentado pela defesa.",
       "targetChapter": "sobre-caso",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-099",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:99:index:17754",
+      "id": "docs-20261106-case-03",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 7–8, case, parágrafo 3",
       "sourceText": "O caso passou então da fase de investigação para a esfera judicial. Em setembro de 2025, o Tribunal de Justiça da Paraíba recebeu a denúncia apresentada pelo Ministério Público, tornando Hytalo Santos e Israel Natã Vicente réus na ação penal. O processo passou a tramitar em segredo de Justiça. Paralelamente, outras frentes de investigação e processos foram abertas. O Ministério Público do Trabalho judicializou, em agosto de 2025, uma ação relacionada às condições de trabalho e às denúncias envolvendo os adolescentes, em processo também mantido sob sigilo. Em dezembro, o órgão informou ter reunido elementos que apontavam para um esquema envolvendo tráfico de pessoas para fins de exploração sexual e submissão a trabalho em condições análogas à escravidão, com dezenas de possíveis vítimas, incluindo crianças e adolescentes.",
       "targetChapter": "sobre-caso",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-100",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:100:index:18587",
+      "id": "docs-20261106-case-04",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 7–8, case, parágrafo 4",
       "sourceText": "Em fevereiro de 2026, veio a primeira condenação criminal diretamente relacionada ao caso que ganhou repercussão com as denúncias sobre a exposição dos adolescentes. A 2ª Vara Mista de Bayeux, na Paraíba, condenou Hytalo Santos a 11 anos e 4 meses de prisão e Israel Natã Vicente a 8 anos e 10 meses, em regime fechado, por exploração de conteúdo pornográfico envolvendo adolescentes. A sentença também determinou o pagamento de R$ 500 mil por danos morais e manteve a prisão preventiva dos dois. Segundo a decisão divulgada pela imprensa, os adolescentes eram utilizados na produção de conteúdos com conotação sexual, com exploração de sua imagem para gerar audiência, engajamento e monetização nas plataformas digitais. A sentença ainda mencionou elementos apresentados durante a investigação, como o pagamento de procedimentos estéticos e tatuagens para adolescentes.",
       "targetChapter": "sobre-caso",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-101",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:101:index:19458",
+      "id": "docs-20261106-case-05",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 7–8, case, parágrafo 5",
       "sourceText": "A condenação, porém, não encerrou os processos relacionados a Hytalo Santos. Em 24 de fevereiro de 2026, a Câmara Criminal do Tribunal de Justiça da Paraíba negou, por unanimidade, novo pedido de habeas corpus e manteve a prisão preventiva dos dois. Antes disso, outros pedidos de liberdade já haviam sido rejeitados pelo tribunal. As defesas afirmaram que recorreriam da condenação. Ao longo de 2026, o nome do influenciador continuou relacionado a outros procedimentos judiciais, incluindo investigações sobre lavagem de dinheiro, ações trabalhistas e processos envolvendo ex-funcionários. O G1 também registrou novos desdobramentos, como uma condenação ao pagamento de R$ 60 mil por assédio contra ex-seguranças, uma investigação sobre lavagem de dinheiro envolvendo Hytalo e Israel e o pedido da defesa para anular a condenação utilizando como argumento a chamada “Lei Felca”. Assim, o caso deixou de estar restrito à denúncia de exploração de menores e passou a envolver diferentes frentes judiciais, que continuam produzindo novos desdobramentos.",
       "targetChapter": "sobre-caso",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-102",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:102:index:20512",
-      "sourceText": "ADULTIZAÇÃO",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Subtítulo alterado para O termo Adultização por solicitação do responsável em 15/10/2026."
-    },
-    {
-      "id": "docs-103",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:103:index:20524",
+      "id": "docs-20261106-adultization-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 8, adultization, parágrafo 1",
       "sourceText": "Foi nesse contexto de exposição de crianças e adolescentes nas redes sociais que o termo “adultização” ganhou espaço no debate público. No caso de Hytalo Santos, a denúncia apresentada por Felca chamou atenção para conteúdos em que crianças e adolescentes apareciam inseridos em situações e dinâmicas associadas ao universo adulto. Mas o que, de fato, significa adultização?",
       "targetChapter": "adultizacao",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-104",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:104:index:20899",
+      "id": "docs-20261106-adultization-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 8, adultization, parágrafo 2",
       "sourceText": "A psicóloga Jéssica Tonioti da Purificação explica que adultização é o processo de enxergar a criança como um “mini adulto”, atribuindo a ela características, responsabilidades, comportamentos e expectativas próprias da vida adulta. Isso significa que o fenômeno não se restringe à sexualização. Embora a exposição e a sexualização de crianças e adolescentes possam fazer parte desse processo, a adultização também pode aparecer em outras situações sociais, quando a infância é atravessada por exigências ou padrões que não correspondem àquela etapa do desenvolvimento.",
       "targetChapter": "adultizacao",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-105",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:105:index:21469",
+      "id": "docs-20261106-adultization-03",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 8, adultization, parágrafo 3",
       "sourceText": "No ambiente digital, essas situações podem ganhar ainda mais visibilidade. Crianças e adolescentes estão sujeitos à exposição de sua imagem, à reprodução de padrões de comportamento e aparência e à transformação de suas experiências em conteúdo para audiência e engajamento. Foi justamente a partir da denúncia envolvendo Hytalo Santos que essas questões passaram a ser discutidas de forma mais ampla pelo público.",
       "targetChapter": "adultizacao",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-106",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:106:index:21884",
+      "id": "docs-20261106-adultization-04",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 8, adultization, parágrafo 4",
       "sourceText": "Para entender melhor o que caracteriza a adultização, como ela pode se manifestar e quais sinais merecem atenção, confira a cartilha a seguir.",
       "targetChapter": "adultizacao",
       "status": "received",
       "verification": "literal"
     },
     {
-      "id": "docs-107",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:107:index:22028",
+      "id": "docs-20261106-infografico",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 9, ordem",
+      "sourceText": "INFOGRÁFICO VISUALIZAÇÕES/COMENTARIOS",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Totais da coleta do relatório, com data explícita e consulta automatizada quando a API está configurada."
+    },
+    {
+      "id": "docs-20261106-video1",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, marcador",
+      "sourceText": "(vídeo 1)",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Reproduz o vídeo comparativo recebido no grupo das autoras."
+    },
+    {
+      "id": "docs-20261106-video2",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 8, marcador",
+      "sourceText": "(vídeo 2)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Reproduz a entrevista recebida no grupo das autoras, entre os parágrafos correspondentes."
+    },
+    {
+      "id": "docs-20261106-cartilha",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 8, marcador",
       "sourceText": "(cartilha)",
       "targetChapter": "adultizacao",
       "status": "received",
       "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-108",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:108:index:22040",
-      "sourceText": "ORDEM",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-109",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:109:index:22046",
-      "sourceText": "TÍTULO E SUBTÍTULO",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-110",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:110:index:22065",
-      "sourceText": "PARÁFRASE",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-111",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:111:index:22075",
-      "sourceText": "TEXTO - CONTEXTUALIZAÇÃO",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-112",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:112:index:22100",
-      "sourceText": "(VÍDEO 1 - DENÚNCIA DO FELCA)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-113",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:113:index:22130",
-      "sourceText": "TEXTO - PORQUE O FELCA TEVE + ALCANCE",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-114",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:114:index:22168",
-      "sourceText": "TEXTO INICIAL - ANÁLISE COMENTÁRIOS",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-115",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:115:index:22204",
-      "sourceText": "(ANÁLISE DOS COMENTÁRIOS - OS 4 TIPOS - INTERATIVO)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-116",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:116:index:22256",
-      "sourceText": "TEXTO FINAL - ANÁLISE COMENTÁRIOS",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-117",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:117:index:22290",
-      "sourceText": "SUBTÍTULO - “ENTRE A INFLUÊNCIA E O JORNALISMO”",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-118",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:118:index:22338",
-      "sourceText": "TEXTO - GANCHO COMPARAÇÃO",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-119",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:119:index:22364",
-      "sourceText": "(VÍDEO 2 - APROFUNDAMENTO COMPARAÇÃO)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-120",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:120:index:22402",
-      "sourceText": "TEXTO - GANCHO SOBRE O FUTURO DO JORNALISMO",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-121",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:121:index:22446",
-      "sourceText": "(PODCAST 1 - O FUTURO DA CHECAGEM)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-122",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:122:index:22481",
-      "sourceText": "(PODCAST 2 - PRECISO VIRAR INFLUENCER PARA SER JORNALISTA?)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-123",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:123:index:22541",
-      "sourceText": "SUBTÍTULO - \"A REALIDADE DOS FATOS\"",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-124",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:124:index:22577",
-      "sourceText": "TEXTO - CONTEXTUALIZAÇÃO DO CASO HYTALO SANTOS",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-125",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:125:index:22624",
-      "sourceText": "(LINHA DO TEMPO DOS ACONTECIMENTOS)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-126",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:126:index:22660",
-      "sourceText": "TEXTO - APROFUNDAMENTO DO CASO HYTALO SANTOS",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-127",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:127:index:22705",
-      "sourceText": "TEXTO - O QUE É ADULTIZAÇÃO",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
-    },
-    {
-      "id": "docs-128",
-      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
-      "sourceLocator": "tab:t.0:paragraph:128:index:22733",
-      "sourceText": "(CARTILHA - APROFUNDAMENTO O QUE É ADULTIZAÇÃO)",
-      "targetChapter": "adultizacao",
-      "status": "received",
-      "verification": "adapted-interface",
-      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+      "adaptation": "Exibe a cartilha final após o texto de chamada."
     }
   ],
   "assets": [
@@ -1868,56 +1528,6 @@
       "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
     },
     {
-      "id": "felca",
-      "localPath": "/media/felca-test.mp4",
-      "width": 1280,
-      "height": 720,
-      "duration": 20,
-      "bytes": 294533,
-      "status": "placeholder",
-      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
-    },
-    {
-      "id": "comparison",
-      "localPath": "/media/comparison-test.mp4",
-      "width": 1280,
-      "height": 720,
-      "duration": 20,
-      "bytes": 290798,
-      "status": "placeholder",
-      "origin": "Fixture procedural local: imagem abstrata, texto de teste e tom sintetizado; sem material de terceiros."
-    },
-    {
-      "id": "checking-future",
-      "localPath": "/media/checking-future-test.m4a",
-      "duration": 120,
-      "bytes": 760342,
-      "status": "placeholder",
-      "origin": "Tom sintetizado localmente para teste de reprodução; não contém entrevista."
-    },
-    {
-      "id": "journalist-influencer",
-      "localPath": "/media/journalist-influencer-test.m4a",
-      "duration": 120,
-      "bytes": 785373,
-      "status": "placeholder",
-      "origin": "Tom sintetizado localmente para teste de reprodução; não contém entrevista."
-    },
-    {
-      "id": "booklet",
-      "localPath": "/documents/cartilha-teste.pdf",
-      "bytes": 1769,
-      "status": "placeholder",
-      "origin": "PDF técnico de teste gerado localmente."
-    },
-    {
-      "id": "images-booklet.webp",
-      "localPath": "/images/booklet.webp",
-      "bytes": 10254,
-      "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
-    },
-    {
       "id": "images-closing.webp",
       "localPath": "/images/closing.webp",
       "bytes": 121406,
@@ -1925,20 +1535,6 @@
       "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
       "width": 1280,
       "height": 720
-    },
-    {
-      "id": "images-comparison.webp",
-      "localPath": "/images/comparison.webp",
-      "bytes": 18432,
-      "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
-    },
-    {
-      "id": "images-felca.webp",
-      "localPath": "/images/felca.webp",
-      "bytes": 20484,
-      "status": "placeholder",
-      "origin": "Imagem técnica gerada localmente para o material de teste."
     },
     {
       "id": "images-opening.webp",
@@ -2014,6 +1610,85 @@
       "bytes": 73200,
       "status": "placeholder",
       "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
+    },
+    {
+      "id": "comparison",
+      "localPath": "/media/comparacao.mp4",
+      "bytes": 24808763,
+      "status": "received",
+      "origin": "video budal.mov — vídeo 1 enviado pelas autoras; conversão H.264/AAC",
+      "duration": 294.8,
+      "width": 960,
+      "height": 540
+    },
+    {
+      "id": "adultization",
+      "localPath": "/media/adultizacao.mp4",
+      "bytes": 24735462,
+      "status": "received",
+      "origin": "video isa.mov — vídeo 2 enviado pelas autoras; conversão H.264/AAC",
+      "duration": 176.6,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "checking-future",
+      "localPath": "/media/duas-trajetorias.m4a",
+      "bytes": 23324782,
+      "status": "received",
+      "origin": "EPISÓDIO 1.2.MP3.mpeg — áudio atualizado enviado pelas autoras; conversão AAC",
+      "duration": 2547.75
+    },
+    {
+      "id": "journalist-influencer",
+      "localPath": "/media/quem-informa.m4a",
+      "bytes": 20341760,
+      "status": "received",
+      "origin": "EPISÓDIO 2.3.MP3.mpeg — áudio atualizado enviado pelas autoras; conversão AAC",
+      "duration": 2209.57
+    },
+    {
+      "id": "booklet",
+      "localPath": "/documents/infancia-acelerada.pdf",
+      "bytes": 10145568,
+      "status": "approved",
+      "origin": "Infância Acelerada - Na Rede da Verdade.pdf — versão final indicada para publicação"
+    },
+    {
+      "id": "images-comparacao.webp",
+      "localPath": "/images/comparacao.webp",
+      "bytes": 3590,
+      "status": "received",
+      "origin": "Quadro extraído do vídeo 1",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "id": "images-adultizacao.webp",
+      "localPath": "/images/adultizacao.webp",
+      "bytes": 27876,
+      "status": "received",
+      "origin": "Quadro extraído do vídeo 2",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "images-infancia-acelerada.webp",
+      "localPath": "/images/infancia-acelerada.webp",
+      "bytes": 32006,
+      "status": "received",
+      "origin": "Primeira página da cartilha final",
+      "width": 881,
+      "height": 492
+    },
+    {
+      "id": "reuters-linhas-vermelhas",
+      "localPath": "/images/reuters-linhas-vermelhas.png",
+      "bytes": 1393990,
+      "status": "received",
+      "origin": "infografico linhas vermelhas.png — arte enviada pelas autoras com crédito ao Digital News Report 2026",
+      "width": 1536,
+      "height": 1024
     }
   ],
   "pending": [
@@ -2021,8 +1696,8 @@
       "id": "B01",
       "description": "Vídeo editorial de contextualização",
       "targetChapter": "contexto",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Roteiro de 06/11/2026 prevê infográfico de visualizações e comentários no lugar do vídeo provisório."
     },
     {
       "id": "B02",
@@ -2035,22 +1710,22 @@
       "id": "B03",
       "description": "Terceiro comentário de autoridade moral",
       "targetChapter": "comentarios",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Autor da entrega orientou retirar o terceiro card provisório e publicar os exemplos disponíveis."
     },
     {
       "id": "B04",
       "description": "Terceiro comentário de oposição",
       "targetChapter": "comentarios",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Autor da entrega orientou retirar o terceiro card provisório e publicar os exemplos disponíveis."
     },
     {
       "id": "B05",
       "description": "Curtidas/respostas ausentes",
       "targetChapter": "comentarios",
       "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "resolution": "Números de teste removidos. Atualização de curtidas e respostas depende da identificação dos comentários originais."
     },
     {
       "id": "B06",
@@ -2063,8 +1738,8 @@
       "id": "B07",
       "description": "Vídeo comparativo",
       "targetChapter": "comparacao",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Vídeo 1 recebido como video budal.mov."
     },
     {
       "id": "B08",
@@ -2141,14 +1816,14 @@
       "description": "Dois podcasts e transcrições",
       "targetChapter": "jornalismo",
       "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "resolution": "Áudios finais recebidos como EPISÓDIO 1.2.MP3.mpeg e EPISÓDIO 2.3.MP3.mpeg. Transcrições aguardam envio."
     },
     {
       "id": "N04",
       "description": "Cartilha PDF e capa",
       "targetChapter": "cartilha",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "approved",
+      "resolution": "PDF Infância Acelerada - Na Rede da Verdade.pdf confirmado como final. Capa obtida da página inicial."
     },
     {
       "id": "N05",
@@ -2161,8 +1836,8 @@
       "id": "N06",
       "description": "Terceiro comentário de adultização",
       "targetChapter": "comentarios",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Autor da entrega orientou retirar o terceiro card provisório e publicar os exemplos disponíveis."
     }
   ],
   "supersededRecords": [
@@ -4600,6 +4275,684 @@
       "verification": "literal",
       "supersededBy": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
       "supersededReason": "Estrutura e redação substituídas pelo documento das autoras recebido em 15/10/2026; histórico preservado."
+    },
+    {
+      "id": "docs-001",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:1:index:1",
+      "sourceText": "NA REDE DA VERDADE: QUEM INFORMA, QUEM ACREDITA E QUEM DENUNCIA?",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-002",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:2:index:66",
+      "sourceText": "Quando fatos e emoções disputam o mesmo espaço, a verdade pode deixar de ser aquilo que foi apurado para se tornar aquilo em que escolhemos acreditar.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-003",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:3:index:218",
+      "sourceText": "CONTEXTUALIZAÇÃO",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido por solicitação aprovada em 29/10/2026; o texto de contextualização permanece integralmente após o título da reportagem."
+    },
+    {
+      "id": "docs-004",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:4:index:235",
+      "sourceText": "Nas redes sociais, informar deixou de ser uma atividade restrita às redações. Com um celular e uma audiência, influenciadores passaram a ocupar espaços antes vinculados ao Jornalismo: comentam acontecimentos, investigam situações, denunciam comportamentos e mobilizam o coletivo em torno de temas de interesse público. Em um tempo marcado pela circulação acelerada de informações, essas denúncias podem alcançar milhões de pessoas antes mesmo de chegarem aos veículos de imprensa, enquanto a identificação com quem comunica pode pesar na percepção sobre aquilo que é verdadeiro. É nesse cenário que esta reportagem investiga os caminhos percorridos por uma denúncia, entre influência, credibilidade, apuração e responsabilidade.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-005",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:5:index:964",
+      "sourceText": "Foi nesse cenário que, em agosto de 2025, o influenciador Felca publicou o vídeo “Adultização”. Em quase 50 minutos, ele apresentou uma denúncia sobre a exposição, exploração e sexualização de crianças e adolescentes nas redes sociais, colocando o caso de Hytalo Santos no centro da discussão.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-006",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:6:index:1258",
+      "sourceText": "A repercussão foi imediata. O vídeo alcançou milhões de pessoas, provocou uma onda de comentários e ultrapassou o ambiente das plataformas digitais, chegando à imprensa, às instituições públicas e ao debate sobre a proteção de crianças e adolescentes na internet.",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-007",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:7:index:1522",
+      "sourceText": "Mas o impacto da denúncia levanta uma questão que vai além do próprio caso: o que faz uma pessoa confiar em quem está falando? Quando um influenciador consegue mobilizar uma audiência maior do que veículos jornalísticos e passa a ser percebido como uma fonte legítima de informação, o que isso revela sobre a forma como consumimos notícias, construímos confiança e estendemos a credibilidade?",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-008",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:8:index:1915",
+      "sourceText": "É a partir dessas perguntas que esta reportagem entra na rede",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-009",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:9:index:1979",
+      "sourceText": "(vídeo 1)",
+      "targetChapter": "contexto",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-010",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:10:index:1990",
+      "sourceText": "PORQUE O FELCA TEVE + ALCANCE",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
+    },
+    {
+      "id": "docs-011",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:11:index:2020",
+      "sourceText": "O alcance da denúncia de Felca não aconteceu por acaso. Antes mesmo de publicar o vídeo sobre a adultização, o influenciador já havia construído uma comunidade de milhões de seguidores e uma relação de proximidade com esse público. A confiança acumulada ao longo dos anos fez com que a denúncia chegasse a uma audiência que já estava disposta a ouvi-lo.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-012",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:12:index:2374",
+      "sourceText": "Mas o número de seguidores, sozinho, não explica a dimensão que o vídeo alcançou.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-013",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:13:index:2456",
+      "sourceText": "A forma como Felca construiu a narrativa também foi determinante. Em vez de apresentar a denúncia a partir da linguagem tradicional de uma reportagem, ele utilizou recursos já conhecidos pelo público das redes: uma comunicação pessoal, direta e acessível, combinada a elementos de investigação e apresentação de evidências.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-014",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:14:index:2780",
+      "sourceText": "Essa mistura aproximou a denúncia da experiência cotidiana de quem consome conteúdo nas redes. O público não estava apenas diante de uma informação, mas de alguém com quem já possuía uma relação de identificação.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-015",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:15:index:2993",
+      "sourceText": "O conceito “efeito cego”, discutido por Brito (2023), nos auxilia a ilustrar esse fenômeno. A confiança construída entre influenciador e audiência pode fazer com que seus seguidores recebam e reproduzam uma informação antes mesmo de submetê-la ao mesmo nível de questionamento que aplicariam a outras fontes, como, o jornalismo.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-016",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:16:index:3323",
+      "sourceText": "Além disso, Felca estava inserido em uma estrutura de circulação diferente daquela enfrentada pelo Jornalismo tradicional. As plataformas digitais favorecem determinados formatos e criadores, ampliando a visibilidade de conteúdos capazes de gerar interação. Assim, a repercussão do vídeo resultou da combinação entre uma audiência já consolidada, a linguagem utilizada, a circulação algorítmica e o contexto em que a denúncia foi publicada. O resultado foi uma mensagem que ultrapassou a comunidade original do influenciador e alcançou pessoas que sequer o acompanhavam.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-017",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:17:index:3894",
+      "sourceText": "Por isso, para entender o alcance de Felca é  necessário compreender a mudança na dinâmica de circulação de informação: nas redes, quem informa não é apenas quem possui uma pauta relevante, mas também quem consegue estabelecer uma relação de confiança com quem está do outro lado da tela.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-018",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:18:index:4185",
+      "sourceText": "GANCHO ANÁLISE COMENTÁRIOS",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-019",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:19:index:4213",
+      "sourceText": "Mas o alcance, por si só, não conta toda a história.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-020",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:20:index:4266",
+      "sourceText": "Para entender por que a denúncia de Felca mobilizou tantas pessoas, é preciso olhar para quem estava do outro lado da tela. O que os comentários revelam sobre confiança, credibilidade e a relação do público com o influenciador?",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-021",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:21:index:4494",
+      "sourceText": "Mais do que medir a repercussão, eles ajudam a entender por que tanta gente acreditou, compartilhou e defendeu aquela denúncia.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-022",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:22:index:4623",
+      "sourceText": "(comentários analisados)",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-023",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:23:index:4649",
+      "sourceText": "Os comentários mostram que a repercussão do vídeo foi muito além da discussão sobre a adultização infantil. Uma das narrativas mais recorrentes coloca Felca em oposição ao Jornalismo, com usuários afirmando que a imprensa não teria feito o que o influenciador fez. Ao mesmo tempo, muitos passaram a tratá-lo como herói, atribuindo a ele coragem, responsabilidade social e capacidade de mobilização. A ideia de que ele não teria interesse financeiro na denúncia também apareceu como argumento para reforçar sua autenticidade.",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-024",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:24:index:5174",
+      "sourceText": "Outros comentários se concentraram diretamente na adultização e em seus impactos, enquanto uma parcela questionou o próprio Felca e sua forma de conduzir a denúncia. Entre elogios, críticas e comparações, os comentários ilustram um debate maior: quem o público considera digno de credibilidade quando o assunto é informar e denunciar? Por quais razões?",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-025",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:25:index:5529",
+      "sourceText": "(subtítulo)",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-026",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:26:index:5542",
+      "sourceText": "COMPARAÇÃO",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-027",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:27:index:5553",
+      "sourceText": "A análise dos comentários do vídeo “Adultização” mostrou que a repercussão da denúncia não esteve relacionada apenas ao conteúdo apresentado por Felca, mas também à forma como o público passou a percebê-lo como uma fonte legítima de informação e denúncia. Em diferentes manifestações, os usuários atribuíram ao influenciador características associadas à atuação jornalística, cobraram a participação da imprensa e, em alguns casos, demonstraram maior confiança na denúncia feita por ele. Ao mesmo tempo, o levantamento realizado para esta pesquisa mostra que o tema envolvendo Hytalo Santos e as denúncias de exploração de crianças e adolescentes já era abordado por veículos jornalísticos antes da publicação do vídeo de Felca. Diante disso, surge uma questão: se o problema já estava sendo tratado pela imprensa e também foi investigado e denunciado por um influenciador, quais são as diferenças entre os caminhos percorridos por cada um até a publicação de uma denúncia?",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-028",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:28:index:6527",
+      "sourceText": "É a partir dessa questão que se estabelece a comparação entre a atuação de Felca e o processo jornalístico. Como as informações são reunidas e verificadas em cada caso? Quais fontes são utilizadas? Como são buscadas respostas dos envolvidos? E de que maneira esses diferentes processos interferem na credibilidade atribuída à informação pelo público? A comparação não pretende determinar quem informa melhor, mas compreender como diferentes atores constroem e circulam informações de interesse público — e o que cada caminho implica em termos de apuração, responsabilidade e credibilidade. A seguir, essas diferenças são apresentadas a partir das etapas que envolvem a construção de uma denúncia.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-029",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:29:index:7225",
+      "sourceText": "(vídeo 2)",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-030",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:30:index:7236",
+      "sourceText": "GANCHO FUTURO DO JORNALISMO",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-031",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:31:index:7264",
+      "sourceText": "Se hoje influenciadores conseguem mobilizar milhões em torno de uma denúncia, o que isso significa para o futuro do Jornalismo? Mais do que disputar alcance, a imprensa precisa entender como preservar sua credibilidade em um ambiente em que qualquer pessoa pode informar, denunciar e conquistar a confiança de uma audiência.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-032",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:32:index:7590",
+      "sourceText": "(podcast 1)",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-033",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:33:index:7602",
+      "sourceText": "(podcast 2)",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-034",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:34:index:7615",
+      "sourceText": "(subtítulo “A realidade dos fatos)",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-035",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:35:index:7651",
+      "sourceText": "CONTEXTUALIZAÇÃO DO CASO",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
+    },
+    {
+      "id": "docs-036",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:36:index:7676",
+      "sourceText": "Hytalo José Santos Silva, conhecido como Hytalo Santos, ganhou notoriedade nas redes sociais pela produção de conteúdos envolvendo crianças e adolescentes, mostrando a rotina dos jovens que conviviam com ele e assumindo, em alguns casos, uma posição semelhante à de uma figura paterna. Antes da repercussão provocada pelo vídeo de Felca, o influenciador já era alvo de denúncias e investigações relacionadas à exposição de menores de idade. Em dezembro de 2024, o Ministério Público passou a investigar suspeitas de exploração de crianças e adolescentes relacionadas ao conteúdo produzido por Hytalo. Ao longo de 2025, novas denúncias e acusações envolvendo o influenciador e pessoas próximas ampliaram a atenção sobre o caso.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-037",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:37:index:8403",
+      "sourceText": "Em 6 de agosto de 2025, Felca publicou o vídeo “Adultização”, no qual apresentou uma denúncia sobre a exposição, exploração e sexualização de crianças e adolescentes nas redes sociais, tendo Hytalo Santos como um dos principais casos apresentados. Cinco dias depois, em 11 de agosto, o Ministério Público da Paraíba ingressou com uma ação civil pública contra o influenciador, solicitando medidas relacionadas à proteção dos adolescentes envolvidos. Em 15 de agosto, Hytalo Santos e seu marido, Israel Natã Vicente, foram presos preventivamente em Carapicuíba, São Paulo, por determinação da Justiça da Paraíba. Em setembro, o Tribunal de Justiça da Paraíba recebeu a denúncia do Ministério Público, tornando os dois réus. Em fevereiro de 2026, Hytalo foi condenado a 11 anos e 4 meses de prisão, enquanto Israel recebeu pena de 8 anos e 10 meses, além da determinação de pagamento de R$ 500 mil por danos morais. O caso, que envolvia inicialmente denúncias sobre a exposição de menores nas redes sociais, passou a ter também consequências criminais e judiciais.",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-038",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:38:index:9467",
+      "sourceText": "MONTAR TEXTO LINHA DO TEMPO",
+      "targetChapter": "cronologia",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-096",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:96:index:16153",
+      "sourceText": "SOBRE O CASO",
+      "targetChapter": "sobre-caso",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo removido da apresentação por solicitação do responsável em 15/10/2026; texto da seção preservado."
+    },
+    {
+      "id": "docs-097",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:97:index:16166",
+      "sourceText": "A repercussão do caso Hytalo Santos não começou com a publicação do vídeo “Adultização”, de Felca. O levantamento realizado para esta pesquisa identificou que o influenciador já era alvo de investigações e havia sido citado em conteúdos jornalísticos antes de agosto de 2025. Entre dezembro de 2024 e julho de 2025, CNN Brasil, G1 e Tilt/UOL publicaram matérias relacionadas a Hytalo Santos e a denúncias envolvendo a exposição e a exploração de menores. Segundo a CNN Brasil, as investigações do Ministério Público da Paraíba haviam começado em 2024, após denúncias recebidas pelo Disque 100. O vídeo de Felca, portanto, inseriu o caso em uma nova dimensão de repercussão pública, mas ocorreu em meio a um processo de investigação que já estava em andamento.",
+      "targetChapter": "sobre-caso",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-098",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:98:index:16926",
+      "sourceText": "A partir de agosto de 2025, as medidas tomadas pelas autoridades se intensificaram. Após a repercussão do vídeo, o Ministério Público da Paraíba apresentou uma ação civil pública que resultou em medidas como a suspensão dos perfis de Hytalo Santos, a interrupção da monetização dos conteúdos, o afastamento dos adolescentes envolvidos e a proibição de contato com menores. Em 15 de agosto, Hytalo Santos e Israel Natã Vicente foram presos preventivamente em Carapicuíba, em São Paulo, por ordem da Justiça da Paraíba. A investigação apurava suspeitas relacionadas à exploração de crianças e adolescentes, incluindo tráfico de pessoas e exploração sexual infantil. A prisão foi mantida após audiência de custódia e, em 19 de agosto, o Superior Tribunal de Justiça também negou um pedido de habeas corpus apresentado pela defesa.",
+      "targetChapter": "sobre-caso",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-099",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:99:index:17754",
+      "sourceText": "O caso passou então da fase de investigação para a esfera judicial. Em setembro de 2025, o Tribunal de Justiça da Paraíba recebeu a denúncia apresentada pelo Ministério Público, tornando Hytalo Santos e Israel Natã Vicente réus na ação penal. O processo passou a tramitar em segredo de Justiça. Paralelamente, outras frentes de investigação e processos foram abertas. O Ministério Público do Trabalho judicializou, em agosto de 2025, uma ação relacionada às condições de trabalho e às denúncias envolvendo os adolescentes, em processo também mantido sob sigilo. Em dezembro, o órgão informou ter reunido elementos que apontavam para um esquema envolvendo tráfico de pessoas para fins de exploração sexual e submissão a trabalho em condições análogas à escravidão, com dezenas de possíveis vítimas, incluindo crianças e adolescentes.",
+      "targetChapter": "sobre-caso",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-100",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:100:index:18587",
+      "sourceText": "Em fevereiro de 2026, veio a primeira condenação criminal diretamente relacionada ao caso que ganhou repercussão com as denúncias sobre a exposição dos adolescentes. A 2ª Vara Mista de Bayeux, na Paraíba, condenou Hytalo Santos a 11 anos e 4 meses de prisão e Israel Natã Vicente a 8 anos e 10 meses, em regime fechado, por exploração de conteúdo pornográfico envolvendo adolescentes. A sentença também determinou o pagamento de R$ 500 mil por danos morais e manteve a prisão preventiva dos dois. Segundo a decisão divulgada pela imprensa, os adolescentes eram utilizados na produção de conteúdos com conotação sexual, com exploração de sua imagem para gerar audiência, engajamento e monetização nas plataformas digitais. A sentença ainda mencionou elementos apresentados durante a investigação, como o pagamento de procedimentos estéticos e tatuagens para adolescentes.",
+      "targetChapter": "sobre-caso",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-101",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:101:index:19458",
+      "sourceText": "A condenação, porém, não encerrou os processos relacionados a Hytalo Santos. Em 24 de fevereiro de 2026, a Câmara Criminal do Tribunal de Justiça da Paraíba negou, por unanimidade, novo pedido de habeas corpus e manteve a prisão preventiva dos dois. Antes disso, outros pedidos de liberdade já haviam sido rejeitados pelo tribunal. As defesas afirmaram que recorreriam da condenação. Ao longo de 2026, o nome do influenciador continuou relacionado a outros procedimentos judiciais, incluindo investigações sobre lavagem de dinheiro, ações trabalhistas e processos envolvendo ex-funcionários. O G1 também registrou novos desdobramentos, como uma condenação ao pagamento de R$ 60 mil por assédio contra ex-seguranças, uma investigação sobre lavagem de dinheiro envolvendo Hytalo e Israel e o pedido da defesa para anular a condenação utilizando como argumento a chamada “Lei Felca”. Assim, o caso deixou de estar restrito à denúncia de exploração de menores e passou a envolver diferentes frentes judiciais, que continuam produzindo novos desdobramentos.",
+      "targetChapter": "sobre-caso",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-102",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:102:index:20512",
+      "sourceText": "ADULTIZAÇÃO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Subtítulo alterado para O termo Adultização por solicitação do responsável em 15/10/2026."
+    },
+    {
+      "id": "docs-103",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:103:index:20524",
+      "sourceText": "Foi nesse contexto de exposição de crianças e adolescentes nas redes sociais que o termo “adultização” ganhou espaço no debate público. No caso de Hytalo Santos, a denúncia apresentada por Felca chamou atenção para conteúdos em que crianças e adolescentes apareciam inseridos em situações e dinâmicas associadas ao universo adulto. Mas o que, de fato, significa adultização?",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-104",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:104:index:20899",
+      "sourceText": "A psicóloga Jéssica Tonioti da Purificação explica que adultização é o processo de enxergar a criança como um “mini adulto”, atribuindo a ela características, responsabilidades, comportamentos e expectativas próprias da vida adulta. Isso significa que o fenômeno não se restringe à sexualização. Embora a exposição e a sexualização de crianças e adolescentes possam fazer parte desse processo, a adultização também pode aparecer em outras situações sociais, quando a infância é atravessada por exigências ou padrões que não correspondem àquela etapa do desenvolvimento.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-105",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:105:index:21469",
+      "sourceText": "No ambiente digital, essas situações podem ganhar ainda mais visibilidade. Crianças e adolescentes estão sujeitos à exposição de sua imagem, à reprodução de padrões de comportamento e aparência e à transformação de suas experiências em conteúdo para audiência e engajamento. Foi justamente a partir da denúncia envolvendo Hytalo Santos que essas questões passaram a ser discutidas de forma mais ampla pelo público.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-106",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:106:index:21884",
+      "sourceText": "Para entender melhor o que caracteriza a adultização, como ela pode se manifestar e quais sinais merecem atenção, confira a cartilha a seguir.",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-107",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:107:index:22028",
+      "sourceText": "(cartilha)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-108",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:108:index:22040",
+      "sourceText": "ORDEM",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-109",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:109:index:22046",
+      "sourceText": "TÍTULO E SUBTÍTULO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-110",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:110:index:22065",
+      "sourceText": "PARÁFRASE",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-111",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:111:index:22075",
+      "sourceText": "TEXTO - CONTEXTUALIZAÇÃO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-112",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:112:index:22100",
+      "sourceText": "(VÍDEO 1 - DENÚNCIA DO FELCA)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-113",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:113:index:22130",
+      "sourceText": "TEXTO - PORQUE O FELCA TEVE + ALCANCE",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-114",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:114:index:22168",
+      "sourceText": "TEXTO INICIAL - ANÁLISE COMENTÁRIOS",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-115",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:115:index:22204",
+      "sourceText": "(ANÁLISE DOS COMENTÁRIOS - OS 4 TIPOS - INTERATIVO)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-116",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:116:index:22256",
+      "sourceText": "TEXTO FINAL - ANÁLISE COMENTÁRIOS",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-117",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:117:index:22290",
+      "sourceText": "SUBTÍTULO - “ENTRE A INFLUÊNCIA E O JORNALISMO”",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-118",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:118:index:22338",
+      "sourceText": "TEXTO - GANCHO COMPARAÇÃO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-119",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:119:index:22364",
+      "sourceText": "(VÍDEO 2 - APROFUNDAMENTO COMPARAÇÃO)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-120",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:120:index:22402",
+      "sourceText": "TEXTO - GANCHO SOBRE O FUTURO DO JORNALISMO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-121",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:121:index:22446",
+      "sourceText": "(PODCAST 1 - O FUTURO DA CHECAGEM)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-122",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:122:index:22481",
+      "sourceText": "(PODCAST 2 - PRECISO VIRAR INFLUENCER PARA SER JORNALISTA?)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-123",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:123:index:22541",
+      "sourceText": "SUBTÍTULO - \"A REALIDADE DOS FATOS\"",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-124",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:124:index:22577",
+      "sourceText": "TEXTO - CONTEXTUALIZAÇÃO DO CASO HYTALO SANTOS",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-125",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:125:index:22624",
+      "sourceText": "(LINHA DO TEMPO DOS ACONTECIMENTOS)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-126",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:126:index:22660",
+      "sourceText": "TEXTO - APROFUNDAMENTO DO CASO HYTALO SANTOS",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-127",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:127:index:22705",
+      "sourceText": "TEXTO - O QUE É ADULTIZAÇÃO",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
+    },
+    {
+      "id": "docs-128",
+      "origin": "https://docs.google.com/document/d/1vRZfLJqAPb48qYLn0TnEP8HgYYWsfNRn3uwho2rdn9o/edit",
+      "sourceLocator": "tab:t.0:paragraph:128:index:22733",
+      "sourceText": "(CARTILHA - APROFUNDAMENTO O QUE É ADULTIZAÇÃO)",
+      "targetChapter": "adultizacao",
+      "status": "received",
+      "verification": "adapted-interface",
+      "adaptation": "Marcação de estrutura representada pela ordem, pelo componente de mídia, pelo título ou pela categoria do acontecimento; não é prosa adicional da reportagem."
     }
   ],
   "previousSource": {

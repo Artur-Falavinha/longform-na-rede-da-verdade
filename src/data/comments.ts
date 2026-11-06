@@ -104,21 +104,6 @@ export const comments = [
         },
         status: "received",
       },
-      {
-        id: "moral-authority-03",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        likes: null,
-        replies: null,
-        likesLiteral: "♥ Lorem ipsum",
-        repliesLiteral: "↩ Lorem ipsum",
-        likesState: "placeholder",
-        source: {
-          label: "Base44 — conteúdo inicial das autoras",
-          url: "https://narededaverdade.base44.app/",
-          collectedAt: "2026-10-10",
-        },
-        status: "placeholder",
-      },
     ],
     expertQuotes: [
       {
@@ -153,8 +138,8 @@ export const comments = [
         text: '"nao nego a importancia do video. mas o quanto que isso encheu o ego desse cara não tá escrito. e escancara ainda mais o lado podre dele o que ele acha da lei felca."',
         likes: null,
         replies: null,
-        likesLiteral: "♥ Lorem ipsum",
-        repliesLiteral: "↩ Lorem ipsum",
+        likesLiteral: "",
+        repliesLiteral: "",
         likesState: "placeholder",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -168,8 +153,8 @@ export const comments = [
         text: '"maior cavalo de troia da internet"',
         likes: null,
         replies: null,
-        likesLiteral: "♥ Lorem ipsum",
-        repliesLiteral: "↩ Lorem ipsum",
+        likesLiteral: "",
+        repliesLiteral: "",
         likesState: "placeholder",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -177,21 +162,6 @@ export const comments = [
           collectedAt: "2026-10-10",
         },
         status: "received",
-      },
-      {
-        id: "opposition-03",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        likes: null,
-        replies: null,
-        likesLiteral: "♥ Lorem ipsum",
-        repliesLiteral: "↩ Lorem ipsum",
-        likesState: "placeholder",
-        source: {
-          label: "Base44 — conteúdo inicial das autoras",
-          url: "https://narededaverdade.base44.app/",
-          collectedAt: "2026-10-10",
-        },
-        status: "placeholder",
       },
     ],
     expertQuotes: [
@@ -227,7 +197,7 @@ export const comments = [
         likes: null,
         replies: null,
         likesLiteral: "♥ ~1,3 mil curtidas",
-        repliesLiteral: "↩ Lorem ipsum",
+        repliesLiteral: "",
         likesState: "approximate",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -242,7 +212,7 @@ export const comments = [
         likes: 277,
         replies: null,
         likesLiteral: "♥ 277 curtidas",
-        repliesLiteral: "↩ Lorem ipsum",
+        repliesLiteral: "",
         likesState: "exact",
         source: {
           label: "Base44 — conteúdo inicial das autoras",
@@ -250,16 +220,6 @@ export const comments = [
           collectedAt: "2026-10-10",
         },
         status: "received",
-      },
-      {
-        id: "adultization-03",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        likes: null,
-        replies: null,
-        likesLiteral: "♥ Lorem ipsum",
-        repliesLiteral: "↩ Lorem ipsum",
-        likesState: "placeholder",
-        status: "placeholder",
       },
     ],
     expertQuotes: [

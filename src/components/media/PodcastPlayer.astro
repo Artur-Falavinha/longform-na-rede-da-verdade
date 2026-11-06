@@ -45,7 +45,11 @@ const anchor =
         src={asset.src}
         data-media-id={asset.id}
         data-purpose="editorial"
-        aria-label={`${asset.title} — áudio de teste`}
+        aria-label={
+          asset.status === "placeholder"
+            ? `${asset.title} — áudio de teste`
+            : asset.title
+        }
       ></audio>
       <div class="player-controls" hidden>
         <div class="transport-controls">
@@ -148,7 +152,7 @@ const anchor =
       <ChevronDown size={18} aria-hidden="true" /> Transcrição{" "}
     </summary>
     <div class="transcript-content">
-      <p>{asset.transcript}</p>
+      <p>{asset.transcript ?? "Transcrição pendente de envio"}</p>
     </div>
   </details>
 </article>

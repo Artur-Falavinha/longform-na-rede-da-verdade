@@ -26,7 +26,10 @@ async function verify() {
 
   for (const path of [
     "/media/opening-test.mp4",
-    "/media/checking-future-test.m4a",
+    "/media/duas-trajetorias.m4a",
+    "/media/quem-informa.m4a",
+    "/media/comparacao.mp4",
+    "/media/adultizacao.mp4",
   ]) {
     const media = await request(path, { headers: { Range: "bytes=0-255" } });
     assert.equal(media.status, 206, `Range indisponível em ${path}`);
@@ -39,7 +42,7 @@ async function verify() {
     assert.deepEqual(body, local.subarray(0, 256));
   }
 
-  const pdf = await request("/documents/cartilha-teste.pdf");
+  const pdf = await request("/documents/infancia-acelerada.pdf");
   assert.equal(pdf.status, 200);
   assert.equal(
     Buffer.from(await pdf.arrayBuffer())

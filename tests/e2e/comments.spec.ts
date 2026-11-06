@@ -19,7 +19,7 @@ test("seleção tem roving focus, painel conjunto e métrica apenas por ação",
   await expect(tabs.nth(1)).toBeFocused();
   await expect(tabs.nth(1)).toHaveAttribute("aria-selected", "true");
   const panel = page.getByRole("tabpanel");
-  await expect(panel.locator("[data-comment-id]")).toHaveCount(3);
+  await expect(panel.locator("[data-comment-id]")).toHaveCount(2);
   await expect(panel).toContainText("Ana Vaz");
   const activeCard = panel.locator(".comment:not([inert])");
   await activeCard.locator("summary").click();
@@ -46,7 +46,7 @@ test("todos os grupos e análises continuam legíveis sem JavaScript", async ({
   ]) {
     const panel = page.locator(`[data-comment-group="${group}"]`);
     await expect(panel).toBeVisible();
-    await expect(panel.locator("[data-comment-id]")).toHaveCount(3);
+    await expect(panel.locator("[data-comment-id]")).toHaveCount(group === "journalism" ? 3 : 2);
   }
   await context.close();
 });

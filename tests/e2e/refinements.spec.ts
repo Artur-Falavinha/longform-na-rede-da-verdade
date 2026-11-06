@@ -20,14 +20,14 @@ test("trocas rápidas mantêm um painel e SVGs alternam com a seleção", async 
       await expect(quote).toHaveText(
         comment.text.replace(/^["“]([\s\S]*)["”]$/, "$1"),
       );
-      const caption = panel.locator("figcaption").nth(j);
-      await expect(caption).toContainText(
-        comment.likesLiteral.replace(/^♥\s*/, ""),
+      const caption = panel.locator(".comment").nth(j).locator("figcaption");
+      const counts = [comment.likesLiteral, comment.repliesLiteral].filter(
+        Boolean,
       );
-      await expect(caption).toContainText(
-        comment.repliesLiteral.replace(/^↩\s*/, ""),
-      );
-      await expect(caption.locator("svg")).toHaveCount(2);
+      for (const count of counts) {
+        await expect(caption).toContainText(count.replace(/^[♥↩]\s*/, ""));
+      }
+      await expect(caption.locator("svg")).toHaveCount(counts.length);
     }
     await expect(panel.locator(".comment").first()).toHaveCSS("opacity", "1");
   }

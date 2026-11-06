@@ -65,16 +65,22 @@ const anchors: Record<string, string> = {
                 <blockquote>
                   {comment.text.replace(/^["“]([\s\S]*)["”]$/, "$1")}
                 </blockquote>
-                <figcaption>
-                  <span>
-                    <Heart size={15} aria-hidden="true" />
-                    {comment.likesLiteral.replace(/^♥\s*/, "")}
-                  </span>
-                  <span>
-                    <MessageCircle size={15} aria-hidden="true" />
-                    {comment.repliesLiteral.replace(/^↩\s*/, "")}
-                  </span>
-                </figcaption>
+                {(comment.likesLiteral || comment.repliesLiteral) && (
+                  <figcaption>
+                    {comment.likesLiteral && (
+                      <span>
+                        <Heart size={15} aria-hidden="true" />
+                        {comment.likesLiteral.replace(/^♥\s*/, "")}
+                      </span>
+                    )}
+                    {comment.repliesLiteral && (
+                      <span>
+                        <MessageCircle size={15} aria-hidden="true" />
+                        {comment.repliesLiteral.replace(/^↩\s*/, "")}
+                      </span>
+                    )}
+                  </figcaption>
+                )}
                 <details class="comment-analysis">
                   <summary>
                     <span>Ler análise</span>{" "}
@@ -211,14 +217,14 @@ const anchors: Record<string, string> = {
   }
   .comment-composition {
     display: grid;
-    grid-template-columns: 1fr 2.15fr;
-    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
     align-items: start;
   }
   .comment-context {
     font-size: 1.0625rem;
     color: var(--muted);
-    padding-top: 2rem;
+    max-width: 65ch;
   }
   .comment-list {
     min-width: 0;

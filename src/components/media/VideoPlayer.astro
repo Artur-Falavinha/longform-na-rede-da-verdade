@@ -40,11 +40,15 @@ const Shell = ambient ? "div" : "media-controller";
       playsinline
       width="1280"
       height="720"
-      aria-label={`${asset.title} — arquivo de teste`}
+      aria-label={
+        asset.status === "placeholder"
+          ? `${asset.title} — arquivo de teste`
+          : asset.title
+      }
     >
       <p>
         Seu navegador não reproduz este vídeo.{" "}
-        <a href={asset.src}>Abrir arquivo de teste</a>.
+        <a href={asset.src}>Abrir vídeo</a>.
       </p>
     </video>
     {!ambient && (
