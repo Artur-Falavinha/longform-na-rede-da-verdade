@@ -186,7 +186,7 @@ describe("exportação administrativa de métricas", () => {
       byMedia: {
         opening: { ambient: 1, editorial: 0 },
         closing: { ambient: 0, editorial: 0 },
-        felca: { ambient: 0, editorial: 0 },
+        adultization: { ambient: 0, editorial: 0 },
         comparison: { ambient: 0, editorial: 0 },
         "checking-future": { ambient: 0, editorial: 0 },
         "journalist-influencer": { ambient: 0, editorial: 0 },

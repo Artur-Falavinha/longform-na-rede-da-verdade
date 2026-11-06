@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test("vídeo nativo avança e retorna ao ponto solicitado", async ({ page }) => {
-  await page.goto("/#contexto");
-  const video = page.locator('[data-media-id="felca"]');
+  await page.goto("/#comparacao");
+  const video = page.locator('[data-media-id="comparison"]');
   await video.scrollIntoViewIfNeeded();
   await video.evaluate((element: HTMLVideoElement) => element.play());
   await expect
@@ -124,7 +124,7 @@ test("unmute e vídeo editorial pausam podcast sem reiniciar posição", async (
     .locator("audio")
     .evaluate((e: HTMLAudioElement) => e.currentTime);
   await podcast.locator("[data-podcast-play]").click();
-  const video = page.locator('[data-media-id="felca"]');
+  const video = page.locator('[data-media-id="comparison"]');
   await video.scrollIntoViewIfNeeded();
   await video.evaluate((e: HTMLVideoElement) => e.play());
   await expect
@@ -154,8 +154,8 @@ test("unmute e vídeo editorial pausam podcast sem reiniciar posição", async (
 test("arquivo ausente tem recuperação sem bloquear leitura", async ({
   page,
 }) => {
-  await page.goto("/#contexto");
-  const video = page.locator('[data-media-id="felca"]');
+  await page.goto("/#comparacao");
+  const video = page.locator('[data-media-id="comparison"]');
   await video.scrollIntoViewIfNeeded();
   await video.evaluate((element: HTMLVideoElement) => {
     element.src = "/media/arquivo-ausente.mp4";
@@ -165,7 +165,7 @@ test("arquivo ausente tem recuperação sem bloquear leitura", async ({
   await expect(video.locator("..").locator(".media-error")).toBeVisible();
   await expect(page.locator("#comentarios .story-copy p").first()).toBeVisible();
   await video.evaluate((element: HTMLVideoElement) => {
-    // Restaura a fixture no gesto de retry; o pipeline de mídia do WebKit ignora page.route.
+    // Restaura a mídia no gesto de retry; o pipeline de mídia do WebKit ignora page.route.
     element
       .parentElement!.querySelector("[data-media-retry]")!
       .addEventListener(

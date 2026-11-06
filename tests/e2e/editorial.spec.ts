@@ -57,6 +57,43 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
     "Isabelle Sestari",
   );
   await expect(page.locator("#contexto")).not.toContainText("Isabelle Sestari");
+  const editorialSequence = [
+    "#report-title",
+    ".standfirst",
+    "#denuncia",
+    "[data-felca-metrics]",
+    "#alcance",
+    "#comentarios",
+    "#comparacao video",
+    "#jornalismo .reuters-figure",
+    "#podcast-checagem-e-futuro",
+    "#podcast-jornalista-e-influenciador",
+    "#cronologia",
+    "#sobre-caso",
+    "#adultizacao video",
+    "#cartilha",
+  ];
+  expect(
+    await page.evaluate((selectors) => {
+      const elements = selectors.map((selector) =>
+        document.querySelector(selector),
+      );
+      return elements.every(
+        (element, index) =>
+          element &&
+          (index === 0 ||
+            Boolean(
+              (elements[index - 1]?.compareDocumentPosition(element) ?? 0) &
+              Node.DOCUMENT_POSITION_FOLLOWING,
+            )),
+      );
+    }, editorialSequence),
+  ).toBe(true);
+  await expect(page.locator(".transcript-content")).toHaveText([
+    "Transcrição pendente de envio",
+    "Transcrição pendente de envio",
+  ]);
+
   await expect(page.locator("#comparacao h2")).toHaveText(
     "Entre a influência e o jornalismo",
   );
@@ -69,9 +106,8 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
   expect(errors).toEqual([]);
 });
 
-test("coluna contínua e cartilha junto ao texto mantêm margens e controles", async ({
+test("coluna contínua e cartilha depois da chamada mantêm margens e controles", async ({
   page,
-  isMobile,
 }) => {
   await page.goto("/#cartilha");
   await page.evaluate(() => document.fonts.ready);
@@ -93,7 +129,7 @@ test("coluna contínua e cartilha junto ao texto mantêm margens e controles", a
   expect(download!.x).toBeGreaterThan(booklet!.x);
   expect(download!.y).toBeGreaterThanOrEqual(booklet!.y);
   expect(download!.y - booklet!.y).toBeLessThan(16);
-  if (isMobile) {
+  {
     const lastParagraph = await page
       .locator("#adultizacao p[data-reveal]")
       .last()

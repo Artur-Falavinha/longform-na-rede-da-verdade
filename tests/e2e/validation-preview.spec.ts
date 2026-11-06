@@ -129,7 +129,7 @@ test("índice acompanha a leitura e navega até o acontecimento", async ({
   );
   const body = await page.locator("body").innerText();
   expect(body).not.toMatch(
-    /conteúdo inicial das autoras|\bN0\d\b|Transcrição pendente|CONTEÚDO DA ENTREVISTA/,
+    /conteúdo inicial das autoras|\bN0\d\b|CONTEÚDO DA ENTREVISTA/,
   );
 });
 

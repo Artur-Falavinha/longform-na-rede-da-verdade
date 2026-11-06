@@ -168,8 +168,8 @@ test("duração pendente e inversões rápidas preservam controles e posição",
   await page.route("**/", async (route) => {
     const response = await route.fetch();
     const body = (await response.text()).replace(
-      'src="/media/checking-future-test.m4a"',
-      'data-held-src="/media/checking-future-test.m4a"',
+      'src="/media/duas-trajetorias.m4a"',
+      'data-held-src="/media/duas-trajetorias.m4a"',
     );
     await route.fulfill({ response, body });
   });

@@ -1,6 +1,7 @@
 ---
 import Longform from "../layouts/Longform.astro";
 import ChapterIndex from "../components/navigation/ChapterIndex.astro";
+import FelcaMetrics from "../components/editorial/FelcaMetrics.astro";
 import EditorialText from "../components/editorial/EditorialText.astro";
 import VideoPlayer from "../components/media/VideoPlayer.astro";
 import PodcastPlayer from "../components/media/PodcastPlayer.astro";
@@ -11,7 +12,7 @@ import { research } from "../data/research";
 import { media } from "../data/media";
 import { timeline } from "../data/timeline";
 import { editorial } from "../data/editorial";
-const [opening, closing, felca, comparison, ...podcasts] = media;
+const [opening, closing, comparison, adultization, ...podcasts] = media;
 ---
 
 <Longform>
@@ -33,9 +34,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       tabindex="-1"
       aria-labelledby="report-title"
     >
-      <div class="story-column standfirst">
-        <EditorialText paragraphs={editorial.standfirst} />
-      </div>
       <header class="title-block wide" data-reveal>
         <h1 id="report-title">
           Na rede
@@ -47,11 +45,14 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         </h1>
         <div class="rule" aria-hidden="true"></div>
       </header>
+      <div class="story-column standfirst">
+        <EditorialText paragraphs={editorial.standfirst} />
+      </div>
       <div id="denuncia" class="story-column story-copy" tabindex="-1">
         <EditorialText paragraphs={editorial.context} />
       </div>
       <div class="story-media">
-        <VideoPlayer asset={felca} />
+        <FelcaMetrics />
       </div>
     </section>
     <section
@@ -107,6 +108,19 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       <div class="story-column story-copy">
         <EditorialText paragraphs={editorial.journalism} />
       </div>
+      <figure class="story-media reuters-figure">
+        <img
+          src="/images/reuters-linhas-vermelhas.png"
+          alt="Mais de 50% usam redes sociais semanalmente para notícias; 33% consomem conteúdo de criadores focados em notícias; 36% confiam nas notícias; 47% evitam notícias às vezes ou frequentemente. Fonte: Digital News Report 2026, Reuters Institute."
+          width="1536"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="small muted">
+          Fonte: Digital News Report 2026, Reuters Institute.
+        </figcaption>
+      </figure>
       <div class="story-media podcast-conversations">
         {podcasts.map((asset) => (
           <PodcastPlayer asset={asset} />
@@ -147,9 +161,13 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
       aria-labelledby="adultizacao-title"
     >
       <h2 id="adultizacao-title" class="story-heading" data-reveal>
-        O termo Adultização
+        Adultização
       </h2>
       <EditorialText paragraphs={editorial.adultization.slice(0, 2)} />
+      <div class="adultization-video">
+        <VideoPlayer asset={adultization} />
+      </div>
+      <EditorialText paragraphs={editorial.adultization.slice(2)} />
       <div class="booklet-passage">
         <aside
           id="cartilha"
@@ -158,7 +176,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
         >
           <Booklet />
         </aside>
-        <EditorialText paragraphs={editorial.adultization.slice(2)} />
       </div>
     </section>
     <footer
@@ -244,7 +261,7 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
   }
   .standfirst {
     font: 400 clamp(1.4rem, 2.6vw, 2rem)/1.5 var(--serif);
-    padding-block: clamp(3rem, 6vw, 6rem) 1rem;
+    padding-block: 0 2rem;
   }
   .story-heading {
     font-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -263,16 +280,25 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
   .final-copy {
     padding-bottom: 4rem;
   }
+  .reuters-figure,
+  .adultization-video {
+    margin-block: 2rem;
+  }
+  .reuters-figure img {
+    width: 100%;
+    height: auto;
+  }
+  .reuters-figure figcaption {
+    display: none;
+  }
   .booklet-passage {
-    display: flow-root;
-    margin-top: 1.4em;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.75rem;
   }
   .booklet-inset {
-    position: relative;
-    z-index: 1;
-    float: right;
-    width: min(38%, 14rem);
-    margin: 0.3rem 0 1.25rem 2rem;
+    width: min(60%, 19rem);
+    scroll-margin-top: 1rem;
   }
   @media (min-width: 900px) {
     .story-copy :global(p[data-reveal]) {
@@ -281,6 +307,10 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     }
   }
   @media (max-width: 599px) {
+    .reuters-figure figcaption {
+      display: block;
+      text-align: center;
+    }
     .title-block {
       padding-top: 3rem;
     }
@@ -289,16 +319,6 @@ const [opening, closing, felca, comparison, ...podcasts] = media;
     }
     .byline {
       font-size: 0.75rem;
-    }
-    .booklet-passage {
-      display: flex;
-      flex-direction: column;
-    }
-    .booklet-inset {
-      float: none;
-      order: 1;
-      width: min(60%, 14rem);
-      margin: 1.75rem 0 0 auto;
     }
   }
 </style>

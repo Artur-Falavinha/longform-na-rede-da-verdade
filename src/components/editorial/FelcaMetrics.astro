@@ -1,0 +1,145 @@
+---
+import { felcaSnapshot, felcaVideoId } from "../../data/felca-metrics";
+const format = new Intl.NumberFormat("pt-BR");
+---
+
+<figure
+  class="felca-metrics"
+  data-felca-metrics
+  aria-label="Alcance do vídeo de Felca"
+>
+  <p class="eyebrow">Repercussão no YouTube</p>
+  <dl>
+    <div>
+      <dt>Visualizações</dt>
+      <dd data-count="views" data-value={felcaSnapshot.views}>
+        {format.format(felcaSnapshot.views)}
+      </dd>
+    </div>
+    <div>
+      <dt>Comentários no vídeo</dt>
+      <dd data-count="comments" data-value={felcaSnapshot.comments}>
+        {format.format(felcaSnapshot.comments)}
+      </dd>
+    </div>
+  </dl>
+  <figcaption>
+    <a href={`https://www.youtube.com/watch?v=${felcaVideoId}`}>
+      Adultização · Felca
+    </a>
+    <span data-count-date>
+      Coleta da pesquisa em{" "}
+      <time datetime={felcaSnapshot.collectedOn}>24/09/2026</time>
+    </span>
+  </figcaption>
+</figure>
+
+<script>
+  import { animate } from "motion";
+  const root = document.querySelector<HTMLElement>("[data-felca-metrics]");
+  const date = root?.querySelector<HTMLElement>("[data-count-date]");
+  const format = new Intl.NumberFormat("pt-BR");
+  const formatDate = new Intl.DateTimeFormat("pt-BR", {
+    dateStyle: "short",
+    timeStyle: "short",
+    timeZone: "America/Sao_Paulo",
+  });
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+
+  async function updateMetrics() {
+    if (!root || !date) return;
+    try {
+      const response = await fetch("/api/felca-metrics", {
+        signal: AbortSignal.timeout(8_000),
+      });
+      if (response.status === 404) return;
+      if (!response.ok) throw new Error();
+      const { views, comments, updatedAt } = await response.json();
+      if (
+        ![views, comments].every(
+          (value) => Number.isSafeInteger(value) && value >= 0,
+        )
+      )
+        return;
+      const updated = formatDate.format(new Date(updatedAt));
+      for (const [key, next] of [
+        ["views", views],
+        ["comments", comments],
+      ] as const) {
+        const element = root.querySelector<HTMLElement>(
+          `[data-count="${key}"]`,
+        );
+        if (!element) continue;
+        const previous = Number(element.dataset.value);
+        element.dataset.value = String(next);
+        const render = (value: number) => {
+          element.textContent = format.format(Math.round(value));
+        };
+        if (reducedMotion.matches || previous === next) render(next);
+        else
+          animate(previous, next, {
+            duration: 0.65,
+            ease: "easeOut",
+            onUpdate: render,
+          });
+      }
+      date.textContent = `Atualizado em ${updated} (Brasília)`;
+    } catch {
+      // Mantém a última coleta disponível se a consulta falhar.
+    }
+    window.setTimeout(() => {
+      if (document.hidden) {
+        const resume = () => {
+          if (document.hidden) return;
+          document.removeEventListener("visibilitychange", resume);
+          void updateMetrics();
+        };
+        document.addEventListener("visibilitychange", resume);
+      } else {
+        void updateMetrics();
+      }
+    }, 60_000);
+  }
+
+  if (root) {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      observer.disconnect();
+      void updateMetrics();
+    });
+    observer.observe(root);
+  }
+</script>
+
+<style>
+  .felca-metrics {
+    margin-block: clamp(2rem, 5vw, 4rem);
+    padding-block: clamp(1rem, 3vw, 2rem);
+    border-block: 1px solid var(--surface);
+  }
+  dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-block: 1rem;
+  }
+  dl > div + div {
+    border-inline-start: 1px solid var(--red);
+    padding-inline-start: clamp(1rem, 4vw, 3rem);
+  }
+  dt,
+  figcaption {
+    color: var(--muted);
+    font-size: var(--small);
+  }
+  dd {
+    margin: 0;
+    font: 400 clamp(1.35rem, 5vw, 4.3rem)/1.12 var(--serif);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: normal;
+  }
+  figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+</style>

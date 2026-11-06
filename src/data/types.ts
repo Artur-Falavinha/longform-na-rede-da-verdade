@@ -16,6 +16,7 @@ export type MediaId =
   | "opening"
   | "closing"
   | "felca"
+  | "adultization"
   | "comparison"
   | "checking-future"
   | "journalist-influencer";
@@ -31,7 +32,7 @@ export type MediaAsset = {
   status: AssetStatus;
   hasAudio: boolean;
   transcript?: string;
-  pendingId: string;
+  pendingId?: string;
 };
 export type TimelineEntry = {
   id: string;
