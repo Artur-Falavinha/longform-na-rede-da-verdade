@@ -1508,40 +1508,21 @@
   ],
   "assets": [
     {
-      "id": "opening",
-      "localPath": "/media/opening-test.mp4",
+      "id": "teaser-longform",
+      "localPath": "/media/teaser-longform.mp4",
+      "bytes": 3293157,
+      "status": "received",
+      "origin": "teaser long form.mov — teaser enviado pelas autoras para abertura e encerramento; conversão H.264/AAC",
       "width": 1280,
       "height": 720,
-      "duration": 15,
-      "bytes": 1576937,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
+      "duration": 33.67
     },
     {
-      "id": "closing",
-      "localPath": "/media/closing-test.mp4",
-      "width": 1280,
-      "height": 720,
-      "duration": 23,
-      "bytes": 5551404,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
-    },
-    {
-      "id": "images-closing.webp",
-      "localPath": "/images/closing.webp",
-      "bytes": 121406,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
-      "width": 1280,
-      "height": 720
-    },
-    {
-      "id": "images-opening.webp",
-      "localPath": "/images/opening.webp",
-      "bytes": 27156,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
+      "id": "images-teaser-longform.webp",
+      "localPath": "/images/teaser-longform.webp",
+      "bytes": 15442,
+      "status": "received",
+      "origin": "Quadro com o título extraído do teaser enviado pelas autoras",
       "width": 1280,
       "height": 720
     },
@@ -1574,44 +1555,6 @@
       "origin": "Google Fonts; licença OFL local no mesmo diretório."
     },
     {
-      "id": "opening-mobile-test",
-      "localPath": "/media/opening-mobile-test.mp4",
-      "width": 540,
-      "height": 960,
-      "bytes": 1143233,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
-      "duration": 15
-    },
-    {
-      "id": "opening-mobile",
-      "localPath": "/images/opening-mobile.webp",
-      "width": 540,
-      "height": 960,
-      "bytes": 13954,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/hands-of-a-person-typing-on-a-cell-phone-4915/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
-    },
-    {
-      "id": "closing-mobile-test",
-      "localPath": "/media/closing-mobile-test.mp4",
-      "width": 540,
-      "height": 960,
-      "bytes": 2814840,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado.",
-      "duration": 23
-    },
-    {
-      "id": "closing-mobile",
-      "localPath": "/images/closing-mobile.webp",
-      "width": 540,
-      "height": 960,
-      "bytes": 73200,
-      "status": "placeholder",
-      "origin": "Mixkit Stock Video Free License: https://mixkit.co/free-stock-video/reverse-aerial-shot-of-a-city-at-night-49847/ | https://mixkit.co/license/#videoFree. Amostra de ambientação; áudio provisório da fixture local preservado."
-    },
-    {
       "id": "comparison",
       "localPath": "/media/comparacao.mp4",
       "bytes": 24808763,
@@ -1623,13 +1566,13 @@
     },
     {
       "id": "adultization",
-      "localPath": "/media/adultizacao.mp4",
-      "bytes": 24735462,
+      "localPath": "/media/adultizacao-revisado.mp4",
+      "bytes": 24644982,
       "status": "received",
-      "origin": "video isa.mov — vídeo 2 enviado pelas autoras; conversão H.264/AAC",
-      "duration": 176.6,
+      "origin": "video isa atualizado.mov — versão corrigida enviada pelas autoras; conversão H.264/AAC",
       "width": 1280,
-      "height": 720
+      "height": 720,
+      "duration": 176.6
     },
     {
       "id": "checking-future",
@@ -1664,11 +1607,11 @@
       "height": 540
     },
     {
-      "id": "images-adultizacao.webp",
-      "localPath": "/images/adultizacao.webp",
-      "bytes": 27876,
+      "id": "images-adultizacao-revisado.webp",
+      "localPath": "/images/adultizacao-revisado.webp",
+      "bytes": 52022,
       "status": "received",
-      "origin": "Quadro extraído do vídeo 2",
+      "origin": "Quadro extraído do vídeo de adultização revisado",
       "width": 1280,
       "height": 720
     },
@@ -1801,15 +1744,15 @@
       "id": "N01",
       "description": "Vídeo ambiente de abertura e créditos",
       "targetChapter": "abertura",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Teaser enviado pelas autoras e indicado para uso na abertura e no encerramento."
     },
     {
       "id": "N02",
       "description": "Vídeo ambiente de encerramento e créditos",
       "targetChapter": "encerramento",
-      "status": "placeholder",
-      "resolution": "Aguardando material e validação editorial das autoras."
+      "status": "received",
+      "resolution": "Teaser enviado pelas autoras e indicado para uso na abertura e no encerramento."
     },
     {
       "id": "N03",

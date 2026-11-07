@@ -101,7 +101,7 @@ test("fonte tardia e falha do coletor preservam geometria, texto e navegação",
   expect(errors).toEqual([]);
 });
 
-test("carga inicial preserva mídias distantes e escolhe variante estável", async ({
+test("o teaser é compartilhado e a carga inicial preserva mídias distantes", async ({
   page,
 }) => {
   const mediaRequests: string[] = [];
@@ -110,10 +110,16 @@ test("carga inicial preserva mídias distantes e escolhe variante estável", asy
       mediaRequests.push(request.url());
   });
   await page.goto("/");
-  await page.waitForTimeout(700);
-  expect(mediaRequests.every((url) => url.includes("opening"))).toBe(true);
   const opening = page.locator('[data-media-id="opening"]');
+  const closing = page.locator('[data-media-id="closing"]');
   const source = await opening.getAttribute("src");
+  expect(source).toBe("/media/teaser-longform.mp4");
+  await expect(closing).toHaveAttribute("src", source!);
+  await expect(closing).toHaveAttribute("preload", "none");
+  await expect.poll(() => mediaRequests.length).toBeGreaterThan(0);
+  expect(mediaRequests.every((url) => new URL(url).pathname === source)).toBe(
+    true,
+  );
   await page.setViewportSize({ width: 1024, height: 768 });
   expect(await opening.getAttribute("src")).toBe(source);
 });

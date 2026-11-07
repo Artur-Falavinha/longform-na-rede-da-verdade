@@ -25,11 +25,11 @@ async function verify() {
   assert(html.includes(origin.origin), "URL pública incorreta.");
 
   for (const path of [
-    "/media/opening-test.mp4",
+    "/media/teaser-longform.mp4",
     "/media/duas-trajetorias.m4a",
     "/media/quem-informa.m4a",
     "/media/comparacao.mp4",
-    "/media/adultizacao.mp4",
+    "/media/adultizacao-revisado.mp4",
   ]) {
     const media = await request(path, { headers: { Range: "bytes=0-255" } });
     assert.equal(media.status, 206, `Range indisponível em ${path}`);
