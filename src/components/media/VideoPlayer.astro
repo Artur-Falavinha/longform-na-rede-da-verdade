@@ -197,6 +197,11 @@ const Shell = ambient ? "div" : "media-controller";
     height: 100svh;
     z-index: 0;
   }
+  @media (min-width: 900px) and (min-aspect-ratio: 3/2) and (hover: hover) and (pointer: fine) {
+    .ambient.cover video {
+      object-fit: cover;
+    }
+  }
   .ambient-controls {
     position: absolute;
     left: var(--gutter);
