@@ -1,30 +1,24 @@
 import type { MediaAsset } from "./types";
+
+const teaser = {
+  kind: "video",
+  purpose: "ambient",
+  src: "/media/teaser-longform.mp4",
+  poster: "/images/teaser-longform.webp",
+  status: "received",
+  hasAudio: true,
+} as const;
+
 export const media = [
   {
+    ...teaser,
     id: "opening",
-    mobileSrc: "/media/opening-mobile-test.mp4",
-    mobilePoster: "/images/opening-mobile.webp",
-    kind: "video",
-    purpose: "ambient",
-    title: "Ambientação de abertura",
-    src: "/media/opening-test.mp4",
-    poster: "/images/opening.webp",
-    status: "placeholder",
-    hasAudio: true,
-    pendingId: "N01",
+    title: "Teaser de abertura",
   },
   {
+    ...teaser,
     id: "closing",
-    mobileSrc: "/media/closing-mobile-test.mp4",
-    mobilePoster: "/images/closing-mobile.webp",
-    kind: "video",
-    purpose: "ambient",
-    title: "Ambientação de encerramento",
-    src: "/media/closing-test.mp4",
-    poster: "/images/closing.webp",
-    status: "placeholder",
-    hasAudio: true,
-    pendingId: "N02",
+    title: "Teaser de encerramento",
   },
   {
     id: "comparison",
@@ -41,8 +35,8 @@ export const media = [
     kind: "video",
     purpose: "editorial",
     title: "Vídeo sobre adultização",
-    src: "/media/adultizacao.mp4",
-    poster: "/images/adultizacao.webp",
+    src: "/media/adultizacao-revisado.mp4",
+    poster: "/images/adultizacao-revisado.webp",
     status: "received",
     hasAudio: true,
   },
