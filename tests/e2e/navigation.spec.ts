@@ -41,7 +41,9 @@ test("A denúncia aponta para o conteúdo depois da capa editorial", async ({
 }) => {
   await page.goto("/");
   await page.locator(".chapter-menu summary").click();
-  await page.getByRole("link", { name: "Contextualização", exact: true }).click();
+  await page
+    .getByRole("link", { name: "Contextualização", exact: true })
+    .click();
   await expect(page).toHaveURL(/#denuncia$/);
   await expect
     .poll(() =>
@@ -71,4 +73,42 @@ test("prévia do capítulo não anima texto oculto ao alternar viewport", async 
   await page.locator(".chapter-menu summary").click();
   await expect(page.locator(".chapter-menu nav")).toBeVisible();
   expect(errors).toEqual([]);
+});
+
+test("no desktop, o menu abre por hover e acompanha o mouse até os capítulos", async ({
+  page,
+  isMobile,
+}) => {
+  test.skip(isMobile, "O menu abre por toque no celular");
+  await page.goto("/");
+  const menu = page.locator(".chapter-menu");
+  const summary = menu.locator("summary");
+  const panel = menu.getByRole("navigation");
+  await expect(menu).not.toHaveAttribute("open", "");
+
+  await summary.hover();
+  await expect(panel).toHaveCSS("opacity", "1");
+  await expect(menu.locator("[data-current-chapter]")).toHaveCSS(
+    "opacity",
+    "1",
+  );
+  const chapter = panel.getByRole("link", {
+    name: "Contextualização",
+    exact: true,
+  });
+  const target = (await chapter.boundingBox())!;
+  await page.mouse.move(
+    target.x + target.width / 2,
+    target.y + target.height / 2,
+    { steps: 12 },
+  );
+  await expect(chapter).toBeVisible();
+  await expect(summary).toHaveAttribute("aria-expanded", "true");
+
+  await page.mouse.move(16, 160);
+  await expect(menu).not.toHaveAttribute("open", "");
+  await summary.hover();
+  await expect(panel).toHaveCSS("opacity", "1");
+  await page.keyboard.press("Escape");
+  await expect(menu).not.toHaveAttribute("open", "");
 });

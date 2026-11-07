@@ -1,3 +1,4 @@
+import { hover } from "motion";
 import { animate } from "motion/mini";
 import { gsap } from "../../scripts/gsap";
 import type { Dispose } from "../../data/types";
@@ -15,10 +16,16 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const nav = menu.querySelector<HTMLElement>("nav")!;
   const preview = root.querySelector<HTMLElement>("[data-chapter-preview]")!;
-  const hover = matchMedia("(hover: hover) and (min-width: 900px)");
+  const desktopHover = matchMedia(
+    "(hover: hover) and (pointer: fine) and (min-width: 900px)",
+  );
+  let hovering = false;
+  let pinned = false;
+  let openTimer = 0;
+  let closeTimer = 0;
   let previewAnimations: ReturnType<typeof animate>[] = [];
   function updatePreview() {
-    if (!hover.matches) {
+    if (!desktopHover.matches) {
       previewAnimations.forEach((animation) => animation.cancel());
       previewAnimations = [];
       preview.style.width = "0px";
@@ -27,8 +34,9 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       return;
     }
     const visible =
-      hover.matches &&
-      (summary.matches(":hover") || summary.matches(":focus-visible"));
+      hovering ||
+      nav.contains(document.activeElement) ||
+      summary.matches(":focus-visible");
     previewAnimations.forEach((animation) => animation.stop());
     const options = {
       duration: reduced.matches ? 0 : 0.4,
@@ -46,13 +54,6 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       ),
     ];
   }
-  for (const event of ["pointerenter", "pointerleave", "focus", "blur"])
-    summary.addEventListener(event, updatePreview, {
-      signal: controller.signal,
-    });
-  hover.addEventListener("change", updatePreview, {
-    signal: controller.signal,
-  });
   reduced.addEventListener("change", updatePreview, {
     signal: controller.signal,
   });
@@ -71,7 +72,8 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       { duration: reduced.matches ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] },
     );
   }
-  function setOpen(next: boolean) {
+  function setOpen(next: boolean, force = false) {
+    if (!force && next === expanded) return;
     expanded = next;
     const request = ++version;
     panelAnimation?.stop();
@@ -100,21 +102,75 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       if (request === version && !expanded) menu.open = false;
     });
   }
+  function dismiss() {
+    clearTimeout(openTimer);
+    clearTimeout(closeTimer);
+    pinned = false;
+    setOpen(false);
+  }
+  const stopHover = hover(root, (_, event) => {
+    if (!desktopHover.matches || event.pointerType !== "mouse") return;
+    clearTimeout(closeTimer);
+    hovering = true;
+    openTimer = window.setTimeout(() => setOpen(true), 100);
+    updatePreview();
+    return () => {
+      clearTimeout(openTimer);
+      hovering = false;
+      updatePreview();
+      closeTimer = window.setTimeout(() => {
+        if (!pinned && !nav.contains(document.activeElement)) setOpen(false);
+      }, 120);
+    };
+  });
+  desktopHover.addEventListener(
+    "change",
+    () => {
+      hovering = false;
+      if (!pinned) dismiss();
+      updatePreview();
+    },
+    { signal: controller.signal },
+  );
+  root.addEventListener("focusin", updatePreview, {
+    signal: controller.signal,
+  });
+  root.addEventListener(
+    "focusout",
+    (event) => {
+      if (root.contains(event.relatedTarget as Node | null)) return;
+      queueMicrotask(() => {
+        if (controller.signal.aborted) return;
+        if (!hovering && !pinned) setOpen(false);
+        updatePreview();
+      });
+    },
+    { signal: controller.signal },
+  );
   summary.addEventListener(
     "click",
     (event) => {
       event.preventDefault();
-      setOpen(!expanded);
+      clearTimeout(openTimer);
+      clearTimeout(closeTimer);
+      pinned = !expanded;
+      setOpen(pinned);
     },
     { signal: controller.signal },
   );
-  reduced.addEventListener("change", () => setOpen(expanded), {
-    signal: controller.signal,
-  });
+  reduced.addEventListener(
+    "change",
+    () => {
+      if (menu.open) setOpen(expanded, true);
+    },
+    {
+      signal: controller.signal,
+    },
+  );
   document.addEventListener(
     "pointerdown",
     (event) => {
-      if (expanded && !menu.contains(event.target as Node)) setOpen(false);
+      if (!menu.contains(event.target as Node)) dismiss();
     },
     { signal: controller.signal },
   );
@@ -232,12 +288,12 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   function schedule() {
     if (!frame) frame = requestAnimationFrame(update);
   }
-  root.addEventListener(
+  document.addEventListener(
     "keydown",
     (event) => {
-      if (event.key === "Escape" && menu.open) {
-        setOpen(false);
-        summary.focus();
+      if (event.key === "Escape" && expanded) {
+        if (menu.contains(document.activeElement)) summary.focus();
+        dismiss();
       }
     },
     { signal: controller.signal },
@@ -251,7 +307,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
         const destination = document.querySelector<HTMLElement>(link.hash);
         if (!destination) return;
         event.preventDefault();
-        setOpen(false);
+        dismiss();
         history.pushState(null, "", link.hash);
         destination.focus({ preventScroll: true });
         scrollToChapter(destination);
@@ -266,6 +322,9 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   update();
   return () => {
     stopScroll();
+    stopHover();
+    clearTimeout(openTimer);
+    clearTimeout(closeTimer);
     ++version;
     panelAnimation?.stop();
     previewAnimations.forEach((animation) => animation.cancel());
