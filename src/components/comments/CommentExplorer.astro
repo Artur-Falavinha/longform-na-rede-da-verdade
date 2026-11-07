@@ -126,7 +126,7 @@ const anchors: Record<string, string> = {
         </div>
       </div>
       {group.expertQuotes.map((quote) => (
-        <figure class="expert-quote reading">
+        <figure class="expert-quote">
           <blockquote class="editorial-quote">{quote.text}</blockquote>
           <figcaption class="quote-attribution">{quote.attribution}</figcaption>
         </figure>
@@ -377,7 +377,9 @@ const anchors: Record<string, string> = {
     margin-top: 0;
   }
   .expert-quote {
+    max-width: var(--story-measure);
     margin-block: 4rem;
+    margin-inline: auto;
   }
   .comment-panel {
     scroll-margin-top: calc(var(--header-height) + 1rem);

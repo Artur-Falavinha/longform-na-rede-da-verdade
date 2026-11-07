@@ -34,7 +34,7 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       tabindex="-1"
       aria-labelledby="report-title"
     >
-      <header class="title-block wide" data-reveal>
+      <header class="title-block story-column" data-reveal>
         <h1 id="report-title">
           Na rede
           <br />
@@ -43,7 +43,6 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
             quem informa, quem acredita e quem denuncia?
           </span>
         </h1>
-        <div class="rule" aria-hidden="true"></div>
       </header>
       <div class="story-column standfirst">
         <EditorialText paragraphs={editorial.standfirst} />
@@ -121,9 +120,9 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
           Fonte: Digital News Report 2026, Reuters Institute.
         </figcaption>
       </figure>
-      <div class="story-media podcast-conversations">
-        {podcasts.map((asset) => (
-          <PodcastPlayer asset={asset} />
+      <div class="story-column podcast-conversations">
+        {podcasts.map((asset, index) => (
+          <PodcastPlayer asset={asset} episode={index + 1} />
         ))}
       </div>
     </section>
@@ -167,9 +166,10 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       <div class="adultization-video">
         <VideoPlayer asset={adultization} />
       </div>
-      <EditorialText paragraphs={editorial.adultization.slice(2, -1)} />
       <div class="booklet-passage">
-        <EditorialText paragraphs={editorial.adultization.slice(-1)} />
+        <div class="booklet-copy">
+          <EditorialText paragraphs={editorial.adultization.slice(2)} />
+        </div>
         <aside
           id="cartilha"
           class="booklet-inset"
@@ -183,7 +183,6 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       class="story-column credits-block"
       aria-label="Créditos da reportagem"
     >
-      <div class="rule" aria-hidden="true"></div>
       <ul class="byline">
         {research.authors.map((author) => (
           <li>{author}</li>
@@ -212,7 +211,7 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     position: relative;
   }
   .story-column {
-    width: min(calc(100% - 2 * var(--gutter)), 48rem);
+    width: min(calc(100% - 2 * var(--gutter)), var(--story-measure));
     margin-inline: auto;
   }
   .story-media {
@@ -234,35 +233,37 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     margin-top: 1.4em;
   }
   .title-block {
+    container-type: inline-size;
     text-align: center;
-    padding-block: clamp(2rem, 4vw, 4rem) 2rem;
+    padding-block: clamp(3rem, 5vw, 5rem) clamp(2rem, 4vw, 3.25rem);
+    border-bottom: 1px solid color-mix(in srgb, var(--muted) 35%, transparent);
   }
   h1 {
-    font-size: clamp(3.5rem, 10.2vw, 9.75rem);
+    font-size: clamp(2.25rem, 17cqi, 8.5rem);
     letter-spacing: -0.04em;
     line-height: 1.02;
-    margin: 1.7rem auto 1.2rem;
   }
   .subtitle {
     display: block;
     margin-top: 1.5rem;
     letter-spacing: normal;
-    font: 700 clamp(1.35rem, 2.4vw, 2.3rem)/1.4 var(--serif);
+    font: 700 clamp(1.2rem, 4.4cqi, 2.15rem)/1.4 var(--serif);
   }
   .credits-block {
-    padding-block: 0 4rem;
+    padding-block: 2.5rem 4rem;
     text-align: center;
+    border-top: 1px solid color-mix(in srgb, var(--muted) 35%, transparent);
   }
   .byline {
     list-style: none;
     padding: 0;
     font-size: 0.875rem;
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
   }
   .standfirst {
     font: 400 clamp(1.4rem, 2.6vw, 2rem)/1.5 var(--serif);
-    padding-block: 0 2rem;
+    padding-block: clamp(2rem, 4vw, 3rem) 2rem;
   }
   .story-heading {
     font-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -299,12 +300,12 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
   }
   .booklet-inset {
     justify-self: end;
-    width: min(60%, 19rem);
+    width: min(70%, 16rem);
     scroll-margin-top: 1rem;
   }
   @media (min-width: 900px) {
     .booklet-passage {
-      grid-template-columns: minmax(0, 1fr) 19rem;
+      grid-template-columns: minmax(0, 1fr) 16rem;
       align-items: end;
     }
     .booklet-inset {
@@ -319,12 +320,6 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     .reuters-figure figcaption {
       display: block;
       text-align: center;
-    }
-    .title-block {
-      padding-top: 3rem;
-    }
-    h1 {
-      font-size: clamp(3.5rem, 14.8vw, 5.5rem);
     }
     .byline {
       font-size: 0.75rem;

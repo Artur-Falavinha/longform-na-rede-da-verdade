@@ -188,13 +188,14 @@ test("menu fecha fora e capas exibem apenas controle sonoro", async ({
   await expect(page.locator("[data-ambient-sound]")).toHaveCount(2);
   const menu = page.locator(".chapter-menu");
   const label = menu.locator(".current-chapter");
-  if (isMobile) await expect(label).toBeHidden();
-  else {
+  if (isMobile) {
+    await expect(label).toBeHidden();
+    await menu.locator("summary").tap();
+  } else {
     await expect(label).toHaveCSS("opacity", "0");
     await menu.locator("summary").hover();
     await expect(label).toHaveCSS("opacity", "1");
   }
-  await menu.locator("summary").click();
   await expect(menu).toHaveAttribute("open", "");
   await page.mouse.click(12, 120);
   await expect(menu).not.toHaveAttribute("open", "");
