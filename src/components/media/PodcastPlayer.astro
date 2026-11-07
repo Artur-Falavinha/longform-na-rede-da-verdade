@@ -359,11 +359,17 @@ const anchor =
   }
   .player-surface.is-compact {
     --play-size: 2.75rem;
+    --compact-bottom: max(0.75rem, env(safe-area-inset-bottom));
     position: fixed;
-    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    bottom: var(--compact-bottom);
     right: var(--gutter);
     z-index: 30;
     width: min(24rem, calc(100% - 2 * var(--gutter)));
+    max-block-size: calc(
+      100% - var(--header-height) - var(--compact-bottom) - 0.75rem
+    );
+    overflow: auto;
+    overscroll-behavior: contain;
     gap: 0.5rem;
     padding: 0.875rem 1rem 0.5rem;
     box-shadow: 0 0.5rem 2rem var(--bg);
@@ -391,6 +397,19 @@ const anchor =
   }
   .is-compact .transport-controls {
     gap: 0.125rem;
+  }
+  @media (max-height: 500px) {
+    .player-surface.is-compact {
+      gap: 0.375rem;
+      padding-block-start: 0.5rem;
+    }
+    .is-compact .episode-header {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .is-compact .episode-art,
+    .is-compact .episode-header .eyebrow {
+      display: none;
+    }
   }
   .transcript {
     font-size: 1rem;
