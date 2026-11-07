@@ -26,6 +26,7 @@
   --small: 0.8125rem;
   --gutter: clamp(1.25rem, 5vw, 5rem);
   --reading: 65ch;
+  --story-measure: 48rem;
   --wide: 76rem;
   --header-height: 4rem;
   --section-space: clamp(2.5rem, 4vw, 4rem);

@@ -126,6 +126,7 @@ test("cartilha acompanha a chamada e mantém as margens e os controles", async (
   const booklet = await preview.boundingBox();
   const download = await page.locator(".booklet-download").boundingBox();
   expect(column).not.toBeNull();
+  expect(booklet!.height).toBeGreaterThan(booklet!.width);
   expect(booklet!.x + booklet!.width).toBeCloseTo(column!.x + column!.width, 0);
   expect(download!.x).toBeGreaterThan(booklet!.x);
   expect(download!.y).toBeGreaterThanOrEqual(booklet!.y);
@@ -139,6 +140,16 @@ test("cartilha acompanha a chamada e mantém as margens e os controles", async (
   );
   expect(lastParagraph!.x).toBeCloseTo(column!.x, 0);
   if (desktop) {
+    const precedingParagraph = await page
+      .locator("#adultizacao p[data-reveal]")
+      .nth(-2)
+      .boundingBox();
+    expect(precedingParagraph!.x + precedingParagraph!.width).toBeLessThan(
+      booklet!.x,
+    );
+    expect(precedingParagraph!.y + precedingParagraph!.height).toBeGreaterThan(
+      booklet!.y,
+    );
     expect(lastParagraph!.x + lastParagraph!.width).toBeLessThan(booklet!.x);
     expect(lastParagraph!.y + lastParagraph!.height).toBeCloseTo(
       booklet!.y + booklet!.height,

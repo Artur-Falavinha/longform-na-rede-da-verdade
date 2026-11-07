@@ -42,11 +42,16 @@ export function initPodcastPlayer(
   function reserveSpace() {
     if (!compact && !animation)
       origin.style.minHeight = `${surface.offsetHeight}px`;
-    if (active)
+    if (active) {
+      const bottom = compact
+        ? parseFloat(getComputedStyle(surface).bottom) || 0
+        : 0;
+      const reserved = compact ? surface.offsetHeight + bottom + 8 : 0;
       document.documentElement.style.setProperty(
         "--compact-space",
-        compact ? `${surface.offsetHeight + 16}px` : "0px",
+        `${reserved}px`,
       );
+    }
   }
   function clearTransition() {
     transitionVersion++;

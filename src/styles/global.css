@@ -246,12 +246,6 @@ li + li {
   color: var(--muted);
   margin-top: 1.2rem;
 }
-.rule {
-  width: 5rem;
-  height: 3px;
-  background: var(--red);
-  margin: 2.5rem auto;
-}
 @media (max-width: 899px) {
   :root {
     --header-height: 3.75rem;
