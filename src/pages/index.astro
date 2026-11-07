@@ -167,8 +167,9 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       <div class="adultization-video">
         <VideoPlayer asset={adultization} />
       </div>
-      <EditorialText paragraphs={editorial.adultization.slice(2)} />
+      <EditorialText paragraphs={editorial.adultization.slice(2, -1)} />
       <div class="booklet-passage">
+        <EditorialText paragraphs={editorial.adultization.slice(-1)} />
         <aside
           id="cartilha"
           class="booklet-inset"
@@ -292,15 +293,23 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     display: none;
   }
   .booklet-passage {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1.75rem;
+    display: grid;
+    gap: 1.75rem;
+    margin-top: 1.4em;
   }
   .booklet-inset {
+    justify-self: end;
     width: min(60%, 19rem);
     scroll-margin-top: 1rem;
   }
   @media (min-width: 900px) {
+    .booklet-passage {
+      grid-template-columns: minmax(0, 1fr) 19rem;
+      align-items: end;
+    }
+    .booklet-inset {
+      width: 100%;
+    }
     .story-copy :global(p[data-reveal]) {
       text-align: justify;
       hyphens: auto;

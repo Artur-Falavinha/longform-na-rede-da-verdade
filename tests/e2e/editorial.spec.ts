@@ -106,9 +106,10 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
   expect(errors).toEqual([]);
 });
 
-test("coluna contínua e cartilha depois da chamada mantêm margens e controles", async ({
+test("cartilha acompanha a chamada e mantém as margens e os controles", async ({
   page,
 }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/#cartilha");
   await page.evaluate(() => document.fonts.ready);
   const preview = page.locator(".booklet-preview");
@@ -129,11 +130,21 @@ test("coluna contínua e cartilha depois da chamada mantêm margens e controles"
   expect(download!.x).toBeGreaterThan(booklet!.x);
   expect(download!.y).toBeGreaterThanOrEqual(booklet!.y);
   expect(download!.y - booklet!.y).toBeLessThan(16);
-  {
-    const lastParagraph = await page
-      .locator("#adultizacao p[data-reveal]")
-      .last()
-      .boundingBox();
+  const lastParagraph = await page
+    .locator("#adultizacao p[data-reveal]")
+    .last()
+    .boundingBox();
+  const desktop = await page.evaluate(
+    () => matchMedia("(min-width: 900px)").matches,
+  );
+  expect(lastParagraph!.x).toBeCloseTo(column!.x, 0);
+  if (desktop) {
+    expect(lastParagraph!.x + lastParagraph!.width).toBeLessThan(booklet!.x);
+    expect(lastParagraph!.y + lastParagraph!.height).toBeCloseTo(
+      booklet!.y + booklet!.height,
+      0,
+    );
+  } else {
     expect(booklet!.y).toBeGreaterThan(
       lastParagraph!.y + lastParagraph!.height,
     );
