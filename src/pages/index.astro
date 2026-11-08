@@ -294,7 +294,9 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     display: none;
   }
   .booklet-passage {
+    --booklet-ratio: 4 / 5;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
     margin-top: 1.4em;
   }
@@ -304,12 +306,32 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     scroll-margin-top: 1rem;
   }
   @media (min-width: 900px) {
-    .booklet-passage {
-      grid-template-columns: minmax(0, 1fr) 16rem;
-      align-items: end;
-    }
-    .booklet-inset {
-      width: 100%;
+    @supports (shape-outside: inset(0)) {
+      .booklet-passage:not(:has(:global([data-document-error]:not([hidden])))) {
+        --booklet-width: min(34%, 16rem);
+        --booklet-lead: 3.3em;
+
+        .booklet-copy,
+        .booklet-inset {
+          grid-area: 1 / 1;
+        }
+        .booklet-copy {
+          display: flow-root;
+        }
+        .booklet-copy::before {
+          content: "";
+          float: right;
+          width: var(--booklet-width);
+          aspect-ratio: var(--booklet-ratio);
+          margin: var(--booklet-lead) 0 0 1.75rem;
+          shape-outside: inset(var(--booklet-lead) 0 0);
+        }
+        .booklet-inset {
+          align-self: start;
+          width: var(--booklet-width);
+          margin-block-start: var(--booklet-lead);
+        }
+      }
     }
     .story-copy :global(p[data-reveal]) {
       text-align: justify;

@@ -136,25 +136,40 @@ test("cartilha acompanha a chamada e mantém as margens e os controles", async (
     .last()
     .boundingBox();
   const desktop = await page.evaluate(
-    () => matchMedia("(min-width: 900px)").matches,
+    () =>
+      matchMedia("(min-width: 900px)").matches &&
+      CSS.supports("shape-outside", "inset(0)"),
   );
   expect(lastParagraph!.x).toBeCloseTo(column!.x, 0);
   if (desktop) {
-    const precedingParagraph = await page
-      .locator("#adultizacao p[data-reveal]")
-      .nth(-2)
-      .boundingBox();
-    expect(precedingParagraph!.x + precedingParagraph!.width).toBeLessThan(
-      booklet!.x,
-    );
-    expect(precedingParagraph!.y + precedingParagraph!.height).toBeGreaterThan(
-      booklet!.y,
-    );
-    expect(lastParagraph!.x + lastParagraph!.width).toBeLessThan(booklet!.x);
-    expect(lastParagraph!.y + lastParagraph!.height).toBeCloseTo(
-      booklet!.y + booklet!.height,
-      0,
-    );
+    const paragraphs = await page
+      .locator(".booklet-copy p")
+      .evaluateAll((elements) =>
+        elements.map((element) => {
+          const range = document.createRange();
+          range.selectNodeContents(element);
+          return [...range.getClientRects()].map(({ top, right, bottom }) => ({
+            top,
+            right,
+            bottom,
+          }));
+        }),
+      );
+    expect(
+      paragraphs[0].some(
+        (line) => line.bottom <= booklet!.y && line.right > booklet!.x,
+      ),
+    ).toBe(true);
+    for (const lines of paragraphs) {
+      const alongside = lines.filter(
+        (line) =>
+          line.top < booklet!.y + booklet!.height && line.bottom > booklet!.y,
+      );
+      expect(alongside.length).toBeGreaterThan(0);
+      expect(Math.max(...alongside.map((line) => line.right))).toBeLessThan(
+        booklet!.x,
+      );
+    }
   } else {
     expect(booklet!.y).toBeGreaterThan(
       lastParagraph!.y + lastParagraph!.height,
