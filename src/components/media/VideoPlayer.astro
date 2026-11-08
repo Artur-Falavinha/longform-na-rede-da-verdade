@@ -35,7 +35,6 @@ const Shell = ambient ? "div" : "media-controller";
       src={asset.src}
       controls={!ambient}
       preload="none"
-      muted={ambient}
       loop={ambient}
       playsinline
       width="1280"
@@ -83,8 +82,8 @@ const Shell = ambient ? "div" : "media-controller";
             type="button"
             class="button"
             data-ambient-sound
-            aria-label="Ativar som"
-            aria-pressed="false"
+            aria-label="Desativar som"
+            aria-pressed="true"
           >
             <VolumeOff
               class="sound-off"

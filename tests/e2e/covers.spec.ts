@@ -4,6 +4,7 @@ test("encerramento ocupa o viewport e permanece fixo durante a revelação rever
   page,
 }) => {
   await page.goto("/");
+  await page.locator("#abertura [data-ambient-sound]").click();
   await page.evaluate(() => document.fonts.ready);
   const video = page.locator('[data-media-id="closing"]');
   const shell = video.locator("..");

@@ -67,6 +67,21 @@ describe("coordenação de áudio e motivos de pausa", () => {
     expect(podcast.paused).toBe(true);
     expect(podcast.currentTime).toBe(42);
   });
+  it("autoplay com som preserva a mídia que o leitor está ouvindo", async () => {
+    const coordinator = createMediaCoordinator();
+    const teaser = new Media();
+    const podcast = new Media();
+    coordinator.register("opening", teaser.element());
+    coordinator.register("checking-future", podcast.element());
+    await coordinator.play("checking-future", "user");
+    expect(await coordinator.play("opening", "automatic")).toBe(false);
+    expect(teaser.paused).toBe(true);
+    expect(podcast.paused).toBe(false);
+    expect(coordinator.reason("opening")).toBe("coordinator");
+    expect(await coordinator.play("opening", "user")).toBe(true);
+    expect(podcast.paused).toBe(true);
+    expect(podcast.currentTime).toBe(42);
+  });
   it("rejeição de autoplay fica aguardando ação manual", async () => {
     const coordinator = createMediaCoordinator();
     const video = new Media();
