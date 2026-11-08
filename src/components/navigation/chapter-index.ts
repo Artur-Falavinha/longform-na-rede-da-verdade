@@ -24,6 +24,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   let openTimer = 0;
   let closeTimer = 0;
   let expanded = menu.open;
+  let previewTargetWidth = 0;
   let previewAnimations: ReturnType<typeof animate>[] = [];
   function motionTiming(duration = 0.4) {
     return {
@@ -35,19 +36,23 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     if (!desktopHover.matches) {
       previewAnimations.forEach((animation) => animation.cancel());
       previewAnimations = [];
+      previewTargetWidth = 0;
       preview.style.width = "0px";
       current.style.opacity = "0";
       current.style.transform = "translateX(8px)";
       return;
     }
     const visible =
-      (hovering && expanded) ||
+      (expanded && (hovering || closeTimer !== 0)) ||
       nav.contains(document.activeElement) ||
       summary.matches(":focus-visible");
+    const width = visible ? current.scrollWidth : 0;
+    if (width === previewTargetWidth && !reduced.matches) return;
+    previewTargetWidth = width;
     previewAnimations.forEach((animation) => animation.stop());
     const options = motionTiming();
     previewAnimations = [
-      animate(preview, { width: visible ? current.scrollWidth : 0 }, options),
+      animate(preview, { width }, options),
       animate(
         current,
         {
@@ -93,33 +98,42 @@ export function initChapterIndex(root: HTMLElement): Dispose {
           ? "translateY(0px) scale(1)"
           : "translateY(-8px) scale(0.98)",
       },
-      next ? motionTiming() : motionTiming(0.22),
+      motionTiming(),
     );
     updatePreview();
     void panelAnimation.finished.then(() => {
       if (request === version && !expanded) menu.open = false;
     });
   }
+  function clearCloseTimer() {
+    clearTimeout(closeTimer);
+    closeTimer = 0;
+  }
   function dismiss() {
     clearTimeout(openTimer);
-    clearTimeout(closeTimer);
+    clearCloseTimer();
     pinned = false;
     setOpen(false);
   }
   const stopHover = hover(root, (_, event) => {
     if (!desktopHover.matches || event.pointerType !== "mouse") return;
-    clearTimeout(closeTimer);
+    clearCloseTimer();
     hovering = true;
-    openTimer = window.setTimeout(() => {
-      if (expanded) updatePreview();
-      else setOpen(true);
-    }, 100);
+    if (menu.open && !expanded) {
+      setOpen(true);
+    } else {
+      openTimer = window.setTimeout(() => {
+        if (expanded) updatePreview();
+        else setOpen(true);
+      }, 100);
+    }
     return () => {
       clearTimeout(openTimer);
       hovering = false;
-      updatePreview();
       closeTimer = window.setTimeout(() => {
+        closeTimer = 0;
         if (!pinned && !nav.contains(document.activeElement)) setOpen(false);
+        else updatePreview();
       }, 120);
     };
   });
@@ -152,7 +166,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     (event) => {
       event.preventDefault();
       clearTimeout(openTimer);
-      clearTimeout(closeTimer);
+      clearCloseTimer();
       pinned = !expanded;
       setOpen(pinned);
     },
@@ -325,7 +339,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     stopScroll();
     stopHover();
     clearTimeout(openTimer);
-    clearTimeout(closeTimer);
+    clearCloseTimer();
     ++version;
     panelAnimation?.stop();
     previewAnimations.forEach((animation) => animation.cancel());
