@@ -52,13 +52,22 @@ test.afterEach(async ({ page }, testInfo) => {
   });
 });
 
-test("mesmo áudio continua durante compactação, pausa e retorno", async ({
+test("áudio e ondas continuam durante compactação, pausa e retorno", async ({
   page,
 }) => {
   await page.goto("/#jornalismo");
   const root = page.locator('[data-podcast="checking-future"]');
   const audio = root.locator("audio");
   const surface = root.locator("[data-player-surface]");
+  const bar = root.locator("[data-wave-bar]").nth(3);
+  const waveHeight = () =>
+    bar.evaluate((element) => element.getBoundingClientRect().height);
+  async function expectPulse() {
+    const start = await waveHeight();
+    await expect
+      .poll(async () => Math.abs((await waveHeight()) - start))
+      .toBeGreaterThan(0.1);
+  }
   await root.scrollIntoViewIfNeeded();
   await audio.evaluate((element) => {
     (window as any).originalAudio = element;
@@ -71,9 +80,11 @@ test("mesmo áudio continua durante compactação, pausa e retorno", async ({
   await expect
     .poll(() => audio.evaluate((e: HTMLAudioElement) => e.currentTime))
     .toBeGreaterThan(0.1);
+  await expectPulse();
   const loads = await page.evaluate(() => (window as any).audioLoads);
   await page.locator("#cronologia").scrollIntoViewIfNeeded();
   await expect(surface).toHaveCSS("position", "fixed");
+  await expectPulse();
   const before = await audio.evaluate((e: HTMLAudioElement) => e.currentTime);
   await expect
     .poll(() => audio.evaluate((e: HTMLAudioElement) => e.currentTime))
@@ -87,6 +98,7 @@ test("mesmo áudio continua durante compactação, pausa e retorno", async ({
     .poll(() => audio.evaluate((e: HTMLAudioElement) => e.paused))
     .toBe(true);
   await expect(surface).toHaveCSS("position", "fixed");
+  await expect(bar).toHaveCSS("transform", "none");
   await root.locator("[data-podcast-play]").click();
   await root.scrollIntoViewIfNeeded();
   await expect(surface).not.toHaveCSS("position", "fixed");
@@ -96,6 +108,11 @@ test("mesmo áudio continua durante compactação, pausa e retorno", async ({
   expect(
     await audio.evaluate((e: HTMLAudioElement) => e.currentTime),
   ).toBeGreaterThan(before);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(bar).toHaveCSS("transform", "none");
+  await expect
+    .poll(() => audio.evaluate((e: HTMLAudioElement) => e.paused))
+    .toBe(false);
 });
 
 test("interromper Flip e trocar podcast preserva foco, destino e áudio único", async ({

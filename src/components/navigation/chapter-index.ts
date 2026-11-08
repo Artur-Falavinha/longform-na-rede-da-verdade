@@ -23,7 +23,14 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   let pinned = false;
   let openTimer = 0;
   let closeTimer = 0;
+  let expanded = menu.open;
   let previewAnimations: ReturnType<typeof animate>[] = [];
+  function motionTiming(duration = 0.4) {
+    return {
+      duration: reduced.matches ? 0 : duration,
+      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+    };
+  }
   function updatePreview() {
     if (!desktopHover.matches) {
       previewAnimations.forEach((animation) => animation.cancel());
@@ -34,14 +41,11 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       return;
     }
     const visible =
-      hovering ||
+      (hovering && expanded) ||
       nav.contains(document.activeElement) ||
       summary.matches(":focus-visible");
     previewAnimations.forEach((animation) => animation.stop());
-    const options = {
-      duration: reduced.matches ? 0 : 0.4,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-    };
+    const options = motionTiming();
     previewAnimations = [
       animate(preview, { width: visible ? current.scrollWidth : 0 }, options),
       animate(
@@ -54,13 +58,9 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       ),
     ];
   }
-  reduced.addEventListener("change", updatePreview, {
-    signal: controller.signal,
-  });
   void document.fonts.ready.then(() => {
     if (!controller.signal.aborted) updatePreview();
   });
-  let expanded = menu.open;
   let version = 0;
   let panelAnimation: ReturnType<typeof animate> | undefined;
   let iconAnimation: ReturnType<typeof animate> | undefined;
@@ -69,7 +69,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     iconAnimation = animate(
       icon,
       { transform: expanded ? "rotate(45deg)" : "rotate(0deg)" },
-      { duration: reduced.matches ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] },
+      motionTiming(0.3),
     );
   }
   function setOpen(next: boolean, force = false) {
@@ -93,11 +93,9 @@ export function initChapterIndex(root: HTMLElement): Dispose {
           ? "translateY(0px) scale(1)"
           : "translateY(-8px) scale(0.98)",
       },
-      {
-        duration: reduced.matches ? 0 : next ? 0.35 : 0.22,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      next ? motionTiming() : motionTiming(0.22),
     );
+    updatePreview();
     void panelAnimation.finished.then(() => {
       if (request === version && !expanded) menu.open = false;
     });
@@ -112,8 +110,10 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     if (!desktopHover.matches || event.pointerType !== "mouse") return;
     clearTimeout(closeTimer);
     hovering = true;
-    openTimer = window.setTimeout(() => setOpen(true), 100);
-    updatePreview();
+    openTimer = window.setTimeout(() => {
+      if (expanded) updatePreview();
+      else setOpen(true);
+    }, 100);
     return () => {
       clearTimeout(openTimer);
       hovering = false;
@@ -162,6 +162,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     "change",
     () => {
       if (menu.open) setOpen(expanded, true);
+      else updatePreview();
     },
     {
       signal: controller.signal,
