@@ -136,7 +136,7 @@ test("teasers compartilham o som com reprodução e posição independentes", as
     })),
   ).toEqual({ paused: true, time: position });
 });
-test("movimento reduzido e autoplay rejeitado deixam reprodução manual disponível", async ({
+test("movimento reduzido deixa reprodução manual disponível", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -149,31 +149,55 @@ test("movimento reduzido e autoplay rejeitado deixam reprodução manual dispon�
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);
+});
+test("teasers iniciam em silêncio quando o navegador exige gesto para som", async ({
+  page,
+}) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.addInitScript(() => {
     const original = HTMLMediaElement.prototype.play;
-    let rejectOnce = true;
+    let interacted = false;
+    document.addEventListener(
+      "click",
+      () => {
+        interacted = true;
+      },
+      { capture: true, once: true },
+    );
     HTMLMediaElement.prototype.play = function () {
-      if (this.dataset.mediaId === "opening" && rejectOnce) {
-        rejectOnce = false;
-        this.dataset.autoplayRejected = "true";
+      if (this.dataset.purpose === "ambient" && !this.muted && !interacted) {
         return Promise.reject(new DOMException("Denied", "NotAllowedError"));
       }
       return original.call(this);
     };
   });
-  await page.reload();
-  await expect(page.locator("#abertura [data-ambient-sound]")).toHaveAttribute(
-    "aria-label",
-    "Desativar som",
-  );
-  await expect(opening).toHaveAttribute("data-autoplay-rejected", "true");
-  await expect(page.locator("[data-ambient-play]")).toHaveCount(0);
-  await opening.click();
+  await page.goto("/");
+  const opening = page.locator('[data-media-id="opening"]');
+  const closing = page.locator('[data-media-id="closing"]');
+  const openingSound = page.locator("#abertura [data-ambient-sound]");
+  const closingSound = page.locator("#encerramento [data-ambient-sound]");
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);
-  expect(await opening.evaluate((e: HTMLVideoElement) => e.muted)).toBe(false);
+  await expect(openingSound).toHaveAttribute("aria-label", "Ativar som");
+  await expect(closing).toHaveJSProperty("paused", true);
+  await expect(closing).toHaveJSProperty("muted", false);
+  await expect(page.locator("[data-ambient-play]")).toHaveCount(0);
+
+  await page.locator("#encerramento").scrollIntoViewIfNeeded();
+  await expect
+    .poll(() => closing.evaluate((e: HTMLVideoElement) => e.currentTime))
+    .toBeGreaterThan(0.1);
+  await expect(closingSound).toHaveAttribute("aria-label", "Ativar som");
+  await expect(opening).toHaveJSProperty("paused", true);
+
+  await closingSound.click();
+  await expect(closing).toHaveJSProperty("muted", false);
+  await expect(closing).toHaveJSProperty("paused", false);
+  await expect(closingSound).toHaveAttribute("aria-label", "Desativar som");
+  await closingSound.click();
+  await expect(opening).toHaveJSProperty("muted", true);
+  await expect(openingSound).toHaveAttribute("aria-label", "Ativar som");
 });
 test("unmute e vídeo editorial pausam podcast sem reiniciar posição", async ({
   page,

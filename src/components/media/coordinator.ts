@@ -5,6 +5,7 @@ export type PauseReason =
   | "visibility"
   | "coordinator"
   | "reduced-motion"
+  | "autoplay-blocked"
   | "error"
   | null;
 type MediaState = {
@@ -96,7 +97,11 @@ export function createMediaCoordinator() {
   }
   function canAutoplay(id: MediaId) {
     const reason = registry.get(id)?.reason;
-    return reason === "initial" || reason === "visibility";
+    return (
+      reason === "initial" ||
+      reason === "visibility" ||
+      reason === "autoplay-blocked"
+    );
   }
   async function play(id: MediaId, intent: "user" | "automatic") {
     const state = registry.get(id);
@@ -115,17 +120,21 @@ export function createMediaCoordinator() {
     const request = state.request;
     if (audible(state.element)) latestAudibleRequest = request;
     state.reason = null;
+    const wasMuted = state.element.muted;
     try {
       await state.element.play();
       claimAudio(id);
       return !state.element.paused;
-    } catch {
-      if (
-        state.request === request &&
-        state.reason !== "coordinator" &&
-        state.reason !== "visibility"
-      )
-        state.reason = "error";
+    } catch (error) {
+      if (state.request === request && state.reason === null) {
+        state.reason =
+          intent === "automatic" &&
+          !wasMuted &&
+          error instanceof DOMException &&
+          error.name === "NotAllowedError"
+            ? "autoplay-blocked"
+            : "error";
+      }
       return false;
     }
   }

@@ -2,6 +2,11 @@ import { animate } from "motion/mini";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
 
+type AmbientSound = {
+  muted: boolean;
+  setMuted(muted: boolean): void;
+};
+
 export function initAmbientVideos(
   roots: Iterable<HTMLElement>,
   coordinator: MediaCoordinator,
@@ -10,23 +15,52 @@ export function initAmbientVideos(
     root,
     video: root.querySelector<HTMLVideoElement>("video")!,
   }));
-  function setMuted(muted: boolean) {
-    for (const { video } of players) {
-      if (video.muted !== muted) video.muted = muted;
-    }
-  }
-  const cleanups = players.map(({ root, video }) =>
-    initAmbientVideo(root, video, coordinator, setMuted),
+  const sound: AmbientSound = {
+    muted: false,
+    setMuted(muted) {
+      sound.muted = muted;
+      for (const { video } of players) {
+        if (video.muted !== muted) video.muted = muted;
+      }
+    },
+  };
+  const playersByRoot = new Map<Element, ReturnType<typeof initAmbientVideo>>(
+    players.map(({ root, video }) => [
+      root,
+      initAmbientVideo(root, video, coordinator, sound),
+    ]),
   );
-  return () => cleanups.forEach((cleanup) => cleanup());
+  const threshold = 0.15;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entering = [];
+      const latestEntries = new Map(
+        entries.map((entry) => [entry.target, entry]),
+      );
+      for (const entry of latestEntries.values()) {
+        const player = playersByRoot.get(entry.target);
+        if (!player) continue;
+        if (entry.isIntersecting && entry.intersectionRatio >= threshold)
+          entering.push(player);
+        else player.setVisible(false);
+      }
+      for (const player of entering) player.setVisible(true);
+    },
+    { threshold },
+  );
+  for (const root of playersByRoot.keys()) observer.observe(root);
+  return () => {
+    observer.disconnect();
+    for (const player of playersByRoot.values()) player.dispose();
+  };
 }
 
 function initAmbientVideo(
   root: HTMLElement,
   video: HTMLVideoElement,
   coordinator: MediaCoordinator,
-  setMuted: (muted: boolean) => void,
-): Dispose {
+  sound: AmbientSound,
+) {
   const id = video.dataset.mediaId as MediaId;
   const soundButton = root.querySelector<HTMLButtonElement>(
     "[data-ambient-sound]",
@@ -69,53 +103,53 @@ function initAmbientVideo(
     );
     updateIcon();
   }
-  function attempt() {
-    if (
+  function canAttempt() {
+    return (
       visible &&
       !document.hidden &&
       !reduced.matches &&
+      !controller.signal.aborted &&
       coordinator.canAutoplay(id)
-    )
+    );
+  }
+  async function attempt() {
+    if (!canAttempt()) return;
+    video.muted = sound.muted;
+    await coordinator.play(id, "automatic");
+    if (coordinator.reason(id) === "autoplay-blocked" && canAttempt()) {
+      video.muted = true;
       void coordinator.play(id, "automatic");
+    }
   }
-  function playOnInteraction() {
-    if (visible && video.paused) void coordinator.play(id, "user");
-  }
-  const observer = new IntersectionObserver(
-    (entries) => {
-      visible =
-        entries[0].isIntersecting && entries[0].intersectionRatio >= 0.15;
-      if (visible) attempt();
-      else if (!video.paused) coordinator.pause(id, "visibility");
-    },
-    { threshold: 0.15 },
-  );
-  observer.observe(root);
   soundButton?.addEventListener(
     "click",
     () => {
-      setMuted(!video.muted);
+      const enableSound = video.muted;
+      sound.setMuted(!enableSound);
       updateSoundButton();
-      playOnInteraction();
+      if (visible && (enableSound || video.paused))
+        void coordinator.play(id, "user");
     },
     { signal: controller.signal },
   );
-  video.addEventListener("click", playOnInteraction, {
+  video.addEventListener(
+    "click",
+    () => {
+      if (!visible) return;
+      const restoreSound = video.muted && !sound.muted;
+      if (restoreSound) video.muted = false;
+      if (restoreSound || video.paused) void coordinator.play(id, "user");
+    },
+    { signal: controller.signal },
+  );
+  video.addEventListener("volumechange", updateSoundButton, {
     signal: controller.signal,
   });
-  video.addEventListener(
-    "volumechange",
-    () => {
-      setMuted(video.muted);
-      updateSoundButton();
-    },
-    { signal: controller.signal },
-  );
   document.addEventListener(
     "visibilitychange",
     () => {
       if (document.hidden && !video.paused) coordinator.pause(id, "visibility");
-      else attempt();
+      else void attempt();
     },
     { signal: controller.signal },
   );
@@ -129,9 +163,15 @@ function initAmbientVideo(
     { signal: controller.signal },
   );
   updateSoundButton();
-  return () => {
-    iconAnimations.forEach((animation) => animation.stop());
-    controller.abort();
-    observer.disconnect();
+  return {
+    setVisible(inViewport: boolean) {
+      visible = inViewport;
+      if (visible) void attempt();
+      else if (!video.paused) coordinator.pause(id, "visibility");
+    },
+    dispose() {
+      iconAnimations.forEach((animation) => animation.stop());
+      controller.abort();
+    },
   };
 }

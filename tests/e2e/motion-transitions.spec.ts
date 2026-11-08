@@ -66,6 +66,12 @@ test("linha de mute termina no estado correto após inversões rápidas", async 
   const button = page.locator("#abertura [data-ambient-sound]");
   const off = button.locator(".sound-off");
   const slash = off.locator('path[d="m2 2 20 20"]');
+  const video = page.locator("#abertura video");
+  await expect(video).toHaveJSProperty("paused", false);
+  if (await video.evaluate((element: HTMLVideoElement) => element.muted))
+    await button.click();
+  await expect(off).toHaveCSS("opacity", "0");
+
   await button.click();
   await expect(off).toHaveCSS("opacity", "1");
   await expect(slash).toHaveCSS("stroke-dashoffset", "0px");
