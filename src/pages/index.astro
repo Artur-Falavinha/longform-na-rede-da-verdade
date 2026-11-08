@@ -295,9 +295,10 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
   }
   .booklet-passage {
     --booklet-ratio: 4 / 5;
+    --booklet-gap: 1.75rem;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.75rem;
+    gap: var(--booklet-gap);
     margin-top: 1.4em;
   }
   .booklet-inset {
@@ -310,6 +311,7 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       .booklet-passage:not(:has(:global([data-document-error]:not([hidden])))) {
         --booklet-width: min(34%, 16rem);
         --booklet-lead: 3.3em;
+        --booklet-offset: calc(var(--booklet-lead) + var(--booklet-gap));
 
         .booklet-copy,
         .booklet-inset {
@@ -323,13 +325,13 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
           float: right;
           width: var(--booklet-width);
           aspect-ratio: var(--booklet-ratio);
-          margin: var(--booklet-lead) 0 0 1.75rem;
+          margin: var(--booklet-offset) 0 0 var(--booklet-gap);
           shape-outside: inset(var(--booklet-lead) 0 0);
         }
         .booklet-inset {
           align-self: start;
           width: var(--booklet-width);
-          margin-block-start: var(--booklet-lead);
+          margin-block-start: var(--booklet-offset);
         }
       }
     }
