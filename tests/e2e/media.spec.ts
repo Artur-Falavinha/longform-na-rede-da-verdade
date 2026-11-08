@@ -51,7 +51,6 @@ test("ambientação retoma por visibilidade, mas respeita pausa manual", async (
   await page.goto("/");
   const opening = page.locator('[data-media-id="opening"]');
   await page.locator("#abertura [data-ambient-sound]").click();
-  await page.locator("#abertura [data-ambient-play]").click();
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.paused))
@@ -90,7 +89,7 @@ test("teasers compartilham o som com reprodução e posição independentes", as
   await expect(openingSound).toHaveAttribute("aria-label", "Desativar som");
   await expect(closingSound).toHaveAttribute("aria-label", "Desativar som");
 
-  await page.locator("#abertura [data-ambient-play]").click();
+  await opening.click();
   await expect
     .poll(() =>
       opening.evaluate((video: HTMLVideoElement) => video.currentTime),
@@ -116,18 +115,20 @@ test("teasers compartilham o som com reprodução e posição independentes", as
   const position = await opening.evaluate(
     (video: HTMLVideoElement) => video.currentTime,
   );
-  await closingSound.click();
-  await expect.poll(mutedStates).toEqual([false, false]);
-  await expect(openingSound).toHaveAttribute("aria-label", "Desativar som");
+  await expect(closingSound).toHaveAttribute("aria-label", "Ativar som");
   expect(
     await closing.evaluate((video: HTMLVideoElement) => video.paused),
   ).toBe(true);
-  await page.locator("#encerramento [data-ambient-play]").click();
+  await closing.click();
   await expect
     .poll(() =>
       closing.evaluate((video: HTMLVideoElement) => video.currentTime),
     )
     .toBeGreaterThan(0.1);
+  await expect.poll(mutedStates).toEqual([true, true]);
+  await closingSound.click();
+  await expect.poll(mutedStates).toEqual([false, false]);
+  await expect(openingSound).toHaveAttribute("aria-label", "Desativar som");
   expect(
     await opening.evaluate((video: HTMLVideoElement) => ({
       paused: video.paused,
@@ -141,11 +142,10 @@ test("movimento reduzido e autoplay rejeitado deixam reprodução manual dispon�
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   const opening = page.locator('[data-media-id="opening"]');
-  const play = page.locator("#abertura [data-ambient-play]");
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.paused))
     .toBe(true);
-  await play.click();
+  await opening.click();
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);
@@ -156,6 +156,7 @@ test("movimento reduzido e autoplay rejeitado deixam reprodução manual dispon�
     HTMLMediaElement.prototype.play = function () {
       if (this.dataset.mediaId === "opening" && rejectOnce) {
         rejectOnce = false;
+        this.dataset.autoplayRejected = "true";
         return Promise.reject(new DOMException("Denied", "NotAllowedError"));
       }
       return original.call(this);
@@ -166,8 +167,9 @@ test("movimento reduzido e autoplay rejeitado deixam reprodução manual dispon�
     "aria-label",
     "Desativar som",
   );
-  await expect(play).toBeVisible();
-  await play.click();
+  await expect(opening).toHaveAttribute("data-autoplay-rejected", "true");
+  await expect(page.locator("[data-ambient-play]")).toHaveCount(0);
+  await opening.click();
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);
@@ -180,7 +182,6 @@ test("unmute e vídeo editorial pausam podcast sem reiniciar posição", async (
   const podcast = page.locator('[data-podcast="checking-future"]');
   const opening = page.locator('[data-media-id="opening"]');
   const sound = page.locator("#abertura [data-ambient-sound]");
-  const play = page.locator("#abertura [data-ambient-play]");
   await podcast.locator("[data-podcast-play]").click();
   await expect
     .poll(() =>
@@ -188,12 +189,13 @@ test("unmute e vídeo editorial pausam podcast sem reiniciar posição", async (
     )
     .toBeGreaterThan(0.1);
   await page.locator("#abertura").scrollIntoViewIfNeeded();
-  await expect(play).toBeVisible();
+  await expect
+    .poll(() => opening.evaluate((e: HTMLVideoElement) => e.paused))
+    .toBe(true);
   expect(
     await podcast.locator("audio").evaluate((e: HTMLAudioElement) => e.paused),
   ).toBe(false);
   await sound.click();
-  await play.click();
   await expect
     .poll(() => opening.evaluate((e: HTMLVideoElement) => e.currentTime))
     .toBeGreaterThan(0.1);

@@ -31,9 +31,6 @@ function initAmbientVideo(
   const soundButton = root.querySelector<HTMLButtonElement>(
     "[data-ambient-sound]",
   );
-  const playButton = root.querySelector<HTMLButtonElement>(
-    "[data-ambient-play]",
-  )!;
   const controller = new AbortController();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const off = soundButton?.querySelector<SVGSVGElement>(".sound-off");
@@ -72,14 +69,6 @@ function initAmbientVideo(
     );
     updateIcon();
   }
-  function updatePlayButton() {
-    if (controller.signal.aborted) return;
-    playButton.hidden =
-      !visible ||
-      !video.paused ||
-      Boolean(video.error) ||
-      (!reduced.matches && coordinator.canAutoplay(id));
-  }
   function attempt() {
     if (
       visible &&
@@ -87,7 +76,10 @@ function initAmbientVideo(
       !reduced.matches &&
       coordinator.canAutoplay(id)
     )
-      void coordinator.play(id, "automatic").then(updatePlayButton);
+      void coordinator.play(id, "automatic");
+  }
+  function playOnInteraction() {
+    if (visible && video.paused) void coordinator.play(id, "user");
   }
   const observer = new IntersectionObserver(
     (entries) => {
@@ -95,7 +87,6 @@ function initAmbientVideo(
         entries[0].isIntersecting && entries[0].intersectionRatio >= 0.15;
       if (visible) attempt();
       else if (!video.paused) coordinator.pause(id, "visibility");
-      updatePlayButton();
     },
     { threshold: 0.15 },
   );
@@ -105,14 +96,13 @@ function initAmbientVideo(
     () => {
       setMuted(!video.muted);
       updateSoundButton();
+      playOnInteraction();
     },
     { signal: controller.signal },
   );
-  playButton.addEventListener(
-    "click",
-    () => void coordinator.play(id, "user").then(updatePlayButton),
-    { signal: controller.signal },
-  );
+  video.addEventListener("click", playOnInteraction, {
+    signal: controller.signal,
+  });
   video.addEventListener(
     "volumechange",
     () => {
@@ -121,10 +111,6 @@ function initAmbientVideo(
     },
     { signal: controller.signal },
   );
-  for (const event of ["play", "pause", "ended", "error", "loadeddata"])
-    video.addEventListener(event, updatePlayButton, {
-      signal: controller.signal,
-    });
   document.addEventListener(
     "visibilitychange",
     () => {
@@ -138,8 +124,6 @@ function initAmbientVideo(
     () => {
       if (reduced.matches && !video.paused)
         coordinator.pause(id, "reduced-motion");
-      else attempt();
-      updatePlayButton();
       updateIcon(true);
     },
     { signal: controller.signal },

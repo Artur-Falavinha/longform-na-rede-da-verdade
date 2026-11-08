@@ -99,16 +99,6 @@ const Shell = ambient ? "div" : "media-controller";
             />
           </button>
         )}
-        <button
-          type="button"
-          class="button"
-          data-ambient-play
-          aria-label={`Reproduzir ${asset.title.toLowerCase()}`}
-          hidden
-        >
-          <Play size={20} fill="currentColor" aria-hidden="true" />
-          Reproduzir
-        </button>
       </div>
     )}
     <div class="media-error" role="status" hidden>
@@ -216,7 +206,6 @@ const Shell = ambient ? "div" : "media-controller";
     left: var(--gutter);
     bottom: calc(2rem + var(--compact-space) + env(safe-area-inset-bottom));
     display: flex;
-    align-items: center;
     gap: 0.75rem;
   }
   .opening .ambient-controls {
@@ -256,10 +245,6 @@ const Shell = ambient ? "div" : "media-controller";
   @media (max-width: 599px) {
     .ambient-controls {
       left: 1rem;
-    }
-    .opening .ambient-controls {
-      align-items: flex-start;
-      flex-direction: column;
     }
     .ambient-controls button {
       font-size: 0.75rem;
