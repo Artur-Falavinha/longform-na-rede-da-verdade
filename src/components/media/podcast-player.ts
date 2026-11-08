@@ -1,4 +1,5 @@
 import { initTranscript } from "./transcript";
+import { initPodcastWaveform } from "./podcast-waveform";
 import { animate } from "motion/mini";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
@@ -27,6 +28,7 @@ export function initPodcastPlayer(
   const duration = root.querySelector<HTMLElement>("[data-duration]")!;
   const error = root.querySelector<HTMLElement>(".podcast-error")!;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const updateWaveform = initPodcastWaveform(surface, reduced);
   const controller = new AbortController();
   let originVisible = true;
   let active = false;
@@ -106,6 +108,11 @@ export function initPodcastPlayer(
   }
   function updatePlayback() {
     const playing = !audio.paused && !audio.ended;
+    updateWaveform(
+      playing &&
+        !audio.error &&
+        audio.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA,
+    );
     playButton.setAttribute(
       "aria-label",
       `${playing ? "Pausar" : "Reproduzir"} ${root.querySelector("h3")!.textContent}`,
@@ -241,6 +248,9 @@ export function initPodcastPlayer(
   updateVolume();
   audio.addEventListener("play", activate, { signal: controller.signal });
   for (const event of [
+    "playing",
+    "waiting",
+    "emptied",
     "pause",
     "ended",
     "timeupdate",
@@ -254,6 +264,7 @@ export function initPodcastPlayer(
     "error",
     () => {
       error.hidden = false;
+      updateWaveform(false);
     },
     { signal: controller.signal },
   );
@@ -269,7 +280,10 @@ export function initPodcastPlayer(
   );
   reduced.addEventListener(
     "change",
-    () => setCompact(active && !originVisible, true),
+    () => {
+      setCompact(active && !originVisible, true);
+      updatePlayback();
+    },
     { signal: controller.signal },
   );
   window.addEventListener(
@@ -302,6 +316,7 @@ export function initPodcastPlayer(
   reserveSpace();
   return () => {
     disposeTranscript();
+    updateWaveform(false);
     controller.abort();
     observer.disconnect();
     sizeObserver.disconnect();
