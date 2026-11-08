@@ -38,6 +38,16 @@ import { chapters } from "../../data/chapters";
   .chapter-menu {
     position: relative;
     flex-shrink: 0;
+    -webkit-tap-highlight-color: color-mix(
+      in srgb,
+      var(--muted) 12%,
+      transparent
+    );
+  }
+  summary,
+  nav {
+    background: var(--bg);
+    border: 1px solid var(--surface);
   }
   summary {
     list-style: none;
@@ -46,8 +56,6 @@ import { chapters } from "../../data/chapters";
     gap: 0;
     min-height: 48px;
     padding: 0.6rem 1rem;
-    background: var(--bg);
-    border: 1px solid var(--surface);
     font: 400 0.8125rem/1.4 var(--sans);
   }
   summary::-webkit-details-marker {
@@ -89,8 +97,6 @@ import { chapters } from "../../data/chapters";
     max-width: calc(100vw - 2 * var(--gutter));
     max-height: calc(90svh - var(--header-height) - var(--compact-space));
     overflow: auto;
-    background: var(--surface);
-    border: 1px solid var(--muted);
     padding: 1rem;
   }
   ol {
