@@ -22,7 +22,6 @@ export function initChapterIndex(root: HTMLElement): Dispose {
   let hovering = false;
   let pinned = false;
   let openTimer = 0;
-  let closeTimer = 0;
   let expanded = menu.open;
   let previewTargetWidth = 0;
   let previewAnimations: ReturnType<typeof animate>[] = [];
@@ -43,7 +42,7 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       return;
     }
     const visible =
-      (expanded && (hovering || closeTimer !== 0)) ||
+      (expanded && hovering) ||
       nav.contains(document.activeElement) ||
       summary.matches(":focus-visible");
     const width = visible ? current.scrollWidth : 0;
@@ -105,19 +104,13 @@ export function initChapterIndex(root: HTMLElement): Dispose {
       if (request === version && !expanded) menu.open = false;
     });
   }
-  function clearCloseTimer() {
-    clearTimeout(closeTimer);
-    closeTimer = 0;
-  }
   function dismiss() {
     clearTimeout(openTimer);
-    clearCloseTimer();
     pinned = false;
     setOpen(false);
   }
   const stopHover = hover(root, (_, event) => {
     if (!desktopHover.matches || event.pointerType !== "mouse") return;
-    clearCloseTimer();
     hovering = true;
     if (menu.open && !expanded) {
       setOpen(true);
@@ -130,11 +123,8 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     return () => {
       clearTimeout(openTimer);
       hovering = false;
-      closeTimer = window.setTimeout(() => {
-        closeTimer = 0;
-        if (!pinned && !nav.contains(document.activeElement)) setOpen(false);
-        else updatePreview();
-      }, 120);
+      if (!pinned && !nav.contains(document.activeElement)) setOpen(false);
+      else updatePreview();
     };
   });
   desktopHover.addEventListener(
@@ -166,7 +156,6 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     (event) => {
       event.preventDefault();
       clearTimeout(openTimer);
-      clearCloseTimer();
       pinned = !expanded;
       setOpen(pinned);
     },
@@ -339,7 +328,6 @@ export function initChapterIndex(root: HTMLElement): Dispose {
     stopScroll();
     stopHover();
     clearTimeout(openTimer);
-    clearCloseTimer();
     ++version;
     panelAnimation?.stop();
     previewAnimations.forEach((animation) => animation.cancel());
