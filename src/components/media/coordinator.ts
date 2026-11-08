@@ -21,6 +21,8 @@ export function createMediaCoordinator() {
   let latestAudibleRequest = 0;
   const audible = (element: HTMLMediaElement) =>
     !element.muted && element.volume > 0;
+  const playingWithSound = (element: HTMLMediaElement) =>
+    !element.paused && audible(element);
   function pause(id: MediaId, reason: PauseReason) {
     const state = registry.get(id);
     if (!state) return;
@@ -31,7 +33,7 @@ export function createMediaCoordinator() {
   }
   function claimAudio(id: MediaId, newRequest = false) {
     const state = registry.get(id);
-    if (!state || state.element.paused || !audible(state.element)) return;
+    if (!state || !playingWithSound(state.element)) return;
     if (newRequest || !state.request) state.request = ++sequence;
     if (state.request < latestAudibleRequest) {
       pause(id, "coordinator");
@@ -39,7 +41,7 @@ export function createMediaCoordinator() {
     }
     latestAudibleRequest = state.request;
     for (const [otherId, other] of registry) {
-      if (otherId !== id && !other.element.paused && audible(other.element))
+      if (otherId !== id && playingWithSound(other.element))
         pause(otherId, "coordinator");
     }
   }
@@ -99,6 +101,16 @@ export function createMediaCoordinator() {
   async function play(id: MediaId, intent: "user" | "automatic") {
     const state = registry.get(id);
     if (!state || (intent === "automatic" && !canAutoplay(id))) return false;
+    if (
+      intent === "automatic" &&
+      audible(state.element) &&
+      [...registry.values()].some(
+        ({ element }) => element !== state.element && playingWithSound(element),
+      )
+    ) {
+      pause(id, "coordinator");
+      return false;
+    }
     state.request = ++sequence;
     const request = state.request;
     if (audible(state.element)) latestAudibleRequest = request;

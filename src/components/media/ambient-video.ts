@@ -2,15 +2,38 @@ import { animate } from "motion/mini";
 import type { Dispose, MediaId } from "../../data/types";
 import type { MediaCoordinator } from "./coordinator";
 
-export function initAmbientVideo(
-  root: HTMLElement,
+export function initAmbientVideos(
+  roots: Iterable<HTMLElement>,
   coordinator: MediaCoordinator,
 ): Dispose {
-  const video = root.querySelector<HTMLVideoElement>("video")!;
+  const players = Array.from(roots, (root) => ({
+    root,
+    video: root.querySelector<HTMLVideoElement>("video")!,
+  }));
+  function setMuted(muted: boolean) {
+    for (const { video } of players) {
+      if (video.muted !== muted) video.muted = muted;
+    }
+  }
+  const cleanups = players.map(({ root, video }) =>
+    initAmbientVideo(root, video, coordinator, setMuted),
+  );
+  return () => cleanups.forEach((cleanup) => cleanup());
+}
+
+function initAmbientVideo(
+  root: HTMLElement,
+  video: HTMLVideoElement,
+  coordinator: MediaCoordinator,
+  setMuted: (muted: boolean) => void,
+): Dispose {
   const id = video.dataset.mediaId as MediaId;
   const soundButton = root.querySelector<HTMLButtonElement>(
     "[data-ambient-sound]",
   );
+  const playButton = root.querySelector<HTMLButtonElement>(
+    "[data-ambient-play]",
+  )!;
   const controller = new AbortController();
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const off = soundButton?.querySelector<SVGSVGElement>(".sound-off");
@@ -40,17 +63,22 @@ export function initAmbientVideo(
     ];
   }
   let visible = false;
-  video.controls = false;
-  video.muted = true;
   root.querySelector<HTMLElement>(".ambient-controls")!.hidden = false;
-  function updateControls() {
+  function updateSoundButton() {
     soundButton?.setAttribute("aria-pressed", String(!video.muted));
     soundButton?.setAttribute(
       "aria-label",
       video.muted ? "Ativar som" : "Desativar som",
     );
-    video.controls = false;
     updateIcon();
+  }
+  function updatePlayButton() {
+    if (controller.signal.aborted) return;
+    playButton.hidden =
+      !visible ||
+      !video.paused ||
+      Boolean(video.error) ||
+      (!reduced.matches && coordinator.canAutoplay(id));
   }
   function attempt() {
     if (
@@ -59,7 +87,7 @@ export function initAmbientVideo(
       !reduced.matches &&
       coordinator.canAutoplay(id)
     )
-      void coordinator.play(id, "automatic").then(updateControls);
+      void coordinator.play(id, "automatic").then(updatePlayButton);
   }
   const observer = new IntersectionObserver(
     (entries) => {
@@ -67,6 +95,7 @@ export function initAmbientVideo(
         entries[0].isIntersecting && entries[0].intersectionRatio >= 0.15;
       if (visible) attempt();
       else if (!video.paused) coordinator.pause(id, "visibility");
+      updatePlayButton();
     },
     { threshold: 0.15 },
   );
@@ -74,14 +103,26 @@ export function initAmbientVideo(
   soundButton?.addEventListener(
     "click",
     () => {
-      video.muted = !video.muted;
-      if (video.paused) void coordinator.play(id, "user").then(updateControls);
-      updateControls();
+      setMuted(!video.muted);
+      updateSoundButton();
     },
     { signal: controller.signal },
   );
-  for (const event of ["play", "pause", "volumechange", "ended"])
-    video.addEventListener(event, updateControls, {
+  playButton.addEventListener(
+    "click",
+    () => void coordinator.play(id, "user").then(updatePlayButton),
+    { signal: controller.signal },
+  );
+  video.addEventListener(
+    "volumechange",
+    () => {
+      setMuted(video.muted);
+      updateSoundButton();
+    },
+    { signal: controller.signal },
+  );
+  for (const event of ["play", "pause", "ended", "error", "loadeddata"])
+    video.addEventListener(event, updatePlayButton, {
       signal: controller.signal,
     });
   document.addEventListener(
@@ -97,12 +138,13 @@ export function initAmbientVideo(
     () => {
       if (reduced.matches && !video.paused)
         coordinator.pause(id, "reduced-motion");
-      updateControls();
+      else attempt();
+      updatePlayButton();
       updateIcon(true);
     },
     { signal: controller.signal },
   );
-  updateControls();
+  updateSoundButton();
   return () => {
     iconAnimations.forEach((animation) => animation.stop());
     controller.abort();

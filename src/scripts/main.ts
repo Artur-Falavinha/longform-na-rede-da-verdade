@@ -1,7 +1,7 @@
 import { initChapterIndex } from "../components/navigation/chapter-index";
 import { initCommentExplorer } from "../components/comments/comment-explorer";
 import { createMediaCoordinator } from "../components/media/coordinator";
-import { initAmbientVideo } from "../components/media/ambient-video";
+import { initAmbientVideos } from "../components/media/ambient-video";
 import { initVideoPlayer } from "../components/media/video-player";
 import { initBooklet } from "../components/documents/booklet";
 import { initPodcastPlayer } from "../components/media/podcast-player";
@@ -31,9 +31,12 @@ document
 document
   .querySelectorAll<HTMLElement>("[data-video-player]")
   .forEach((root) => dispose.push(initVideoPlayer(root)));
-document
-  .querySelectorAll<HTMLElement>("[data-ambient]")
-  .forEach((root) => dispose.push(initAmbientVideo(root, coordinator)));
+dispose.push(
+  initAmbientVideos(
+    document.querySelectorAll<HTMLElement>("[data-ambient]"),
+    coordinator,
+  ),
+);
 document
   .querySelectorAll<HTMLElement>("[data-booklet]")
   .forEach((root) => dispose.push(initBooklet(root)));

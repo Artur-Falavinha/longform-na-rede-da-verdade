@@ -179,12 +179,12 @@ test("arraste do card reduz altura e preserva análise clicável", async ({
   await expect(active.locator("details")).toHaveAttribute("open", "");
 });
 
-test("menu fecha fora e capas exibem apenas controle sonoro", async ({
+test("menu fecha fora e capas exibem o controle sonoro", async ({
   page,
   isMobile,
 }) => {
   await page.goto("/");
-  await expect(page.locator(".cover-next, [data-ambient-play]")).toHaveCount(0);
+  await expect(page.locator(".cover-next")).toHaveCount(0);
   await expect(page.locator("[data-ambient-sound]")).toHaveCount(2);
   const menu = page.locator(".chapter-menu");
   const label = menu.locator(".current-chapter");
@@ -205,7 +205,7 @@ test("menu fecha fora e capas exibem apenas controle sonoro", async ({
   await expect(page.locator(".podcast header p")).toHaveCount(0);
 });
 
-test("capas mantêm somente volume mesmo pausadas e fora da tela", async ({
+test("capas mantêm a barra nativa oculta mesmo pausadas e fora da tela", async ({
   page,
 }) => {
   await page.goto("/");
