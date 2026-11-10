@@ -200,33 +200,6 @@
       "adaptation": "Rótulo, título, instrução ou fragmento de interface adaptado à sequência do PDF e ao componente acessível; conteúdo editorial preservado nos registros literais."
     },
     {
-      "id": "source-072",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:leaf[31]",
-      "sourceText": "Recente;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-073",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:leaf[33]",
-      "sourceText": "Popularização;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-074",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:leaf[35]",
-      "sourceText": "Consolidação;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
       "id": "source-075",
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "rede-disse:leaf[36]",
@@ -364,33 +337,6 @@
       "verification": "literal"
     },
     {
-      "id": "source-247",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:journalism:analysis[1]",
-      "sourceText": "Não é uma informação inédita;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-248",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:journalism:analysis[2]",
-      "sourceText": "Narrativa;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-249",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:journalism:analysis[3]",
-      "sourceText": "Mobilização;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
       "id": "source-250",
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "rede-disse:journalism:analysis[4]",
@@ -507,33 +453,6 @@
       "verification": "literal"
     },
     {
-      "id": "source-262",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:moral-authority:analysis[1]",
-      "sourceText": "Autoridade Moral;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-263",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:moral-authority:analysis[2]",
-      "sourceText": "Mobilização Pública;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-264",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:moral-authority:analysis[3]",
-      "sourceText": "Deslegitimação Institucional;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
       "id": "source-265",
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "rede-disse:moral-authority:analysis[4]",
@@ -595,33 +514,6 @@
       "origin": "https://narededaverdade.base44.app/",
       "sourceLocator": "rede-disse:opposition:analysis[0]",
       "sourceText": "Questionamentos sobre as motivações, métodos e responsabilidades do influenciador. Parte do público exerceu pensamento crítico, levantando dúvidas sobre os limites entre denúncia e exposição.",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-272",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:opposition:analysis[1]",
-      "sourceText": "Vulnerabilidade Pessoal;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-273",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:opposition:analysis[2]",
-      "sourceText": "Surfar em temas;",
-      "targetChapter": "comentarios",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "source-274",
-      "origin": "https://narededaverdade.base44.app/",
-      "sourceLocator": "rede-disse:opposition:analysis[3]",
-      "sourceText": "Conflito como Sucesso;",
       "targetChapter": "comentarios",
       "status": "received",
       "verification": "literal"
@@ -727,15 +619,6 @@
       "verification": "literal"
     },
     {
-      "id": "docs-20261106-reach-04",
-      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
-      "sourceLocator": "p. 1–2, reach, parágrafo 4",
-      "sourceText": "A pesquisadora Brito, em sua discussão sobre o chamado “efeito cego”, em 2023, ajuda a compreender esse fenômeno. A confiança construída entre influenciador e audiência pode fazer com que seus seguidores recebam e reproduzam uma informação antes mesmo de submetê-la ao mesmo nível de questionamento que aplicariam a outras fontes, como o jornalismo.",
-      "targetChapter": "alcance",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
       "id": "docs-20261106-reach-05",
       "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
       "sourceLocator": "p. 1–2, reach, parágrafo 5",
@@ -808,15 +691,6 @@
       "verification": "literal"
     },
     {
-      "id": "docs-20261106-comparison-02",
-      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
-      "sourceLocator": "p. 3, comparison, parágrafo 2",
-      "sourceText": "Conhecido pelo nome artístico Felca, Felipe Bressanim Pereira é um youtuber e humorista que ganhou popularidade com vídeos de humor, críticas e comentários sobre conteúdos que circulam na internet. No vídeo “Adultização”, ele abordou a exposição e a sexualização de crianças e adolescentes nas redes sociais, destacando o caso de Hytalo Santos, influenciador paraibano conhecido por publicar vídeos de dança e da rotina de jovens que participavam de seus conteúdos. As denúncias apresentadas por Felca apontaram possíveis situações de exploração e exposição inadequada de menores de idade. O caso, que já era acompanhado por autoridades e abordado pela imprensa, ganhou grande repercussão após a publicação do vídeo.",
-      "targetChapter": "comparacao",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
       "id": "docs-20261106-comparison-03",
       "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
       "sourceLocator": "p. 3, comparison, parágrafo 3",
@@ -848,15 +722,6 @@
       "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
       "sourceLocator": "Antes do infográfico, parágrafo 3",
       "sourceText": "Portanto, não é correto afirmar que a imprensa desconhecia o assunto ou que Felca foi o primeiro a trazer as suspeitas ao conhecimento público. A cobertura jornalística já existia, mas a denúncia ganhou outra dimensão após a publicação do vídeo. Felca não necessariamente chegou primeiro à informação, mas conseguiu fazer com que milhões de pessoas olhassem para ela, ampliando a visibilidade de um assunto que já vinha sendo noticiado.",
-      "targetChapter": "jornalismo",
-      "status": "received",
-      "verification": "literal"
-    },
-    {
-      "id": "docs-sabrina-journalism-intro-04",
-      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
-      "sourceLocator": "Antes do infográfico, parágrafo 4",
-      "sourceText": "A comparação, portanto, não se trata de uma disputa para determinar quem informou primeiro, mas de compreender por que diferentes formas de comunicar uma denúncia produzem níveis distintos de atenção, identificação e engajamento. A repercussão do caso também permite observar como a linguagem, a proximidade com a audiência e a confiança construída nas redes sociais influenciam a circulação de informações.",
       "targetChapter": "jornalismo",
       "status": "received",
       "verification": "literal"
@@ -1576,6 +1441,33 @@
       "status": "received",
       "verification": "adapted-interface",
       "adaptation": "Exibe a cartilha final após o texto de chamada."
+    },
+    {
+      "id": "sabrina-20261110-reach-04",
+      "origin": "Mensagem enviada por Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "sourceLocator": "Alcance, parágrafo sobre o efeito cego",
+      "sourceText": "A pesquisadora Taísa Bibiano Brito, em sua dissertação sobre o chamado “efeito cego” no comportamento de usuários nas redes sociais, de 2023, ajuda a compreender esse fenômeno. A confiança construída entre influenciador e audiência pode fazer com que seus seguidores recebam e reproduzam uma informação antes mesmo de submetê-la ao mesmo nível de questionamento que aplicariam a outras fontes, como o jornalismo.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "sabrina-20261110-comparison-02",
+      "origin": "Mensagem enviada por Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "sourceLocator": "Comparação, segundo parágrafo",
+      "sourceText": "Conhecido pelo nome artístico Felca, Felipe Bressanim Pereira é um youtuber e humorista que ganhou popularidade com vídeos de humor, críticas e comentários sobre conteúdos que circulam na internet. Somados, seus perfis oficiais no YouTube, Instagram, X e TikTok acumulam aproximadamente 32,46 milhões de seguidores. No vídeo “Adultização”, o influenciador abordou a exposição e a sexualização de crianças e adolescentes nas redes sociais, dando destaque ao caso de Hytalo Santos, influenciador paraibano conhecido por publicar vídeos de dança e registros da rotina de jovens que participavam de seus conteúdos.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "sabrina-20261110-journalism-intro-04",
+      "origin": "Mensagem enviada por Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "sourceLocator": "Antes do infográfico, parágrafo sobre a comparação",
+      "sourceText": "A comparação, portanto, não é uma disputa para determinar quem informou primeiro, mas de compreender por que diferentes formas de comunicar uma denúncia produzem níveis distintos de atenção, identificação e engajamento. A repercussão do caso também permite observar como a linguagem, a proximidade com a audiência e a confiança construída nas redes sociais influenciam a circulação de informações.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
     }
   ],
   "assets": [
@@ -1856,6 +1748,171 @@
     }
   ],
   "supersededRecords": [
+    {
+      "id": "source-274",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[3]",
+      "sourceText": "Conflito como Sucesso;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-273",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[2]",
+      "sourceText": "Surfar em temas;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-272",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:opposition:analysis[1]",
+      "sourceText": "Vulnerabilidade Pessoal;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-264",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[3]",
+      "sourceText": "Deslegitimação Institucional;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-263",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[2]",
+      "sourceText": "Mobilização Pública;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-262",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:moral-authority:analysis[1]",
+      "sourceText": "Autoridade Moral;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-249",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[3]",
+      "sourceText": "Mobilização;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-248",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[2]",
+      "sourceText": "Narrativa;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-247",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:journalism:analysis[1]",
+      "sourceText": "Não é uma informação inédita;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-074",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[35]",
+      "sourceText": "Consolidação;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-073",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[33]",
+      "sourceText": "Popularização;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "source-072",
+      "origin": "https://narededaverdade.base44.app/",
+      "sourceLocator": "rede-disse:leaf[31]",
+      "sourceText": "Recente;",
+      "targetChapter": "comentarios",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "Solicitação de Sabrina Gomes da Cunha ao grupo em 10/11/2026",
+      "supersededReason": "Tópicos removidos dos cards de comentários a pedido das autoras; comentários e citações mantidos."
+    },
+    {
+      "id": "docs-sabrina-journalism-intro-04",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Antes do infográfico, parágrafo 4",
+      "sourceText": "A comparação, portanto, não se trata de uma disputa para determinar quem informou primeiro, mas de compreender por que diferentes formas de comunicar uma denúncia produzem níveis distintos de atenção, identificação e engajamento. A repercussão do caso também permite observar como a linguagem, a proximidade com a audiência e a confiança construída nas redes sociais influenciam a circulação de informações.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "sabrina-20261110-journalism-intro-04",
+      "supersededReason": "Redação substituída pela versão enviada por Sabrina em 10/11/2026."
+    },
+    {
+      "id": "docs-20261106-comparison-02",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3, comparison, parágrafo 2",
+      "sourceText": "Conhecido pelo nome artístico Felca, Felipe Bressanim Pereira é um youtuber e humorista que ganhou popularidade com vídeos de humor, críticas e comentários sobre conteúdos que circulam na internet. No vídeo “Adultização”, ele abordou a exposição e a sexualização de crianças e adolescentes nas redes sociais, destacando o caso de Hytalo Santos, influenciador paraibano conhecido por publicar vídeos de dança e da rotina de jovens que participavam de seus conteúdos. As denúncias apresentadas por Felca apontaram possíveis situações de exploração e exposição inadequada de menores de idade. O caso, que já era acompanhado por autoridades e abordado pela imprensa, ganhou grande repercussão após a publicação do vídeo.",
+      "targetChapter": "comparacao",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "sabrina-20261110-comparison-02",
+      "supersededReason": "Redação substituída pela versão enviada por Sabrina em 10/11/2026."
+    },
+    {
+      "id": "docs-20261106-reach-04",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 1–2, reach, parágrafo 4",
+      "sourceText": "A pesquisadora Brito, em sua discussão sobre o chamado “efeito cego”, em 2023, ajuda a compreender esse fenômeno. A confiança construída entre influenciador e audiência pode fazer com que seus seguidores recebam e reproduzam uma informação antes mesmo de submetê-la ao mesmo nível de questionamento que aplicariam a outras fontes, como o jornalismo.",
+      "targetChapter": "alcance",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "sabrina-20261110-reach-04",
+      "supersededReason": "Redação substituída pela versão enviada por Sabrina em 10/11/2026."
+    },
     {
       "id": "docs-20261106-journalism-01",
       "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",

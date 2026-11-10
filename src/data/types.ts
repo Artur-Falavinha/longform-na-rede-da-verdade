@@ -64,7 +64,6 @@ export type CommentGroup = {
   comments: Comment[];
   expertQuotes: { text: string; attribution: string; source?: SourceRef }[];
   analysis: string[];
-  topics: string[];
   pendingDistribution: string;
 };
 export type Dispose = () => void;

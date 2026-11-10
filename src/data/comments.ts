@@ -65,7 +65,6 @@ export const comments = [
     analysis: [
       "Comentários que discutiram o papel da mídia tradicional e relacionaram a denúncia às funções do jornalismo. Manifestações expressaram crítica à suposta omissão da imprensa convencional.",
     ],
-    topics: ["Não é uma informação inédita;", "Narrativa;", "Mobilização;"],
     pendingDistribution:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -118,11 +117,6 @@ export const comments = [
     ],
     analysis: [
       "Manifestações que construíram Felca como figura de autoridade, coragem e intervenção social. Comentários associaram o influenciador à defesa das crianças e à responsabilidade social.",
-    ],
-    topics: [
-      "Autoridade Moral;",
-      "Mobilização Pública;",
-      "Deslegitimação Institucional;",
     ],
     pendingDistribution:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -178,11 +172,6 @@ export const comments = [
     analysis: [
       "Questionamentos sobre as motivações, métodos e responsabilidades do influenciador. Parte do público exerceu pensamento crítico, levantando dúvidas sobre os limites entre denúncia e exposição.",
     ],
-    topics: [
-      "Vulnerabilidade Pessoal;",
-      "Surfar em temas;",
-      "Conflito como Sucesso;",
-    ],
     pendingDistribution:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -236,7 +225,6 @@ export const comments = [
     analysis: [
       "A denúncia funcionou como catalisadora de um debate mais amplo sobre a exposição e adultização de crianças e adolescentes. O tema ganhou proporção muito maior do que antes.",
     ],
-    topics: ["Recente;", "Popularização;", "Consolidação;"],
     pendingDistribution:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
