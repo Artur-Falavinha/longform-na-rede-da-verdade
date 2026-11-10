@@ -26,7 +26,7 @@ export function initAmbientVideos(
   };
   const playersByRoot = new Map<Element, ReturnType<typeof initAmbientVideo>>(
     players.map(({ root, video }) => [
-      root,
+      root.closest(".ambient-chapter") ?? root,
       initAmbientVideo(root, video, coordinator, sound),
     ]),
   );

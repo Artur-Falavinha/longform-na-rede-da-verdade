@@ -187,14 +187,11 @@ const Shell = ambient ? "div" : "media-controller";
   }
   .cover {
     margin: 0;
+    height: 100vh;
     height: 100svh;
-    clip-path: inset(0);
   }
   .cover .video-shell {
-    position: fixed;
-    inset: 0;
-    height: 100svh;
-    z-index: 0;
+    height: 100%;
   }
   @media (min-width: 900px) and (min-aspect-ratio: 3/2) and (hover: hover) and (pointer: fine) {
     .ambient.cover video {
@@ -249,19 +246,8 @@ const Shell = ambient ? "div" : "media-controller";
     .ambient-controls button {
       font-size: 0.75rem;
     }
-    .ambient .video-shell {
+    .ambient:not(.cover) .video-shell {
       height: 70svh;
-    }
-    .cover .video-shell {
-      height: 100svh;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .cover {
-      clip-path: none;
-    }
-    .cover .video-shell {
-      position: relative;
     }
   }
 </style>
