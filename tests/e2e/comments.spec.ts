@@ -21,9 +21,7 @@ test("seleção tem roving focus, painel conjunto e métrica apenas por ação",
   const panel = page.getByRole("tabpanel");
   await expect(panel.locator("[data-comment-id]")).toHaveCount(2);
   await expect(panel).toContainText("Ana Vaz");
-  const activeCard = panel.locator(".comment:not([inert])");
-  await activeCard.locator("summary").click();
-  await expect(activeCard.locator(".analysis-body")).toBeVisible();
+  await expect(page.locator(".comment-analysis")).toHaveCount(0);
   await page.keyboard.press("End");
   expect(await page.evaluate(() => (window as any).commentEvents[0])).toEqual({
     groupId: "moral-authority",
@@ -31,13 +29,14 @@ test("seleção tem roving focus, painel conjunto e métrica apenas por ação",
   });
 });
 
-test("todos os grupos e análises continuam legíveis sem JavaScript", async ({
+test("todos os grupos e comentários continuam legíveis sem JavaScript", async ({
   browser,
   baseURL,
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto(baseURL!);
+  await expect(page.locator(".comment-analysis")).toHaveCount(0);
   for (const group of [
     "journalism",
     "moral-authority",
@@ -46,7 +45,9 @@ test("todos os grupos e análises continuam legíveis sem JavaScript", async ({
   ]) {
     const panel = page.locator(`[data-comment-group="${group}"]`);
     await expect(panel).toBeVisible();
-    await expect(panel.locator("[data-comment-id]")).toHaveCount(group === "journalism" ? 3 : 2);
+    await expect(panel.locator("[data-comment-id]")).toHaveCount(
+      group === "journalism" ? 3 : 2,
+    );
   }
   await context.close();
 });

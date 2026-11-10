@@ -6,7 +6,6 @@ import {
   ArrowDownRight,
   Heart,
   MessageCircle,
-  Plus,
 } from "@lucide/astro";
 import { comments } from "../../data/comments";
 const anchors: Record<string, string> = {
@@ -81,22 +80,6 @@ const anchors: Record<string, string> = {
                     )}
                   </figcaption>
                 )}
-                <details class="comment-analysis">
-                  <summary>
-                    <span>Ler análise</span>{" "}
-                    <Plus size={18} aria-hidden="true" />
-                  </summary>
-                  <div class="analysis-body">
-                    <ul>
-                      {group.topics.map((topic) => (
-                        <li>{topic}</li>
-                      ))}
-                    </ul>
-                    {group.analysis.slice(1).map((text) => (
-                      <p>{text}</p>
-                    ))}
-                  </div>
-                </details>
               </figure>
             ))}
           </div>
@@ -310,7 +293,6 @@ const anchors: Record<string, string> = {
   .comment.featured {
     --quote-inset: clamp(3rem, 5vw, 4.375rem);
     padding: clamp(1.5rem, 2.5vw, 2.25rem);
-    padding-bottom: 0.875rem;
     border: 0;
     background: var(--red);
     position: relative;
@@ -340,41 +322,8 @@ const anchors: Record<string, string> = {
     flex-shrink: 0;
     transform: translateY(-0.5px);
   }
-  .comment-analysis summary :global(svg) {
-    display: block;
-    flex-shrink: 0;
-    position: relative;
-    top: -1px;
-    transition: transform 300ms;
-  }
-  .comment-analysis[open] summary :global(svg) {
-    transform: rotate(45deg);
-  }
   .featured figcaption {
     color: var(--text);
-  }
-  .comment-analysis {
-    margin-top: 0.75rem;
-    font-size: 0.875rem;
-  }
-  .comment-analysis summary {
-    width: fit-content;
-    line-height: 1;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-  }
-  .analysis-body {
-    padding-top: 1rem;
-    border-top: 1px solid var(--text);
-    line-height: 1.65;
-  }
-  .analysis-body ul {
-    margin-top: 0;
   }
   .expert-quote {
     max-width: var(--story-measure);
@@ -387,8 +336,7 @@ const anchors: Record<string, string> = {
   @media (prefers-reduced-motion: reduce) {
     .comment-track,
     .group-selectors a::before,
-    .tab-icon :global(svg),
-    .comment-analysis summary :global(svg) {
+    .tab-icon :global(svg) {
       transition: none;
     }
   }
