@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import duasTrajetorias from "../../src/data/transcripts/duas-trajetorias.json" with { type: "json" };
+import quemInforma from "../../src/data/transcripts/quem-informa.json" with { type: "json" };
 import inventory from "../../validation/content-inventory.json" with { type: "json" };
 
 test("textos das autoras aparecem integralmente e na ordem editorial", async ({
@@ -89,10 +91,14 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
       );
     }, editorialSequence),
   ).toBe(true);
-  await expect(page.locator(".transcript-content")).toHaveText([
-    "Transcrição pendente de envio",
-    "Transcrição pendente de envio",
-  ]);
+  for (const [id, transcript] of [
+    ["checking-future", duasTrajetorias],
+    ["journalist-influencer", quemInforma],
+  ] as const) {
+    await expect(
+      page.locator(`[data-podcast="${id}"] .transcript-content p`),
+    ).toHaveText(transcript.map(({ text }) => text));
+  }
 
   await expect(page.locator("#comparacao h2")).toHaveText(
     "Entre a influência e o jornalismo",

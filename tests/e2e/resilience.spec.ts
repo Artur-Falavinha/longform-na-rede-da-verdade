@@ -55,7 +55,7 @@ test("larguras, orientação e ampliação de 200% mantêm leitura e controles",
   });
   await podcast.locator("[data-podcast-close]").click();
   await podcast.locator("summary").click();
-  await expect(podcast.locator(".transcript p")).toBeVisible();
+  await expect(podcast.locator(".transcript-content")).toBeVisible();
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth - window.innerWidth,

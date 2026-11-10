@@ -1758,8 +1758,8 @@
       "id": "N03",
       "description": "Dois podcasts e transcrições",
       "targetChapter": "jornalismo",
-      "status": "placeholder",
-      "resolution": "Áudios finais recebidos como EPISÓDIO 1.2.MP3.mpeg e EPISÓDIO 2.3.MP3.mpeg. Transcrições aguardam envio."
+      "status": "received",
+      "resolution": "Áudios publicados das versões 1.2 e 2.3. Transcrições recebidas nos arquivos EPISODIO 1.3 (transcript).MP3.pdf.txt e EPISÓDIO 2.4 (transcript).MP3.pdf.txt. Os horários ficam na fonte, pois foram marcados em versões diferentes dos áudios."
     },
     {
       "id": "N04",

@@ -175,7 +175,15 @@ const anchor =
       <ChevronDown size={18} aria-hidden="true" /> Transcrição{" "}
     </summary>
     <div class="transcript-content">
-      <p>{asset.transcript ?? "Transcrição pendente de envio"}</p>
+      <div class="transcript-copy">
+        {
+          asset.transcript?.length ? (
+            asset.transcript.map(({ text }) => <p>{text}</p>)
+          ) : (
+            <p>Transcrição pendente de envio</p>
+          )
+        }
+      </div>
     </div>
   </details>
 </article>
@@ -439,9 +447,14 @@ const anchor =
   .transcript summary::-webkit-details-marker {
     display: none;
   }
-  .transcript p {
-    padding: 1rem 0 2rem;
+  .transcript-copy {
+    display: grid;
+    gap: 1rem;
+    padding-block: 1rem 2rem;
     max-width: 65ch;
+  }
+  .transcript-copy p {
+    margin: 0;
   }
   .podcast-error {
     color: var(--accent);
