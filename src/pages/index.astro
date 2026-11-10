@@ -107,7 +107,7 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       aria-label="O futuro do jornalismo"
     >
       <div class="story-column story-copy">
-        <EditorialText paragraphs={editorial.journalism} />
+        <EditorialText paragraphs={editorial.journalismIntro} />
       </div>
       <figure class="story-media reuters-figure">
         <img
@@ -122,6 +122,9 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
           Fonte: Digital News Report 2026, Reuters Institute.
         </figcaption>
       </figure>
+      <div class="story-column story-copy">
+        <EditorialText paragraphs={editorial.journalismOutro} />
+      </div>
       <div class="story-column podcast-conversations">
         {podcasts.map((asset, index) => (
           <PodcastPlayer asset={asset} episode={index + 1} />
@@ -192,6 +195,8 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       </ul>
       <p class="small muted">
         Orientador: {research.advisor}
+        <br />
+        Apoio técnico e desenvolvimento do site — {research.technicalSupport}
         <br />
         {research.institution}
       </p>

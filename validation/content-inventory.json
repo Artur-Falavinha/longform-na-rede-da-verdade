@@ -826,10 +826,82 @@
       "verification": "literal"
     },
     {
-      "id": "docs-20261106-journalism-01",
-      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
-      "sourceLocator": "p. 3–4, journalism, parágrafo 1",
-      "sourceText": "Se hoje influenciadores conseguem mobilizar milhões em torno de uma denúncia, o que isso significa para o futuro do Jornalismo? Mais do que disputar alcance, a imprensa precisa entender como preservar sua credibilidade em um ambiente em que qualquer pessoa pode informar, denunciar e conquistar a confiança de uma audiência.",
+      "id": "docs-sabrina-journalism-intro-01",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Antes do infográfico, parágrafo 1",
+      "sourceText": "Se hoje influenciadores conseguem mobilizar milhões de pessoas em torno de uma denúncia, o que isso significa para o futuro do Jornalismo? A comparação entre o vídeo de Felca e a cobertura da imprensa revela que a discussão não está apenas na capacidade de alcançar grandes audiências, mas também na forma como uma informação é descoberta, investigada, apresentada e recebida pelo público.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-intro-02",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Antes do infográfico, parágrafo 2",
+      "sourceText": "O levantamento identificou que o caso de Hytalo Santos já era acompanhado pela imprensa antes da publicação de “Adultização”. Entre dezembro de 2024 e julho de 2025, quase oito meses antes do vídeo, veículos como CNN Brasil, G1 e Tilt/UOL publicaram matérias sobre investigações, denúncias e acusações envolvendo o influenciador e pessoas relacionadas a ele. Ao todo, foram identificados nove conteúdos jornalísticos distintos nesse período.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-intro-03",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Antes do infográfico, parágrafo 3",
+      "sourceText": "Portanto, não é correto afirmar que a imprensa desconhecia o assunto ou que Felca foi o primeiro a trazer as suspeitas ao conhecimento público. A cobertura jornalística já existia, mas a denúncia ganhou outra dimensão após a publicação do vídeo. Felca não necessariamente chegou primeiro à informação, mas conseguiu fazer com que milhões de pessoas olhassem para ela, ampliando a visibilidade de um assunto que já vinha sendo noticiado.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-intro-04",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Antes do infográfico, parágrafo 4",
+      "sourceText": "A comparação, portanto, não se trata de uma disputa para determinar quem informou primeiro, mas de compreender por que diferentes formas de comunicar uma denúncia produzem níveis distintos de atenção, identificação e engajamento. A repercussão do caso também permite observar como a linguagem, a proximidade com a audiência e a confiança construída nas redes sociais influenciam a circulação de informações.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-intro-05",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Antes do infográfico, parágrafo 5",
+      "sourceText": "Essa transformação aparece também nos hábitos de consumo de notícias dos brasileiros. O Digital News Report 2026, do Reuters Institute, aponta que mais da metade da população brasileira utiliza semanalmente as redes sociais como fonte de informação. Além disso, 33% consomem conteúdos informativos produzidos por criadores ou influenciadores dedicados principalmente à produção de notícias. Ao mesmo tempo, 36% afirmam confiar nas notícias, enquanto 47% dizem evitá-las às vezes ou frequentemente.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-outro-01",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Depois do infográfico, parágrafo 1",
+      "sourceText": "Os dados dimensionam um cenário em que as redes sociais ocupam um espaço importante no acesso à informação e criadores de conteúdo também participam da circulação de notícias. Ao mesmo tempo, os índices de confiança e de evasão mostram que a relação do público com o jornalismo enfrenta desafios que vão além da disputa por audiência.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-outro-02",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Depois do infográfico, parágrafo 2",
+      "sourceText": "Mais do que disputar visualizações ou reproduzir a linguagem dos influenciadores, o desafio do Jornalismo é compreender o que aproxima esses criadores do público sem abrir mão dos princípios que sustentam a profissão. Proximidade, identificação e narrativas envolventes podem caminhar junto com apuração rigorosa, verificação das informações, pluralidade de fontes e direito ao contraditório.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-outro-03",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Depois do infográfico, parágrafo 3",
+      "sourceText": "Como demonstram os dados e as entrevistas reunidos nesta reportagem, influenciadores podem dar visibilidade a denúncias e impulsionar debates de interesse público. No entanto, o alcance de uma publicação, por si só, não substitui o processo jornalístico de investigação e verificação. O futuro da imprensa também depende de tornar esse processo mais transparente e de mostrar ao público como uma informação é construída e sustentada.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal"
+    },
+    {
+      "id": "docs-sabrina-journalism-outro-04",
+      "origin": "Texto enviado por Sabrina Gomes da Cunha para a reportagem",
+      "sourceLocator": "Depois do infográfico, parágrafo 4",
+      "sourceText": "Mas, afinal, como esse trabalho acontece na prática e quais desafios os jornalistas enfrentam diante das transformações no ambiente informacional? Para aprofundar essa discussão, os próximos episódios do podcast Na Rede da Verdade apresentam as experiências de dois jornalistas investigativos, Ricardo Vilches e Mauri König. Primeiro, conheça as trajetórias e as reportagens que marcaram suas carreiras. Depois, acompanhe uma conversa sobre o papel dos influenciadores, a importância da apuração e da checagem e os desafios da credibilidade no Jornalismo.",
       "targetChapter": "jornalismo",
       "status": "received",
       "verification": "literal"
@@ -1784,6 +1856,17 @@
     }
   ],
   "supersededRecords": [
+    {
+      "id": "docs-20261106-journalism-01",
+      "origin": "TEXTOS.pdf — versão enviada pelas autoras em 06/11/2026",
+      "sourceLocator": "p. 3–4, journalism, parágrafo 1",
+      "sourceText": "Se hoje influenciadores conseguem mobilizar milhões em torno de uma denúncia, o que isso significa para o futuro do Jornalismo? Mais do que disputar alcance, a imprensa precisa entender como preservar sua credibilidade em um ambiente em que qualquer pessoa pode informar, denunciar e conquistar a confiança de uma audiência.",
+      "targetChapter": "jornalismo",
+      "status": "received",
+      "verification": "literal",
+      "supersededBy": "docs-sabrina-journalism-intro-01",
+      "supersededReason": "Parágrafo substituído pela versão ampliada enviada por Sabrina Gomes da Cunha."
+    },
     {
       "id": "source-001",
       "origin": "https://narededaverdade.base44.app/",

@@ -230,6 +230,7 @@ export const research = {
     "Sabrina Gomes da Cunha",
   ],
   advisor: "Prof. Dr. Daniel Zanella",
+  technicalSupport: "Artur Lachoman Falavinha",
   institution: "Universidade Positivo — Jornalismo — TCC 2, 2026",
   authorsQuote:
     '"Em um tempo em que a credibilidade pode se sobrepor aos fatos, buscar a verdade torna-se um ato de responsabilidade."',
