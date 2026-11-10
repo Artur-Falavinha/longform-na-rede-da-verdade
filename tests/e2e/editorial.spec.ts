@@ -55,10 +55,18 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
       .locator("#adultizacao")
       .evaluate((node) => node.nextElementSibling?.nextElementSibling?.id),
   ).toBe("encerramento");
-  await expect(page.locator("footer.credits-block")).toContainText(
-    "Isabelle Sestari",
+  const credits = page.locator("footer.credits-block");
+  await expect(credits).toContainText("Isabelle Sestari");
+  await expect(credits.locator("p")).toHaveText(
+    /Orientador: .*Apoio técnico e desenvolvimento do site — Artur Lachoman Falavinha.*Universidade Positivo/s,
   );
   await expect(page.locator("#contexto")).not.toContainText("Isabelle Sestari");
+  await expect(
+    page.locator("#jornalismo > .story-copy:has(+ .reuters-figure) p"),
+  ).toHaveCount(5);
+  await expect(
+    page.locator("#jornalismo > .reuters-figure + .story-copy p"),
+  ).toHaveCount(4);
   const editorialSequence = [
     "#report-title",
     ".standfirst",
@@ -67,7 +75,9 @@ test("textos das autoras aparecem integralmente e na ordem editorial", async ({
     "#alcance",
     "#comentarios",
     "#comparacao video",
+    "#jornalismo > .story-copy:has(+ .reuters-figure)",
     "#jornalismo .reuters-figure",
+    "#jornalismo > .reuters-figure + .story-copy",
     "#podcast-checagem-e-futuro",
     "#podcast-jornalista-e-influenciador",
     "#cronologia",
