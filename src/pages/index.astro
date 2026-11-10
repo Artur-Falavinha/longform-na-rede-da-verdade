@@ -24,7 +24,9 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
     tabindex="-1"
     aria-label="Capa em vídeo"
   >
-    <VideoPlayer asset={opening} opening />
+    <div class="ambient-track">
+      <VideoPlayer asset={opening} opening />
+    </div>
   </section>
   <main id="reportagem">
     <section
@@ -201,14 +203,44 @@ const [opening, closing, comparison, adultization, ...podcasts] = media;
       tabindex="-1"
       aria-label="Vídeo de encerramento"
     >
-      <VideoPlayer asset={closing} cover />
+      <div class="ambient-track">
+        <VideoPlayer asset={closing} cover />
+      </div>
     </section>
   </main>
 </Longform>
 <style>
   .ambient-chapter {
+    height: 100vh;
     height: 100svh;
     position: relative;
+  }
+  @supports (overflow: clip) {
+    @media (prefers-reduced-motion: no-preference) {
+      .ambient-chapter {
+        overflow: clip;
+      }
+      .ambient-track {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 200%;
+        display: flex;
+        flex-direction: column;
+      }
+      #encerramento .ambient-track {
+        inset-block: auto 0;
+        justify-content: flex-end;
+      }
+      .ambient-track :global(.cover) {
+        position: sticky;
+        top: 0;
+        flex: none;
+      }
+      #encerramento .ambient-track :global(.cover) {
+        top: auto;
+        bottom: 0;
+      }
+    }
   }
   .story-column {
     width: min(calc(100% - 2 * var(--gutter)), var(--story-measure));
