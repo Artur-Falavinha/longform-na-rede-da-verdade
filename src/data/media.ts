@@ -1,4 +1,6 @@
 import type { MediaAsset } from "./types";
+import duasTrajetorias from "./transcripts/duas-trajetorias.json" with { type: "json" };
+import quemInforma from "./transcripts/quem-informa.json" with { type: "json" };
 
 const teaser = {
   kind: "video",
@@ -48,7 +50,7 @@ export const media = [
     src: "/media/duas-trajetorias.m4a",
     status: "received",
     hasAudio: true,
-    pendingId: "N03",
+    transcript: duasTrajetorias,
   },
   {
     id: "journalist-influencer",
@@ -58,6 +60,6 @@ export const media = [
     src: "/media/quem-informa.m4a",
     status: "received",
     hasAudio: true,
-    pendingId: "N03",
+    transcript: quemInforma,
   },
 ] satisfies MediaAsset[];

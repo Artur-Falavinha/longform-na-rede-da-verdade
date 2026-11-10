@@ -31,7 +31,7 @@ export type MediaAsset = {
   poster?: string;
   status: AssetStatus;
   hasAudio: boolean;
-  transcript?: string;
+  transcript?: { timestamp: string; text: string }[];
   pendingId?: string;
 };
 export type TimelineEntry = {
