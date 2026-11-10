@@ -20,7 +20,13 @@ export default {
   ) {
     const url = new URL(request.url);
     if (url.pathname === "/api/felca-metrics") {
-      return deliverFelcaMetrics(request, env.YOUTUBE_API_KEY);
+      const metrics = await deliverFelcaMetrics(request, env.YOUTUBE_API_KEY);
+      const response = new Response(metrics.body, metrics);
+      response.headers.set(
+        "Access-Control-Allow-Origin",
+        "https://na-rede-da-verdade.github.io",
+      );
+      return response;
     }
     const asset = media[url.pathname];
     if (!asset || !["GET", "HEAD"].includes(request.method)) {

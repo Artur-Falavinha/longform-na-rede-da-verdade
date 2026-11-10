@@ -8,12 +8,15 @@ import {
   Minimize,
 } from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
+import { workerUrl } from "../../delivery/worker-url";
 interface Props {
   asset: MediaAsset;
   opening?: boolean;
   cover?: boolean;
 }
 const { asset, opening = false, cover = false } = Astro.props;
+const src = workerUrl(asset.src);
+const mobileSrc = asset.mobileSrc && workerUrl(asset.mobileSrc);
 const ambient = asset.purpose === "ambient";
 const Shell = ambient ? "div" : "media-controller";
 ---
@@ -28,11 +31,11 @@ const Shell = ambient ? "div" : "media-controller";
       {...{ slot: ambient ? undefined : "media" }}
       data-media-id={asset.id}
       data-purpose={asset.purpose}
-      data-media-src={asset.src}
-      data-mobile-src={asset.mobileSrc}
+      data-media-src={src}
+      data-mobile-src={mobileSrc}
       data-mobile-poster={asset.mobilePoster}
       poster={asset.poster}
-      src={asset.src}
+      src={src}
       controls={!ambient}
       preload="none"
       loop={ambient}
@@ -47,7 +50,7 @@ const Shell = ambient ? "div" : "media-controller";
     >
       <p>
         Seu navegador não reproduz este vídeo.{" "}
-        <a href={asset.src}>Abrir vídeo</a>.
+        <a href={src}>Abrir vídeo</a>.
       </p>
     </video>
     {!ambient && (
@@ -106,7 +109,7 @@ const Shell = ambient ? "div" : "media-controller";
       <button type="button" class="button" data-media-retry>
         Tentar novamente
       </button>
-      <a href={asset.src}>Abrir arquivo diretamente</a>
+      <a href={src}>Abrir arquivo diretamente</a>
     </div>
   </Shell>
 </figure>

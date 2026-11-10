@@ -12,6 +12,7 @@ permissions:
 
 env:
   PUBLIC_SITE_URL: https://na-rede-da-verdade.artur-falavinha.workers.dev/
+  PAGES_SITE_URL: https://na-rede-da-verdade.github.io/
   PUBLIC_POSTHOG_KEY: ""
   PUBLIC_POSTHOG_HOST: ""
   WRANGLER_SEND_METRICS: "false"
@@ -57,11 +58,11 @@ jobs:
           if-no-files-found: ignore
 
   publicar:
-    name: Publicar na Cloudflare
+    name: Publicar na Cloudflare e no GitHub Pages
     needs: validar
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     concurrency:
       group: cloudflare-main
       cancel-in-progress: false
@@ -103,3 +104,36 @@ jobs:
       - name: Conferir versão e entrega de mídia
         if: steps.atual.outputs.publicar == 'true'
         run: node scripts/verify-deployment.mjs "$PUBLIC_SITE_URL" "$GITHUB_SHA"
+      - name: Gerar página para o GitHub Pages
+        if: steps.atual.outputs.publicar == 'true'
+        run: |
+          PUBLIC_WORKER_ORIGIN="$PUBLIC_SITE_URL" PUBLIC_SITE_URL="$PAGES_SITE_URL" \
+            npx astro build --outDir "$RUNNER_TEMP/longform-pages-build"
+          cp dist/release.json "$RUNNER_TEMP/longform-pages-build/"
+          touch "$RUNNER_TEMP/longform-pages-build/.nojekyll"
+      - name: Publicar no GitHub Pages
+        if: steps.atual.outputs.publicar == 'true'
+        env:
+          PAGES_DEPLOY_KEY: ${{ secrets.PAGES_DEPLOY_KEY }}
+        run: |
+          if [ -z "$PAGES_DEPLOY_KEY" ]; then
+            echo '::error::Cadastre o secret PAGES_DEPLOY_KEY do repositório de publicação.'
+            exit 1
+          fi
+          key=$(mktemp)
+          known_hosts=$(mktemp)
+          trap 'rm -f -- "$key" "$known_hosts"' EXIT
+          printf '%s\n' "$PAGES_DEPLOY_KEY" | tr -d '\r' > "$key"
+          unset PAGES_DEPLOY_KEY
+          echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > "$known_hosts"
+          export GIT_SSH_COMMAND="ssh -i '$key' -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile='$known_hosts'"
+          publication="$RUNNER_TEMP/longform-pages"
+          git clone --depth 1 --branch main git@github.com:na-rede-da-verdade/na-rede-da-verdade.github.io.git "$publication"
+          rsync -a --delete --exclude='/.git/' --exclude='/media/' --exclude='/_headers' "$RUNNER_TEMP/longform-pages-build/" "$publication/"
+          git -C "$publication" add --all
+          if git -C "$publication" diff --cached --quiet; then exit 0; fi
+          git -C "$publication" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "ci(site): publica versão $GITHUB_SHA"
+          git -C "$publication" push origin HEAD:main
+      - name: Conferir versão no GitHub Pages
+        if: steps.atual.outputs.publicar == 'true'
+        run: node scripts/verify-deployment.mjs "$PAGES_SITE_URL" "$GITHUB_SHA" "$PUBLIC_SITE_URL"
