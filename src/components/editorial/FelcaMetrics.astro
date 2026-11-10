@@ -36,6 +36,7 @@ const format = new Intl.NumberFormat("pt-BR");
 
 <script>
   import { animate } from "motion";
+  import { workerUrl } from "../../delivery/worker-url";
   const root = document.querySelector<HTMLElement>("[data-felca-metrics]");
   const date = root?.querySelector<HTMLElement>("[data-count-date]");
   const format = new Intl.NumberFormat("pt-BR");
@@ -49,7 +50,7 @@ const format = new Intl.NumberFormat("pt-BR");
   async function updateMetrics() {
     if (!root || !date) return;
     try {
-      const response = await fetch("/api/felca-metrics", {
+      const response = await fetch(workerUrl("/api/felca-metrics"), {
         signal: AbortSignal.timeout(8_000),
       });
       if (response.status === 404) return;

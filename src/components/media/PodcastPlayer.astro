@@ -10,11 +10,13 @@ import {
   ChevronDown,
 } from "@lucide/astro";
 import type { MediaAsset } from "../../data/types";
+import { workerUrl } from "../../delivery/worker-url";
 interface Props {
   asset: MediaAsset;
   episode: number;
 }
 const { asset, episode } = Astro.props;
+const src = workerUrl(asset.src);
 const waveHeights =
   episode === 1 ? [4, 14, 26, 32, 10, 4] : [8, 20, 8, 32, 16, 4];
 const anchor =
@@ -67,7 +69,7 @@ const anchor =
       <audio
         controls
         preload="none"
-        src={asset.src}
+        src={src}
         data-media-id={asset.id}
         data-purpose="editorial"
         aria-label={
@@ -166,7 +168,7 @@ const anchor =
       </div>
       <p class="podcast-error small" role="status" hidden>
         Não foi possível reproduzir. Use Reproduzir para tentar novamente ou{" "}
-        <a href={asset.src}>abra o arquivo</a>.
+        <a href={src}>abra o arquivo</a>.
       </p>
     </div>
   </div>
