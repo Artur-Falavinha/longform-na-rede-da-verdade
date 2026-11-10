@@ -157,7 +157,7 @@ test("carrosséis mantêm cards iguais, navegação e posição após trocar eix
   ).toBe(true);
 });
 
-test("arraste do card reduz altura e preserva análise clicável", async ({
+test("arraste do card ajusta a altura e mantém a navegação", async ({
   page,
 }) => {
   await page.goto("/#comentarios");
@@ -175,8 +175,11 @@ test("arraste do card reduz altura e preserva análise clicável", async ({
     .poll(() => track.evaluate((el) => el.clientHeight))
     .toBeLessThan(height - 20);
   const active = panel.locator(".comment:not([inert])");
-  await active.locator("summary").click();
-  await expect(active.locator("details")).toHaveAttribute("open", "");
+  await expect(active).toHaveAttribute("data-comment-id", "journalism-02");
+  await expect(active.locator("details")).toHaveCount(0);
+  await panel.getByRole("button", { name: "Comentário anterior" }).click();
+  await expect(panel.locator("[data-slide-status]")).toHaveText("1 / 3");
+  await expect(active).toHaveAttribute("data-comment-id", "journalism-01");
 });
 
 test("menu fecha fora e capas exibem apenas controle sonoro", async ({
